@@ -23,7 +23,7 @@
 						<span class="card-title">Log in</span>
 						<div id="div_login">
 							{!! Form::open(['route'=>'login']) !!}
-							{!! csrf_field() !!}
+								@csrf
 								{!! Form::text('login_id',null,['class'=>'validate']) !!}
 								<label for="login_id">Username/Email</label>
 								{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
