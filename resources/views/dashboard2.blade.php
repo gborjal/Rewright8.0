@@ -10,12 +10,7 @@
 				<li><a href="{!! URL::to('logout') !!}">logout</a></li>
 			</ul>
 			<ul id="nav-desktop" class="side-nav fixed">
-				<li class="no-padding">
-					<a href="#!">
-						<i class="material-icons left">schedule</i> Timeline
-						{{-- timeline --}}
-					</a>
-				</li>										
+														
 				<li class="no-padding">
 					<a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}">
 					
@@ -33,16 +28,12 @@
 						<i class="material-icons left">perm_identity</i> Profile	{{-- Profile --}}
 					</a>
 				</li>	
-				<li class="no-padding" id='db_setting'>
-					<a href="#m_settings" class="modal-trigger">
-						<i class="material-icons left">settings</i>	Settings		{{-- Settings --}}
-					</a>
-				</li>
+
 				
 				
 		    </ul>
 		    <ul id="slide-out" class="side-nav">
-				<li><a href="#!"><i class="material-icons left">schedule</i>Timeline</a></li>				{{-- timeline --}}
+				
 				<li><a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left ">question_answer</i>Thread</a></li>	{{-- discussions board --}}
 				<li><a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Tasks</a></li>						{{-- tasks board --}}
 				<li class="no-padding">																		{{-- Profile --}}
@@ -58,7 +49,7 @@
 						</li>
 					</ul>
 				</li>
-				<li><a href="#m_settings" class="modal-trigger"><i class="material-icons left">settings</i>Settings</a></li>				{{-- Settings --}}
+				
 				
 		    </ul>
 		</nav>

@@ -6,7 +6,7 @@
 		<nav class="top-nav grey darken-4" >
 			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">dashboard</i></a>			
 			<ul class="top-nav hide-on-med-and-down right">
-				<li><a href="{!! URL::to('logout') !!}">logout</a></li>
+				<li><a href="{!! route('logout') !!}">logout</a></li>
 			</ul>
 			<ul id="nav-desktop" class="side-nav fixed">
 				<li class="no-padding">
@@ -26,29 +26,27 @@
 						<i class="material-icons left">work</i>	Tasks			{{-- tasks board --}}
 					</a>
 				</li>							
-				
-				<li class="no-padding" id='db_profile'>
-					<a href="#m_personal" class="modal-trigger">
-						<i class="material-icons left">face</i> Profile	{{-- Profile --}}
-					</a>
-				</li>
 				<li class="no-padding"><!-- task timeline -->
 					<a href="#db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}">
 						<i class="material-icons left">perm_identity</i>	Patients			{{-- patients --}}
 					</a>
-				</li>	
-				<li class="no-padding" id='db_setting'>
-					<a href="#m_settings" class="modal-trigger">
-						<i class="material-icons left">settings</i>	Settings		{{-- Settings --}}
-					</a>
 				</li>
+				<li class="no-padding" id='db_profile'>
+					<a href="#m_personal" class="modal-trigger">
+						<i class="material-icons left">face</i> Profile	{{-- Profile --}}
+					</a>
+				</li>	
+				
 				
 				
 		    </ul>
 		    <ul id="slide-out" class="side-nav">
-				<li><a href="#!"><i class="material-icons left">schedule</i>Timeline</a></li>				{{-- timeline --}}
+				
 				<li><a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left ">question_answer</i>Thread</a></li>	{{-- discussions board --}}
 				<li><a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Tasks</a></li>						{{-- tasks board --}}
+				@if(Auth::user()->user_types ==1)
+				<li><a href="db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Patients</a></li>						{{-- tasks board --}}
+				@endif
 				<li class="no-padding">																		{{-- Profile --}}
 					<ul class="collapsible collapsible-accordion">
 						<li>
@@ -64,10 +62,7 @@
 						</li>
 					</ul>
 				</li>
-				@if(Auth::user()->user_types ==1)
-				<li><a href="db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Patients</a></li>						{{-- tasks board --}}
-				@endif
-				<li><a href="#m_settings" class="modal-trigger"><i class="material-icons left">settings</i>Settings</a></li>				{{-- Settings --}}
+				
 				
 		    </ul>
 		</nav>
