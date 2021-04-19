@@ -17,7 +17,12 @@ use App\Http\Controllers\Auth\AuthController;
 
 
 Route::get('/', [indexController::class,'index']);
-
-Route::get('auth/login',[AuthController::class,'showLoginForm']);
-Route::post('auth/login', [AuthController::class,'login'])->name('login');	
- 
+Route::prefix('auth')->group(function () {	//login routes
+	Route::get('login',[AuthController::class,'showLoginForm']);
+	Route::post('login', [AuthController::class,'login'])->name('login');
+	
+	Route::prefix('admin')->group(function () {
+		Route::get('login',[AuthController::class,'showAdminLoginForm']);
+		Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
+	});
+});
