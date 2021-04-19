@@ -212,11 +212,6 @@ class userSeeder extends Seeder
             'active'        => True
         ]);
 
-        tags::create([
-            'tasks_id'      => $id3,
-            'tag_info_id'   => $tag_id,
-            'active'        => True
-        ]);
         assigned_to::create([
             'task_id'       => $id3,
             'user_id'       => $patient_id,
