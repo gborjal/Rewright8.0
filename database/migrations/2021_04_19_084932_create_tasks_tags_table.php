@@ -13,7 +13,7 @@ class CreateTasksTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tasks_tags', function (Blueprint $table) {
+        /*Schema::create('tasks_tags', function (Blueprint $table) {
             $table->integer('tasks_id')->unsigned();        //tags used in this task
             $table->integer('tag_info_id')->unsigned(); 
             $table->increments('id');
@@ -28,7 +28,7 @@ class CreateTasksTagsTable extends Migration
                 ->references('id')
                 ->on('tag_info')
                 ->onDelete('cascade');
-        });
+        });*/
     }
 
     /**
