@@ -6,7 +6,7 @@
 		<nav class="top-nav grey darken-4" >
 			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">dashboard</i></a>			
 			<ul class="top-nav hide-on-med-and-down right">
-				<li><a href="{!! route('auth.logout') !!}">logout</a></li>
+				<li><a href="{!! route('logout') !!}">logout</a></li>
 			</ul>
 			<ul id="nav-desktop" class="side-nav fixed">
 				<li class="no-padding">
@@ -55,7 +55,7 @@
 								<ul>
 									<ul>
 									<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
-									<li><a href="{!! route('auth.logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
+									<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
 								</ul>
 								</ul>
 							</div>
