@@ -17,7 +17,7 @@ class CreateTagInfoTable extends Migration
             $table->increments('id');
             $table->string('desc');
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
         });
     }
 

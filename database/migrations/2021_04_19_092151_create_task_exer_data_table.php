@@ -21,7 +21,7 @@ class CreateTaskExerDataTable extends Migration
             $table->integer('freq_order');
             $table->timestamp('created')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('task_assignment_id')
                 ->references('id')

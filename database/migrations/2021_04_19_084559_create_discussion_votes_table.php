@@ -17,7 +17,8 @@ class CreateDiscussionVotesTable extends Migration
             $table->integer('discussion_comment_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->boolean('vote');
-            $table->timestamps('update_ts');
+            $table->timestamps();
+            
             $table->foreign('discussion_comment_id')
                 ->references('id')
                 ->on('discussion_comments')

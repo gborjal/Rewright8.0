@@ -25,7 +25,7 @@ class CreateUsersInfoTable extends Migration
             $table->text('perm_address')->nullable();
             $table->text('tempo_address')->nullable();
             $table->text('office_address')->nullable();
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('user_id')
                 ->references('id')

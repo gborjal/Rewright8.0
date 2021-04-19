@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('text');
             $table->integer('size');
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
         });
     }
 

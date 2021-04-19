@@ -17,7 +17,7 @@ class CreateDevelopersTable extends Migration
             $table->integer('project_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->integer('role');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('project_id')
                 ->references('id')

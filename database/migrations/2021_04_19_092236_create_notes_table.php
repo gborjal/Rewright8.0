@@ -22,7 +22,7 @@ class CreateNotesTable extends Migration
             $table->mediumText('text')->nullable();
             $table->string('image')->nullable();
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('physician_id')
                 ->references('id')

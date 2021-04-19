@@ -19,7 +19,8 @@ class CreateDiscussionNotifsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->boolean('seen');
             $table->boolean('read');
-            $table->timestamps('update_ts');
+            $table->timestamps();
+            
             $table->foreign('discussion_id')
                 ->references('id')
                 ->on('discussions_board')

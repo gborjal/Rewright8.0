@@ -22,7 +22,7 @@ class CreateTaskAssignmentTable extends Migration
             $table->timestamp('start')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('end')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('task_id')
                 ->references('id')

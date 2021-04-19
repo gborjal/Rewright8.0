@@ -22,7 +22,7 @@ class CreateDiscussionsBoardTable extends Migration
             $table->string('image')->nullable();
             $table->integer('priority')->nullable();
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('project_id')
                 ->references('id')

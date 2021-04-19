@@ -21,7 +21,7 @@ class CreateDiscussionCommentsTable extends Migration
             $table->string('image')->nullable();
             $table->integer('upvote')->nullable();
             $table->integer('downvote')->nullable();
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('discussion_id')
                 ->references('id')

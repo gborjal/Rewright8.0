@@ -23,7 +23,7 @@ class CreateTasksBoardTable extends Migration
             $table->integer('frequency')->nullable(); //points to exer_data table too
             $table->string('image')->nullable();
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('project_id')
                 ->references('id')

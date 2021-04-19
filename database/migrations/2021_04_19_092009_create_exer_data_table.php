@@ -20,7 +20,7 @@ class CreateExerDatasTable extends Migration
             $table->string('file')->nullable();
             $table->timestamp('created')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('user_id')
                 ->references('id')

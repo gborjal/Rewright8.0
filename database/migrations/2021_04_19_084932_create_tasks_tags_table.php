@@ -18,7 +18,7 @@ class CreateTasksTagsTable extends Migration
             $table->integer('tag_info_id')->unsigned(); 
             $table->increments('id');
             $table->boolean('active');
-            $table->timestamps('update_ts');
+            $table->timestamps();
             
             $table->foreign('tasks_id')
                 ->references('id')
