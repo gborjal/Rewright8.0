@@ -43,7 +43,7 @@ class userSeeder extends Seeder
             "office_address"=>NULL
         ]);
 
-        $admin_project_id = DB::table('projects')->insertGetId([
+        $admin_project_id = \DB::table('projects')->insertGetId([
             'owner_id' => 1,
             'text' => 'Admin',
             'size' => 1000,
@@ -83,7 +83,7 @@ class userSeeder extends Seeder
         
 
         //physician
-        $physician_id = DB::table('users')->insertGetId([
+        $physician_id = \DB::table('users')->insertGetId([
             'username'=>'hborjal91',
             'email'=> 'hborjal91@gmail.com',
             'password'=> Hash::make('sy16dl3l'),
@@ -105,7 +105,7 @@ class userSeeder extends Seeder
         ]);
         
         
-        $physician_project_id = DB::table('projects')->insertGetId([
+        $physician_project_id = \DB::table('projects')->insertGetId([
             'owner_id' => $physician_id,
             'text' => 'Helena Louise Borjal',
             'size' => 10,
@@ -133,7 +133,7 @@ class userSeeder extends Seeder
             'active'        => True
 
         ]);
-        App\discussion_notif::create([
+        discussion_notif::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $physician_id,
             'seen'          => False,
