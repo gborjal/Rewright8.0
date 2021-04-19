@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\user_types;
 
 class userTypesSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class userTypesSeeder extends Seeder
     {
         $table = 'user_types';
         \DB::table($table)->delete();
-        App\Models\user_types::create([
+        user_types::create([
     		'type'=>0,
     		'description'=>'Admin'
 		]);

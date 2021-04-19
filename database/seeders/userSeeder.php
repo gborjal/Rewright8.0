@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use App\Models\discussion_notif;
+use App\Models\discussion_comment;
+use App\Models\tags;
+use App\Models\assigned_to;
 class userSeeder extends Seeder
 {
     /**
@@ -60,14 +64,14 @@ class userSeeder extends Seeder
             'active'        => True
 
         ]);
-        App\Models\discussion_notif::create([
+        discussion_notif::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $admin_id,
             'seen'          => False,
             'read'          => False
         ]);
         
-        App\Models\discussion_comment::create([
+        discussion_comment::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $admin_id,
             'text'          => 'found the answer. thanks.',
@@ -134,14 +138,14 @@ class userSeeder extends Seeder
             'seen'          => False,
             'read'          => False
         ]);
-        /*App\Models\discussion_notif::create([
+        /*discussion_notif::create([
             'discussion_id' => $discussion_id,
             'user_id'       => 3,
             'seen'          => False,
             'read'          => False
         ]);*/
         
-        App\Models\discussion_comment::create([
+        discussion_comment::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $physician_id,
             'text'          => 'Do the recommended exercise for 10 days.',
@@ -178,14 +182,14 @@ class userSeeder extends Seeder
             'role'          => 2
         ]);
 
-        /*App\Models\discussion_notif::create([
+        /*discussion_notif::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $patient_id,
             'seen'          => False,
             'read'          => False
         ]);*/
         
-        App\Models\discussion_comment::create([
+        discussion_comment::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $patient_id,
             'text'          => 'Thanks for the recommendation.',
@@ -207,12 +211,12 @@ class userSeeder extends Seeder
             'active'        => True
         ]);
 
-        App\Models\tags::create([
+        tags::create([
             'tasks_id'      => $id3,
             'tag_info_id'   => $tag_id,
             'active'        => True
         ]);
-        App\Models\assigned_to::create([
+        assigned_to::create([
             'task_id'       => $id3,
             'user_id'       => $patient_id,
             'status'        => False,
