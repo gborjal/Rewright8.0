@@ -75,7 +75,7 @@ Route::prefix('/discussion')->group(function () {
 	Route::get('comments/{$id}', [discussionController::class,'getComments']);
 	Route::post('upvotes', [discussionController::class,'postUpvotes'])->name('discUpvotes');	//ajax request
 	//Route::get('upvotes', [discussionController::class,'postUpvotes']);
-	Route::get('image/{image}', [imagesController::class,'discussionImage');	//possible change
+	Route::get('image/{image}', [imagesController::class,'discussionImage']);	//possible change
 });
 Route::prefix('/tasks')->group(function () {
 
