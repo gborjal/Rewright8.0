@@ -50,8 +50,7 @@
             "php artisan cache:clear",
             "chmod -R 777 public/",
             "chmod -R 755 storage",
-            "chmod -R 755 vendor",
-            "chmod -R 644 bootstrap/cache"
+            "chmod -R 755 vendor"
         ]
     },
     "extra": {
