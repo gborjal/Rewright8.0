@@ -45,7 +45,7 @@ class User extends Authenticatable
      */
     public function userInformation()
     {
-        return $this->hasOne('App\user_info');
+        return $this->hasOne('App\Models\user_info');
     }
     /**
      * Projects the User is included
@@ -54,7 +54,7 @@ class User extends Authenticatable
      */
     public function projects()
     {
-        return $this->hasMany('App\developer');
+        return $this->hasMany('App\Models\developer');
     }
     /**
      * User's created Discussion
@@ -63,7 +63,7 @@ class User extends Authenticatable
      */
     public function discussions()
     {
-        return $this->hasMany('App\discussion');
+        return $this->hasMany('App\Models\discussion');
     }
     /**
      * User's created Discussion Comments
@@ -72,7 +72,7 @@ class User extends Authenticatable
      */
     public function discussion_comments()
     {
-        return $this->hasMany('App\discussion_comments');
+        return $this->hasMany('App\Models\discussion_comments');
     }
     /**
      * User's Discussion votes
@@ -81,7 +81,7 @@ class User extends Authenticatable
      */
     public function discussion_votes()
     {
-        return $this->hasMany('App\discussion_vote');
+        return $this->hasMany('App\Models\discussion_vote');
     }
     /**
      * User's Discussion notifications
@@ -90,7 +90,7 @@ class User extends Authenticatable
      */
     public function discussion_notif()
     {
-        return $this->hasMany('App\discussion_notif');
+        return $this->hasMany('App\Models\discussion_notif');
     }
     /**
      * User's created Tasks
@@ -99,6 +99,6 @@ class User extends Authenticatable
      */
     public function createdTask()
     {
-        return $this->hasMany('App\task');
+        return $this->hasMany('App\Models\task');
     }
 }

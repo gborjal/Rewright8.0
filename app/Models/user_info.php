@@ -36,6 +36,6 @@ class user_info extends Model
      * @return \illuminate\Database\Eloquent\Relations\belongsTo
      */
     public function user(){
-    	 return $this->belongsTo('App\User');
+    	 return $this->belongsTo('App\Models\User');
     }
 }

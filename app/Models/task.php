@@ -32,7 +32,7 @@ class task extends Model
      */
     public function assignedBy()
     {
-        return $this->belongsTo('App\user');
+        return $this->belongsTo('App\Models\user');
     }
     /**
      * Project Information
@@ -41,7 +41,7 @@ class task extends Model
      */
     public function project()
     {
-        return $this->belongsTo('App\project');
+        return $this->belongsTo('App\Models\project');
     }
     /**
      * User Information
@@ -50,7 +50,7 @@ class task extends Model
      */
     public function assignedTo()
     {
-        return $this->belongsTo('App\assigned_to');
+        return $this->belongsTo('App\Models\assigned_to');
     }
     /**
      * notifs
@@ -59,7 +59,7 @@ class task extends Model
      */
     public function notifications()
     {
-        return $this->hasMany('App\task_notif');
+        return $this->hasMany('App\Models\task_notif');
     }
     /**
      * exer_datas
@@ -69,7 +69,7 @@ class task extends Model
     /*
     public function exer_datas()
     {
-        return $this->hasMany('App\task_exer_data');
+        return $this->hasMany('App\Models\task_exer_data');
     }
     */
 }

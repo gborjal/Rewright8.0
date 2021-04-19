@@ -27,7 +27,7 @@ class developer extends Model
      * @return \illuminate\Database\Eloquent\Relations\belongsTo
      */
     public function user(){
-    	 return $this->belongsTo('App\User');
+    	 return $this->belongsTo('App\Models\User');
     }
     /**
      * Project information
@@ -35,6 +35,6 @@ class developer extends Model
      * @return \illuminate\Database\Eloquent\Relations\belongsTo
      */
     public function project(){
-         return $this->belongsTo('App\project');
+         return $this->belongsTo('App\Models\project');
     }
 }

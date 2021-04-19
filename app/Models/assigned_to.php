@@ -32,7 +32,7 @@ class assigned_to extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\user');
+        return $this->belongsTo('App\Models\user');
     }
     /**
      * Project Information
@@ -41,7 +41,7 @@ class assigned_to extends Model
      */
     public function project()
     {
-        return $this->belongsTo('App\project');
+        return $this->belongsTo('App\Models\project');
     }
     /**
      * exer_datas
@@ -51,6 +51,6 @@ class assigned_to extends Model
     
     public function exer_datas()
     {
-        return $this->hasOne('App\task_exer_data');
+        return $this->hasOne('App\Models\task_exer_data');
     }
 }

@@ -28,7 +28,7 @@ class discussion_vote extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\user');
+        return $this->belongsTo('App\Models\user');
     }
     /**
      * Comment Information
@@ -37,6 +37,6 @@ class discussion_vote extends Model
      */
     public function comment()
     {
-        return $this->belongsTo('App\discussion_comment');
+        return $this->belongsTo('App\Models\discussion_comment');
     }
 }

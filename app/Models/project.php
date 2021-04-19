@@ -30,7 +30,7 @@ class project extends Model
      */
     public function developers()
     {
-        return $this->hasMany('App\developer');
+        return $this->hasMany('App\Models\developer');
     }
     /**
      * Discussions 
@@ -39,6 +39,6 @@ class project extends Model
      */
     public function discussions()
     {
-        return $this->hasMany('App\discussion');
+        return $this->hasMany('App\Models\discussion');
     }
 }

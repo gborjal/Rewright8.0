@@ -31,7 +31,7 @@ class discussion_comment extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\user');
+        return $this->belongsTo('App\Models\user');
     }
     /**
      * Discussion Information
@@ -40,7 +40,7 @@ class discussion_comment extends Model
      */
     public function discussion()
     {
-        return $this->belongsTo('App\discussion');
+        return $this->belongsTo('App\Models\discussion');
     }
      /**
      * Discussion Information
@@ -49,6 +49,6 @@ class discussion_comment extends Model
      */
     public function vote()
     {
-        return $this->hasOne('App\discussion_vote');
+        return $this->hasOne('App\Models\discussion_vote');
     }
 }

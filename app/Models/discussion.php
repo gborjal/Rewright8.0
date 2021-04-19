@@ -32,7 +32,7 @@ class discussion extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\user');
+        return $this->belongsTo('App\Models\user');
     }
     /**
      * Project Information
@@ -41,7 +41,7 @@ class discussion extends Model
      */
     public function project()
     {
-        return $this->belongsTo('App\project');
+        return $this->belongsTo('App\Models\project');
     }
     /**
      * Comments
@@ -50,7 +50,7 @@ class discussion extends Model
      */
     public function comments()
     {
-        return $this->hasMany('App\discussion_comment');
+        return $this->hasMany('App\Models\discussion_comment');
     }
     /**
      * notifs
@@ -59,6 +59,6 @@ class discussion extends Model
      */
     public function notifications()
     {
-        return $this->hasMany('App\discussion_notif');
+        return $this->hasMany('App\Models\discussion_notif');
     }
 }

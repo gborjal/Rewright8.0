@@ -29,6 +29,6 @@ class exer_data extends Model
      */
     public function assignedBy()
     {
-        return $this->belongsTo('App\user');
+        return $this->belongsTo('App\Models\user');
     }
 }

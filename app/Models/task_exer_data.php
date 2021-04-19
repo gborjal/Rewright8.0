@@ -33,7 +33,7 @@ class task_exer_data extends Model
      */
     public function assignedTo()
     {
-        return $this->belongsTo('App\assigned_to');
+        return $this->belongsTo('App\Models\assigned_to');
     }
     /**
      * Exer Data information
@@ -42,6 +42,6 @@ class task_exer_data extends Model
      */
     public function exerDataInformation()
     {
-        return $this->hasOne('App\exer_data');
+        return $this->hasOne('App\Models\exer_data');
     }
 }

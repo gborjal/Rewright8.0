@@ -29,7 +29,7 @@ class discussion_notif extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\user');
+        return $this->belongsTo('App\Models\user');
     }
     /**
      * Comment Information
@@ -38,6 +38,6 @@ class discussion_notif extends Model
      */
     public function discussion()
     {
-        return $this->belongsTo('App\discussion');
+        return $this->belongsTo('App\Models\discussion');
     }
 }
