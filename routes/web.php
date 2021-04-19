@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\Auth\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +16,8 @@ use App\Http\Controllers\indexController;
 */
 
 
-Route::get('/', [indexController::class,'index']);	
+Route::get('/', [indexController::class,'index']);
+
+Route::get('auth/login',[AuthController::class,'showLoginForm']);
+Route::post('auth/login', [AuthController::class,'login'])->name('login');	
  
