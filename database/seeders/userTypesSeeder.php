@@ -20,7 +20,7 @@ class userTypesSeeder extends Seeder
     		'type'=>0,
     		'description'=>'Admin'
 		]);
-    	App\Modelsuser_types::create([
+    	user_types::create([
     		'type'=>1,
     		'description'=>'User'
 		]);
