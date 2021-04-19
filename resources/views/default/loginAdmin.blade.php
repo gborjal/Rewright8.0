@@ -22,20 +22,20 @@
 					<div class="card-content">
 						<span class="card-title">Log in</span>
 						<div id="div_login">
+							
 							{!! Form::open(['route'=>'loginAdmin']) !!}
 								@csrf
-								{!! Form::text('login_id',null,['class'=>'validate']) !!}
+								{!! Form::text('login_id',null,['placeholder'=>'username or email','class'=>'validate']) !!}
 								<label for="login_id">Username/Email</label>
 								{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
 								<label for="password">Password</label>
 								<p>
-									<input type="checkbox" id="remember" name="remember"/>
-									<label for="remember">Remember</label>
-								</p>
-
+								<input type="checkbox" id="remember" name="remember"/>
+		      					<label for="remember">Remember</label>
+		      					</p>	
 								<button class="btn waves-effect red darken-4" type="submit">Login
 								    <i class="large material-icons right">send</i>
-								</button>
+				  				</button>
 							{!! Form::close() !!}
 							<br/><br/>
 						</div>
