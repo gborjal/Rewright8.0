@@ -1,7 +1,7 @@
 @extends('index_master')
 
 @section('content')
-	@if($errors->has())
+	@if($errors->any())
 		@foreach($errors->all() as $error)
 
 			<script type="text/javascript">
