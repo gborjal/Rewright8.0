@@ -60,14 +60,14 @@ class userSeeder extends Seeder
             'active'        => True
 
         ]);
-        App\discussion_notif::create([
+        App\Models\discussion_notif::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $admin_id,
             'seen'          => False,
             'read'          => False
         ]);
         
-        App\discussion_comment::create([
+        App\Models\discussion_comment::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $admin_id,
             'text'          => 'found the answer. thanks.',
@@ -134,14 +134,14 @@ class userSeeder extends Seeder
             'seen'          => False,
             'read'          => False
         ]);
-        /*App\discussion_notif::create([
+        /*App\Models\discussion_notif::create([
             'discussion_id' => $discussion_id,
             'user_id'       => 3,
             'seen'          => False,
             'read'          => False
         ]);*/
         
-        App\discussion_comment::create([
+        App\Models\discussion_comment::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $physician_id,
             'text'          => 'Do the recommended exercise for 10 days.',
@@ -178,14 +178,14 @@ class userSeeder extends Seeder
             'role'          => 2
         ]);
 
-        /*App\discussion_notif::create([
+        /*App\Models\discussion_notif::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $patient_id,
             'seen'          => False,
             'read'          => False
         ]);*/
         
-        App\discussion_comment::create([
+        App\Models\discussion_comment::create([
             'discussion_id' => $discussion_id,
             'user_id'       => $patient_id,
             'text'          => 'Thanks for the recommendation.',
@@ -207,18 +207,17 @@ class userSeeder extends Seeder
             'active'        => True
         ]);
 
-        App\tags::create([
+        App\Models\tags::create([
             'tasks_id'      => $id3,
             'tag_info_id'   => $tag_id,
             'active'        => True
         ]);
-        App\assigned_to::create([
+        App\Models\assigned_to::create([
             'task_id'       => $id3,
             'user_id'       => $patient_id,
             'status'        => False,
             'active'        => True
         ]);
         
-    }
     }
 }

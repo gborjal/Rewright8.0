@@ -15,11 +15,11 @@ class userTypesSeeder extends Seeder
     {
         $table = 'user_types';
         \DB::table($table)->delete();
-        user_types::create([
+        App\Models\user_types::create([
     		'type'=>0,
     		'description'=>'Admin'
 		]);
-    	user_types::create([
+    	App\Modelsuser_types::create([
     		'type'=>1,
     		'description'=>'User'
 		]);
