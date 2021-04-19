@@ -14,7 +14,7 @@ class userRolesSeeder extends Seeder
     public function run()
     {
         $table = 'user_roles';
-        DB::table($table)->delete();
+        \DB::table($table)->delete();
         user_roles::create([
     		'type'=>0,
     		'description'=>'Admin'

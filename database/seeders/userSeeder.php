@@ -14,17 +14,17 @@ class userSeeder extends Seeder
     public function run()
     {
         $table = 'users';
-        DB::table($table)->delete();
+        \DB::table($table)->delete();
 
         //admin
-        $admin_id = DB::table($table)->insertGetId([
+        $admin_id = \DB::table($table)->insertGetId([
             'username'=>'gborjal01',
         	'email'=> 'gborjal01@gmail.com',
         	'password'=> Hash::make('59626288'),
             'activation_code' => '59626288',
             'user_types'=> 0
         ]);
-        DB::table('users_info')->insert([
+        \DB::table('users_info')->insert([
             "user_id"=>$admin_id,
             "profile"=>'1_profile_1.jpg',
             "banner"=>'1_banner_1.jpg',
@@ -44,13 +44,13 @@ class userSeeder extends Seeder
             'size' => 1000,
             'active' => True
         ]);
-        DB::table('developers')->insert([
+        \DB::table('developers')->insert([
             'project_id'    => $admin_project_id,
             'user_id'       => $admin_id,
             'role'          => 0
         ]);
 
-        $discussion_id = DB::table('discussions_board')->insertGetId([
+        $discussion_id = \DB::table('discussions_board')->insertGetId([
             'project_id'    => $admin_project_id,
             'user_id'       => $admin_id,
             'title'         => "Patient group not found error after renaming group, despite recreating",
@@ -85,7 +85,7 @@ class userSeeder extends Seeder
             'activation_code' => 'sy16dl3l',
             'user_types'=> 1
         ]);//physician
-        DB::table('users_info')->insert([
+        \DB::table('users_info')->insert([
             "user_id"=>$physician_id,
             "profile"=>'1_profile_1.jpg',
             "banner"=>'1_banner_1.jpg',
@@ -107,18 +107,18 @@ class userSeeder extends Seeder
             'active' => True
         ]);
         //PT joins admin's group
-        DB::table('developers')->insert([
+        \DB::table('developers')->insert([
             'project_id'    => $admin_project_id,
             'user_id'       => $physician_id,
             'role'          => 1
         ]);
-        DB::table('developers')->insert([
+        \DB::table('developers')->insert([
             'project_id'    => $physician_project_id,
             'user_id'       => $physician_id,
             'role'          => 1
         ]);
 
-        $discussion_id = DB::table('discussions_board')->insertGetId([
+        $discussion_id = \DB::table('discussions_board')->insertGetId([
             'project_id'    => $physician_project_id,
             'user_id'       => $physician_id,
             'title'         => "Tendernes in the carpus",
@@ -151,14 +151,14 @@ class userSeeder extends Seeder
         ]);
 
         //patient
-        $patient_id = DB::table('users')->insertGetId([
+        $patient_id = \DB::table('users')->insertGetId([
             'username'=>'lmborjal',
             'email'=> 'lmborjal@yahoo.com',
             'password'=> Hash::make('123456'),
             'activation_code' => '123456',
             'user_types'=> 2
         ]);
-        DB::table('users_info')->insert([
+        \DB::table('users_info')->insert([
             "user_id"=>$patient_id,
             "profile"=>'1_profile_1.jpg',
             "banner"=>'1_banner_1.jpg',
@@ -172,7 +172,7 @@ class userSeeder extends Seeder
             "office_address"=>NULL
         ]);
 
-        DB::table('developers')->insert([
+        \DB::table('developers')->insert([
             'project_id'    => $physician_project_id,
             'user_id'       => $patient_id,
             'role'          => 2
@@ -193,12 +193,12 @@ class userSeeder extends Seeder
             'upvote'        => NULL,
             'downvote'      => NULL
         ]);
-        $tag_id = DB::table('tag_info')->insertGetId([
+        $tag_id = \DB::table('tag_info')->insertGetId([
             'desc'=>'Wrist',
             'active'=> True
         ]);
 
-        $id3 = DB::table('tasks_board')->insertGetId([
+        $id3 = \DB::table('tasks_board')->insertGetId([
             'project_id'    => $physician_project_id,
             'user_id'       => $physician_id,
             'title'         => "Tendernes in the carpus",

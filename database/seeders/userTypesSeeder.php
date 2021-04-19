@@ -14,7 +14,7 @@ class userTypesSeeder extends Seeder
     public function run()
     {
         $table = 'user_types';
-        DB::table($table)->delete();
+        \DB::table($table)->delete();
         user_types::create([
     		'type'=>0,
     		'description'=>'Admin'
