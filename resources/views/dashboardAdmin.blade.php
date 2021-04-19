@@ -7,7 +7,7 @@
 		<nav class="top-nav grey darken-4" >
 			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">dashboard</i></a>			
 			<ul class="top-nav hide-on-med-and-down right">
-				<li><a href="{!! URL::to('logout') !!}">logout</a></li>
+				<li><a href="{!! route('auth/logout') !!}">logout</a></li>
 			</ul>
 			<ul id="nav-desktop" class="side-nav fixed">
 				<li class="no-padding">
@@ -57,7 +57,7 @@
 								<ul>
 									<li class="red-text text-darken-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUpdate Profile</li>
 									<li class="red-text text-darken-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAccount Settings</li>
-									<li><a href="{!! URL::to('logout') !!}" class="red-text text-darken-4">logout</a></li>
+									<li><a href="{!! route('auth/logout') !!}" class="red-text text-darken-4">logout</a></li>
 								</ul>
 							</div>
 						</li>

@@ -55,7 +55,7 @@
 								<ul>
 									<ul>
 									<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
-									<li><a href="{!! URL::to('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
+									<li><a href="{!! route('auth/logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
 								</ul>
 								</ul>
 							</div>
