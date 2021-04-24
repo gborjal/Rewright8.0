@@ -31,7 +31,7 @@ Route::prefix('auth')->group(function () {
 
 	Route::prefix('admin')->group(function () {
 		//Admin Login Routes
-		Route::get('login',[AuthController::class,'showAdminLoginForm']);
+		Route::get('login',[AuthController::class,'showAdminLoginForm'])->name('loginAdminForm');
 		Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
 		
 		Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
