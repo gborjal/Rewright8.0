@@ -1,7 +1,13 @@
 @extends('masterLeapLab')
 @section('header-content')
+
     <script type="text/javascript">
-      var siteUrl = "reWright.test";
+      var siteUrl = window.location.hostname;
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
 
       var project_id = <?php if(Auth::user()->users_type == 1){ echo Auth::user()->projects[1]->project_id; }else{ echo Auth::user()->projects[0]->project_id; } ?>;
       var tasks=[];

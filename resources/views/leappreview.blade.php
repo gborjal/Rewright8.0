@@ -3,7 +3,11 @@
     <script type="text/javascript">
       var pageid = parseInt({{ $pageid }}); 
       var player2 = {player:null,recorder:null,controller:null};
-
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
     </script>
     
     <script type = "text/javascript" src = "{{ URL::asset('leap.lib/record.lib/js/preview-v/recorder.js') }}"></script>

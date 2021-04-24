@@ -10,11 +10,7 @@
 				<li><a href="{!! route('auth/logout') !!}">logout</a></li>
 			</ul>
 			<ul id="nav-desktop" class="side-nav fixed">
-				<li class="no-padding">
-					<a href="#!">
-						<i class="material-icons left">schedule</i> Timeline 		{{-- timeline --}}
-					</a>
-				</li>										
+														
 				<li class="no-padding">																
 					<a href="#!" id='db_manage'>
 						<i class="material-icons left">work</i>Manage 				{{-- Manage --}}
@@ -27,13 +23,12 @@
 				</li>	
 				<li class="no-padding" id='db_setting'>
 					<a href="#m_settings" class="modal-trigger">
-						<i class="material-icons left">settings</i>	Settings		{{-- Settings --}}
+						<i class="material-icons left disabled">settings</i>	Settings		{{-- Settings --}}
 					</a>
 				</li>
 					
 		    </ul>
 		    <ul id="slide-out" class="side-nav">
-				<li><a href="#!"><i class="material-icons left">schedule</i>Timeline</a></li>				{{-- timeline --}}
 				<li class="no-padding">																		{{-- Manage --}}
 					<ul class="collapsible collapsible-accordion">
 						<li>

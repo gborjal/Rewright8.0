@@ -30,7 +30,8 @@ class AuthController extends Controller
      */
     public function showAdminLoginForm()
     {
-        return view('default.loginAdmin');
+        return redirect()->route('loginAdmin');
+        //return view('default.loginAdmin');
     }
     /**
      * Create a new authentication controller instance.

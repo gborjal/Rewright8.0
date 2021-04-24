@@ -2,7 +2,7 @@
 @section('header-content')
     <script type="text/javascript">
       var player2 = {player:null,recorder:null,controller:null};
-</script>
+    </script>
     
     <script type = "text/javascript" src = "{{ URL::asset('leap.lib/record.lib/js/vanilla-v/recorder.js') }}"></script>
     <script type = "text/javascript" src = "{{ URL::asset('leap.lib/record.lib/js/vanilla-v/controls.js') }}"></script>
