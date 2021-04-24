@@ -30,7 +30,7 @@ class AuthController extends Controller
      */
     public function showAdminLoginForm()
     {
-        return redirect()->route('loginAdmin');
+        return redirect()->route('loginAdminForm');
         //return view('default.loginAdmin');
     }
     /**
