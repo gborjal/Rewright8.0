@@ -3,10 +3,8 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>ReWright Visualizer</title>
-    
-    <!--Local-->
     <!--script type = "text/javascript" src = "{{ URL::asset('js/jquery-2.1.1.min.js') }}"/></script-->
-    <script type = "text/javascript" src = "{{ URL::asset('leap.lib/record.lib/js/lib/jquery-2.1.0.min.js') }}"/></script>
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
 
     <!--link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"-->
     <link rel="stylesheet" href="{{ URL::asset('leap.lib/css/lib/angular.rangeSlider.css')}}">

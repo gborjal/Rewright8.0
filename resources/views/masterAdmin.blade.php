@@ -17,9 +17,9 @@
     </head>
     <body>
         <!--Local-->
-        <script type = "text/javascript" src = "{{ URL::asset('js/jquery-2.1.1.min.js') }}"/></script><!--local copy-->
         <script type = "text/javascript" src = "{{ URL::asset('js/materialize.js') }}"/></script>
         <!--Online-->
+        <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
         <!--    
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type = "text/javascript" src = "{{ URL::asset('js/materialize.min.js') }}"/></script>    
