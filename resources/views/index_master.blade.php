@@ -16,11 +16,9 @@
         
     </head>
     <body>
+        @yield('content')
         <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
         <script type = "text/javascript" src = "{{ URL::asset('js/materialize.min.js') }}"/></script>
-        
-        @yield('content')
-        
         <script type = "text/javascript" src = "{{ URL::asset('js/index_functions.js') }}"/></script>
         
     </body>
