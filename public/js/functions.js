@@ -977,7 +977,7 @@ $(document).ready(function(){
     $('.materialboxed').materialbox();
     */
     //side navbar
-	$('.button-collapse').sideNav({
+	$('.button-collapse').sidenav({
 		menuWidth: 300, // Default is 240
 		edge: 'left', // Choose the horizontal origin
 		closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
