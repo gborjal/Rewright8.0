@@ -37,6 +37,6 @@ function chk_pword()
 	}
 }
 $(document).ready(function(){
-	$('select').material_select();
+	$('select').formSelect();
 
 });

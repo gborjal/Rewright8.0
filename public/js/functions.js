@@ -639,7 +639,7 @@ function populateExerData(){
         a.href = "http://" + siteUrl + "/preview/" + result.id;
         a.target = "_blank";
     }
-    $('select').material_select();
+    $('select').formSelect();
 }
 function populateProjectList(){
 	var sel_inp = document.getElementById('patientData');
@@ -659,7 +659,7 @@ function populateProjectList(){
         a.href = "http://" + siteUrl + "/preview/" + result.id + ".json.lz";
         a.target = "_blank";*/
     }
-    $('select').material_select();
+    $('select').formSelect();
 }
 function submitExer(id){
 
