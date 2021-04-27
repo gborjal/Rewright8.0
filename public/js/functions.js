@@ -970,10 +970,12 @@ $('#e_view').click(function(){
     getExerDataList();
 });
 $(document).ready(function(){
+	/*
 	$('select').material_select();
     $('.scrollspy').scrollSpy();
     $('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
     $('.materialboxed').materialbox();
+    */
     //side navbar
 	$('.button-collapse').sideNav({
 		menuWidth: 300, // Default is 240
@@ -982,11 +984,13 @@ $(document).ready(function(){
 		}
 	);
 	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    /*
     $('.modal-trigger').leanModal({
 	    ready: function () {
 	        $('ul.tabs').tabs();
 	    }
 	});
+	*/
 	if($('#modal2 div ul li').length == 0){
 		$('#modal2 div ul li').ready(function(){
 			$('html,body').animate({ scrollTop: 0 }, 'slow');
