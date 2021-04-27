@@ -13,11 +13,11 @@
         <link rel = "stylesheet" type = "text/css" href = "{{ URL::asset('css/functions.css') }}"/>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+        <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
     </head>
     <body>
         @yield('content')
-        <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
+        
         <script type = "text/javascript" src = "{{ URL::asset('js/materialize.min.js') }}"/></script>
         <script type = "text/javascript" src = "{{ URL::asset('js/index_functions.js') }}"/></script>
         
