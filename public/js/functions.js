@@ -354,6 +354,7 @@ function notifsNextPage(pageNo){
 		$.ajax({
 			url: url,
 			data: data,
+			method: "POST",
 			success:function(data){
 				for(var i=0;i< data.discussions.length;i++){
 					var discussion = {profile:'',first_name:'',last_name:'',disc_id:'',disc_title:'',disc_text:''};
@@ -403,6 +404,7 @@ function notifsRefresh(){
 	$.ajax({
 		url: url,
 		data: data,
+		method: "POST",
 		success:function(data){
 			if(data.cnt > 0 && data.cnt != $('#modal2 div ul li').length){
 				notifsNextPage(-1);
@@ -424,6 +426,7 @@ function vote(id,type){
 	$.ajax({
         url: '/discussion/upvotes',
         data: data,
+        method: "POST",
         success:function(data){
 			var u = $('#upc'+id);
 			u.empty();
@@ -448,6 +451,7 @@ function getProjects(){
 	$.ajax({
 		url: 'project/getProjects',
 		data: data,
+		method: "POST",
     	success:function(data){
     		var ul = $('#projects ul');
     		for(var i=0;i<data.projects.length;i++){
@@ -482,6 +486,7 @@ function submitActivationForm(formId){
 		contentType: false,
 		mimeType: 'multipart/form-data',
        	data: dataform,
+       	method: "POST",
         
         success:function(data){
         	var status = JSON.parse(data).status;
@@ -542,6 +547,7 @@ function getExerDataList(){
         processData: false,
 		contentType: false,
     	data: dataform,
+    	method: "POST",
     	success:function(data){
     		var status = data.success;
         	var msg = data.message;
@@ -598,6 +604,7 @@ function getPatientList(){
         processData: false,
 		contentType: false,
     	data: dataform,
+    	method: "POST",
     	success:function(data){
     		var status = data.success;
         	var msg = data.message;
@@ -686,7 +693,8 @@ function submitExer(id){
             processData: false,
 			contentType: false,
 			mimeType: 'multipart/form-data',
-            data: dataform,            
+            data: dataform,
+            method: "POST",            
             success:function(data){
             	var status = JSON.parse(data).status;
             	var msg = JSON.parse(data).message;
@@ -732,6 +740,7 @@ $('.boards').on('click',function(){
 		$.ajax({
             url: 'discussionBoard',
             data: data,
+            method: "POST",
             success:function(data){
 				for(var i=0;i< data.discussions.length;i++){
 					var discussion = {profile:'',first_name:'',last_name:'',disc_id:'',disc_title:'',disc_text:''};
@@ -789,6 +798,7 @@ $('.boards').on('click',function(){
 		$.ajax({
             url: 'taskBoard',
             data: data,
+            method: "POST",
             success:function(data){
 
             	if(data.status == "fail"){
@@ -1010,6 +1020,7 @@ $(document).ready(function(){
 			$.ajax({
 	            url: 'discussionBoard',
 	            data: data,
+	            method: "POST",
 	            success:function(data){
 	            	if(data.discussions.length > 0){
 		            	for(var i=0;i< data.discussions.length;i++){

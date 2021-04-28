@@ -6,8 +6,8 @@ var data = {
 
 $.ajax({
       url: '/note/list/task',
-      type:"POST",
       data: data,
+      method: "POST",
       success:function(data){
         if(data.status == 'success'){
           var ul = document.getElementById("sidePanel");

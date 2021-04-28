@@ -31,7 +31,7 @@ function ajaxSubmitPostings(formId,dataform){
             processData: false,
 			contentType: false,
 			mimeType: 'multipart/form-data',
-            type:"POST",
+            method:"POST",
             data: dataform,
             
             success:function(data){

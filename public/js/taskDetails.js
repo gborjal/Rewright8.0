@@ -14,7 +14,7 @@ var data = {
 
 $.ajax({
       url: '/taskBoard/info',
-      type:"POST",
+      method: "POST",
       data: data,
       success:function(data){
         if(data.status == 'success'){

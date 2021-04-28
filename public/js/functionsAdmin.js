@@ -47,7 +47,7 @@ function submitActivationForm(formId){
         processData: false,
         contentType: false,
         mimeType: 'multipart/form-data',
-        type:"POST",
+        method: "POST",
         data: dataform,
         
         success:function(data){
@@ -108,7 +108,7 @@ function submitRegForm(){
         processData: false,
 		contentType: false,
 		mimeType: 'multipart/form-data',
-        type:"POST",
+        method: "POST",
         data: dataform,
         
         success:function(data){
@@ -156,7 +156,7 @@ function submitActivationForm(){
         processData: false,
 		contentType: false,
 		mimeType: 'multipart/form-data',
-        type:"POST",
+        method: "POST",
         data: dataform,
         
         success:function(data){
@@ -219,7 +219,7 @@ function searchPatientGroup(){
         processData: false,
         contentType: false,
         mimeType: 'multipart/form-data',
-        type:"POST",
+        method: "POST",
         data: dataform,
         
         success:function(data){
@@ -314,7 +314,7 @@ function updatePGSize(id,type){
         url: '/admin/auth/updatepgcount',
         processData: false,
         contentType: false,
-        type:"POST",
+        method: "POST",
         data: dataform,
         success:function(data){
             var status = data.status;

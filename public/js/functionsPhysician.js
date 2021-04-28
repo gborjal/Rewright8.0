@@ -13,7 +13,7 @@ function searchPatient(){
         processData: false,
         contentType: false,
         mimeType: 'multipart/form-data',
-        type:"POST",
+        method: "POST",
         data: dataform,
         
         success:function(data){
@@ -126,6 +126,7 @@ function loadNotes(id){
       url: '/note/list/',
       type:"POST",
       data: data,
+      method: "POST",
       success:function(data){
 
         if(data.status == 'success'){
@@ -198,6 +199,7 @@ function loadTasks(id){
         url: 'taskBoard',
         type:"POST",
         data: data,
+        method: "POST",
         success:function(data){
             if(data.status == "fail"){
                 var toastContent = "<span>" + data.message + "</span>";
@@ -260,6 +262,7 @@ function loadDiscs(id){
         url: 'discussionBoard',
         type:"POST",
         data: data,
+        method: "POST",
         success:function(data){
             for(var i=0;i< data.discussions.length;i++){
                 var discussion = {profile:'',first_name:'',last_name:'',disc_id:'',disc_title:'',disc_text:''};
