@@ -87,8 +87,7 @@ Route::prefix('/tasks')->group(function () {
 	//Route::get('info', [taskController::class,'getTask']);
 
 });
-
-Route::prefix('/post')->group(function () {
+Route::prefix('/post')->group(['middleware' => ['cors']],function () {
 	Route::prefix('discussion')->group(function () {
 		Route::post('thread', [discussionController::class,'postDiscussion'])->name('postDiscussion');	//ajax request
 		//Route::get('thread', [discussionController::class,'postDiscussion']);
