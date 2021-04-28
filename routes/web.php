@@ -87,6 +87,7 @@ Route::prefix('/tasks')->group(function () {
 	//Route::get('info', [taskController::class,'getTask']);
 
 });
+/*
 Route::prefix('/post')->group(function () {
 	Route::prefix('discussion')->group(function () {
 		Route::post('thread', [discussionController::class,'postDiscussion'])->name('postDiscussion');	//ajax request
@@ -118,7 +119,7 @@ Route::prefix('/post')->group(function () {
 	Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
 	//Route::get('note', [notesController::class,'postNote']);
 	
-});
+});*/
 Route::prefix('/profile')->group(function () {
 	Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
 	Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
