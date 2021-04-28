@@ -1,4 +1,11 @@
 var siteUrl = window.location.hostname;
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        datatype: "JSON",
+        method: "POST"
+    }
+});
 // For todays date;
 Date.prototype.today = function () { 
     return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
@@ -320,6 +327,7 @@ function commentsRefresh(){
 		$.ajax({
 			url: "/post/discussion/comment/cnt",
 			data: data,
+			method: "POST",
 			success:function(data){
 				if(data.cnt != $('#lsComments ul li').length){
 					genContentComments(displayed_id);
