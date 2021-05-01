@@ -199,7 +199,7 @@ class AuthController extends Controller
         
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
-            return redirect()->back()
+            return back()
                     ->withErrors($validator)
                     ->withInput($request->except(['password']));
         }else {
@@ -211,26 +211,26 @@ class AuthController extends Controller
             }else{                
                 if($field === "email"){
                     if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
-                        return redirect()->route('login')
+                        return back()
                         ->with('error','Account does not exist.')
                         ->withInput($request->except('password'));
                     }
-                    return redirect()->route('login')
+                    return back()
                         ->with('error','E-mail and Password does not match.')
                         ->withInput($request->except('password'));
                 }else{
                     if(DB::table('users')->where('username','=',$userdata['username'])->count() === 0){
-                        return redirect()->route('login')
+                        return back()
                         ->with('error','Account does not exist.')
                         ->withInput($request->except('password'));
                     }
-                    return redirect()->route('login')
+                    return back()
                         ->with('error','Username and Password does not match.')
                         ->withInput($request->except('password'));
                 }
             }
         }
-        return redirect()->route('login')
+        return back()
                 ->withInput($request->except('password'));
     }
 
