@@ -24,6 +24,32 @@ use App\Http\Controllers\userController;
 Route::middleware(['web', 'auth'])->group(function () {
 
     Route::get('/', [indexController::class,'index']);
+    Route::prefix('auth')->group(function () {	
+		//Login routes
+		Route::get('login',[AuthController::class,'showLoginForm']);
+		Route::post('login', [AuthController::class,'login'])->name('login');
+
+		Route::get('logout',[userController::class,'getLogout'])->name('logout');
+
+		Route::prefix('admin')->group(function () {
+			//Admin Login Routes
+			Route::get('login',[AuthController::class,'showAdminLoginForm']);
+			Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
+			
+			Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
+		});
+		//Profile routes
+		Route::prefix('profile')->group(function () {
+			Route::post('save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
+			Route::get('edit/{code}',[userController::class,'editUserProfile1']);
+			Route::post('edit/{code}', [userController::class,'editUserProfile1'])->name('editProfile');
+		});
+		//Specialist search
+		Route::prefix('search')->group(function () {
+			//Route::get('auth/search/patient', 'userController@getPatientSrch');
+			Route::post('patient', [userController::class,'getPatientSrch'])->name('getPatientSrch');
+		});
+	});
 });
 
 ?>
