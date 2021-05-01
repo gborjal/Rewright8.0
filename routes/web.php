@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\discussionController;
+use App\Http\Controllers\taskController;
 use App\Http\Controllers\imagesController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\notesController;
