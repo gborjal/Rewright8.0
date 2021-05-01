@@ -9,6 +9,7 @@ use App\Http\Controllers\taskController;
 use App\Http\Controllers\imagesController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\notesController;
+use App\Http\Controllers\projectsController;
 use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
@@ -116,13 +117,13 @@ Route::prefix('/tasks')->group(function () {
 			Route::post('adjustedScore', [taskController::class,'postAdjustedScore'])->name('postAdjustedScore');	//ajax 
 			Route::get('adjustedScore', [taskController::class,'postAdjustedScore']);
 		});
-		
-		Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
-		//Route::get('note', [notesController::class,'postNote']);
 		Route::prefix('patient')->group(function () {
 			Route::post('list', [projectController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
 			Route::get('list', [projectController::class,'postPatientDataList']);
 		});
+		Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
+		//Route::get('note', [notesController::class,'postNote']);
+		
 		
 	});
 //});
