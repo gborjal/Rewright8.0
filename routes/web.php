@@ -23,6 +23,7 @@ use App\Http\Controllers\userController;
 */
 
 Route::group(['middleware' => 'web'], function () {
+	Route::auth();
 	Route::get('/', [indexController::class,'index']);
 	Route::prefix('auth')->group(function () {	
 		//Login routes
