@@ -9,7 +9,7 @@ use App\Http\Controllers\taskController;
 use App\Http\Controllers\imagesController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\notesController;
-use App\Http\Controllers\projectController;
+use App\Http\Controllers\projectsController;
 use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
@@ -118,8 +118,8 @@ Route::prefix('/tasks')->group(function () {
 			Route::get('adjustedScore', [taskController::class,'postAdjustedScore']);
 		});
 		Route::prefix('patient')->group(function () {
-			Route::post('list', [projectController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
-			Route::get('list', [projectController::class,'postPatientDataList']);
+			Route::post('list', [projectsController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
+			Route::get('list', [projectsController::class,'postPatientDataList']);
 		});
 		Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
 		//Route::get('note', [notesController::class,'postNote']);
@@ -132,11 +132,11 @@ Route::prefix('/profile')->group(function () {
 	Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
 });
 Route::prefix('/project')->group(function () {
-	Route::post('getProjects', [projectController::class,'getProjects'])->name('getProjects');	//ajax request
-	//Route::get('getProjects', [projectController::class,'getProjects']);	//ajax request
+	Route::post('getProjects', [projectsController::class,'getProjects'])->name('getProjects');	//ajax request
+	//Route::get('getProjects', [projectsController::class,'getProjects']);	//ajax request
 
-	Route::post('joinProject/{id}', [projectController::class,'joinProject'])->name('joinProject');	//ajax request
-	//Route::get('joinProject/{id}', [projectController::class,'joinProject']);	
+	Route::post('joinProject/{id}', [projectsController::class,'joinProject'])->name('joinProject');	//ajax request
+	//Route::get('joinProject/{id}', [projectsController::class,'joinProject']);	
 });
 Route::get('/preview/{id}', [taskController::class,'reviewExercise']);				//ajax request
 Route::prefix('/recordings')->group(function () {
