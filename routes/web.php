@@ -9,7 +9,7 @@ use App\Http\Controllers\taskController;
 use App\Http\Controllers\imagesController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\notesController;
-use App\Http\Controllers\projectsController;
+use App\Http\Controllers\projectController;
 use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
