@@ -50,6 +50,21 @@ Route::middleware(['web', 'auth'])->group(function () {
 			Route::post('patient', [userController::class,'getPatientSrch'])->name('getPatientSrch');
 		});
 	});
+	Route::prefix('admin')->group(function () {
+		Route::get('dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
+		//Admin functionality Routes
+		Route::post('register', [adminController::class,'registerByAdmin'])->name('registerByAdmin');
+		Route::get('register', [adminController::class,'registerByAdmin']);
+
+		Route::post('getCode', [adminController::class,'getActivationCode'])->name('getActivationCode');
+		Route::get('getCode', [adminController::class,'getActivationCode']);
+
+		Route::post('patientGroupInfo', [adminController::class,'getPatientGroup'])->name('getPatientGroup');
+		Route::get('patientGroupInfo', [adminController::class,'getPatientGroup']);
+
+		Route::post('updatepgcount', [adminController::class,'postUpdatePGCount'])->name('pgUpdateCount');	//ajax request
+		//Route::get('updatepgcount', [adminController::class,'postUpdatePGCount']);
+	});
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 	Route::prefix('/discussion')->group(function () {
 		Route::post('/', [discussionController::class,'getDiscussion'])->name('discussion');	//ajax request
