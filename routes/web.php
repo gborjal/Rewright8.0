@@ -117,10 +117,15 @@ Route::prefix('/tasks')->group(function () {
 			Route::post('adjustedScore', [taskController::class,'postAdjustedScore'])->name('postAdjustedScore');	//ajax 
 			Route::get('adjustedScore', [taskController::class,'postAdjustedScore']);
 		});
-		Route::prefix('patient')->group(function () {
+		Route::group(['prefix'=>'patient',  'middleware' => ['web','admin'], function(){
+			Route::auth();
 			Route::post('list', [projectsController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
 			Route::get('list', [projectsController::class,'postPatientDataList']);
 		});
+		/*Route::prefix('patient')->group(function () {
+			Route::post('list', [projectsController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
+			Route::get('list', [projectsController::class,'postPatientDataList']);
+		});*/
 		Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
 		//Route::get('note', [notesController::class,'postNote']);
 		
