@@ -27,7 +27,6 @@
 					<div id="div_login" class="col s12">
 						<br/>
 						{!! Form::open(['route'=>'login']) !!}
-							@csrf
 							{!! Form::text('login_id',null,['placeholder'=>'username or email','class'=>'validate']) !!}
 							<label for="login_id">Username/Email</label>
 							{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
