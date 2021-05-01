@@ -21,7 +21,7 @@ use App\Http\Controllers\userController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware(['web'])->group(function () {
+Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/', [indexController::class,'index']);
     Route::prefix('auth')->group(function () {	
 		//Login routes
