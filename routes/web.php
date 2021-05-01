@@ -119,6 +119,10 @@ Route::prefix('/tasks')->group(function () {
 		
 		Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
 		//Route::get('note', [notesController::class,'postNote']);
+		Route::prefix('patient')->group(function () {
+			Route::post('list', [projectController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
+			Route::get('list', [projectController::class,'postPatientDataList']);
+		});
 		
 	});
 //});
