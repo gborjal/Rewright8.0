@@ -118,8 +118,8 @@ Route::prefix('/tasks')->group(function () {
 			Route::get('adjustedScore', [taskController::class,'postAdjustedScore']);
 		});
 		Route::prefix('patient')->group(function () {
-			Route::post('list', [projectsController::class,'postPatientDataList'])->name('postExerciseDataList')->middleware('auth');	//ajax 
-			Route::get('list', [projectsController::class,'postPatientDataList'])->middleware('auth');
+			Route::post('list', [projectsController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
+			Route::get('list', [projectsController::class,'postPatientDataList']);
 		});
 		Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
 		//Route::get('note', [notesController::class,'postNote']);
