@@ -50,6 +50,7 @@ Route::middleware(['web', 'auth'])->group(function () {
 			Route::post('patient', [userController::class,'getPatientSrch'])->name('getPatientSrch');
 		});
 	});
+	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 });
 
 ?>
