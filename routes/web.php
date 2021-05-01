@@ -21,22 +21,9 @@ use App\Http\Controllers\userController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['web', 'auth'])->group(function () {
 
-Route::group(['middleware' => 'web'], function () {
-
-    Route::auth();
-
-    Route::get('/', 'HomeController@index');
-
-    // Moving here will ensure that sessions, csrf, etc. is included in all these routes
-    Route::group(['prefix'=>'admin',  'middleware' => 'admin'], function(){
-        Route::get('/', function(){
-            return view('admin.index');
-        });
-
-        Route::get('/user', function(){
-            return view('admin.user');
-        });
-    });
+    Route::get('/', [indexController::class,'index']);
 });
+
 ?>
