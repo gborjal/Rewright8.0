@@ -87,7 +87,16 @@ class AuthController extends Controller
         }else {
         
             if(Auth::attempt($userdata,$remember)){
-                return redirect()->route('dashboardAdmin');
+                if($field == 'email'){
+                    $user = User::where(['email','=',$userdata['email']])->first();
+                    
+                }else{
+                    $user = User::where(['username','=',$userdata['username']])->first();
+                }
+                $tokenResult = $user->createToken('authToken')->plainTextToken;
+
+                return redirect()->route('dashboardAdmin')
+                        ->with('authToken',$tokenResult);
             }else{               
                 if($field === "email"){
                     if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
@@ -206,8 +215,18 @@ class AuthController extends Controller
             if(Auth::attempt($userdata,$remember))
             {
                 //return redirect()->route('dashboard');
+                //
+                if($field == 'email'){
+                    $user = User::where(['email','=',$userdata['email']])->first();
+                    
+                }else{
+                    $user = User::where(['username','=',$userdata['username']])->first();
+                }
+                $tokenResult = $user->createToken('authToken')->plainTextToken;
+
                 return redirect()->route('dashboard')
-                    ->with('project',Auth::user()->projects->first()->project_id);
+                    ->with('project',Auth::user()->projects->first()->project_id)
+                    ->with('authToken',$tokenResult);
             }else{                
                 if($field === "email"){
                     if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
