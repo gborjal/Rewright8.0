@@ -3,6 +3,16 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\discussionController;
+use App\Http\Controllers\taskController;
+use App\Http\Controllers\imagesController;
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\notesController;
+use App\Http\Controllers\projectsController;
+use App\Http\Controllers\userController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
