@@ -205,10 +205,14 @@ class userController extends Controller
      *
      *  @return void
      */
-    public function getLogoutAdmin(){
+    public function getLogoutAdmin(Request $request){
         
         Auth::logout();
         
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
         return redirect()->intended('/auth/admin/login');
     }
 	/**
@@ -216,15 +220,20 @@ class userController extends Controller
      *
      *  @return void
      */
-    public function getLogout(){
+    public function getLogout(Request $request){
         
         if(Auth::user()->user_types === 0){
             
             Auth::logout();
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
             return redirect()->intended('/auth/admin/login');
         }else{
             Auth::logout();
-        
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
             return redirect()->intended('/');    
         }
         
