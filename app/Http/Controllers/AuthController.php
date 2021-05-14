@@ -217,10 +217,10 @@ class AuthController extends Controller
                 //return redirect()->route('dashboard');
                 //
                 if($field == 'email'){
-                    $user = User::where(['email','=',$userdata['email']])->first();
+                    $user = User::where('email','=',$userdata['email'])->first();
                     
                 }else{
-                    $user = User::where(['username','=',$userdata['username']])->first();
+                    $user = User::where('username','=',$userdata['username'])->first();
                 }
                 $tokenResult = $user->createToken('authToken')->plainTextToken;
 
