@@ -22,6 +22,15 @@ use App\Http\Controllers\userController;
 |
 */
 Route::middleware(['web'])->group(function () {
+	Route::get('/', [indexController::class,'index']);
+	Route::prefix('auth')->group(function () {	
+		//Login route
+		Route::get('login',[AuthController::class,'showLoginForm']);
+		
+		//Admin Login Route
+		Route::get('admin/login',[AuthController::class,'showAdminLoginForm']);
+			
+	});
  //    Route::get('/', [indexController::class,'index']);
  //    Route::prefix('auth')->group(function () {	
 	// 	//Login routes
