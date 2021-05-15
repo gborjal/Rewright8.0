@@ -28,8 +28,7 @@ Route::middleware(['web'])->group(function () {
 		Route::get('login',[AuthController::class,'showLoginForm']);
 		
 		//Admin Login Route
-		Route::get('admin/login',[AuthController::class,'showAdminLoginForm']);
-			
+		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('loginAdmin');
 	});
 });
 
