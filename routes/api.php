@@ -110,7 +110,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 			Route::get('adjustedScore', [taskController::class,'postAdjustedScore']);
 		});
 		Route::prefix('patient')->group(function () {
-			Route::post('list', [projectsController::class,'postPatientDataList'])->name('postExerciseDataList');	//ajax 
+			Route::post('list', [projectsController::class,'postPatientDataList'])->name('postExerciseDataListPatient');	//ajax 
 			Route::get('list', [projectsController::class,'postPatientDataList']);
 		});
 		Route::post('note', [notesController::class,'postNote'])->name('postNote');	//ajax 
