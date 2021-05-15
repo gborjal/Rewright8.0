@@ -32,7 +32,7 @@ use App\Http\Controllers\userController;
 // 	});
 // });
 
-Route::middleware(['web'])->group(function () {
+Route::middleware(['web','auth:sanctum'])->group(function () {
 	Route::get('/', [indexController::class,'index']);
 	Route::prefix('auth')->group(function () {	
 		//Login route
