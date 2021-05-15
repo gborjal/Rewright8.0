@@ -35,7 +35,7 @@
 							<input type="checkbox" id="remember" name="remember"/>
 	      					<label for="remember">Remember</label>
 	      					</p>	
-							<button class="btn waves-effect red darken-4" type="submit">Login
+							<button class="btn waves-effect red darken-4" type="submit" formmethod="post">Login
 							    <i class="large material-icons right">send</i>
 			  				</button>
 						{!! Form::close() !!}
