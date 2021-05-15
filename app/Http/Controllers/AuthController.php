@@ -108,9 +108,9 @@ class AuthController extends Controller
             }else{               
                 if($field === "email"){
                     if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
-                        return redirect()->route('login')
-                        ->with('error','Account does not exist.')
-                        ->withInput($request->except('password'));
+                        return redirect()->route('showLoginForm')
+                            ->with('error','Account does not exist.')
+                            ->withInput($request->except('password'));
                     }else{
                         $db = DB::table('users')->select('user_types')->where('email','=',$userdata['email'])->first();
                         
@@ -127,8 +127,8 @@ class AuthController extends Controller
                                     ->withInput($request->except('password'));
                         }else{
                             return redirect()->route('loginAdmin')
-                            ->with('error','E-mail and Password does not match.')
-                            ->withInput($request->except('password'));
+                                ->with('error','E-mail and Password does not match.')
+                                ->withInput($request->except('password'));
                         }
                     }
                 }else{
@@ -152,8 +152,8 @@ class AuthController extends Controller
                                     ->withInput($request->except('password'));
                         }else{
                             return redirect()->route('loginAdmin')
-                            ->with('error','E-mail and Password does not match.')
-                            ->withInput($request->except('password'));
+                                ->with('error','E-mail and Password does not match.')
+                                ->withInput($request->except('password'));
                         }
                     }
                 }
@@ -239,8 +239,8 @@ class AuthController extends Controller
                 if($field === "email"){
                     if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
                         return back()
-                        ->with('error','Account does not exist.')
-                        ->withInput($request->except('password'));
+                            ->with('error','Account does not exist.')
+                            ->withInput($request->except('password'));
                     }
                     return back()
                         ->with('error','E-mail and Password does not match.')
@@ -248,8 +248,8 @@ class AuthController extends Controller
                 }else{
                     if(DB::table('users')->where('username','=',$userdata['username'])->count() === 0){
                         return back()
-                        ->with('error','Account does not exist.')
-                        ->withInput($request->except('password'));
+                            ->with('error','Account does not exist.')
+                            ->withInput($request->except('password'));
                     }
                     return back()
                         ->with('error','Username and Password does not match.')
