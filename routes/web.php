@@ -26,7 +26,7 @@ Route::middleware(['web'])->group(function () {
 	Route::prefix('auth')->group(function () {	
 		//Login route
 		Route::get('login',[AuthController::class,'showLoginForm']);
-		
+		Route::post('login',[AuthController::class,'showLoginForm']);
 		//Admin Login Route
 		Route::post('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
 	});
