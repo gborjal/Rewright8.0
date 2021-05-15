@@ -21,7 +21,15 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = "dashboard";
-    
+    /*
+     * Create a AuthController Instance
+     *
+     *
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
     /**
      * Go to get Admin login.
      *
