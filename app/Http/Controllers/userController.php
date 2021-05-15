@@ -44,7 +44,7 @@ class userController extends Controller
         if(Auth::user()->user_types === 0){
             Auth::logout();
             return redirect()
-                ->route('loginAdmin')
+                ->route('showAdminLoginForm')
                 ->with('error','Account is an admin.');
         }else if(Auth::user()->user_types === 1){
                 return view('dashboard');
