@@ -230,7 +230,7 @@ class AuthController extends Controller
                 }else{
                     $user = User::where('username','=',$userdata['username'])->first();
                 }
-                //$tokenResult = $user->createToken('authToken')->plainTextToken;
+                $tokenResult = $user->createToken('authToken')->plainTextToken;
 
                 return redirect()->route('dashboard')
                     ->with('project',Auth::user()->projects->first()->project_id)
