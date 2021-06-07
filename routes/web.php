@@ -23,6 +23,7 @@ use App\Http\Controllers\userController;
 */
 Route::middleware(['web'])->group(function () {
 	Route::get('/', [indexController::class,'index']);
+	/*
 	Route::prefix('auth')->group(function () {	
 		//Login route
 		
@@ -30,7 +31,7 @@ Route::middleware(['web'])->group(function () {
 		//Admin Login Route
 		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
 	});
-
+	*/
 });
 
 // Route::middleware(['web'])->group(function () {

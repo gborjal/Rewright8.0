@@ -34,17 +34,22 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		// 	Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 		// });
 		//Profile routes
+		/*
 		Route::prefix('profile')->group(function () {
 			Route::post('save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
 			Route::get('edit/{code}',[userController::class,'editUserProfile1']);
 			Route::post('edit/{code}', [userController::class,'editUserProfile1'])->name('editProfile');
 		});
+		*/
 		//Specialist search
+		/*
 		Route::prefix('search')->group(function () {
 			//Route::get('auth/search/patient', 'userController@getPatientSrch');
 			Route::post('patient', [userController::class,'getPatientSrch'])->name('getPatientSrch');
 		});
+		*/
 	});
+	/*
 	Route::prefix('admin')->group(function () {
 		Route::get('dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
 		//Admin functionality Routes
@@ -152,9 +157,12 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 			Route::get('task', [notesController::class,'getTaskExerDataNotes']);
 		});
 	});
+	*/
 });
 
 
+/*
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+*/
