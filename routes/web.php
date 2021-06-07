@@ -23,15 +23,16 @@ use App\Http\Controllers\userController;
 */
 Route::middleware(['web'])->group(function () {
 	Route::get('/', [indexController::class,'index']);
-	/*
+	
 	Route::prefix('auth')->group(function () {	
 		//Login route
 		
-		Route::post('login',[AuthController::class,'showLoginForm'])->name('showLoginForm');
+		Route::get('login',[AuthController::class,'showLoginForm'])->name('showLoginForm');
+		Route::post('login', [AuthController::class,'login'])->name('login');
 		//Admin Login Route
 		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
 	});
-	*/
+	
 });
 
 // Route::middleware(['web'])->group(function () {
