@@ -178,7 +178,7 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        
+        var_dump($request);   
         // create our user data for the authentication
         $userdata =  $request->only([
             'login_id',
