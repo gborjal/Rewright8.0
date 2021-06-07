@@ -60,7 +60,8 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::post('updatepgcount', [adminController::class,'postUpdatePGCount'])->name('pgUpdateCount');	//ajax request
 		//Route::get('updatepgcount', [adminController::class,'postUpdatePGCount']);
 	});
-	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
+	Route::get('/dashboard', [userController::class,'dashboard']);
+	Route::post('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 	Route::prefix('/discussion')->group(function () {
 		Route::post('/', [discussionController::class,'getDiscussion'])->name('discussion');	//ajax request
 		//Route::get('/', [discussionController::class,'getDiscussion']);
