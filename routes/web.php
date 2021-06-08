@@ -21,17 +21,20 @@ use App\Http\Controllers\userController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+	
+
+
 Route::middleware(['web'])->group(function () {
 	Route::get('/', [indexController::class,'index']);
 	
-	Route::prefix('auth')->group(function () {	
-		//Login route
-		
-		//Route::get('login',[AuthController::class,'showLoginForm'])->name('showLoginForm');
-		//Route::post('login', [AuthController::class,'login'])->name('login');
-		//Admin Login Route
-		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
-	});
+	// Route::prefix('auth')->group(function () {	
+	// 	//Login route
+	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
+	Route::post('login', [AuthController::class,'login']);	
+	// 	//Admin Login Route
+	// 	Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
+	// });
 	
 });
 
