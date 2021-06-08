@@ -28,7 +28,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 	Route::prefix('auth')->group(function () {;
 		Route::post('login', [AuthController::class,'login'])->name('login');
 		Route::get('logout',[userController::class,'getLogout'])->name('logout');
-		Route::get('loginfailed', [AuthController::class, 'login'])->name('loginfailed');
+
 		// Route::prefix('admin')->group(function () {
 		// 	Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
 		// 	Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
