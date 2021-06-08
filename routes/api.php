@@ -26,9 +26,9 @@ use App\Http\Controllers\userController;
 Route::group(['middleware' => ['auth:sanctum']], function(){
 
 	Route::prefix('auth')->group(function () {;
-		Route::match(['get', 'post'], 'login',[AuthController::class,'login'])->name('login');
+		Route::post('login', [AuthController::class,'login'])->name('login');
 		Route::get('logout',[userController::class,'getLogout'])->name('logout');
-
+		Route::get('/login',[AuthController::class, 'showLoginForm'])->name('login');
 		// Route::prefix('admin')->group(function () {
 		// 	Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
 		// 	Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
