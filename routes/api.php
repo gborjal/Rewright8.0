@@ -24,8 +24,6 @@ use App\Http\Controllers\userController;
 |
 */
 
-Route::post('login', [AuthController::class,'login']);
-Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
 Route::group(['middleware' => ['auth:sanctum']], function(){
 
 	Route::prefix('auth')->group(function () {;
