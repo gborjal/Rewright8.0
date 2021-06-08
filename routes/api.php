@@ -23,12 +23,13 @@ use App\Http\Controllers\userController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('login', [AuthController::class,'login']);
+Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
 Route::group(['middleware' => ['auth:sanctum']], function(){
 
 	Route::prefix('auth')->group(function () {;
 		Route::get('logout',[userController::class,'getLogout'])->name('logout');
-		Route::get('/',[AuthController::class,'showLoginForm'])->name('login');
-		Route::post('/', [AuthController::class,'login']);
 		// 	Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
 		// 	Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 		// });
