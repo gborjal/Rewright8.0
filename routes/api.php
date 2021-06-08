@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::get('logout',[userController::class,'getLogout'])->name('logout');
 		Route::get('/login', function(){
 			return view('default.login');
-		});
+		})->name('login');
 		// Route::prefix('admin')->group(function () {
 		// 	Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
 		// 	Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
