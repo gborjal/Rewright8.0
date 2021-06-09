@@ -273,7 +273,7 @@ function genContentComments(disc_id){
     }
 
 	$.ajax({
-        url: '/discussion/comments',
+        url: '/api/discussion/comments',
         data: data,
         success:function(data){
         		var comments = [];
