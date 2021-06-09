@@ -21,8 +21,9 @@ Date.prototype.timeNow = function () {
 }
 function filterGenComments(comments){
 	var li = "<ul class='collection'>";
-	console.log(comments);
+
 	for(var i=0;i < comments.length;i++){
+		console.log(comments[i]);
 		var upvote = (comments[i].upvote!=null) ? comments[i].upvote : 0 ;
 		var downvote = (comments[i].downvote!=null) ? comments[i].downvote : 0 ;
 
