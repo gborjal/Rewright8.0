@@ -276,6 +276,7 @@ function genContentComments(disc_id){
 	$.ajax({
         url: '/api/discussion/comments',
         data: data,
+        method: "POST",
         success:function(data){
         		var comments = [];
 
