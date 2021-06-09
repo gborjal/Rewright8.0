@@ -23,7 +23,7 @@ function filterGenComments(comments){
 	var li = "<ul class='collection'>";
 
 	for(var i=0;i < comments.length;i++){
-		console.log(comments[i]);
+		console.log(comments[i].updated_at);
 		var upvote = (comments[i].upvote!=null) ? comments[i].upvote : 0 ;
 		var downvote = (comments[i].downvote!=null) ? comments[i].downvote : 0 ;
 
