@@ -344,7 +344,7 @@ function notifsNextPage(pageNo){
 	var url = "";
 	var prev = discussions.length;
 	if(board === "db_disc_board"){
-		url = "discussionBoard";
+		url = "/api/discussion/board";
 	
 		var data = {
 	            project: project_id,
