@@ -23,15 +23,14 @@ function filterGenComments(comments){
 	var li = "<ul class='collection'>";
 
 	for(var i=0;i < comments.length;i++){
-		console.log(comments[i].updated_at);
 		var upvote = (comments[i].upvote!=null) ? comments[i].upvote : 0 ;
 		var downvote = (comments[i].downvote!=null) ? comments[i].downvote : 0 ;
 
-		var year = Number(comments[i].updated_at.date.substr(0,4));
-		var day  = Number(comments[i].updated_at.date.substr(9,1));
-		var month= Number(comments[i].updated_at.date.substr(6,1)) - 1;
-		var hour = Number(comments[i].updated_at.date.substr(11,2));
-		var min  = Number(comments[i].updated_at.date.substr(14,2));
+		var year = Number(comments[i].updated_at.substr(0,4));
+		var day  = Number(comments[i].updated_at.substr(9,1));
+		var month= Number(comments[i].updated_at.substr(6,1)) - 1;
+		var hour = Number(comments[i].updated_at.substr(11,2));
+		var min  = Number(comments[i].updated_at.substr(14,2));
 
 		var date = new Date(year,month,day,hour,min); 
 		li += "<li class='collection-item avatar'>"+
