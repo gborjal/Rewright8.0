@@ -738,7 +738,7 @@ $('.boards').on('click',function(){
         }
 
 		$.ajax({
-            url: 'discussionBoard',
+            url: '/api/discussion/board',
             data: data,
             method: "POST",
             success:function(data){
@@ -796,7 +796,7 @@ $('.boards').on('click',function(){
         }
 
 		$.ajax({
-            url: 'taskBoard',
+            url: '/api/task/board',
             data: data,
             method: "POST",
             success:function(data){
