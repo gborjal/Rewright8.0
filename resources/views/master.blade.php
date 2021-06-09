@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="authToken" content="{{ $authToken }}">
+        <meta name="authToken" content=authToken>
         <title>ReWrighT</title>
         <!--Font/Icon-->
         <!--link rel = "stylesheet" type = "text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons"/-->
