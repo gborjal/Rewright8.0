@@ -242,6 +242,7 @@ function launchGenContent(disc_id){
 	$.ajax({
         url: '/api/discussion',
         data: data,
+        method: "POST",
         success:function(data){
 			var artcle = {profile:'',first_name:'',last_name:'',disc_id:'',disc_title:'',disc_text:'',disc_image:'',disc_priority:'',project_name:'',updated_at:'',read:'',seen:''};
 				artcle.profile 		= data.article.profile;
