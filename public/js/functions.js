@@ -2,12 +2,12 @@ var siteUrl = window.location.hostname;
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-        'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
+        'AUTHTOKEN':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
         datatype: "JSON",
         method: "POST"
     }
     beforeSend: function(xhr) {
-        xhr.setRequestHeader('Authorization', "Bearer "+ $('meta[name="authToken"]').attr('content'));
+        xhr.setRequestHeader('AUTHTOKEN', "Bearer "+ $('meta[name="authToken"]').attr('content'));
     }
 });
 // For todays date;
