@@ -394,7 +394,7 @@ function notifsRefresh(){
 
 	var url = "";
 	if(board === "db_disc_board"){
-		url = "post/discussion/notifs/cnt";
+		url = "/api/post/discussion/notifs/cnt";
 	}
 	var data = {
             project: project_id,
