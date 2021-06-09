@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 
 	});
 	//Route::middleware(['web', 'cors'])->group(function () {
-	/*Route::prefix('/post')->group(function () {
+	Route::prefix('/post')->group(function () {
 		Route::prefix('discussion')->group(function () {
 			Route::post('thread', [discussionController::class,'postDiscussion'])->name('postDiscussion');	//ajax request
 			//Route::get('thread', [discussionController::class,'postDiscussion']);
@@ -117,7 +117,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//Route::get('note', [notesController::class,'postNote']);
 		
 		
-	});*/
+	});
 	//});
 	Route::prefix('/profile')->group(function () {
 		Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
