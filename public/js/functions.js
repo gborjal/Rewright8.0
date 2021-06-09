@@ -1018,7 +1018,7 @@ $(document).ready(function(){
 	            all: true
 		        }
 			$.ajax({
-	            url: 'discussionBoard',
+	            url: '/api/discussion/board',
 	            data: data,
 	            method: "POST",
 	            success:function(data){
