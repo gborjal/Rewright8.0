@@ -325,7 +325,7 @@ function commentsRefresh(){
             id: displayed_id
 		};
 		$.ajax({
-			url: "/post/discussion/comment/cnt",
+			url: "/api/post/discussion/comment/cnt",
 			data: data,
 			method: "POST",
 			success:function(data){
@@ -543,7 +543,7 @@ function getExerDataList(){
 
 	//dataform.append('_token',$('#postExerciseDataList [name=_token]')[0].value);
 	$.ajax({
-		url: '/post/exerdata/list',
+		url: '/api/post/exerdata/list',
         processData: false,
 		contentType: false,
     	data: dataform,
@@ -600,7 +600,7 @@ function getPatientList(){
 
 	//dataform.append('_token',$('#postTask [name=_token]')[0].value);
 	$.ajax({
-		url: '/post/patient/list',
+		url: '/api/post/patient/list',
         processData: false,
 		contentType: false,
     	data: dataform,
@@ -689,7 +689,7 @@ function submitExer(id){
 		dataform.append('leapData',$('#leapData'+id).prop('files')[0]);
 	}
 	$.ajax({
-			url: '/post/task/patient',
+			url: '/api/post/task/patient',
             processData: false,
 			contentType: false,
 			mimeType: 'multipart/form-data',
