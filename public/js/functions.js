@@ -6,9 +6,9 @@ $.ajaxSetup({
         datatype: "JSON",
         method: "POST"
     },
-    /*beforeSend: function(xhr) {
+    beforeSend: function(xhr) {
         xhr.setRequestHeader('Authorization', "Bearer "+ $('meta[name="authToken"]').attr('content'));
-    }*/
+    }
 });
 // For todays date;
 Date.prototype.today = function () { 
