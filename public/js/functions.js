@@ -1058,6 +1058,7 @@ $(document).ready(function(){
 						updateModal2(board,'modal2');
 						launchGenContent(discussions[0].disc_id);
 						displayed_id = discussions[0].disc_id;
+						commentsRefresh();
 					}
 					return true;
 	            },error:function(){ 
@@ -1068,7 +1069,7 @@ $(document).ready(function(){
 		});
 	}
 	notifsRefresh();
-	commentsRefresh();
+	
 	if(user_type == 0 || user_type ==1){
 		populateExerData();
 		getPatientList();	
