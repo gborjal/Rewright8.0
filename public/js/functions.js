@@ -240,7 +240,7 @@ function launchGenContent(disc_id){
     }
 
 	$.ajax({
-        url: 'discussion',
+        url: '/api/discussion',
         data: data,
         success:function(data){
 			var artcle = {profile:'',first_name:'',last_name:'',disc_id:'',disc_title:'',disc_text:'',disc_image:'',disc_priority:'',project_name:'',updated_at:'',read:'',seen:''};
@@ -347,16 +347,14 @@ function commentsRefresh(){
 function notifsNextPage(pageNo){
 	var url = "";
 	var prev = discussions.length;
-	if(board === "db_disc_board"){
-		url = "/api/discussion/board";
-	
+	if(board === "db_disc_board"){	
 		var data = {
 	            project: project_id,
 	            page: pageNo+1,
 	            all: false
 			};
 		$.ajax({
-			url: url,
+			url: "/api/discussion/board",
 			data: data,
 			method: "POST",
 			success:function(data){
@@ -428,7 +426,7 @@ function vote(id,type){
     }
 
 	$.ajax({
-        url: '/discussion/upvotes',
+        url: '/api/discussion/upvotes',
         data: data,
         method: "POST",
         success:function(data){
@@ -453,7 +451,7 @@ function getProjects(){
 	var data = {
 	};
 	$.ajax({
-		url: 'project/getProjects',
+		url: '/api/project/getProjects',
 		data: data,
 		method: "POST",
     	success:function(data){
