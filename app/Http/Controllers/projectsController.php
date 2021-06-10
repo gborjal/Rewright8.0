@@ -11,10 +11,6 @@ use App\Models\developer;
 
 class projectsController extends Controller
 {
-    public function __construct()
-    {
-      $this->middleware('auth:auth:sanctum');
-    }
     /**
      *  Get projects
      *
