@@ -4,7 +4,7 @@
 	
 	<header>
 		<nav class="top-nav grey darken-4" >
-			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">dashboard</i></a>			
+			<a href="#" data-activates="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
 			<ul class="top-nav hide-on-med-and-down right">
 				<li><a href="{!! route('logout') !!}">logout</a></li>
 			</ul>
@@ -36,36 +36,30 @@
 						<i class="material-icons left">face</i> Profile	{{-- Profile --}}
 					</a>
 				</li>	
-				
-				
-				
-		    </ul>
-		    <ul id="slide-out" class="side-nav">
-				
-				<li><a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left ">question_answer</i>Thread</a></li>	{{-- discussions board --}}
-				<li><a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Tasks</a></li>						{{-- tasks board --}}
-				@if(Auth::user()->user_types ==1)
-				<li><a href="db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Patients</a></li>						{{-- tasks board --}}
-				@endif
-				<li class="no-padding">																		{{-- Profile --}}
-					<ul class="collapsible collapsible-accordion">
-						<li>
-							<a class="collapsible-header"><i class="material-icons left">face</i>{{ Auth::user()->username }}</a>
-							<div class="collapsible-body">
-								<ul>
-									<ul>
-									<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
-									<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
-								</ul>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</li>
-				
-				
-		    </ul>
+			</ul>
 		</nav>
+		<ul id="slide-out" class="sidenav">
+			<li><a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left ">question_answer</i>Thread</a></li>	{{-- discussions board --}}
+			<li><a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Tasks</a></li>						{{-- tasks board --}}
+			@if(Auth::user()->user_types ==1)
+			<li><a href="db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Patients</a></li>						{{-- tasks board --}}
+			@endif
+			<li class="no-padding">																		{{-- Profile --}}
+				<ul class="collapsible collapsible-accordion">
+					<li>
+						<a class="collapsible-header"><i class="material-icons left">face</i>{{ Auth::user()->username }}</a>
+						<div class="collapsible-body">
+							<ul>
+								<ul>
+								<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
+								<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
+							</ul>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
 	</header>
 	<main>
 		<!-- General Body -->
