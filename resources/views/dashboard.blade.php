@@ -3,9 +3,9 @@
 @section('content')
 	
 	<header>
-		<nav class="top-nav">
+		<nav class="top-nav grey darken-4">
 			<div class="container">
-				<div class="nav-wrapper grey darken-4" >
+				<div class="nav-wrapper">
 					<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
 					<ul class="right hide-on-med-and-down right">
 						<li><a href="{!! route('logout') !!}">logout</a></li>
