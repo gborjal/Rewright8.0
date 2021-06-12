@@ -3,41 +3,45 @@
 @section('content')
 	
 	<header>
-		<nav class="top-nav grey darken-4" >
-			<a href="#" data-activates="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
-			<ul class="top-nav hide-on-med-and-down right">
-				<li><a href="{!! route('logout') !!}">logout</a></li>
-			</ul>
-			<ul id="nav-desktop" class="side-nav fixed">
-				<li class="no-padding">
-					<a href="#!">
-						<i class="material-icons left">schedule</i> Timeline
-						{{-- timeline --}}
-					</a>
-				</li>										
-				<li class="no-padding">
-					<a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}">
-					
-						<i class="material-icons left">question_answer</i>Thread {{-- discussions board --}}
-					</a>
-				</li>			
-				<li class="no-padding"><!-- task timeline -->
-					<a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}">
-						<i class="material-icons left">work</i>	Tasks			{{-- tasks board --}}
-					</a>
-				</li>							
-				<li class="no-padding"><!-- task timeline -->
-					<a href="#db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}">
-						<i class="material-icons left">perm_identity</i>	Patients			{{-- patients --}}
-					</a>
-				</li>
-				<li class="no-padding" id='db_profile'>
-					<a href="#m_personal" class="modal-trigger">
-						<i class="material-icons left">face</i> Profile	{{-- Profile --}}
-					</a>
-				</li>	
-			</ul>
+		<nav class="top-nav">
+			<div class="container">
+				<div class="nav-wrapper grey darken-4" >
+					<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
+					<ul class="right hide-on-med-and-down right">
+						<li><a href="{!! route('logout') !!}">logout</a></li>
+					</ul>
+				</div>
+			</div>
 		</nav>
+		<ul id="nav-desktop" class="sidenav sidenav-fixed">
+			<li class="no-padding">
+				<a href="#!">
+					<i class="material-icons left">schedule</i> Timeline
+					{{-- timeline --}}
+				</a>
+			</li>										
+			<li class="no-padding">
+				<a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}">
+				
+					<i class="material-icons left">question_answer</i>Thread {{-- discussions board --}}
+				</a>
+			</li>			
+			<li class="no-padding"><!-- task timeline -->
+				<a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}">
+					<i class="material-icons left">work</i>	Tasks			{{-- tasks board --}}
+				</a>
+			</li>							
+			<li class="no-padding"><!-- task timeline -->
+				<a href="#db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}">
+					<i class="material-icons left">perm_identity</i>	Patients			{{-- patients --}}
+				</a>
+			</li>
+			<li class="no-padding" id='db_profile'>
+				<a href="#m_personal" class="modal-trigger">
+					<i class="material-icons left">face</i> Profile	{{-- Profile --}}
+				</a>
+			</li>	
+		</ul>
 		<ul id="slide-out" class="sidenav">
 			<li><a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left ">question_answer</i>Thread</a></li>	{{-- discussions board --}}
 			<li><a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Tasks</a></li>						{{-- tasks board --}}
