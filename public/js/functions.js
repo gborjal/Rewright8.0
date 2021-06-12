@@ -1000,12 +1000,18 @@ $(document).ready(function(){
     $('.materialboxed').materialbox();
     */
     //side navbar
-	$('.button-collapse').sidenav({
+    $('.sidenav').sidenav(
+    	{
+		menuWidth: 300, // Default is 240
+		edge: 'left', // Choose the horizontal origin
+		closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+		});
+	/*$('.button-collapse').sidenav({
 		menuWidth: 300, // Default is 240
 		edge: 'left', // Choose the horizontal origin
 		closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
 		}
-	);
+	);*/
 	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     /*
     $('.modal-trigger').leanModal({
