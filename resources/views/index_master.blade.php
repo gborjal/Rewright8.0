@@ -20,6 +20,6 @@
         
         <script type = "text/javascript" src = "{{ URL::asset('js/materialize.min.js') }}"/></script>
         <script type = "text/javascript" src = "{{ URL::asset('js/index_functions.js') }}"/></script>
-        
+        @yield('errors')
     </body>
 </html>
