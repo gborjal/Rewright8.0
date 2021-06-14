@@ -27,10 +27,6 @@ use App\Http\Controllers\userController;
 Route::group(['middleware' => ['auth:sanctum']], function(){
 
 	Route::prefix('auth')->group(function () {;
-		
-		// 	Route::post('login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
-		// 	Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
-		// });
 		//Profile routes
 		Route::prefix('profile')->group(function () {
 			Route::post('save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
