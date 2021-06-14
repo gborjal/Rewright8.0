@@ -33,7 +33,7 @@ Route::middleware(['web'])->group(function () {
 	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
 	Route::post('login', [AuthController::class,'login']);	
 	// 	//Admin Login Route
-	// 	Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
+	 	Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
 	// });
 	//Route::get('/dashboard', [userController::class,'dashboard']);
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
