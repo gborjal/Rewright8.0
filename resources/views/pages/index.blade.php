@@ -2,18 +2,26 @@
 
 @section('content')
 	@if($errors->any())
-		@foreach($errors->all() as $error)
+		<script type="text/javascript">
+			@foreach($errors->all() as $error)
 
-			<script type="text/javascript">
+			
 				var toastContent = "<span>{{ $error }}</span>";
-				M.toast(toastContent, 5000, 'red darken-4');
-			</script>
-		@endforeach
+				M.toast({ 	html:toastContent,
+							displayLength:5000, 
+							classes:'red darken-4'
+						});
+			
+			@endforeach
+		</script>
 	@endif
 	@if(Session::get('error'))
 		<script type="text/javascript">
 			var toastContent = "<span>{{ Session::get('error') }}</span>";
-			M.toast(toastContent, 5000, 'red darken-4');
+			M.toast({ 	html:toastContent,
+						displayLength:5000, 
+						classes:'red darken-4'
+					});
 		</script>
 	@endif
 	<div class="container">
