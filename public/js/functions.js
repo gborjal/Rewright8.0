@@ -1009,9 +1009,15 @@ $(document).ready(function(){
 	);
 	$('.collapsible').collapsible();
 	$('.modal').modal();
-	$('ul.tabs').tabs();
+
 	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     
+    $('.modal').leanModal({
+	    ready: function () {
+	        $('ul.tabs').tabs();
+	    }
+	});
+	
 	if($('#modal2 div ul li').length == 0){
 		$('#modal2 div ul li').ready(function(){
 			$('html,body').animate({ scrollTop: 0 }, 'slow');
