@@ -31,10 +31,13 @@ Route::middleware(['web'])->group(function () {
 	// Route::prefix('auth')->group(function () {	
 	// 	//Login route
 	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
+	Route::get('logout',[userController::class,'getLogout'])->name('logout');
 	Route::post('login', [AuthController::class,'login']);	
 	// 	//Admin Login Route
 	 	Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
+	 	Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 	// });
+
 	//Route::get('/dashboard', [userController::class,'dashboard']);
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 });
