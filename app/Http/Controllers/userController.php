@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
-use \Auth;
+//use \Auth;
 use \Validator;
 use \DB;
 use Illuminate\Support\Carbon;
