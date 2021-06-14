@@ -39,7 +39,7 @@ class AuthController extends Controller
     public function showAdminLoginForm()
     {
         //return redirect()->route('loginAdminForm');
-        return view('default.loginAdmin');
+        return view('default.loginAdmin'); 
     }
     /**
      * Create a new authentication controller instance.
@@ -93,7 +93,7 @@ class AuthController extends Controller
                     ->withErrors($validator)
                     ->withInput($request->except(['password']));
         }else {
-        
+            var_dump($userdata);
             if(Auth::attempt($userdata,$remember)){
                 if($field == 'email'){
                     $user = User::where(['email','=',$userdata['email']])->first();
