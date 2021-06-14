@@ -993,9 +993,11 @@ $('#e_view').click(function(){
     getExerDataList();
 });
 $(document).ready(function(){
+	$('select').formSelect();
+	$('.scrollspy').scrollSpy();
 	/*
-	$('select').material_select();
-    $('.scrollspy').scrollSpy();
+	
+    
     $('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
     $('.materialboxed').materialbox();
     */
@@ -1008,8 +1010,10 @@ $(document).ready(function(){
 		}
 	);
 	$('.collapsible').collapsible();
-	$('.modal').modal();
-	$('ul.tabs').tabs();
+	$('.modal').modal({
+		onOpenStart: $('ul.tabs').tabs();
+	});
+	
 	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     
 	
