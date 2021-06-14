@@ -210,7 +210,7 @@ class userController extends Controller
      */
     public function getLogoutAdmin(Request $request){
         
-        Auth::logout();
+       Auth::guard('web')->logout();
         
         $request->session()->invalidate();
 
@@ -224,19 +224,15 @@ class userController extends Controller
      *  @return void
      */
     public function getLogout(Request $request){
-        
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
         if(Auth::user()->user_types === 0){
             
-            Auth::logout();
-            $request->session()->invalidate();
-
-            $request->session()->regenerateToken();
             return redirect()->intended('/auth/admin/login');
         }else{
-            Auth::logout();
-            $request->session()->invalidate();
-
-            $request->session()->regenerateToken();
+            
             return redirect()->intended('/');    
         }
         

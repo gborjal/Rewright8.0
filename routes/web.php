@@ -37,7 +37,7 @@ Route::middleware(['web'])->group(function () {
 		Route::post('admin/login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
 		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
 
-		Route::get('admin/logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
+		//Route::get('admin/logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 	 	
 	 	//Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 	// });
