@@ -6,14 +6,14 @@
 
 			<script type="text/javascript">
 				var toastContent = "<span>{{ $error }}</span>";
-				Materialize.toast(toastContent, 5000, 'red darken-4');
+				M.toast(toastContent, 5000, 'red darken-4');
 			</script>
 		@endforeach
 	@endif
 	@if(Session::get('error'))
 		<script type="text/javascript">
 			var toastContent = "<span>{{ Session::get('error') }}</span>";
-			Materialize.toast(toastContent, 5000, 'red darken-4');
+			M.toast(toastContent, 5000, 'red darken-4');
 		</script>
 	@endif
 	<div class="container">
