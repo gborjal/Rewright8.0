@@ -40,7 +40,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		});
 	});
 	Route::prefix('admin')->group(function () {
-		Route::get('dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
+		//Route::get('dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
 		//Admin functionality Routes
 		Route::post('register', [adminController::class,'registerByAdmin'])->name('registerByAdmin');
 		Route::get('register', [adminController::class,'registerByAdmin']);
