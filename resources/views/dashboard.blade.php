@@ -51,14 +51,14 @@
 			<li class="no-padding">																		{{-- Profile --}}
 				<ul id="profileMenu" class="collapsible">
 					<li>
-						<a class="collapsible-header"><i class="material-icons left">face</i>{{ Auth::user()->username }}</a>
+						<div class="collapsible-header"><i class="material-icons left">face</i>{{ Auth::user()->username }}</div>
 						<div class="collapsible-body">
-							<ul>
+							
 								<ul>
 									<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
 									<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
 								</ul>
-							</ul>
+							
 						</div>
 					</li>
 				</ul>
