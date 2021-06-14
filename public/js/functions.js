@@ -995,12 +995,8 @@ $('#e_view').click(function(){
 $(document).ready(function(){
 	$('select').formSelect();
 	$('.scrollspy').scrollSpy();
-	/*
-	
-    
-    $('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
-    $('.materialboxed').materialbox();
-    */
+	$('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
+	$('.materialboxed').materialbox();
     //side navbar
     $('.sidenav').sidenav(
     	{
