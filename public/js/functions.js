@@ -1008,7 +1008,7 @@ $(document).ready(function(){
 		}
 	);
 	$('.collapsible').collapsible();
-	$('.modal').modal('onStartOpen',$('ul.tabs').tabs());
+	$('.modal').modal('onOpenStart',$('ul.tabs').tabs());
 	
 	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     
