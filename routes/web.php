@@ -31,8 +31,8 @@ Route::middleware(['web'])->group(function () {
 	// Route::prefix('auth')->group(function () {	
 	// 	//Login route
 	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
-	Route::get('logout',[userController::class,'getLogout'])->name('logout');
-	Route::post('login', [AuthController::class,'login']);	
+	Route::post('login', [AuthController::class,'login']);
+	Route::get('logout',[userController::class,'getLogout'])->name('logout');	
 	// 	//Admin Login Route
 		Route::post('admin/login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
 		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
