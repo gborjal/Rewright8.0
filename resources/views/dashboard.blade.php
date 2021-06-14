@@ -49,15 +49,15 @@
 			<li><a href="db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Patients</a></li>						{{-- tasks board --}}
 			@endif
 			<li class="no-padding">																		{{-- Profile --}}
-				<ul class="collapsible collapsible-accordion">
+				<ul id="profileMenu" class="collapsible">
 					<li>
 						<a class="collapsible-header"><i class="material-icons left">face</i>{{ Auth::user()->username }}</a>
 						<div class="collapsible-body">
 							<ul>
 								<ul>
-								<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
-								<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
-							</ul>
+									<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
+									<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
+								</ul>
 							</ul>
 						</div>
 					</li>
