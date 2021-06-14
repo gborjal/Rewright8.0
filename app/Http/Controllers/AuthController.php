@@ -93,7 +93,7 @@ class AuthController extends Controller
                     ->withErrors($validator)
                     ->withInput($request->except(['password']));
         }else {
-            var_dump($userdata);
+            //var_dump($userdata);
             if(Auth::attempt($userdata,$remember)){
                 if($field == 'email'){
                     $user = User::where('email','=',$userdata['email'])->first();
@@ -105,6 +105,7 @@ class AuthController extends Controller
 
                 return redirect()->route('dashboardAdmin')
                         ->with('authToken',$tokenResult);
+                        
             }else{               
                 if($field === "email"){
                     if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
