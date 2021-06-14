@@ -96,10 +96,10 @@ class AuthController extends Controller
             var_dump($userdata);
             if(Auth::attempt($userdata,$remember)){
                 if($field == 'email'){
-                    $user = User::where(['email','=',$userdata['email']])->first();
+                    $user = User::where('email','=',$userdata['email'])->first();
                     
                 }else{
-                    $user = User::where(['username','=',$userdata['username']])->first();
+                    $user = User::where('username','=',$userdata['username'])->first();
                 }
                 $tokenResult = $user->createToken('authToken')->plainTextToken;
 
