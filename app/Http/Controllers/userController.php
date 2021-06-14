@@ -43,7 +43,8 @@ class userController extends Controller
     */
     public function dashboard(Request $request){   
         if(Auth::user()->user_types === 0){
-            Auth::logout();
+            Auth::guard('web')->logout();
+            //Auth::logout();
             return redirect()
                 ->route('showAdminLoginForm')
                 ->with('error','Account is an admin.');
@@ -63,7 +64,8 @@ class userController extends Controller
         if(Auth::user()->user_types === 0){
             return view('dashboardAdmin');//$request->user()->username; 
         }else{
-            Auth::logout();
+            Auth::guard('web')->logout();
+            //Auth::logout();
             return redirect()
                 ->route('login')
                 ->with('error','Account is not an admin.');
