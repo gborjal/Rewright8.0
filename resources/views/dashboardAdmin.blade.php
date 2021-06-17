@@ -3,65 +3,64 @@
 @section('content')
 
 	<div id='top'></div>
-	<header>
-		<nav class="top-nav grey darken-4" >
+	<header>	
+		<nav class="top-nav grey darken-4">
 			<div class="container">
 				<div class="nav-wrapper">
-					<a href="#" data-activates="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
-					<ul class="top-nav hide-on-med-and-down right">
+					<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
+					<ul class="right hide-on-med-and-down">
 						<li><a href="{!! route('logoutAdmin') !!}">logout</a></li>
 					</ul>
 				</div>
 			</div>
-			<ul id="nav-desktop" class="sidenav side-nav fixed">
-				<li class="no-padding">										<a href="#!" id='db_manage'>
-						<i class="material-icons left">work</i>Manage 				{{-- Manage --}}
-					</a>
-				</li>
-				<li class="no-padding" id='db_profile'>
-					<a href="#m_personal" class="modal-trigger">
-						<i class="material-icons left">perm_identity</i> Profile	{{-- Profile --}}
-					</a>
-				</li>	
-				<li class="no-padding" id='db_setting'>
-					<a href="#m_settings" class="modal-trigger">
-						<i class="material-icons left disabled">settings</i>	Settings		{{-- Settings --}}
-					</a>
-				</li>
-					
-		    </ul>
-		    <ul id="slide-out" class="side-nav">
-				<li class="no-padding">																		{{-- Manage --}}
-					<ul class="collapsible collapsible-accordion">
-						<li>
-							<a class="collapsible-header"><i class="material-icons left">work</i>Manage</a>
-							<div class="collapsible-body">
-								<ul>
-									<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'manageUser');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUser</a></li>
-									<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'managePG');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPatient Group</a></li>
-									<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'manageDiscussion');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDiscussions</a></li>
-									<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'manageTask');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTasks</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</li>
-				<li class="no-padding">																		{{-- Profile --}}
-					<ul class="collapsible collapsible-accordion">
-						<li>
-							<a class="collapsible-header"><i class="material-icons left">perm_identity</i>{{ Auth::user()->username }}</a>
-							<div class="collapsible-body">
-								<ul>
-									<li class="red-text text-darken-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUpdate Profile</li>
-									<li class="red-text text-darken-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAccount Settings</li>
-									<li><a href="{!! route('logoutAdmin') !!}" class="red-text text-darken-4">logout</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</li>
-				<li><a href="#m_settings" class="modal-trigger"><i class="material-icons left">settings</i>Settings</a></li>				{{-- Settings --}}
-		    </ul>
+		</nav>
+		<ul id="nav-desktop" class="sidenav sidenav-fixed">
+			<li class="no-padding">
+				<a href="#!" id='db_manage'>
+					<i class="material-icons left">work</i>Manage 				{{-- Manage --}}
+				</a>
+			</li>										
+			<li class="no-padding" id='db_profile'>
+				<a href="#m_personal" class="modal-trigger">
+					<i class="material-icons left">face</i> Profile	{{-- Profile --}}
+				</a>
+			</li>
+			<li class="no-padding" id='db_setting'>
+				<a href="#m_settings" class="modal-trigger">
+					<i class="material-icons left disabled">settings</i>	Settings		{{-- Settings --}}
+				</a>
+			</li>	
+		</ul>
+		<ul id="slide-out" class="sidenav">
+			<li class="no-padding">																		{{-- Manage --}}
+				<ul id="manageMenu" class="collapsible">
+					<li>
+						<div class="collapsible-header"><i class="material-icons left">work</i>Manage</div>
+						<div class="collapsible-body">
+							<ul>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'manageUser');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUser</a></li>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'managePG');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPatient Group</a></li>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'manageDiscussion');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDiscussions</a></li>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select_tab', 'manageTask');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTasks</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="no-padding">																		{{-- Profile --}}
+				<ul id="profileMenu" class="collapsible">
+					<li>
+						<div class="collapsible-header"><i class="material-icons left">perm_identity</i>{{ Auth::user()->username }}</div>
+						<div class="collapsible-body">
+							<ul>
+								<li><a href="#m_personal" class="modal-trigger">Profile</a></li>
+								<li><a href="{!! route('logoutAdmin') !!}"><i class="material-icons">exit_to_app</i></a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
 	</header>
 	<main>
 		<!-- General Body -->
