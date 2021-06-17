@@ -7,7 +7,7 @@
 			<div class="container">
 				<div class="nav-wrapper">
 					<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
-					<ul class="right hide-on-med-and-down right">
+					<ul class="right hide-on-med-and-down">
 						<li><a href="{!! route('logout') !!}">logout</a></li>
 					</ul>
 				</div>
