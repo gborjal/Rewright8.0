@@ -216,7 +216,7 @@ class userController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->intended('/auth/admin/login');
+        return redirect()->intended('/admin/login');
     }
 	/**
      *  Log out the user 
