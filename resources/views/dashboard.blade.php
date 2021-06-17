@@ -8,7 +8,7 @@
 				<div class="nav-wrapper">
 					<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
 					<ul class="right hide-on-med-and-down right">
-						<li><a href="">logout</a></li>
+						<li><a href="{!! route('logout') !!}">logout</a></li>
 					</ul>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 							
 								<ul>
 									<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
-									<li><a href=""><i class="material-icons">exit_to_app</i></a></li>
+									<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
 								</ul>
 							
 						</div>
