@@ -40,11 +40,6 @@ $('#a_activation').click(function(){
     document.getElementById('createUser').style.display = 'none';
     document.getElementById('getActivationCode').style.display = 'block';
 });
-function tabbedMenu(tabId){
-    var instance = M.Tabs.getInstance(elem);
-    instance.select(tabId);
-    return true;
-}
 function submitActivationForm(formId){
     var div = formId + "_div";
     formId = '#' + formId;

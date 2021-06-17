@@ -38,10 +38,10 @@
 						<div class="collapsible-header"><i class="material-icons left">work</i>Manage</div>
 						<div class="collapsible-body">
 							<ul>
-								<li class="red-text text-darken-4"><a href = "#!" onclick = "tabbedMenu('manageUser');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUser</a></li>
-								<li class="red-text text-darken-4"><a href = "#!" onclick = "tabbedMenu('managePG');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPatient Group</a></li>
-								<li class="red-text text-darken-4"><a href = "#!" onclick = "tabbedMenu('manageDiscussion');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDiscussions</a></li>
-								<li class="red-text text-darken-4"><a href = "#!" onclick = "tabbedMenu('manageTask');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTasks</a></li>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select', 'manageUser');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUser</a></li>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select', 'managePG');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPatient Group</a></li>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select', 'manageDiscussion');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDiscussions</a></li>
+								<li class="red-text text-darken-4"><a href = "#!" onclick = "$('ul.tabs').tabs('select', 'manageTask');">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTasks</a></li>
 							</ul>
 						</div>
 					</li>
@@ -310,7 +310,5 @@
 		
 		<!-- End of modals -->
 	</main>
-    <script type="text/javascript">
-    	
-    </script>
+    
 @stop
