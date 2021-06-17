@@ -56,7 +56,7 @@
 							
 								<ul>
 									<li><a href="#m_personal" class="modal-trigger">View Profile</a></li>
-									<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
+									<li><a href="{!! route('logoutAdmin') !!}"><i class="material-icons">exit_to_app</i></a></li>
 								</ul>
 							
 						</div>
