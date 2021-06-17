@@ -27,6 +27,7 @@ $(document).ready(function(){
     });
 	$('.collapsible').collapsible();
     $('.tabs').tabs();
+    var instance = M.Tabs.getInstance(elem);
 });
 
 $('#a_c_user').click(function(){
