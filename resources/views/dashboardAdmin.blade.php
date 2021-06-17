@@ -5,14 +5,16 @@
 	<div id='top'></div>
 	<header>
 		<nav class="top-nav grey darken-4" >
-			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">dashboard</i></a>			
-			<ul class="top-nav hide-on-med-and-down right">
-				<li><a href="{!! route('logoutAdmin') !!}">logout</a></li>
-			</ul>
-			<ul id="nav-desktop" class="side-nav fixed">
-														
-				<li class="no-padding">																
-					<a href="#!" id='db_manage'>
+			<div class="container">
+				<div class="nav-wrapper">
+					<a href="#" data-activates="slide-out" class="sidenav-trigger"><i class="material-icons">dashboard</i></a>			
+					<ul class="top-nav hide-on-med-and-down right">
+						<li><a href="{!! route('logoutAdmin') !!}">logout</a></li>
+					</ul>
+				</div>
+			</div>
+			<ul id="nav-desktop" class="sidenav side-nav fixed">
+				<li class="no-padding">										<a href="#!" id='db_manage'>
 						<i class="material-icons left">work</i>Manage 				{{-- Manage --}}
 					</a>
 				</li>
@@ -60,7 +62,6 @@
 				</li>
 				<li><a href="#m_settings" class="modal-trigger"><i class="material-icons left">settings</i>Settings</a></li>				{{-- Settings --}}
 		    </ul>
-		</nav>
 	</header>
 	<main>
 		<!-- General Body -->
