@@ -52,7 +52,7 @@
 								<ul>
 									<li class="red-text text-darken-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUpdate Profile</li>
 									<li class="red-text text-darken-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAccount Settings</li>
-									<li><a href="{!! route('auth/logout') !!}" class="red-text text-darken-4">logout</a></li>
+									<li><a href="{!! route('logoutAdmin') !!}" class="red-text text-darken-4">logout</a></li>
 								</ul>
 							</div>
 						</li>
