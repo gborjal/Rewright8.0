@@ -7,7 +7,6 @@
         <title>ReWrighT</title>
         <!--Font/Icon-->
         <!--link rel = "stylesheet" type = "text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons"/-->
-        
         <link rel = "stylesheet" type = "text/css" href="{{ URL::asset('css/materialize-fonts.min.css') }}"/>
         <link rel = "stylesheet" type = "text/css" href = "{{ URL::asset('css/materialize.min.css') }}" media="screen,projection"/>
         <link rel = "stylesheet" type = "text/css" href = "{{ URL::asset('css/functions.css') }}"/>
