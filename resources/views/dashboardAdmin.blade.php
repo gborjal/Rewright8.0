@@ -24,11 +24,6 @@
 				<a href="#m_personal" class="modal-trigger">
 					<i class="material-icons left">face</i> Profile	{{-- Profile --}}
 				</a>
-			</li>
-			<li class="no-padding" id='db_setting'>
-				<a href="#m_settings" class="modal-trigger">
-					<i class="material-icons left disabled">settings</i>	Settings		{{-- Settings --}}
-				</a>
 			</li>	
 		</ul>
 		<ul id="slide-out" class="sidenav">
@@ -297,15 +292,6 @@
 				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="">Save</a>
 			</div>
 			{!! Form::close() !!}
-		</div>
-		<div id="m_settings" class="modal modal-fixed-footer">
-			<div class="modal-content">
-				<h4>Setting</h4>
-				<p>Sample Settings Here.</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-			</div>
 		</div>
 		
 		<!-- End of modals -->
