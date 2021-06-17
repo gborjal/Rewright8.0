@@ -310,5 +310,7 @@
 		
 		<!-- End of modals -->
 	</main>
-    
+    <script type="text/javascript">
+    	var instance = M.Tabs.getInstance(elem);
+    </script>
 @stop
