@@ -1,24 +1,31 @@
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
+        datatype: "JSON",
+        method: "POST"
+    },
+    /*beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', "Bearer "+ $('meta[name="authToken"]').attr('content'));
+    }*/
+});
 $(document).ready(function(){
-	/*
-    $('select').material_select();
+    $('select').formSelect();
     $('.scrollspy').scrollSpy();
     $('.materialboxed').materialbox();
-    */
-    //side navbar
-	$('.button-collapse').sidenav({
-		menuWidth: 300, // Default is 240
-		edge: 'left', // Choose the horizontal origin
-		closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-		}
-	);
-	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    /*
-    $('.modal-trigger').leanModal({
-	    ready: function () {
-	        $('ul.tabs').tabs();
-	    }
-	});
-    */
+    
+	$('.sidenav').sidenav(
+        {
+        menuWidth: 300, // Default is 240
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        }
+    );
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal({
+        onOpenStart: $('ul.tabs').tabs(),
+    });
+	
 });
 
 $('#a_c_user').click(function(){
