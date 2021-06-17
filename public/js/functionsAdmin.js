@@ -25,7 +25,7 @@ $(document).ready(function(){
     $('.modal').modal({
         onOpenStart: $('ul.tabs').tabs(),
     });
-	
+	$('.collapsible').collapsible();
 });
 
 $('#a_c_user').click(function(){
