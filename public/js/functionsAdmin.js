@@ -151,6 +151,7 @@ function submitRegForm(){
 }
 
 function submitActivationForm(){
+    console.log("activationform");
 	var formId = '#f_activation';
 	var dataform =  new FormData();
 
