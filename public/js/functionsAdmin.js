@@ -45,7 +45,7 @@ function submitActivationForm(formId){
     formId = '#' + formId;
     var dataform =  new FormData();
 
-    //dataform.append('_token',$(formId + ' [name=_token]')[0].value);
+    dataform.append('_token',$('meta[name="csrf-token"]').attr('content'));
     dataform.append('email',$(formId+' [name=email]')[0].value);
     
     var error;
