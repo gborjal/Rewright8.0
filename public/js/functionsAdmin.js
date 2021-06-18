@@ -160,9 +160,6 @@ function submitActivationForm(){
 	var error;
 	$.ajax({
         url: $(formId).attr('action'),
-        processData: false,
-		contentType: false,
-		mimeType: 'multipart/form-data',
         method: "POST",
         data: dataform,
         
