@@ -384,7 +384,7 @@ class adminController extends Controller
                             $proj_id = project::create($proj_inp);
                            
                             $dev_inp = new developer;
-                            $dev_inp->project_id = Auth::user()->id;
+                            $dev_inp->project_id = $proj_id->id;//Auth::user()->id;
                             $dev_inp->user_id = $user;
                             $dev_inp->role = $input['user_types'];
                             $dev_inp->save();
