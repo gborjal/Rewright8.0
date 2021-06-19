@@ -41,7 +41,10 @@ function ajaxSubmitPostings(formId,dataform){
 
             	if(success!=undefined && success == false){
                 	var toastContent = "<span>"+msg+"</span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 	            }else if(status!=undefined && status == false){
 	            	for(errors of msg){
 	                    var toastContent = "<span>" + errors + "</span>";
@@ -50,7 +53,10 @@ function ajaxSubmitPostings(formId,dataform){
 	            }else{
 
 	            	var toastContent = "<span>Success</span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 	            }
 				return true;
             },error:function(data){ 
