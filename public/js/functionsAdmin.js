@@ -357,7 +357,7 @@ function updatePGSize(id,type){
     dataform.append('type',type);
 
     $.ajax({
-        url: '/admin/auth/updatepgcount',
+        url: '/api/admin/updatepgcount',
         processData: false,
         contentType: false,
         method: "POST",
