@@ -389,11 +389,11 @@ class adminController extends Controller
                             $dev_inp->role = $input['user_types'];
                             $dev_inp->save();
 
-                            DB::table('developers')->insert([
+                            /*DB::table('developers')->insert([
                                     'project_id'    => $proj_id->id,
                                     'user_id'       => $user,
                                     'role'          => 1
-                                ]);
+                                ]);*/
                             
 
                         }else if($input['user_types'] == 2){
