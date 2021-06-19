@@ -171,7 +171,10 @@ function loadNotes(id){
             }
         }else{
             var toastContent = "<span>" + data.message + "</span>";
-            Materialize.toast(toastContent, 5000, 'red darken-4');   
+            M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });   
         }
         
          
@@ -203,7 +206,10 @@ function loadTasks(id){
         success:function(data){
             if(data.status == "fail"){
                 var toastContent = "<span>" + data.message + "</span>";
-                Materialize.toast(toastContent, 5000, 'red darken-4');
+                M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             }else{
                 if(data.tasks.length > 0){
                     var resTasks = [];
@@ -233,12 +239,18 @@ function loadTasks(id){
                     updateGenContentTasks(resTasks,'patientResTask'+id);
                 }else{
                     var toastContent = "<span> No Tasks available. </span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 }
                 if(data.error.length >0){
                     for(var i=0;i<data.error.length;i++){
                         var toastContent = "<span> "+ data.error[i].status + "Patient ID: " + data.error[i].info + " </span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                        M.toast({   html:toastContent,
+                                displayLength:5000, 
+                                classes:'red darken-4'
+                            });
                     }
                 }
             }
