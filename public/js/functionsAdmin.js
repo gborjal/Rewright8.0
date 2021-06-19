@@ -209,7 +209,10 @@ function submitActivationForm(){
                         });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
-				toastContent, 5000, 'red darken-4');
+				M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
                 a = addNode(row,'a',undefined,undefined,"btn waves-effect btn-flat",undefined,undefined,"Copy");
