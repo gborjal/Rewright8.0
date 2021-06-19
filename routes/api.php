@@ -43,13 +43,13 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//Route::get('dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
 		//Admin functionality Routes
 		Route::post('register', [adminController::class,'registerByAdmin'])->name('registerByAdmin');
-		Route::get('register', [adminController::class,'registerByAdmin']);
+		//Route::get('register', [adminController::class,'registerByAdmin']);
 
 		Route::post('getCode', [adminController::class,'getActivationCode'])->name('getActivationCode');
-		Route::get('getCode', [adminController::class,'getActivationCode']);
+		//Route::get('getCode', [adminController::class,'getActivationCode']);
 
 		Route::post('patientGroupInfo', [adminController::class,'getPatientGroup'])->name('getPatientGroup');
-		Route::get('patientGroupInfo', [adminController::class,'getPatientGroup']);
+		//Route::get('patientGroupInfo', [adminController::class,'getPatientGroup']);
 
 		Route::post('updatepgcount', [adminController::class,'postUpdatePGCount'])->name('pgUpdateCount');	//ajax request
 		//Route::get('updatepgcount', [adminController::class,'postUpdatePGCount']);
