@@ -64,14 +64,23 @@ function submitActivationForm(formId){
                 
                 for(var message in msg){                    
                     var toastContent = "<span>" + msg[message] + "</span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 }
             }else if(status == "fail"){
                 var toastContent = "<span>" + msg + "</span>";
-                Materialize.toast(toastContent, 5000, 'red darken-4');
+                M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             }else if(status == "success"){
                 var toastContent = "<span>" + msg + "</span>";
-                Materialize.toast(toastContent, 5000, 'red darken-4');
+                M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
                 a = addNode(row,'a',undefined,undefined,"btn waves-effect btn-flat",undefined,undefined,"Copy");
@@ -85,7 +94,10 @@ function submitActivationForm(formId){
                     document.execCommand("copy");
                     document.removeEventListener("copy", listener);
                     toastContent = "<span>" + "Copied Code: " + msg + "</span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
@@ -127,15 +139,24 @@ function submitRegForm(){
             	for(var message in msg){
             		
             		var toastContent = "<span>" + msg[message] + "</span>";
-					Materialize.toast(toastContent, 5000, 'red darken-4');
+					M.toast({  html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             	}
             }else if(status == "fail"){
                 cur.innerHTML = " ";
             	var toastContent = "<span>" + msg + "</span>";
-				Materialize.toast(toastContent, 5000, 'red darken-4');
+				M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
-				Materialize.toast(toastContent, 5000, 'red darken-4');
+				M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 				
                 cur.innerHTML = " ";
 				addNode(cur,'h1',undefined,undefined,undefined,undefined,undefined,msg);
@@ -174,15 +195,21 @@ function submitActivationForm(){
         		
             	for(var message in msg){            		
             		var toastContent = "<span>" + msg[message] + "</span>"; 
-					Materialize.toast(toastContent, 5000, 'red darken-4');
+					M.toast({  html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             	}
             }else if(status == "fail"){
                 //cur.innerHTML = " ";
             	var toastContent = "<span>" + msg + "</span>";
-				Materialize.toast(toastContent, 5000, 'red darken-4');
+                M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
-				Materialize.toast(toastContent, 5000, 'red darken-4');
+				toastContent, 5000, 'red darken-4');
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
                 a = addNode(row,'a',undefined,undefined,"btn waves-effect btn-flat",undefined,undefined,"Copy");
@@ -196,7 +223,10 @@ function submitActivationForm(){
                     document.execCommand("copy");
                     document.removeEventListener("copy", listener);
                     toastContent = "<span>" + "Copied Code: " + msg + "</span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
@@ -237,12 +267,18 @@ function searchPatientGroup(){
                 
                 for(errors of msg){
                     var toastContent = "<span>" + errors + "</span>";
-                    Materialize.toast(toastContent, 1000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 }
             }else if(status == "fail"){
                 for(errors of msg){
                     var toastContent = "<span>" + errors + "</span>";
-                    Materialize.toast(toastContent, 1000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 }
             }else if(status == "success"){
                 
@@ -335,7 +371,10 @@ function updatePGSize(id,type){
         },error:function(){
             for(errors of JSON.parse(data).message){
                 var toastContent = "<span>" + errors + "</span>";
-                Materialize.toast(toastContent, 1000, 'red darken-4');
+                M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             }
             return false;
         }
