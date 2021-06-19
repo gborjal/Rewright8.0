@@ -151,7 +151,6 @@ function submitRegForm(){
 }
 
 function submitActivationForm(){
-    console.log("activationform");
 	var formId = '#f_activation';
 	var dataform =  new FormData();
 
@@ -161,6 +160,9 @@ function submitActivationForm(){
 	var error;
 	$.ajax({
         url: $(formId).attr('action'),
+        processData: false,
+		contentType: false,
+		mimeType: 'multipart/form-data',
         method: "POST",
         data: dataform,
         
