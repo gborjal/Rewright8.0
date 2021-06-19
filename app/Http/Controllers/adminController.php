@@ -341,10 +341,10 @@ class adminController extends Controller
                 ];
                 //dd($response);
                 $input = $request->only([
-                '_token',
-                'email',
-                'user_types'
-                ]);
+                            '_token',
+                            'email',
+                            'user_types'
+                            ]);
                 if(Auth::user()->user_types === 1) $input['user_types'] = 2;    // only admin can choose what kind of user to make
                 //dd($input);
                 $rules = array(
@@ -366,7 +366,10 @@ class adminController extends Controller
                     $input['password']= Hash::make($pword);
                     $input['username'] = explode("@", $input['email'])[0];
                     $input['activation_code'] = $pword;
-                    try{
+                    //search for existing
+                    $query = User::where('email','=',$input['email'])
+                            ->get();
+                    if(is_null($query) || count($query) == 0){
                         if($input['user_types'] == 1){
                             $user = DB::table('users')
                                         -> insertGetId($input);
@@ -425,29 +428,13 @@ class adminController extends Controller
 
                         return response()
                            ->json($response);
-                    }catch (QueryException $e) {
-                        //$errDuplicateEntry = 1062;
-                        if($e->errorInfo[1] == 1062){
-                            $response['status'] = 'fail';
-                            $response['message'] = 'Email already exists.';
-                            return response()
-                                ->json($response);
-                        }else{
-                            echo "here";
-                            $response['status'] = 'fail';
-                            $response['message'] = $e->errorInfo[1];
-                            return response()
-                                ->json($response);
-                        }
-
-                    } catch (PDOException $e) {
+                    }else{
                         $response['status'] = 'fail';
-                        $response['message'] = 'PDOException. Kindly report this.';
-                        
+                        $response['message'] = 'Email already exists.';
                         return response()
                             ->json($response);
-                    }           
-                   
+
+                    } 
                 }
             } 
         }else{
