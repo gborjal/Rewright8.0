@@ -7,6 +7,7 @@ use Illuminate\Database\QueryException;
 
 use App\Models\User;
 use App\Models\project;
+use App\Models\developer;
 use \Image;
 use \Storage;
 use \Validator;
