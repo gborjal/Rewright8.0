@@ -379,12 +379,17 @@ class adminController extends Controller
                                          'size' => 10,
                                          'active' => true
                                         ]);
-                           
-                            $dev_inp = new developer;
+                            $dev_inp = DB::table('developers')
+                                            ->insert([
+                                                    'project_id'    => $proj_id,
+                                                    'user_id'       => $user,
+                                                    'role'          => $input['user_types']
+                                                    ]);
+                            /*$dev_inp = new developer;
                             $dev_inp->project_id = $proj_id;//Auth::user()->id;
                             $dev_inp->user_id = $user;
                             $dev_inp->role = $input['user_types'];
-                            $dev_inp->save();
+                            $dev_inp->save();*/
 
                             /*DB::table('developers')->insert([
                                     'project_id'    => $proj_id->id,
