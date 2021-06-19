@@ -500,14 +500,23 @@ function submitActivationForm(formId){
         		
             	for(var message in msg){            		
             		var toastContent = "<span>" + msg[message] + "</span>";
-					Materialize.toast(toastContent, 5000, 'red darken-4');
+					M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             	}
             }else if(status == "fail"){
             	var toastContent = "<span>" + msg + "</span>";
-				Materialize.toast(toastContent, 5000, 'red darken-4');
+				M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
-				Materialize.toast(toastContent, 5000, 'red darken-4');
+				M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 				
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
@@ -522,7 +531,10 @@ function submitActivationForm(formId){
                     document.execCommand("copy");
                     document.removeEventListener("copy", listener);
                     toastContent = "<span>" + "Copied Code: " + msg + "</span>";
-                    Materialize.toast(toastContent, 5000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
@@ -689,7 +701,10 @@ function submitExer(id){
 	dataform.append('id',id);
 	if($('#leapData'+id).val() == undefined){
 		var toastContent = "<span> Leap File Required. </span>";
-        Materialize.toast(toastContent, 5000, 'red darken-4');
+        M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 	}else{
 		dataform.append('leapData',$('#leapData'+id).prop('files')[0]);
 	}
@@ -808,7 +823,10 @@ $('.boards').on('click',function(){
 
             	if(data.status == "fail"){
             		var toastContent = "<span>" + data.message + "</span>";
-                	Materialize.toast(toastContent, 5000, 'red darken-4');
+                	M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             	}else{
 
             		var tasks = [];
@@ -839,12 +857,18 @@ $('.boards').on('click',function(){
 						updateGenContentTasks(tasks,'genContentTask');
 					}else{
 						var toastContent = "<span> No Tasks available. </span>";
-                		Materialize.toast(toastContent, 5000, 'red darken-4');
+                		M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 					}
 					if(data.error.length >0){
 						for(var i=0;i<data.error.length;i++){
 							var toastContent = "<span> "+ data.error[i].status + "Patient ID: " + data.error[i].info + " </span>";
-                		Materialize.toast(toastContent, 5000, 'red darken-4');
+                		M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 						}
 					}
 				}
