@@ -426,13 +426,14 @@ class adminController extends Controller
                         return response()
                            ->json($response);
                     }catch (QueryException $e) {
-                        $errDuplicateEntry = 1062;
+                        //$errDuplicateEntry = 1062;
                         if($e->errorInfo[1] == 1062){
                             $response['status'] = 'fail';
                             $response['message'] = 'Email already exists.';
                             return response()
                                 ->json($response);
                         }else{
+                            echo "here";
                             $response['status'] = 'fail';
                             $response['message'] = $e->errorInfo[1];
                             return response()
