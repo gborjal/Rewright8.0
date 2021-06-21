@@ -38,7 +38,7 @@ function ajaxSubmitPostings(formId,dataform){
             	var success = (JSON.parse(data).success) ? JSON.parse(data).success: undefined;
             	var status = (JSON.parse(data).status) ? JSON.parse(data).status: undefined;
             	var msg = JSON.parse(data).message;
-            	console.log(msg);
+            	console.log(typeof msg);
             	if(!success || !status){
             		if(typeof msg != "object"){
             			var toastContent = "<span>" + msg + "</span>";
@@ -47,7 +47,7 @@ function ajaxSubmitPostings(formId,dataform){
                             classes:'red darken-4'
                         });
             		}else{
-            			for(errors of msg.text){
+            			for(errors of Object.values(msg)){
 		                    var toastContent = "<span>" + errors + "</span>";
 		                   	M.toast({   html:toastContent,
 	                            displayLength:5000, 
