@@ -38,7 +38,7 @@ function ajaxSubmitPostings(formId,dataform){
             	var success = (JSON.parse(data).success) ? JSON.parse(data).success: undefined;
             	var status = (JSON.parse(data).status) ? JSON.parse(data).status: undefined;
             	var msg = JSON.parse(data).message;
-            	console.log(typeof msg);
+            	
             	if(!success || !status){
             		if(typeof msg != "object"){
             			var toastContent = "<span>" + msg + "</span>";
@@ -88,6 +88,12 @@ function resetPostings(div,type){
 				discHighlightCntr = 0;
 				$('#postDiscussion input')[3].value = '';
 				addDesc('addl_post_disc','text','What do you want to say?',discTextCntr);
+				break;
+		case 2: taskTextCntr = 1;
+				taskImageCntr = 0;
+				taskHighlightCntr = 0;
+				$('#postTask input')[3].value = '';
+				addDesc('addl_post_task','text','What do you want to say?',taskTextCntr);
 				break;
 		case 3: notesTextCntr = 1;
 				notesImageCntr = 0;
