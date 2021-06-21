@@ -38,15 +38,8 @@ function ajaxSubmitPostings(formId,dataform){
             	var success = (JSON.parse(data).success) ? JSON.parse(data).success: undefined;
             	var status = (JSON.parse(data).status) ? JSON.parse(data).status: undefined;
             	var msg = JSON.parse(data).message;
-            	console.log(typeof(JSON.parse(data).success));
-            	console.log(typeof(JSON.parse(data).status));
-            	if(status==undefined || success == false){
-                	var toastContent = "<span>"+msg+"</span>";
-                    M.toast({   html:toastContent,
-                            displayLength:5000, 
-                            classes:'red darken-4'
-                        });
-	            }else if(success==undefined || status == false){
+            	console.log(msg);
+            	if(success == false || status == false){
 	            	for(errors of msg){
 	                    var toastContent = "<span>" + errors + "</span>";
 	                    Materialize.toast(toastContent, 1000, 'red darken-4');
