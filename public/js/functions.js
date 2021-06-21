@@ -950,7 +950,7 @@ $('a').on('click', function() {
 				
 				dataform = colateText('addl_post_comment');
 				dataform.append('discussion_id',displayed_id);
-				
+				console.log("here");
 				if(ajaxSubmitPostings(formId,dataform)){
 					
 					resetPostings('addl_post_comment',4);
