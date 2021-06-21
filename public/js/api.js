@@ -39,7 +39,7 @@ function ajaxSubmitPostings(formId,dataform){
             	var status = (JSON.parse(data).status) ? JSON.parse(data).success: undefined;
             	var msg = JSON.parse(data).message;
             	console.log(typeof(status));
-            	if(status!=undefined && status == "false"){
+            	if(status!=undefined || status == "false"){
 	            	for(errors of msg){
 	                    var toastContent = "<span>" + errors + "</span>";
 	                     M.toast({   html:toastContent,
