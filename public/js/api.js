@@ -40,14 +40,14 @@ function ajaxSubmitPostings(formId,dataform){
             	var msg = JSON.parse(data).message;
             	console.log(msg);
             	if(!success || !status){
-            		if(typeof msg == "object"){
+            		if(typeof msg != "object"){
             			var toastContent = "<span>" + msg + "</span>";
 	                   	M.toast({   html:toastContent,
                             displayLength:5000, 
                             classes:'red darken-4'
                         });
             		}else{
-            			for(errors of msg){
+            			for(errors of msg.text){
 		                    var toastContent = "<span>" + errors + "</span>";
 		                   	M.toast({   html:toastContent,
 	                            displayLength:5000, 
