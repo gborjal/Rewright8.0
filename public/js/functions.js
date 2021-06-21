@@ -923,7 +923,7 @@ $('a').on('click', function() {
 				dataform.append('patientData',$('#patientData').val());
 								
 				if(ajaxSubmitPostings(formId,dataform)){
-					resetPostings('addl_post_task',1);
+					resetPostings('addl_post_task',2);
 					//reset postings
 				}
 				return false;
