@@ -39,13 +39,22 @@ function ajaxSubmitPostings(formId,dataform){
             	var status = (JSON.parse(data).status) ? JSON.parse(data).status: undefined;
             	var msg = JSON.parse(data).message;
             	if(!success || !status){
-	            	for(errors of msg){
-	                    var toastContent = "<span>" + errors + "</span>";
+            		if(typeof msg == "object"){
+            			var toastContent = "<span>" + msg + "</span>";
 	                   	M.toast({   html:toastContent,
                             displayLength:5000, 
                             classes:'red darken-4'
                         });
-	                }
+            		}else{
+            			for(errors of msg){
+		                    var toastContent = "<span>" + errors + "</span>";
+		                   	M.toast({   html:toastContent,
+	                            displayLength:5000, 
+	                            classes:'red darken-4'
+	                        });
+		                }
+            		}
+	            	
 	            }else{
 					var toastContent = "<span>Success</span>";
                     M.toast({   html:toastContent,
