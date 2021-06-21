@@ -92,7 +92,7 @@ function resetPostings(div,type){
 		case 2: taskTextCntr = 1;
 				taskImageCntr = 0;
 				taskHighlightCntr = 0;
-				$('#postTask input')[3].value = '';
+				$('#postTask input')[2].value = '';
 				addDesc('addl_post_task','text','What do you want to say?',taskTextCntr);
 				break;
 		case 3: notesTextCntr = 1;
