@@ -38,11 +38,19 @@ function ajaxSubmitPostings(formId,dataform){
             	var success = (JSON.parse(data).success) ? JSON.parse(data).success: undefined;
             	var status = (JSON.parse(data).status) ? JSON.parse(data).status: undefined;
             	var msg = JSON.parse(data).message;
-            	console.log(msg);
-            	if(success == false || status == false){
+            	if(status==undefined && success == false){
+                	var toastContent = "<span>"+msg+"</span>";
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
+	            }else if(success==undefined && status == false){
 	            	for(errors of msg){
 	                    var toastContent = "<span>" + errors + "</span>";
-	                    Materialize.toast(toastContent, 1000, 'red darken-4');
+	                   	M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
 	                }
 	            }else{
 
