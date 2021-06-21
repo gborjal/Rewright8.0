@@ -36,10 +36,10 @@ function ajaxSubmitPostings(formId,dataform){
             
             success:function(data){
             	var success = (JSON.parse(data).success) ? JSON.parse(data).success: undefined;
-            	var status = (JSON.parse(data).status) ? JSON.parse(data).success: undefined;
+            	var status = (JSON.parse(data).status) ? JSON.parse(data).status: undefined;
             	var msg = JSON.parse(data).message;
-            	console.log(typeof(success));
-            	console.log(typeof(status));
+            	console.log(typeof(JSON.parse(data).success));
+            	console.log(typeof(JSON.parse(data).status));
             	if(success!=undefined || success == false){
                 	var toastContent = "<span>"+msg+"</span>";
                     M.toast({   html:toastContent,
