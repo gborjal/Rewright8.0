@@ -94,7 +94,7 @@ class userController extends Controller
                         ->where('activation_code','=',$code)
                         ->first();
             $user_cnt = user_info::select('*')
-                            ->where('user_id','=',$user_id[0]->id)
+                            ->where('user_id','=',$user_id->id)
                             ->count();
             var_dump($user_id);
             if($user_cnt == 0){
