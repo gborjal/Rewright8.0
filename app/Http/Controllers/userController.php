@@ -93,7 +93,7 @@ class userController extends Controller
                         ->select('id','email','activation_code as code')
                         ->where('activation_code','=',$code)
                         ->first();
-            var_dump($user_id);
+            print_r($user_id->id);
             /*$user_cnt = user_info::select('*')
                             ->where('user_id','=',$user_id->id)
                             ->count();
