@@ -94,7 +94,7 @@ class userController extends Controller
                         ->where('activation_code','=',$code)
                         ->first();
             var_dump($user_id);
-            $user_cnt = user_info::select('*')
+            /*$user_cnt = user_info::select('*')
                             ->where('user_id','=',$user_id->id)
                             ->count();
             
@@ -135,7 +135,7 @@ class userController extends Controller
                                 'o_add'  => $user_info->o_add,
                                 'email'  => $user_id->email,
                                 'code'   => $user_id->code);
-            return view('profileEdit',['user_info'=>$user]);
+            return view('profileEdit',['user_info'=>$user]);*/
         }else{
             //view only redirect to another view
         }
