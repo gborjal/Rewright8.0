@@ -157,7 +157,8 @@ class taskController extends Controller
                                     $temp = [
                                             //'notif_id'          => $assigned->id,
                                             'task_datas'        => task_exer_data::whereIn('task_assignment_id',$assigned_to_patient_ids)
-                                                                        ->orderBy('task_assignment_id','freq_order')
+                                                                        ->orderBy('task_assignment_id','asc')
+                                                                        ->orderBy('freq_order','asc')
                                                                         ->get(),
                                             ];
 
@@ -250,7 +251,8 @@ class taskController extends Controller
                                     $temp = [
                                             //'notif_id'          => $assigned->id,
                                             'task_datas'        => task_exer_data::whereIn('task_assignment_id',$assigned_to_patient_ids)
-                                                                        ->orderBy('task_assignment_id','freq_order')
+                                                                        ->orderBy('task_assignment_id','asc')
+                                                                        ->orderBy('freq_order','asc')
                                                                         ->get(),
                                             ];
                                     
@@ -345,7 +347,8 @@ class taskController extends Controller
                                     $temp = [
                                             //'notif_id'          => $assigned->id,
                                             'task_datas'        => task_exer_data::whereIn('task_assignment_id',$assigned_to_patient_ids)
-                                                                        ->orderBy('task_assignment_id','freq_order')
+                                                                        ->orderBy('task_assignment_id','asc')
+                                                                        ->orderBy('freq_order','asc')
                                                                         ->get(),
                                             ];
                                     
