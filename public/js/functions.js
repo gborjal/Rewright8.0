@@ -816,7 +816,7 @@ $('.boards').on('click',function(){
         }
 
 		$.ajax({
-            url: '/api/task/board',
+            url: '/api/tasks/board',
             data: data,
             method: "POST",
             success:function(data){
