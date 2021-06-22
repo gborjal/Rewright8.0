@@ -93,10 +93,11 @@ class userController extends Controller
                         ->select('id','email','activation_code as code')
                         ->where('activation_code','=',$code)
                         ->first();
+            var_dump($user_id);
             $user_cnt = user_info::select('*')
                             ->where('user_id','=',$user_id->id)
                             ->count();
-            var_dump($user_id);
+            
             if($user_cnt == 0){
                 $user_info_id = DB::table('users_info')->insertGetId([
                     "user_id"=>$user_id->id,
