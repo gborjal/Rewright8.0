@@ -38,7 +38,6 @@
 						<div class="collapsible-header"><i class="material-icons left">perm_identity</i>{{ Auth::user()->username }}</div>
 						<div class="collapsible-body">
 							<ul>
-								<li><a href="#m_personal" class="modal-trigger">Profile</a></li>
 								<li><a href="{!! route('logout') !!}"><i class="material-icons">exit_to_app</i></a></li>
 							</ul>
 						</div>
