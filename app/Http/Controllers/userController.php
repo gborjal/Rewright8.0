@@ -121,7 +121,7 @@ class userController extends Controller
                                             'perm_address as p_add',
                                             'tempo_address as t_add',
                                             'office_address as o_add')
-                            ->where('user_id','=',$user_id[0]->id)
+                            ->where('user_id','=',$user_id->id)
                             ->first();
                 $user = array('prof_pic' => $user_info->prof_pic,
                                 'fname'  => $user_info->fname,
@@ -132,8 +132,8 @@ class userController extends Controller
                                 'p_add'  => $user_info->p_add,
                                 't_add'  => $user_info->t_add,
                                 'o_add'  => $user_info->o_add,
-                                'email'  => $user_id[0]->email,
-                                'code'   => $user_id[0]->code);
+                                'email'  => $user_id->email,
+                                'code'   => $user_id->code);
             return view('profileEdit',['user_info'=>$user]);
         }else{
             //view only redirect to another view
