@@ -96,6 +96,7 @@ class userController extends Controller
             $user_cnt = user_info::select('*')
                             ->where('user_id','=',$user_id[0]->id)
                             ->count();
+            var_dump($user_id);
             if($user_cnt == 0){
                 $user_info_id = DB::table('users_info')->insertGetId([
                     "user_id"=>$user_id[0]->id,
