@@ -98,7 +98,7 @@ class userController extends Controller
                             ->count();
             
             if($user_cnt == 0){
-                $user_info_id = DB::table('users_info')->insertGetId([
+                $user_info_id = DB::table('users_info')->insert([
                     "user_id"=>$user_id->id,
                     "profile"=>'1_profile_1.jpg',
                     "banner"=>'1_banner_1.jpg',
