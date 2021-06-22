@@ -30,18 +30,7 @@
 				</div>
 			</div>
 		</nav>
-		<ul id="nav-desktop" class="sidenav sidenav-fixed">
-			<li class="no-padding">
-				<a href="#!" id='db_manage'>
-					<i class="material-icons left">work</i>Manage 				{{-- Manage --}}
-				</a>
-			</li>										
-			<li class="no-padding" id='db_profile'>
-				<a href="#m_personal" class="modal-trigger">
-					<i class="material-icons left">face</i> Profile	{{-- Profile --}}
-				</a>
-			</li>	
-		</ul>
+		
 		<ul id="slide-out" class="sidenav">
 			<li class="no-padding">																		{{-- Profile --}}
 				<ul id="profileMenu" class="collapsible">
@@ -189,6 +178,7 @@
 		$(document).ready(function(){
 
 			$('select').formSelect();
+			$('.collapsible').collapsible();
 			$('.sidenav').sidenav(
 	    	{
 					menuWidth: 300, // Default is 240
