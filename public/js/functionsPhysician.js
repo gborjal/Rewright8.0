@@ -24,12 +24,18 @@ function searchPatient(){
                 
                 for(errors of msg){
                     var toastContent = "<span>" + errors + "</span>";
-                    Materialize.toast(toastContent, 1000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 }
             }else if(status == "fail"){
                 for(errors of msg){
                     var toastContent = "<span>" + errors + "</span>";
-                    Materialize.toast(toastContent, 1000, 'red darken-4');
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
                 }
             }else if(status == "success"){
                 
@@ -167,7 +173,10 @@ function loadNotes(id){
               }
             }else{
                 var toastContent = "<span>No notes available</span>";
-                Materialize.toast(toastContent, 10000, 'red darken-4');
+                M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
             }
         }else{
             var toastContent = "<span>" + data.message + "</span>";
