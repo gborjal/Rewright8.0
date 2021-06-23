@@ -147,7 +147,7 @@ class userController extends Controller
      * @return Response
      */
     public function saveEditUserProfile(Request $request){
-        //dd($request->all());
+        dd($request->all());
         $response = [
             'success'       => "",
             'message'       => []
