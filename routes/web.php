@@ -52,9 +52,9 @@ Route::middleware(['web'])->group(function () {
 			//Route::post('edit/{code}', [userController::class,'editUserProfile1'])->name('editProfile');
 		});
 	});
-	Route::prefix('profile')->group(function () {
-		Route::post('save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
-	});
+	
+	Route::post('auth/profile/save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
+	
 });
 
 
