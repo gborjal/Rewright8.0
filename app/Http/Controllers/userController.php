@@ -200,8 +200,8 @@ class userController extends Controller
             $user->updated_at = Carbon::now();
             $user->save();
         }
-        $redirect = 'auth/profile/edit/' . $input['h_code'];
-        return redirect()->intended($redirect);
+        /*$redirect = 'auth/profile/edit/' . $input['h_code'];
+        return redirect()->intended($redirect);*/
         
     }
     /**
