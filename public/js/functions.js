@@ -939,7 +939,7 @@ $('a').on('click', function() {
 					//resetPostings('addl_post_task',1);
 					//reset postings
 				}
-			return false;
+				return false;
 			}
 		}else if($(this).attr('href')==='#comment'){
 
