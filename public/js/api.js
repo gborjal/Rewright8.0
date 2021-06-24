@@ -5,7 +5,9 @@
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
         datatype: "JSON",
+        method: "POST"
     }
 });
 function addNode(parent,type,id,name,classTxt,value,inpType,textNode){
