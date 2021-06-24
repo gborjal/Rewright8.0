@@ -198,8 +198,7 @@ class userController extends Controller
                                     'perm_address'  => $input['perm_address']
                                 ]);*/
                 $user = user_info::where('user_id',$user_id->id);
-                var_dump($user);
-                /*$user->first_name =  $input['fname'];
+                $user->first_name =  $input['fname'];
                 $user->middle_name = $input['mname'];
                 $user->last_name = $input['lname'];
                 $user->perm_address = $input['perm_address'];
@@ -209,7 +208,7 @@ class userController extends Controller
                 if($user->office_address !== $input['office_address']) $user->office_address = $input['office_address'];
                 
                 $user->updated_at = Carbon::now();
-                $user->save();*/
+                $user->save();
             }
             /*$redirect = 'auth/profile/edit/' . $input['h_code'];
             return redirect()->intended($redirect);*/
