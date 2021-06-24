@@ -49,7 +49,6 @@
 	</header>
 	<main>
 	{!! Form::open(['route'=>'postEditProfile','id'=>'postEditProfile','files'=>'true']) !!}
-	
 	<div class = "container">
 		<div class = "row">
 			<div class="col s12 m9 l7 offset-l3">
@@ -141,9 +140,9 @@
 		</div>
 		<div class="row">
 			<div class="col l12">
-				<button class="btn waves-effect red darken-4" type="submit">Update
-				    <i class="large material-icons right">send</i>
-				</button>
+				<a href="#post" class="modal-action modal-close waves-effect waves-green btn-flat ">Update
+					<i class="large material-icons right">send</i>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -176,6 +175,14 @@
       </div>
     </footer>
 	<script type = "text/javascript" />
+		$.ajaxSetup({
+		  headers: {
+		      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+		      'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
+		      datatype: "JSON",
+		      method: "POST"
+		  }
+		});
 		$(document).ready(function(){
 
 			$('select').formSelect();
@@ -187,6 +194,20 @@
 					closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
 				}
 			);
+		});
+		$('a').on('click', function() {
+			if($(this).attr('href') != undefined){
+				if($(this).attr('href') ==='#top' ) {
+		   		$('html,body').animate({ scrollTop: 0 }, 'slow');
+				}else if($(this).attr('href')==='#post'){
+					var dataform =  new FormData(document.getElementById("postEditProfile"));
+									
+					if(ajaxSubmitPostings(formId,dataform)){
+						//materialize toast : success
+					}
+					return false;
+				}
+			}
 		});
 	</script>
 
