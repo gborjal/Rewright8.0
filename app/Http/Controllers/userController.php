@@ -210,7 +210,7 @@ class userController extends Controller
             
                 $response = [
                 'status'        => 'success',
-                'discussions'   => $set
+                'message'       => "Successfully updated profile."
                 ];
                 return response()
                     ->json($response)
