@@ -538,7 +538,7 @@ function submitActivationForm(formId){
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
-                a.href = "http://" + siteUrl + "/auth/profile/edit/" + msg;
+                a.href = "https://" + siteUrl + "/auth/profile/edit/" + msg;
                 a.target = "_blank";
 				}
         },error:function(data){ 
