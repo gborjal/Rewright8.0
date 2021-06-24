@@ -186,12 +186,20 @@ class userController extends Controller
                     ->setCallback($request->input('callback'));                   
             }else{
                 $user_id = DB::table('users')
-                            ->select('id','email','activation_code as code')
+                            ->select('id')
                             ->where('activation_code','=',$input['h_code'])
                             ->orWhere('email','=',$input['h_email'])
                             ->first();
-                $user = user_info::where('user_id',$user_id->id)->first();
-                $user->first_name =  $input['fname'];
+                /*$user = user_info::where('user_id',$user_id->id)
+                                ->update([
+                                    'first_name'    => $input['fname'],
+                                    'middle_name'   => $input['mname'],
+                                    'last_name'     => $input['lname'],
+                                    'perm_address'  => $input['perm_address']
+                                ]);*/
+                $user = user_info::where('user_id',$user_id->id);
+                var_dump($user);
+                /*$user->first_name =  $input['fname'];
                 $user->middle_name = $input['mname'];
                 $user->last_name = $input['lname'];
                 $user->perm_address = $input['perm_address'];
@@ -201,7 +209,7 @@ class userController extends Controller
                 if($user->office_address !== $input['office_address']) $user->office_address = $input['office_address'];
                 
                 $user->updated_at = Carbon::now();
-                $user->save();
+                $user->save();*/
             }
             /*$redirect = 'auth/profile/edit/' . $input['h_code'];
             return redirect()->intended($redirect);*/
