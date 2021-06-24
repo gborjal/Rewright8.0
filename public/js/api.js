@@ -4,7 +4,7 @@
 */
 $.ajaxSetup({
     headers: {
-    	Access-Control-Allow-Origin : *,
+    	'Access-Control-Allow-Origin' : '*',
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
         'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
         datatype: "JSONP",
