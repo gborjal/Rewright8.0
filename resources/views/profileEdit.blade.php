@@ -175,14 +175,6 @@
 	      </div>
 	    </footer>
 		<script type = "text/javascript" />
-			$.ajaxSetup({
-			  headers: {
-			      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-			      'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
-			      datatype: "JSON",
-			      method: "POST"
-			  }
-			});
 			// source: https://stackoverflow.com/questions/895171/prevent-users-from-submitting-a-form-by-hitting-enter
 			$(document).on("keydown", ":input:not(textarea)", function(event) {
 		    return event.key != "Enter";
