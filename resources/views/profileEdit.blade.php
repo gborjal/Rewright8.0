@@ -183,6 +183,10 @@
 		      method: "POST"
 		  }
 		});
+		// source: https://stackoverflow.com/questions/895171/prevent-users-from-submitting-a-form-by-hitting-enter
+		$(document).on("keydown", ":input:not(textarea)", function(event) {
+	    return event.key != "Enter";
+		});
 		$(document).ready(function(){
 
 			$('select').formSelect();
