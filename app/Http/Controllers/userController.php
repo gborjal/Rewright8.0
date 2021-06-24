@@ -88,7 +88,7 @@ class userController extends Controller
      * @return View
      */
     public function editUserProfile1($code){
-        var_dump(Auth::user());
+        var_dump(Auth::user()->createToken('authToken')->plainTextToken);
         if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
             $user_id = DB::table('users')
                         ->select('id','email','activation_code as code')
