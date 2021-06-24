@@ -208,21 +208,14 @@ class userController extends Controller
                 user_info::where('user_id',$user_id->id)
                         ->update($update);
             
-                /*$user = user_info::where('user_id',$user_id->id)->first();
-                $user->first_name =  $input['fname'];
-                $user->middle_name = $input['mname'];
-                $user->last_name = $input['lname'];
-                $user->perm_address = $input['perm_address'];
-                if($user->sex !== $input['sex']) $user->sex = $input['sex'];
-                if($user->suffix_name !== $input['suffix_name']) $user->suffix_name = $input['suffix_name'];
-                if($user->tempo_address !== $input['tempo_address']) $user->tempo_address = $input['tempo_address'];
-                if($user->office_address !== $input['office_address']) $user->office_address = $input['office_address'];
-                
-                $user->updated_at = Carbon::now();
-                $user->save();*/
+                $response = [
+                'status'        => 'success',
+                'discussions'   => $set
+                ];
+                return response()
+                    ->json($response)
+                    ->setCallback($request->input('callback'));
             }
-            /*$redirect = 'auth/profile/edit/' . $input['h_code'];
-            return redirect()->intended($redirect);*/
         }    
     }
     /**
