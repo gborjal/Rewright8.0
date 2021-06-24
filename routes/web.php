@@ -53,7 +53,7 @@ Route::middleware(['web'])->group(function () {
 		});
 	});
 	
-	Route::post('auth/profile/save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
+	/*Route::post('auth/profile/save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request*/
 	
 });
 
