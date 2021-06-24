@@ -200,11 +200,11 @@ class userController extends Controller
                 if($user->sex !== $input['sex']) 
                     $update['sex'] = $input['sex'];
                 if($user->suffix_name !== $input['suffix_name']) 
-                    $update['suffix_name'] = $input['suffix_name']);
+                    $update['suffix_name'] = $input['suffix_name'];
                 if($user->tempo_address !== $input['tempo_address']) 
-                    $update['tempo_address'] = $input['tempo_address']);
+                    $update['tempo_address'] = $input['tempo_address'];
                 if($user->office_address !== $input['office_address']) 
-                    $update['office_address'] = $input['office_address']);
+                    $update['office_address'] = $input['office_address'];
                 user_info::where('user_id',$user_id->id)
                         ->update($update);
             
