@@ -28,9 +28,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 
 	Route::prefix('auth')->group(function () {;
 		//Profile routes
-		Route::prefix('profile')->group(function () {
-			Route::post('save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
-		});
+		Route::post('/profile/save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request
 		//Specialist search
 		Route::prefix('search')->group(function () {
 			//Route::get('auth/search/patient', 'userController@getPatientSrch');
