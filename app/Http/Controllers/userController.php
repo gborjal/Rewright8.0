@@ -197,7 +197,7 @@ class userController extends Controller
                                     'last_name'     => $input['lname'],
                                     'perm_address'  => $input['perm_address']
                                 ]);*/
-                $user = user_info::where('user_id',$user_id->id);
+                $user = user_info::where('user_id',$user_id->id)->first();
                 $user->first_name =  $input['fname'];
                 $user->middle_name = $input['mname'];
                 $user->last_name = $input['lname'];
