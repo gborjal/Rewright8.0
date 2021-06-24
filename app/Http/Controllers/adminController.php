@@ -379,8 +379,7 @@ class adminController extends Controller
                                          'size' => 10,
                                          'active' => true
                                         ]);
-                            $dev_inp = DB::table('developers')
-                                            ->insert([
+                            $dev_inp = developer::insert([
                                                     'project_id'    => $proj_id,
                                                     'user_id'       => $user,
                                                     'role'          => $input['user_types']
@@ -451,6 +450,16 @@ class adminController extends Controller
      *  source: https://codebriefly.com/unique-alphanumeric-string-php/
      *  @return /code
      */
+    private function unique_code($limit)
+    {
+      return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit);
+    }
+    /**
+     *  check if user is an admin
+     *
+     *  
+     *  @return 
+     */
     private function isAdmin()
     {
         if (Auth::user()->user_types === 0){
@@ -460,14 +469,5 @@ class adminController extends Controller
         }
       return false;
     }
-    /**
-     *  check if user is an admin
-     *
-     *  
-     *  @return 
-     */
-    private function unique_code($limit)
-    {
-      return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit);
-    }
+    
 }
