@@ -135,7 +135,7 @@ class userController extends Controller
                                 'email'  => $user_id->email,
                                 'code'   => $user_id->code);
             return view('profileEdit',['user_info'=>$user])
-                        ->with('authToken',$request->user()->currentAccessToken());
+                        ->with('authToken',Auth::user()->token());
         }else{
             //view only redirect to another view
         }
