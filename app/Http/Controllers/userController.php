@@ -189,8 +189,8 @@ class userController extends Controller
                             ->select('id','email','activation_code as code')
                             ->where('activation_code','=',$input['h_code'])
                             ->orWhere('email','=',$input['h_email'])
-                            ->get();
-                $user = user_info::where('user_id',$user_id[0]->id)->first();
+                            ->first();
+                $user = user_info::where('user_id',$user_id->id)->first();
                 $user->first_name =  $input['fname'];
                 $user->middle_name = $input['mname'];
                 $user->last_name = $input['lname'];
