@@ -87,7 +87,7 @@ class userController extends Controller
      *
      * @return View
      */
-    public function editUserProfile1($code){
+    public function editUserProfile1(Request $request,$code){
         if($request->ajax() ){
             if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
                 $user_id = DB::table('users')
