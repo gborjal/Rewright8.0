@@ -135,8 +135,10 @@ class userController extends Controller
                                 'o_add'  => $user_info->o_add,
                                 'email'  => $user_id->email,
                                 'code'   => $user_id->code);
-            return view('profileEdit',['user_info'=>$user])
-                        ->with('authToken',Auth::user()->createToken('authToken')->plainTextToken);
+                $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+                var_dump($tokenResult);
+            /*return view('profileEdit',['user_info'=>$user])
+                        ->with('authToken',$tokenResult);*/
         }else{
             //view only redirect to another view
         }
