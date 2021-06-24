@@ -113,32 +113,31 @@ class userController extends Controller
                     "office_address"=>NULL
                 ]);
             }
-                $user_info = user_info::select('profile as prof_pic',
-                                            'first_name as fname',
-                                            'middle_name as mname',
-                                            'last_name as lname',
-                                            'suffix_name as sname',
-                                            'sex',
-                                            'perm_address as p_add',
-                                            'tempo_address as t_add',
-                                            'office_address as o_add')
-                            ->where('user_id','=',$user_id->id)
-                            ->first();
-                $user = array('prof_pic' => $user_info->prof_pic,
-                                'fname'  => $user_info->fname,
-                                'mname'  => $user_info->mname,
-                                'lname'  => $user_info->lname,
-                                'sname'  => $user_info->sname,
-                                'sex'    => $user_info->sex,
-                                'p_add'  => $user_info->p_add,
-                                't_add'  => $user_info->t_add,
-                                'o_add'  => $user_info->o_add,
-                                'email'  => $user_id->email,
-                                'code'   => $user_id->code);
-                $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
-                var_dump($tokenResult);
-            /*return view('profileEdit',['user_info'=>$user])
-                        ->with('authToken',$tokenResult);*/
+            $user_info = user_info::select('profile as prof_pic',
+                                        'first_name as fname',
+                                        'middle_name as mname',
+                                        'last_name as lname',
+                                        'suffix_name as sname',
+                                        'sex',
+                                        'perm_address as p_add',
+                                        'tempo_address as t_add',
+                                        'office_address as o_add')
+                        ->where('user_id','=',$user_id->id)
+                        ->first();
+            $user = array('prof_pic' => $user_info->prof_pic,
+                            'fname'  => $user_info->fname,
+                            'mname'  => $user_info->mname,
+                            'lname'  => $user_info->lname,
+                            'sname'  => $user_info->sname,
+                            'sex'    => $user_info->sex,
+                            'p_add'  => $user_info->p_add,
+                            't_add'  => $user_info->t_add,
+                            'o_add'  => $user_info->o_add,
+                            'email'  => $user_id->email,
+                            'code'   => $user_id->code);
+            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+            return view('profileEdit',['user_info'=>$user])
+                        ->with('authToken',$tokenResult);
         }else{
             //view only redirect to another view
         }
