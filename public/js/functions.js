@@ -34,7 +34,7 @@ function filterGenComments(comments){
 
 		var date = new Date(year,month,day,hour,min); 
 		li += "<li class='collection-item avatar'>"+
-				 "<img src='http://"+ siteUrl +"/profile/image/t/"+comments[i].user_id+"' alt='notavailable' class='profiles circle' />"+
+				 "<img src='https://"+ siteUrl +"/profile/image/t/"+comments[i].user_id+"' alt='notavailable' class='profiles circle' />"+
 				 "<span class='card-title'><b>"+comments[i].first_name+" "+comments[i].last_name+"</b><br/><p class='grey-text text-darken-1' style='font-size:12px;'>"+date.toUTCString()+"</p></span>"+
 				 "<div class='votes'><a id='upc"+comments[i].comment_id+"' class='btn tooltipped waves-effect waves-light-blue-accent-4 waves-ripple  light-blue darken-4' data-position='top' data-delay='50' data-tooltip='UPVOTE' href='#!' onclick='vote("+comments[i].comment_id+",1);'><span >"+upvote+"</span></a><a id='downc"+comments[i].comment_id+"' class='btn tooltipped waves-effect waves-light-blue-accent-4  btn-flat' data-position='top' data-delay='50' data-tooltip='DOWNVOTE' href='#!' onclick='vote("+comments[i].comment_id+",2);'>"+downvote+"</a></div>"+
 			 	"<p class='flow-text'>"+filterGenText(comments[i].text,comments[i].image)+"</p>"+
@@ -55,10 +55,10 @@ function updateGenContentTasks(arr,div){
 			
 			li = "<li><div class='collapsible-header'><ul class='collection'><li class='collection-item avatar'>";
 			if(user_type!=1){
-				li 	+=	 "<img src='http://" + siteUrl + "/profile/image/get/t/"+arr[i].creator_info.profile+"' alt='notavailable' class='profiles circle' />"+
+				li 	+=	 "<img src='https://" + siteUrl + "/profile/image/get/t/"+arr[i].creator_info.profile+"' alt='notavailable' class='profiles circle' />"+
 						 "<div class='title"+font+"'>"+arr[i].creator_info.first_name+" "+arr[i].creator_info.last_name;
 			}else{
-				li 	+=	 "<img src='http://" + siteUrl + "/profile/image/get/t/"+arr[i].patient_info.profile+"' alt='notavailable' class='profiles circle' />"+
+				li 	+=	 "<img src='https://" + siteUrl + "/profile/image/get/t/"+arr[i].patient_info.profile+"' alt='notavailable' class='profiles circle' />"+
 					 "<div class='title"+font+"'>"+arr[i].patient_info.first_name+" "+arr[i].patient_info.last_name;
 			}
 
@@ -107,7 +107,7 @@ function updateGenContentTasks(arr,div){
 							}
 						}
 							
-						li+="<div class='secondary-content "+font+"'><a class='btn btn-flat tooltipped' href='http://" + siteUrl + "/tasks/" + arr[i].exers_info.task_datas[k].id + "' target='_blank' data-position='left' data-delay='50' data-tooltip='Launch'><i class='material-icons'>launch</i></a></div>";
+						li+="<div class='secondary-content "+font+"'><a class='btn btn-flat tooltipped' href='https://" + siteUrl + "/tasks/" + arr[i].exers_info.task_datas[k].id + "' target='_blank' data-position='left' data-delay='50' data-tooltip='Launch'><i class='material-icons'>launch</i></a></div>";
 						
 						li+="</li>";
 
@@ -156,7 +156,7 @@ function updateModal2(currBoard,div){
 							break;
 				}
 
-				li 	+=	 "<img src='http://" + siteUrl + "/profile/image/get/t/"+discussions[i].profile+"' alt='notavailable' class='profiles circle' />"+
+				li 	+=	 "<img src='https://" + siteUrl + "/profile/image/get/t/"+discussions[i].profile+"' alt='notavailable' class='profiles circle' />"+
 						 "<span class='title"+font+"'>"+discussions[i].first_name+" "+discussions[i].last_name+"</span>"+
 						 "<p class='"+font+"'>"+discussions[i].disc_title+"...<br/>";
 				if(discussions[i].disc_text!=false){
@@ -197,7 +197,7 @@ function updateModal2(currBoard,div){
 						break;
 			}
 
-			li 	+=	 "<img src='http://" + siteUrl + "/profile/image/get/t/"+currBoard[i].profile+"' alt='notavailable' class='profiles circle' />"+
+			li 	+=	 "<img src='https://" + siteUrl + "/profile/image/get/t/"+currBoard[i].profile+"' alt='notavailable' class='profiles circle' />"+
 					 "<span class='title"+font+"'>"+currBoard[i].first_name+" "+currBoard[i].last_name+"</span>"+
 					 "<p class='"+font+"'>"+currBoard[i].disc_title+"...<br/>";
 			if(currBoard[i].disc_text!=false){
@@ -601,7 +601,7 @@ function getExerDataList(){
                     var a = addNode(row,'a',undefined,undefined,"secondary-content",undefined,undefined,undefined);
                     addNode(a,'i',undefined,undefined,"material-icons",undefined,undefined,"launch");
                     var siteUrl = window.location.href.split('/')[2];
-                    a.href = "http://" + siteUrl + "/preview/" + result.id;
+                    a.href = "https://" + siteUrl + "/preview/" + result.id;
                     a.target = "_blank";
                     
                 }
@@ -668,7 +668,7 @@ function populateExerData(){
         var a = addNode(row,'a',undefined,undefined,"secondary-content",undefined,undefined,undefined);
         addNode(a,'i',undefined,undefined,"material-icons",undefined,undefined,"launch");
         var siteUrl = window.location.href.split('/')[2];
-        a.href = "http://" + siteUrl + "/preview/" + result.id;
+        a.href = "https://" + siteUrl + "/preview/" + result.id;
         a.target = "_blank";
     }
     $('select').formSelect();
@@ -688,7 +688,7 @@ function populateProjectList(){
         /*var a = addNode(row,'a',undefined,undefined,"secondary-content",undefined,undefined,undefined);
         addNode(a,'i',undefined,undefined,"material-icons",undefined,undefined,"launch");
         var siteUrl = window.location.href.split('/')[2];
-        a.href = "http://" + siteUrl + "/preview/" + result.id + ".json.lz";
+        a.href = "https://" + siteUrl + "/preview/" + result.id + ".json.lz";
         a.target = "_blank";*/
     }
     $('select').formSelect();
