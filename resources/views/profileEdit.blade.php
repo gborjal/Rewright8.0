@@ -206,7 +206,7 @@
 					}else if($(this).attr('href')==='#post'){
 						var dataform =  new FormData(document.getElementById("postEditProfile"));
 										
-						if(ajaxSubmitPostings(formId,dataform)){
+						if(ajaxSubmitPostings("#postEditProfile",dataform)){
 							//materialize toast : success
 						}
 						return false;
