@@ -3,6 +3,7 @@
     <head>
     	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     	<meta name="csrf-token" content="{{ csrf_token() }}" />
+    	<meta name="authToken" content="{{ session('authToken') }}">
         <title>ReWrighT</title>
         <!--Font/Icon-->
         <!--link rel = "stylesheet" type = "text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons"/-->
@@ -48,6 +49,7 @@
 	</header>
 	<main>
 	{!! Form::open(['route'=>'postEditProfile','id'=>'postEditProfile','files'=>'true']) !!}
+	
 	<div class = "container">
 		<div class = "row">
 			<div class="col s12 m9 l7 offset-l3">
