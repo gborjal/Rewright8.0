@@ -190,14 +190,21 @@ class userController extends Controller
                             ->where('activation_code','=',$input['h_code'])
                             ->orWhere('email','=',$input['h_email'])
                             ->first();
-                /*$user = user_info::where('user_id',$user_id->id)
-                                ->update([
-                                    'first_name'    => $input['fname'],
-                                    'middle_name'   => $input['mname'],
-                                    'last_name'     => $input['lname'],
-                                    'perm_address'  => $input['perm_address']
-                                ]);*/
                 $user = user_info::where('user_id',$user_id->id)->first();
+                $update = [
+                            'first_name'    => $input['fname'],
+                            'middle_name'   => $input['mname'],
+                            'last_name'     => $input['lname'],
+                            'perm_address'  => $input['perm_address'],
+                        ];
+                if($user->sex !== $input['sex']) array_push($update,$input['sex']);
+                if($user->suffix_name !== $input['suffix_name']) array_push($update,$input['suffix_name']);
+                if($user->tempo_address !== $input['tempo_address']) array_push($update,$input['tempo_address']);
+                if($user->office_address !== $input['office_address']) array_push($update,$input['office_address']);
+                user_info::where('user_id',$user_id->id)
+                        ->update($update);
+            
+                /*$user = user_info::where('user_id',$user_id->id)->first();
                 $user->first_name =  $input['fname'];
                 $user->middle_name = $input['mname'];
                 $user->last_name = $input['lname'];
@@ -208,7 +215,7 @@ class userController extends Controller
                 if($user->office_address !== $input['office_address']) $user->office_address = $input['office_address'];
                 
                 $user->updated_at = Carbon::now();
-                $user->save();
+                $user->save();*/
             }
             /*$redirect = 'auth/profile/edit/' . $input['h_code'];
             return redirect()->intended($redirect);*/
