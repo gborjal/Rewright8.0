@@ -1,4 +1,4 @@
-@extends('masterLeapLab')
+@extends('masterleaplab')
 @section('header-content')
     <script type="text/javascript">
       var player2 = {player:null,recorder:null,controller:null};
