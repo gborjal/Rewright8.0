@@ -52,8 +52,9 @@ Route::middleware(['web'])->group(function () {
 			//Route::post('edit/{code}', [userController::class,'editUserProfile1'])->name('editProfile');
 		});
 	});
-	
-	/*Route::post('auth/profile/save', [userController::class,'saveEditUserProfile'])->name('postEditProfile');	//ajax request*/
+	Route::prefix('/recordings')->group(function () {
+		Route::get('lab', [taskController::class,'vanillaLab']);
+	});
 	
 });
 

@@ -124,8 +124,8 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 	});
 	Route::get('/preview/{id}', [taskController::class,'reviewExercise']);				//ajax request
 	Route::prefix('/recordings')->group(function () {
-		Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
-		Route::get('lab', [taskController::class,'vanillaLab']);				
+		//Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
+		//Route::get('lab', [taskController::class,'vanillaLab']);				
 		Route::post('exer/result/', [taskController::class,'getResultData']);	//ajax request\
 		Route::get('exer/{id}', [taskController::class,'getExerDataTask']);	//ajax request\
 		Route::get('patient_exer/{id}', [taskController::class,'getPatientExerDataTask']);	//ajax request\
