@@ -53,7 +53,7 @@ Route::middleware(['web'])->group(function () {
 		});
 	});
 	Route::prefix('/recordings')->group(function () {
-		Route::get('lab', [taskController::class,'vanillaLab']);
+		Route::get('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');
 	});
 	
 });
