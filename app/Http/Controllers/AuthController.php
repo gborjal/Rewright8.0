@@ -103,7 +103,8 @@ class AuthController extends Controller
                 }
                 $tokenResult = $user->createToken('authToken')->plainTextToken;
 
-                return redirect()->route('dashboardAdmin',['authToken'=>$tokenResult]);
+                return redirect()->route('dashboardAdmin')
+                        ->with('authToken',$tokenResult);
                         
             }else{               
                 if($field === "email"){
@@ -232,8 +233,9 @@ class AuthController extends Controller
                 }
                 $tokenResult = $user->createToken('authToken')->plainTextToken;
 
-                return redirect()->route('dashboard',['authToken'=>$tokenResult])
-                    ->with('project',Auth::user()->projects->first()->project_id);
+                return redirect()->route('dashboard')
+                    ->with('project',Auth::user()->projects->first()->project_id)
+                    ->with('authToken',$tokenResult);
             }else{                
                 if($field === "email"){
                     if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
