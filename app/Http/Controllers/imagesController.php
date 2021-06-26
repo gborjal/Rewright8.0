@@ -16,7 +16,7 @@ class imagesController extends Controller
         if($image == null)
             $image = "notavailable.jpg";
 
-    	if(!Storage::disk('public')->has($image)){
+    	if(!Storage::disk('local')->has($image)){
     		$response = [
     			'success'	=> False,
     			'message'	=> "Image unavailable"
@@ -24,7 +24,7 @@ class imagesController extends Controller
     		return response()
     			->json($response);
     	}
-        $storagePath = public::disk('local')->get($image);
+        $storagePath = Storage::disk('local')->get($image);
         $size = 300;
         if($type == 'f')
             $size = 300;
@@ -40,7 +40,7 @@ class imagesController extends Controller
         if($image == null)
             $image = "notavailable.jpg";
 
-        if(!Storage::disk('public')->has($image)){
+        if(!Storage::disk('local')->has($image)){
             $response = [
                 'success'   => False,
                 'message'   => "Image unavailable"
@@ -48,7 +48,7 @@ class imagesController extends Controller
             return response()
                 ->json($response);
         }
-        $storagePath = Storage::disk('public')->get($image);
+        $storagePath = Storage::disk('local')->get($image);
         $size = 300;
         if($type == 'f')
             $size = 300;
@@ -61,7 +61,7 @@ class imagesController extends Controller
 
     public function discussionImage($image)
     {
-    	if(!Storage::disk('public')->has($image)){
+    	if(!Storage::disk('local')->has($image)){
     		$response = [
     			'success'	=> False,
     			'message'	=> "Image unavailable"
@@ -69,7 +69,7 @@ class imagesController extends Controller
     		return response()
     			->json($response);
     	}
-        $storagePath = Storage::disk('public')->get($image);
+        $storagePath = Storage::disk('local')->get($image);
 
         return Image::make($storagePath)->response();
     }
