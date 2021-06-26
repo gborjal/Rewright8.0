@@ -299,6 +299,7 @@ class discussionController extends Controller
             }else{
 
                 $input+=['user_id'=>Auth::user()->id];
+                $input+=['active'=>true];
                 $newDisc = discussion::create($input);
                 $user_ids = developer::select('user_id')
                         ->where('project_id','=',$newDisc['project_id'])
