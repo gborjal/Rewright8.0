@@ -52,8 +52,14 @@ Route::middleware(['web'])->group(function () {
 			//Route::post('edit/{code}', [userController::class,'editUserProfile1'])->name('editProfile');
 		});
 	});
+	Route::get('/preview/{id}', [taskController::class,'reviewExercise']);
 	Route::prefix('/recordings')->group(function () {
 		Route::get('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');
+
+		Route::get('exer/{id}', [taskController::class,'getExerDataTask']);	//ajax request\
+		Route::get('patient_exer/{id}', [taskController::class,'getPatientExerDataTask']);	//ajax request\
+		Route::get('training/{id}', [taskController::class,'getTrainingDataTask']);	//ajax request\
+		Route::get('preview/{id}', [taskController::class,'getExerData']);
 	});
 	
 });
