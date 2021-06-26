@@ -49,7 +49,8 @@ class userController extends Controller
                 ->route('showAdminLoginForm')
                 ->with('error','Account is an admin.');
         }else if(Auth::user()->user_types === 1){
-                return view('dashboard');
+            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+                return view('dashboard',['authToken'=>$tokenResult]); 
         }else if(Auth::user()->user_types === 2){
                 return view('dashboard2');   
         }
