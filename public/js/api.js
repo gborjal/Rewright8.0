@@ -363,7 +363,7 @@ function updateGenContent(artcle){
 		if(artcle.project_name.length >25){
 			dtls+= '<div class="tags"><div class="chip">'+ artcle.project_name.substr(0,25) +'...</div><div class="chip"><img src="http://' + siteUrl + '/profile/image/get/t/'+ artcle.profile +'" alt="Contact Person">'+ artcle.first_name +' '+ artcle.last_name +'</div></div>';
 		}else{
-			dtls+= '<div class="tags"><div class="chip">'+ artcle.project_name +'</div><div class="chip"><img src="http://' + siteUrl + '/profile/image/get/t/'+ artcle.profile +'" alt="Contact Person">'+ artcle.first_name +' '+ artcle.last_name +'</div></div>';
+			dtls+= '<div class="tags"><div class="chip">'+ artcle.project_name +'</div><div class="chip"><img src="http://' + siteUrl + '/profile/image/get/t/'+ artcle.profile +'">'+ artcle.first_name +' '+ artcle.last_name +'</div></div>';
 		}
 	if(details.is(':parent') ){
 		details.empty();
