@@ -1,4 +1,4 @@
-@extends('masterLeapLab')
+@extends('masterleaplab')
 @section('header-content')
     <script type="text/javascript">
       var pageid = parseInt({{ $pageid }}); 
