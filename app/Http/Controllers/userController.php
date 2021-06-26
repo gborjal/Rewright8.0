@@ -50,9 +50,10 @@ class userController extends Controller
                 ->with('error','Account is an admin.');
         }else if(Auth::user()->user_types === 1){
             $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
-                return view('dashboard',['authToken'=>$tokenResult]); 
+            return view('dashboard',['authToken'=>$tokenResult]); 
         }else if(Auth::user()->user_types === 2){
-                return view('dashboard2');   
+            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+            return view('dashboard2',['authToken'=>$tokenResult]); 
         }
         
     }
@@ -63,7 +64,8 @@ class userController extends Controller
     */
     public function dashboardAdmin(Request $request){
         if(Auth::user()->user_types === 0){
-            return view('dashboardAdmin');//$request->user()->username; 
+            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+            return view('dashboardAdmin',['authToken'=>$tokenResult]);//$request->user()->username; 
         }else{
             Auth::guard('web')->logout();
             //Auth::logout();
