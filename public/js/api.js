@@ -346,6 +346,7 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 function updateGenContent(artcle){
 	//details
 	var details = $('#div_details','#genContent');
+	console.log(artcle.updated_at.date);
 	if(artcle.updated_at){
 		var year = Number(artcle.updated_at.date.substr(0,4));
 		var day  = Number(artcle.updated_at.date.substr(9,1));
