@@ -333,7 +333,7 @@ class discussionController extends Controller
                                 array_push($invalidImg,$cntr);
                             }else{
                                 $imageName = uniqid('',True) . '.' . $image->getClientOriginalExtension();
-                                Storage::put($imageName,file_get_contents($image->getRealPath()));
+                                Storage::disk('local')->put($imageName,file_get_contents($image->getRealPath()));
                                 $db_images.= $imageName . ",";
                             }
                         }else{
@@ -421,7 +421,7 @@ class discussionController extends Controller
                                 array_push($invalidImg,$cntr);
                             }else{
                                 $imageName = uniqid('',True) . '.' . $image->getClientOriginalExtension();
-                                Storage::put($imageName,file_get_contents($image->getRealPath()));
+                                Storage::disk('local')->put($imageName,file_get_contents($image->getRealPath()));
                                 $db_images.= $imageName . ",";
                             }
                         }else{
