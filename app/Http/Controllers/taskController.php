@@ -856,7 +856,7 @@ class taskController extends Controller
                         }else{
                             
                             $leapName = uniqid('',True) . '.json.' . $leapData->getClientOriginalExtension();
-                            Storage::put('trainingData/'.$leapName,file_get_contents($leapData->getRealPath()));
+                            Storage::disk('local')->put('trainingData/'.$leapName,file_get_contents($leapData->getRealPath()));
                             $db_leap_files.= $leapName;// . ",";
                         }
                     }else{
@@ -892,7 +892,7 @@ class taskController extends Controller
                                 array_push($invalidImg,$cntr);
                             }else{
                                 $imageName = uniqid('',True) . '.' . $image->getClientOriginalExtension();
-                                Storage::put($imageName,file_get_contents($image->getRealPath()));
+                                Storage::disk('local')->put($imageName,file_get_contents($image->getRealPath()));
                                 $db_images.= $imageName . ",";
                             }
                         }else{
@@ -976,7 +976,7 @@ class taskController extends Controller
                         }else{
                             
                             $leapName = uniqid('',True) . '.json.lz';
-                            Storage::put('trainingData/'.$leapName,file_get_contents($leapData->getRealPath()));
+                            Storage::disk('local')->put('trainingData/'.$leapName,file_get_contents($leapData->getRealPath()));
                             $db_leap_files.= $leapName;// . ",";
                         }
                         $task_exer_data = task_exer_data::find(intval($input['id']));
@@ -1114,7 +1114,7 @@ class taskController extends Controller
                         }else{
                             
                             $resultName = uniqid('',True) . '.json';
-                            Storage::put('trainingData/'.$resultName,file_get_contents($resultData->getRealPath()));
+                            Storage::disk('local')->put('trainingData/'.$resultName,file_get_contents($resultData->getRealPath()));
                             $db_leap_files.= $resultName;// . ",";
                         }
                         $task_exer_data = task_exer_data::find(intval($input['id']));
@@ -1202,7 +1202,7 @@ class taskController extends Controller
                         }else{
                             
                             $leapName = uniqid('',True) . '.json.' . $leapData->getClientOriginalExtension();
-                            Storage::put('trainingData/'.$leapName,file_get_contents($leapData->getRealPath()));
+                            Storage::disk('local')->put('trainingData/'.$leapName,file_get_contents($leapData->getRealPath()));
                             $db_leap_files.= $leapName;// . ",";
                         }
                     }else{
