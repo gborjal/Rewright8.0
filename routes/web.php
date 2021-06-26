@@ -61,7 +61,7 @@ Route::middleware(['web'])->group(function () {
 		Route::get('training/{id}', [taskController::class,'getTrainingDataTask']);	//ajax request\
 		Route::get('preview/{id}', [taskController::class,'getExerData']);
 	});
-	
+	Route::get('/tasks/{id}', [taskController::class,'openTask']);				
 });
 
 

@@ -64,8 +64,6 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::get('image/{image}', [imagesController::class,'discussionImage']);	//possible change
 	});
 	Route::prefix('/tasks')->group(function () {
-
-		Route::get('{id}', [taskController::class,'openTask']);				//ajax request
 		Route::get('/', [taskController::class,'openTasks']);
 		Route::post('board', [taskController::class,'getTasks'])->name('taskBoard');	//ajax request
 		//Route::get('board', [taskController::class,'getTasks']);
@@ -122,7 +120,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::post('joinProject/{id}', [projectsController::class,'joinProject'])->name('joinProject');	//ajax request
 		//Route::get('joinProject/{id}', [projectsController::class,'joinProject']);	
 	});
-	Route::get('/preview/{id}', [taskController::class,'reviewExercise']);				//ajax request
+	
 	Route::prefix('/recordings')->group(function () {
 		//Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
 		//Route::get('lab', [taskController::class,'vanillaLab']);				
