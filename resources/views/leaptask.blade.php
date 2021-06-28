@@ -243,11 +243,12 @@
         angular.bootstrap(dvRecorder, ['Recorder']);
       });
       $(document).ready(function(){
-        $(".button-collapse").sideNav({
-          menuWidth:window.innerWidth - (window.innerWidth/3),
-          edge: 'right'
-        });
-
+        $(".button-collapse").sidenav({ 
+          {
+            menuWidth: window.innerWidth - (window.innerWidth/3), // Default is 240
+            edge: 'right', // Choose the horizontal origin
+          }
+        );
       });
       /*var resultTotal = (function similarityResultTotal(result){
             var cnt = 0;
