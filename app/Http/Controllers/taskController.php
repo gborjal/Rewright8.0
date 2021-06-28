@@ -385,7 +385,8 @@ class taskController extends Controller
      */
     public function vanillaLab(Request $request){
         //authenticate before proceeding
-        return view('leapvanilla',[]); 
+        $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+        return view('leapvanilla',['authToken'=>$tokenResult]); 
         
     }
     /**
@@ -396,9 +397,10 @@ class taskController extends Controller
     public function openTask(Request $request,$id){
         //authenticate before proceeding
         $task_exer_data = task_exer_data::find($id);
-        if(!is_null($task_exer_data)){
-
-            return view('leaptask',['pageid' => $id,'exer_id'=>$task_exer_data->exer_data_id,'p_exer_id'=>$task_exer_data->patient_exer_data_id,'resScore'=>$task_exer_data->resultScore,'adjustedResScore'=>$task_exer_data->adjustedResultScore]); 
+        if(!is_null($task_exer_data)){ 
+            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+            
+            return view('leaptask',['pageid' => $id,'exer_id'=>$task_exer_data->exer_data_id,'p_exer_id'=>$task_exer_data->patient_exer_data_id,'resScore'=>$task_exer_data->resultScore,'adjustedResScore'=>$task_exer_data->adjustedResultScore,'authToken'=>$tokenResult]); 
         }else{
             return redirect()->route('dashboard');
         }
@@ -412,7 +414,8 @@ class taskController extends Controller
     public function reviewExercise(Request $request,$id){
         //authenticate before 
         //$task_exer_data = task_exer_data::find($id);
-        return view('leappreview',['pageid' => $id]);//,'exer_id'=>$task_exer_data->exer_data_id]);        
+        $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+        return view('leappreview',['pageid' => $id, 'authToken'=>$tokenResult]);//,'exer_id'=>$task_exer_data->exer_data_id]);        
     }
     /**
      *  open tasks
