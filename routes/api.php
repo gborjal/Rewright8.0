@@ -61,7 +61,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::get('comments/{$id}', [discussionController::class,'getComments']);
 		Route::post('upvotes', [discussionController::class,'postUpvotes'])->name('discUpvotes');	//ajax request
 		//Route::get('upvotes', [discussionController::class,'postUpvotes']);
-		Route::get('image/{image}', [imagesController::class,'discussionImage']);	//possible change
+		//Route::get('image/{image}', [imagesController::class,'discussionImage']);	//possible change
 	});
 	Route::prefix('/tasks')->group(function () {
 		Route::get('/', [taskController::class,'openTasks']);
@@ -109,10 +109,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		
 	});
 	//});
-	Route::prefix('/profile')->group(function () {
-		Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
-		Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
-	});
+	
 	Route::prefix('/project')->group(function () {
 		Route::post('getProjects', [projectsController::class,'getProjects'])->name('getProjects');	//ajax request
 		//Route::get('getProjects', [projectsController::class,'getProjects']);	//ajax request
