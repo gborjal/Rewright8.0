@@ -61,7 +61,12 @@ Route::middleware(['web'])->group(function () {
 		Route::get('training/{id}', [taskController::class,'getTrainingDataTask']);	//ajax request\
 		Route::get('preview/{id}', [taskController::class,'getExerData']);
 	});
-	Route::get('/tasks/{id}', [taskController::class,'openTask']);				
+	Route::get('/tasks/{id}', [taskController::class,'openTask']);
+	Route::prefix('/profile')->group(function () {
+		Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
+		Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
+	});
+	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);	//possible change
 });
 
 
