@@ -33,7 +33,8 @@ class imagesController extends Controller
         }
        
         //return Image::make($storagePath)->resize($size,$size)->response();
-        return Storage::get($storagePath);
+        //return Storage::get($storagePath);
+        return Image::make($storagePath)->response();
     }
 
 	public function forcedGetPicture($type,$image)
@@ -58,7 +59,8 @@ class imagesController extends Controller
         }
        
         //return Image::make($storagePath)->resize($size,$size)->response();
-        return Storage::get($storagePath);
+        //return Storage::get($storagePath);
+        return Image::make($storagePath)->response();
     }
 
     public function discussionImage($image)
@@ -73,7 +75,7 @@ class imagesController extends Controller
     	}
         $storagePath = Storage::disk('local')->get($image);
 
-        //return Image::make($storagePath)->response();
-        return Storage::get($storagePath);
+        return Image::make($storagePath)->response();
+        //return Storage::get($storagePath);
     }
 }
