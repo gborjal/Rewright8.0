@@ -13,13 +13,7 @@
 				</div>
 			</div>
 		</nav>
-		<ul id="nav-desktop" class="sidenav sidenav-fixed">
-			<li class="no-padding">
-				<a href="#!">
-					<i class="material-icons left">schedule</i> Timeline
-					{{-- timeline --}}
-				</a>
-			</li>										
+		<ul id="nav-desktop" class="sidenav sidenav-fixed">									
 			<li class="no-padding">
 				<a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}">
 				
