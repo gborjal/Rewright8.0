@@ -42,11 +42,11 @@ function updateTaskInfoDetail(artcle,details,genContent){
 //details
   var details = details;
   if(artcle.updated_at){
-    var year = Number(artcle.updated_at.date.substr(0,4));
-    var day  = Number(artcle.updated_at.date.substr(9,1));
-    var month= Number(artcle.updated_at.date.substr(6,1)) - 1;
-    var hour = Number(artcle.updated_at.date.substr(11,2));
-    var min  = Number(artcle.updated_at.date.substr(14,2));
+    var year = Number(artcle.updated_at.substr(0,4));
+    var day  = Number(artcle.updated_at.substr(9,1));
+    var month= Number(artcle.updated_at.substr(6,1)) - 1;
+    var hour = Number(artcle.updated_at.substr(11,2));
+    var min  = Number(artcle.updated_at.substr(14,2));
 
     var date = new Date(year,month,day,hour,min);
   }else{
@@ -84,7 +84,10 @@ function submitAdjustedScore(){
         success:function(data){
           if(data.status == 'success'){ 
               var toastContent = "<span>" + data.message + "</span>";
-              Materialize.toast(toastContent, 1000, 'red darken-4');
+              M.toast({   html:toastContent,
+                            displayLength:1000, 
+                            classes:'red darken-4'
+                        });
           }           
           return true;
         },error:function(){ 
