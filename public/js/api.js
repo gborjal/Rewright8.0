@@ -26,14 +26,18 @@ function addNode(parent,type,id,name,classTxt,value,inpType,textNode){
 	parent.appendChild(tmp);
 	return tmp;
 }
-function ajaxSubmitPostings(formId,dataform){
-	var error;
+function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
+	var error;,
+	
 		$.ajax({
+			connection: (keepAlive) ? "Keep-Alive": "close",
+			keep-alive: (keepAlive) ? 'timeout=10, max='+timeoutMax
             url: $(formId).attr('action'),
             processData: false,
 			contentType: false,
 			mimeType: 'multipart/form-data',
             method:"POST",
+
             data: dataform,
             
             success:function(data){

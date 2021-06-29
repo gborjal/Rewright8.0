@@ -922,7 +922,7 @@ $('a').on('click', function() {
 				dataform.append('leapData',$('#leapData').val());
 				dataform.append('patientData',$('#patientData').val());
 								
-				if(ajaxSubmitPostings(formId,dataform)){
+				if(ajaxSubmitPostings(formId,dataform,true,5000)){
 					resetPostings('addl_post_task',2);
 					//reset postings
 				}
