@@ -27,7 +27,7 @@ function addNode(parent,type,id,name,classTxt,value,inpType,textNode){
 	return tmp;
 }
 function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
-	var error;,
+	var error;
 	var conn = (keepAlive) ? "Keep-Alive": "close";
 	if(keepAlive){
 		var k = 'timeout=10, max='+timeoutMax;
