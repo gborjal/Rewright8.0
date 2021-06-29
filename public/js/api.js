@@ -28,10 +28,12 @@ function addNode(parent,type,id,name,classTxt,value,inpType,textNode){
 }
 function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 	var error;,
-	
+	var conn = (keepAlive) ? "Keep-Alive": "close";
+	if(keepAlive){
+		var k = 'timeout=10, max='+timeoutMax;
 		$.ajax({
-			connection: (keepAlive) ? "Keep-Alive": "close",
-			keep-alive: (keepAlive) ? 'timeout=10, max='+timeoutMax,
+			connection: 'Keep-Alive',
+			keep-alive: k,
             url: $(formId).attr('action'),
             processData: false,
 			contentType: false,
@@ -78,6 +80,55 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
                 return false;
             }
         });
+    }else{
+    	$.ajax({
+            url: $(formId).attr('action'),
+            processData: false,
+			contentType: false,
+			mimeType: 'multipart/form-data',
+            method:"POST",
+
+            data: dataform,
+            
+            success:function(data){
+            	var success = (JSON.parse(data).success) ? JSON.parse(data).success: undefined;
+            	var status = (JSON.parse(data).status) ? JSON.parse(data).status: undefined;
+            	var msg = JSON.parse(data).message;
+            	
+            	if(!success || !status){
+            		if(typeof msg != "object"){
+            			var toastContent = "<span>" + msg + "</span>";
+	                   	M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
+            		}else{
+            			for(errors of Object.values(msg)){
+		                    var toastContent = "<span>" + errors + "</span>";
+		                   	M.toast({   html:toastContent,
+	                            displayLength:5000, 
+	                            classes:'red darken-4'
+	                        });
+		                }
+            		}
+	            	
+	            }else{
+					var toastContent = "<span>Success</span>";
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
+	            }
+				return true;
+            },error:function(data){ 
+                for(errors of JSON.parse(data).message){
+	                var toastContent = "<span>" + errors + "</span>";
+	                Materialize.toast(toastContent, 1000, 'red darken-4');
+	            }
+                return false;
+            }
+        });
+    }
     if(error == undefined){
     	return true;
     }
