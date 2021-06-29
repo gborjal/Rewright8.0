@@ -33,7 +33,7 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 		var k = 'timeout=10, max='+timeoutMax;
 		$.ajax({
 			connection: 'Keep-Alive',
-			keep-alive: k,
+			'keep-alive': k,
             url: $(formId).attr('action'),
             processData: false,
 			contentType: false,
