@@ -206,7 +206,7 @@ function loadTasks(id){
     }
 
     $.ajax({
-        url: '/api/task/board',
+        url: '/api/tasks/board',
         type:"POST",
         data: data,
         method: "POST",
