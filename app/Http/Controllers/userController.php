@@ -326,8 +326,8 @@ class userController extends Controller
                         $searchStr = strtoupper('%' . str_replace(' ', '%',$input['search']) . '%');
                         $query = DB::table('users_info')
                                     ->select('users_info.user_id as id')
-                                    ->where([
-                                                [DB::raw('UPPER(CONCAT(first_name, " ",middle_name," ", last_name))'),"LIKE",$searchStr], 
+                                    ->whereRaw('UPPER(CONCAT(first_name, " ",middle_name," ", last_name)) LIKE ?',[$searchStr])
+                                    ->where([                                    
                                                 ['developers.project_id','=',Auth::user()->projects[Auth::user()->user_types]->project_id],
                                                 ['users_info.user_id','<>',intval(Auth::user()->id)]
                                             ])
