@@ -130,7 +130,7 @@ function loadNotes(id){
     $.ajax({
       url: '/api/note/list/',
       data: data,
-      method: "POST",
+      method: "GET",
       success:function(data){
 
         if(data.status == 'success'){
