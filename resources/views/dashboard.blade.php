@@ -15,13 +15,13 @@
 		</nav>
 		<ul id="nav-desktop" class="sidenav sidenav-fixed">									
 			<li class="no-padding">
-				<a href="/discussion/board" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}">
+				<a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}">
 				
 					<i class="material-icons left">question_answer</i>Thread {{-- discussions board --}}
 				</a>
 			</li>			
 			<li class="no-padding"><!-- task timeline -->
-				<a href="/task/board" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}">
+				<a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}">
 					<i class="material-icons left">work</i>	Tasks			{{-- tasks board --}}
 				</a>
 			</li>							
