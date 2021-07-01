@@ -324,7 +324,7 @@ class userController extends Controller
                 }else if(!$validator_owner_name->fails()){
                     //try{
                         $searchStr = strtoupper('%' . str_replace(' ', '%',$input['search']) . '%');
-                        echo $searchStr;
+                        
                         $query = DB::table('users_info')
                                     ->select('users_info.user_id as id')
                                     ->whereRaw("UPPER(first_name) LIKE ?",[$searchStr])
