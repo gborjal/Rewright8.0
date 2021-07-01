@@ -23,16 +23,16 @@ function searchPatient(){
             
             if(status == "validatorFail"){
                 
-                for(errors of msg){
-                    var toastContent = "<span>" + errors + "</span>";
+                for(var message in msg){                    
+                    var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
                             classes:'red darken-4'
                         });
                 }
             }else if(status == "fail"){
-                for(errors of msg){
-                    var toastContent = "<span>" + errors + "</span>";
+                for(var message in msg){                    
+                    var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
                             classes:'red darken-4'
@@ -40,7 +40,7 @@ function searchPatient(){
                 }
             }else if(status == "success"){
                 
-                for(result of msg){
+                for(var result in msg){
                     if(result.length != 0){
                         if(searchRes.length == 0){
                             searchRes.push(result);
