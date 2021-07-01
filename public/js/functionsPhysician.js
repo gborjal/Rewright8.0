@@ -127,7 +127,7 @@ function loadNotes(id){
     }
 
     $.ajax({
-      url: '/note/list/',
+      url: '/api/note/list/',
       type:"POST",
       data: data,
       method: "POST",
@@ -206,7 +206,7 @@ function loadTasks(id){
     }
 
     $.ajax({
-        url: 'taskBoard',
+        url: '/api/task/board',
         type:"POST",
         data: data,
         method: "POST",
@@ -278,7 +278,7 @@ function loadDiscs(id){
         }
     var resDisc = [];
     $.ajax({
-        url: 'discussionBoard',
+        url: '/api/discussion/board',
         type:"POST",
         data: data,
         method: "POST",
