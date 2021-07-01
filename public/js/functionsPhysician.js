@@ -125,7 +125,7 @@ function loadNotes(id){
         
         id:id
     }
-
+    console.log(data);
     $.ajax({
       url: '/api/note/list/',
       type:"POST",
