@@ -922,7 +922,7 @@ $('a').on('click', function() {
 				dataform.append('leapData',$('#leapData').val());
 				dataform.append('patientData',$('#patientData').val());
 								
-				if(ajaxSubmitPostings(formId,dataform,true,5000)){
+				if(ajaxSubmitPostings(formId,dataform,true,50000)){
 					resetPostings('addl_post_task',2);
 					//reset postings
 				}
@@ -934,7 +934,7 @@ $('a').on('click', function() {
 				dataform.append('title',$(formId+' [name=title]')[0].value);
 				dataform.append('leapData',$(formId+' [name=leapData]')[0].files[0]);
 								
-				if(ajaxSubmitPostings(formId,dataform)){
+				if(ajaxSubmitPostings(formId,dataform,true,50000)){
 					//materialize toast : success
 					//resetPostings('addl_post_task',1);
 					//reset postings
