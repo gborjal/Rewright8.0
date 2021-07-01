@@ -70,14 +70,14 @@ function searchPatient(){
                     var header_ul = addNode(div_header,"ul",undefined,undefined,"collection");
                     var header_li = addNode(header_ul,"li",undefined,undefined,"collection-item avatar");
                     var img_prof = addNode(header_li,"img",undefined,undefined,"profile circle");
-                        img_prof.src = "http://" + siteUrl + "/discussion/image/"+result[0].profile;
+                        img_prof.src = "https://" + siteUrl + "/discussion/image/"+result[0].profile;
                         img_prof.alt = 'notavailable';
                     var fullname = result[0].first_name + " " + result[0].middle_name + " " + result[0].last_name;
                         fullname += (result[0].suffix_name) ? result[0].suffix_name: " ";
                         addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,fullname);
                     var a = addNode(header_li,'a',undefined,undefined,"btn waves-effect",undefined,undefined,"Profile");
                     //var siteUrl = window.location.href.split('/')[2];
-                        a.href = "http://" + siteUrl + "/auth/profile/edit/" + result[0].code;
+                        a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
 
                     var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
@@ -154,7 +154,7 @@ function loadNotes(id){
                 if(info.exer_data){
                     var secCont = addNode(header_li,"div",undefined,undefined,"secondary-content");
                         a = addNode(secCont,"a",undefined,undefined,"btn-flat tooltipped");
-                        a.href = "http://" + siteUrl + "/tasks/" + info.exer_data;
+                        a.href = "https://" + siteUrl + "/tasks/" + info.exer_data;
                         a.target = "blank";
                         a.setAttribute('data-position',"left");
                         a.setAttribute("data-delay","50");
@@ -186,9 +186,9 @@ function loadNotes(id){
         
          
         return true;
-      },error:function(){ 
-          alert("An Error!!!!");
-          return false;
+      },error:function(data){ 
+            error = data.status;
+            return false;
       }
     });
 
