@@ -274,8 +274,8 @@ class userController extends Controller
                 '_token',
                 'search',
                 ]);
-                $validator_email = Validator::make($input, ['search'     => 'required|email|max:255']);
-                $validator_owner_name = Validator::make($input, ['search'     => 'required|string|max:255']);
+                $validator_email = Validator::make($input, ['search'        => 'required|email|max:255']);
+                $validator_owner_name = Validator::make($input, ['search'   => 'required|string|max:255']);
 
                 if (!$validator_email->fails()) {
                     try{
@@ -322,7 +322,7 @@ class userController extends Controller
                             ->json($response);
                     }
                 }else if(!$validator_owner_name->fails()){
-                    try{
+                    //try{
                         $searchStr = strtoupper('%' . str_replace(' ', '%',$input['search']) . '%');
                         $query = DB::table('users_info')
                                     ->select('users_info.user_id as id')
@@ -330,7 +330,6 @@ class userController extends Controller
                                     ->where('developers.project_id','=',Auth::user()->projects[Auth::user()->user_types]->project_id)
                                     ->where('users_info.user_id','<>',intval(Auth::user()->id))
                                     ->leftjoin("developers","developers.user_id",'=','users_info.user_id')
-                                    
                                     ->get();
                         if(!is_null($query)){
                             if(count($query)== 0){
@@ -356,13 +355,13 @@ class userController extends Controller
                                 return response()
                                     ->json($response);
                         }
-                    } catch (PDOException $e) {
+                   /* } catch (PDOException $e) {
                         $response['status'] = 'fail';
                         $response['message'] = 'PDOException. Kindly report this.';
                         
                         return response()
                             ->json($response);
-                    }
+                    }*/
                 } else { // all validation failed
                     $response['status'] = 'validatorFail';
                     $response['message'] = array($validator_email->errors());
