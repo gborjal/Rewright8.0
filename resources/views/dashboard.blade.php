@@ -40,7 +40,7 @@
 			<li><a href="discussionBoard" id='db_disc_board' class='boards' data-link="{{ route('discussionBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left ">question_answer</i>Thread</a></li>	{{-- discussions board --}}
 			<li><a href="taskBoard" id='db_task_board' class='boards' data-link="{{ route('taskBoard') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Tasks</a></li>						{{-- tasks board --}}
 			@if(Auth::user()->user_types ==1)
-			<li><a href="db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}"><i class="material-icons left">work</i>Patients</a></li>						{{-- tasks board --}}
+			<li><a href="db_patients" id='db_patients' class='boards'><i class="material-icons left">work</i>Patients</a></li>						{{-- Patients board --}}
 			@endif
 			<li class="no-padding">																		{{-- Profile --}}
 				<ul id="profileMenu" class="collapsible">
