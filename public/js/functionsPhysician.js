@@ -72,7 +72,9 @@ function searchPatient(){
                     var img_prof = addNode(header_li,"img",undefined,undefined,"profile circle");
                         img_prof.src = "http://" + siteUrl + "/discussion/image/"+result[0].profile;
                         img_prof.alt = 'notavailable';
-                        addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,result[0].first_name + " " + result[0].middle_name + " " + result[0].last_name + result[0].suffix_name);
+                    var fullname = result[0].first_name + " " + result[0].middle_name + " " + result[0].last_name;
+                        fullname += (result[0].suffix_name) ? result[0].suffix_name: " ";
+                        addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,fullname);
                     var a = addNode(header_li,'a',undefined,undefined,"btn waves-effect",undefined,undefined,"Profile");
                     //var siteUrl = window.location.href.split('/')[2];
                         a.href = "http://" + siteUrl + "/auth/profile/edit/" + result[0].code;
