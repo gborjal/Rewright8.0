@@ -328,9 +328,9 @@ class userController extends Controller
                         
                         $query = DB::table('users_info')
                                     ->select('users_info.user_id as id')
-                                    ->whereRaw("UPPER(first_name) LIKE ?",[$searchStr])
-                                    ->whereRaw("UPPER(middle_name) LIKE ?",[$searchStr])
-                                    ->whereRaw("UPPER(last_name) LIKE ?",[$searchStr])
+                                    ->orWhereRaw("UPPER(first_name) LIKE ?",[$searchStr])
+                                    ->orWhereRaw("UPPER(middle_name) LIKE ?",[$searchStr])
+                                    ->orWhereRaw("UPPER(last_name) LIKE ?",[$searchStr])
                                     ->where([                                    
                                                 ['developers.project_id','=',Auth::user()->projects[Auth::user()->user_types]->project_id],
                                                 ['users_info.user_id','<>',intval(Auth::user()->id)]
