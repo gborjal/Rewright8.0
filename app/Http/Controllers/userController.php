@@ -278,7 +278,7 @@ class userController extends Controller
                 $validator_owner_name = Validator::make($input, ['search'   => 'required|string|max:255']);
 
                 if (!$validator_email->fails()) {
-                    $searchStr = strtoupper($input['search']));
+                    $searchStr = strtoupper($input['search']);
                     try{
                         $query = User::select('id')
                                     ->where(DB::raw('UPPER(email)'),'=',$searchStr)
