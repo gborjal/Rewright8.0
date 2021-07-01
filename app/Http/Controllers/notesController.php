@@ -72,7 +72,7 @@ class notesController extends Controller
 	                '_token',
 	                'id',
 				]);
-				echo $input;
+				var_dump($input);
 				$notes = array();
 	            $query_result = note::where([
 	                                    ['patient_id','=',$input['id']],
