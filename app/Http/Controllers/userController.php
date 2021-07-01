@@ -330,7 +330,7 @@ class userController extends Controller
                                                 [DB::raw('UPPER(CONCAT(first_name, " ",middle_name," ", last_name))'),"LIKE",$searchStr], 
                                                 ['developers.project_id','=',Auth::user()->projects[Auth::user()->user_types]->project_id],
                                                 ['users_info.user_id','<>',intval(Auth::user()->id)]
-                                            ]
+                                            ])
                                     ->leftjoin("developers","developers.user_id",'=','users_info.user_id')
                                     ->get();
                         if(!is_null($query)){
