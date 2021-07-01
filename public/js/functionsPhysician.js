@@ -41,6 +41,7 @@ function searchPatient(){
             }else if(status == "success"){
                 
                 for(var result in msg){
+                    console.log(result);
                     if(result.length != 0){
                         if(searchRes.length == 0){
                             searchRes.push(result);
