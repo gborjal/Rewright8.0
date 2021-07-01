@@ -17,12 +17,10 @@ function searchPatient(){
         data: dataform,
         
         success:function(data){
-            console.log(data);
             var status = JSON.parse(data).status;
             var msg = JSON.parse(data).message;
             
             if(status == "validatorFail"){
-                
                 for(var message in msg){                    
                     var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
@@ -39,9 +37,7 @@ function searchPatient(){
                         });
                 }
             }else if(status == "success"){
-                
-                for(var result in msg){
-                    console.log(result);
+                for(result of msg){
                     if(result.length != 0){
                         if(searchRes.length == 0){
                             searchRes.push(result);
