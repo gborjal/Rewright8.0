@@ -279,7 +279,7 @@ class userController extends Controller
 
                 if (!$validator_email->fails()) {
                     $searchStr = strtoupper($input['search']);
-                    try{
+                    //try{
                         $query = User::select('id')
                                     ->where(DB::raw('UPPER(email)'),'=',$searchStr)
                                     ->where('developers.project_id','=',Auth::user()->projects[Auth::user()->user_types]->project_id)
@@ -315,13 +315,13 @@ class userController extends Controller
                                 return response()
                                     ->json($response);
                         }
-                    } catch (PDOException $e) {
+                    /*} catch (PDOException $e) {
                         $response['status'] = 'fail';
                         $response['message'] = array('PDOException. Kindly report this.');
                         
                         return response()
                             ->json($response);
-                    }
+                    }*/
                 }else if(!$validator_owner_name->fails()){
                     //try{
                         $searchStr = strtoupper('%' . str_replace(' ', '%',$input['search']) . '%');
@@ -379,6 +379,6 @@ class userController extends Controller
                 
             }
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
 }
