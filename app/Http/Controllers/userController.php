@@ -278,9 +278,10 @@ class userController extends Controller
                 $validator_owner_name = Validator::make($input, ['search'   => 'required|string|max:255']);
 
                 if (!$validator_email->fails()) {
+                    $searchStr = strtoupper($input['search']));
                     try{
                         $query = User::select('id')
-                                    ->where(DB::raw('UPPER(email)'),'=',$input['search'])
+                                    ->where(DB::raw('UPPER(email)'),'=',$searchStr)
                                     ->where('developers.project_id','=',Auth::user()->projects[Auth::user()->user_types]->project_id)
                                     ->leftjoin("developers","developers.user_id",'=','users.id')
                                     ->get();
