@@ -67,11 +67,12 @@ class notesController extends Controller
      */
     public function getPatientNotes(Request $request){
         if ( $request->ajax() ) {
-            if(Auth::user()->user_types == 1){
+            if(Auth::user()->user_types == 1){ 
 	            $input = $request->only([
 	                '_token',
 	                'id',
 				]);
+				echo $input;
 				$notes = array();
 	            $query_result = note::where([
 	                                    ['patient_id','=',$input['id']],
