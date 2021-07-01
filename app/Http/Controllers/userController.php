@@ -373,8 +373,7 @@ class userController extends Controller
                     array_push($response['message'], $validator_owner_name->errors());
                     
                     return response()
-                        ->json($response)
-                        ->setCallback($request->input('callback'));
+                        ->json($response);
                 }
                 
             }
