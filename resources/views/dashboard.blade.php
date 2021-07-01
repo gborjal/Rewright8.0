@@ -26,7 +26,7 @@
 				</a>
 			</li>							
 			<li class="no-padding"><!-- task timeline -->
-				<a href="#db_patients" id='db_patients' class='boards' data-link="{{ route('noteList') }}" data-token="{{ csrf_token() }}">
+				<a href="#db_patients" id='db_patients' class='boards'>
 					<i class="material-icons left">perm_identity</i>	Patients			{{-- patients --}}
 				</a>
 			</li>
