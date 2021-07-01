@@ -13,17 +13,15 @@
       success:function(data){
         var status = data.status;
         var msg = data.message;
-        if(msg === null || msg === undefined)
+        if(msg === null || msg === undefined){
           similarityResult = [];
-        else{
+        }else{
           similarityResult = JSON.parse(msg);
         }
         return true;
-        },error:function(data){ 
-            
-          
-            return false;
-        }
-      });
+      },error:function(data){ 
+        return false;
+      }
+  });
 
 }).call(this);
