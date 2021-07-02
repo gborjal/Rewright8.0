@@ -71,7 +71,8 @@ Route::middleware(['web'])->group(function () {
 });
 Route::middleware(['Auth:sanctum'])->group(function () {
 	Route::post('/tasks/info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
-	//Route::get('info', [taskController::class,'getTask']);
-}	Route::post('/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
+		//Route::get('info', [taskController::class,'getTask']);
+	Route::post('/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
 			//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
+});
 ?>
