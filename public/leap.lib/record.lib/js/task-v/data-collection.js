@@ -5,7 +5,7 @@
       var dropArea;
       $scope.recordings = [
         {
-          url: '/recordings/preview/'.concat(exer_id,'.json.lz')
+          url: 'api/recordings/preview/'.concat(exer_id,'.json.lz')
         }
       ];
       $scope.title = function() {
@@ -74,7 +74,7 @@
       var dropArea;
       $scope.recordings = [
         {
-           url: '/recordings/patient_exer/'.concat(pageid,'.json.lz')
+           url: 'api/recordings/patient_exer/'.concat(pageid,'.json.lz')
         }
       ];
       $scope.title = function() {
