@@ -65,8 +65,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 	});
 
 	Route::prefix('/tasks')->group(function () {
-		Route::post('info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
-		//Route::get('info', [taskController::class,'getTask']);
+		
 		Route::post('board', [taskController::class,'getTasks'])->name('taskBoard');	//ajax request
 		//Route::get('board', [taskController::class,'getTasks']);
 		Route::get('/', [taskController::class,'openTasks']);
@@ -132,8 +131,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::post('/', [notesController::class,'getNote'])->name('noteInfo');	//ajax request
 		//Route::get('/', [notesController::class,'getNote']);
 		//Route::prefix('/list')->group(function () {
-			Route::post('/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
-			//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
+			
 			Route::post('/list/', [notesController::class,'getPatientNotes'])->name('noteList');	//ajax request
 			Route::get('/list/', [notesController::class,'getPatientNotes']);
 			
