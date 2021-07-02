@@ -70,7 +70,7 @@ Route::middleware(['web'])->group(function () {
 	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);	//possible change
 });
 Route::middleware(['auth:sanctum'])->group(function () {
-	Route::post('tasks/note/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
+	Route::post('/note/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
 	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
 	Route::post('tasks/info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
 	//Route::get('info', [taskController::class,'getTask']);
