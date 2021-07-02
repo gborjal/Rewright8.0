@@ -5,7 +5,7 @@ var data = {
 }
 
 $.ajax({
-      url: 'api/note/list/task',
+      url: '/note/list/task',
       data: data,
       method: "POST",
       success:function(data){
