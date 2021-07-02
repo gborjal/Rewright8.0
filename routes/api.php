@@ -132,7 +132,13 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//Route::prefix('/list')->group(function () {
 			Route::post('/list/', [notesController::class,'getPatientNotes'])->name('noteList');	//ajax request
 			Route::get('/list/', [notesController::class,'getPatientNotes']);
+			
+		//});
 	});
+	Route::post('/tasks/info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
+	//Route::get('info', [taskController::class,'getTask']);
+	Route::post('/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
+	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
 });
 
 

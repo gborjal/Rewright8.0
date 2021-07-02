@@ -13,7 +13,7 @@ var data = {
 }
 
 $.ajax({
-      url: '/tasks/info',
+      url: window.location.hostname + '/api/tasks/info',
       method: "POST",
       data: data,
       success:function(data){
