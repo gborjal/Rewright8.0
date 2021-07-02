@@ -44,7 +44,7 @@ Route::middleware(['web'])->group(function () {
 
 	//Route::get('/dashboard', [userController::class,'dashboard']);
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
-	Route::post('/dashboard', [userController::class,'dashboard'])->name('dashboard');
+	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 	Route::get('admin/dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
 	Route::prefix('auth')->group(function () {;
 		//Profile routes
@@ -69,6 +69,9 @@ Route::middleware(['web'])->group(function () {
 	});
 	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);	//possible change
 });
-
-
+Route::middleware(['Auth:sanctum'])->group(function () {
+	Route::post('/tasks/info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
+	//Route::get('info', [taskController::class,'getTask']);
+}	Route::post('/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
+			//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
 ?>

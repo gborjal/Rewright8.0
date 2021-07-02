@@ -63,14 +63,11 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//Route::get('upvotes', [discussionController::class,'postUpvotes']);
 		//Route::get('image/{image}', [imagesController::class,'discussionImage']);	//possible change
 	});
-	
+
 	Route::prefix('/tasks')->group(function () {
 		Route::get('/', [taskController::class,'openTasks']);
 		Route::post('board', [taskController::class,'getTasks'])->name('taskBoard');	//ajax request
 		//Route::get('board', [taskController::class,'getTasks']);
-		Route::post('info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
-		//Route::get('info', [taskController::class,'getTask']);
-
 	});
 	//Route::middleware(['web', 'cors'])->group(function () {
 	Route::prefix('/post')->group(function () {
