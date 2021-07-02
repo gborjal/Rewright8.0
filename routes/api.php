@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//Route::get('upvotes', [discussionController::class,'postUpvotes']);
 		//Route::get('image/{image}', [imagesController::class,'discussionImage']);	//possible change
 	});
+	
 	Route::prefix('/tasks')->group(function () {
 		Route::get('/', [taskController::class,'openTasks']);
 		Route::post('board', [taskController::class,'getTasks'])->name('taskBoard');	//ajax request
