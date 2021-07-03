@@ -385,7 +385,7 @@ class taskController extends Controller
      */
     public function vanillaLab(Request $request){
         //authenticate before proceeding
-        if(is_null(Auth::user())){
+        if(!is_null(Auth::user())){
             $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
             return view('leapvanilla',['authToken'=>$tokenResult]);
         }else{
