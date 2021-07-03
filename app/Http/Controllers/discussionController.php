@@ -107,7 +107,7 @@ class discussionController extends Controller
                 ->json($response)
                 ->setCallback($request->input('callback'));
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
         
     }
     /**
@@ -150,7 +150,7 @@ class discussionController extends Controller
                 ->json($response)
                 ->setCallback($request->input('callback'));
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
     /**
      *  get comment details and contents
@@ -261,7 +261,7 @@ class discussionController extends Controller
                 ->json($response)
                 ->setCallback($request->input('callback'));
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
     /**
      *  post discussion on board
@@ -363,7 +363,7 @@ class discussionController extends Controller
             }
 
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
      /**
      *  post Comment on board
@@ -446,7 +446,7 @@ class discussionController extends Controller
                     ->json($response);
             }
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
     /**
      *  get Comment COUNT on board
