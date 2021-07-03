@@ -52,7 +52,7 @@
     <div id="dvInfoPanel" >    
         <!--div id="dvSidePanel" class="sidenav" style="z-index:1000000;"-->
 
-          <ul id="sidePanel" class = "sidenav collapsible popout" style="z-index:1000000;"">
+          <ul id="sidePanel" class = "sidenav collapsible popout" style="z-index:1000000;">
             <li>
               <div class="collapsible-header active">
                 <ul class="collection">
