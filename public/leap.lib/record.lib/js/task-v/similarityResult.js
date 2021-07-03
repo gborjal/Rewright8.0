@@ -11,12 +11,12 @@
       data: dataform,
       
       success:function(data){
-        var status = data.status;
-        var msg = data.message;
+        var status = JSON.parse(data).status;
+        var msg = JSON.parse(data).message;
         if(msg === null || msg === undefined){
           similarityResult = [];
         }else{
-          similarityResult = JSON.parse(msg);
+          similarityResult = msg[message]; 
         }
         return true;
       },error:function(data){ 
