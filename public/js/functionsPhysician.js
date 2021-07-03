@@ -82,31 +82,31 @@ function searchPatient(){
 
                     var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
                     var row = addNode(div_body,"div",undefined,undefined,"row");
-                    var div2 = addNode(row,"div",undefined,undefined,"col s12");
-                    var dtls_ul = addNode(div2,"ul",undefined,undefined,"tabs");
+                    var div2 = addNode(row,"div");
+                    var dtls_ul = addNode(div2,"ul",undefined,undefined,"tabs tabs-fixed-width tab-demo z-depth-1");
                     //thread/discussions
-                    var dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab col s3");
+                    var dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
                         a = addNode(dtls_tab,"a",undefined,undefined,"active",undefined,undefined,"Threads");
                         a.href = "#patientResThread"+res_id;
                         a.onclick = loadDiscs(res_id);
                     //tasks    
-                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab col s3");
+                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
                         a = addNode(dtls_tab,"a",undefined,undefined,undefined,undefined,undefined,"Tasks");
                         a.href = "#patientResTask"+res_id;
                         a.onclick = function(){loadTasks(res_id)};
                     //notes
-                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab col s3");
+                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
                         a = addNode(dtls_tab,"a",undefined,undefined,undefined,undefined,undefined,"Notes");
                         a.href = "#patientResNotes"+res_id;
                         a.onclick = function(){ loadNotes(res_id) };
                         
-                    var d = addNode(div2,"div","patientResThread"+result[0].user_id,undefined,undefined,undefined,undefined,undefined);
+                    var d = addNode(div2,"div","patientResThread"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
                     var d_t_d = addNode(d,"div",undefined,undefined,"modal-content container");
                         addNode(d_t_d,"ul",undefined,undefined,"collection");
-                    var t = addNode(div2,"div","patientResTask"+result[0].user_id,undefined,undefined,undefined,undefined,undefined);
+                    var t = addNode(div2,"div","patientResTask"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
                     var t_d = addNode(t,"div",undefined,undefined,"modal-content container");
                         addNode(t_d,"ul",undefined,undefined,"collapsible popout");
-                    var notes = addNode(div2,"div",undefined,undefined,undefined,undefined,undefined,undefined);
+                    var notes = addNode(div2,"div",undefined,undefined,"col s12",undefined,undefined,undefined);
                         addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible popout");
                     $('.tabs').tabs();
                     
