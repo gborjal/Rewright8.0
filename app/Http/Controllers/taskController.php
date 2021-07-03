@@ -389,7 +389,7 @@ class taskController extends Controller
             $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
             return view('leapvanilla',['authToken'=>$tokenResult]);
         }else{
-            redirect()->route('logout');
+            return redirect()->route('logout');
         } 
         
     }
