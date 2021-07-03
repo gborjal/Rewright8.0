@@ -239,11 +239,11 @@
     $(document).ready(function(){
       $(".sidenav").sidenav(
         {
-          menuWidth: window.innerWidth - (window.innerWidth/3), // Default is 240
+          menuWidth: window.innerWidth - (window.innerWidth/3), // Default is 240 
           edge: 'right', // Choose the horizontal origin
         }
       );
-      
+      $('.collapsible').collapsible();
     });
     /*var resultTotal = (function similarityResultTotal(result){
           var cnt = 0;
