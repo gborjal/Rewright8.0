@@ -447,8 +447,6 @@ class taskController extends Controller
             $exer_data = task_exer_data::select('similarityData')
                                         ->where('id','=',intval($input['id']))
                                         ->first();
-            //dd($exer_data->similarityData);
-            //$exer_data = exer_data::find($exer_datas->id);
             if(is_null($exer_data->similarityData) || !Storage::disk('local')->has('trainingData/'.$exer_data['similarityData'])){
                 $response = [
                     'success'   => False,
@@ -920,7 +918,7 @@ class taskController extends Controller
             }
 
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
     /**
      *  post task on board (patient)
@@ -1232,7 +1230,7 @@ class taskController extends Controller
             }
 
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
     /**
      *  post exercise_data
