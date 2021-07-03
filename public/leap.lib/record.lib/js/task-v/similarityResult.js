@@ -4,7 +4,7 @@
   dataform.append('id',pageid);
   
   $.ajax({
-      url: 'api/recordings/exer/result/',
+      url: '/recordings/exer/result/',
       processData: false,
       contentType: false,
       type:"POST",
