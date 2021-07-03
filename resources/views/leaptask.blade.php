@@ -48,7 +48,7 @@
     @endif
 @stop
 @section('body-content')
-  <body>
+  
     <div id="dvInfoPanel" >    
         <!--div id="dvSidePanel" class="sidenav" style="z-index:1000000;"-->
 
@@ -160,7 +160,7 @@
         <i class="large material-icons">chevron_left</i>
       </a>
     </div>
-  <!-- Modal Structure -->
+  
         
     
 
