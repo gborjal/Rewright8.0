@@ -50,9 +50,9 @@
 @section('body-content')
   <body>
     <div id="dvInfoPanel" >    
-        <div id="dvSidePanel" class="sidenav" style="z-index:1000000;">
+        <!--div id="dvSidePanel" class="sidenav" style="z-index:1000000;"-->
 
-          <ul id="sidePanel" class = "collapsible popout">
+          <ul id="sidePanel" class = "sidenav collapsible popout" style="z-index:1000000;"">
             <li>
               <div class="collapsible-header active">
                 <ul class="collection">
@@ -154,16 +154,15 @@
             @endif
           </ul>
         </div>
-        <div class="fixed-action-btn" style="top: 50%; right: 0px;">
-          <a class="btn-floating btn-large button-collapse sidenav-trigger" href="#" data-target="dvSidePanel">
-            <i class="large material-icons">chevron_left</i>
-          </a>
-        </div>
-        
-
+    </div>
+    <div class="fixed-action-btn" style="top: 50%; right: 0px;">
+      <a class="btn-floating btn-large button-collapse sidenav-trigger" href="#" data-target="sidePanel">
+        <i class="large material-icons">chevron_left</i>
+      </a>
+    </div>
   <!-- Modal Structure -->
         
-    </div>
+    
 
     <div id="dvPlayer" >    
         <div id="dcPlayer" data-ng-controller="DataCollection" ng-show="mode != 'recording' && mode != 'off'">          
