@@ -117,15 +117,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//Route::get('joinProject/{id}', [projectsController::class,'joinProject']);	
 	});
 	
-	Route::prefix('/recordings')->group(function () {
-		//Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
-		//Route::get('lab', [taskController::class,'vanillaLab']);				
-		Route::post('exer/result/', [taskController::class,'getResultData']);	//ajax request\
-		Route::get('exer/{id}', [taskController::class,'getExerDataTask']);	//ajax request\
-		Route::get('patient_exer/{id}', [taskController::class,'getPatientExerDataTask']);	//ajax request\
-		Route::get('training/{id}', [taskController::class,'getTrainingDataTask']);	//ajax request\
-		Route::get('preview/{id}', [taskController::class,'getExerData']);	//ajax request\
-	});
+	
 
 	Route::prefix('/note')->group(function () {
 		Route::post('/', [notesController::class,'getNote'])->name('noteInfo');	//ajax request

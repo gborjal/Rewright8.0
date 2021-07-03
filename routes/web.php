@@ -74,5 +74,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
 	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
 	Route::post('tasks/info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
 	//Route::get('info', [taskController::class,'getTask']);
+	Route::prefix('/recordings')->group(function () {
+		//Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
+		//Route::get('lab', [taskController::class,'vanillaLab']);				
+		Route::post('exer/result/', [taskController::class,'getResultData']);	//ajax request\
+		Route::get('exer/{id}', [taskController::class,'getExerDataTask']);	//ajax request\
+		Route::get('patient_exer/{id}', [taskController::class,'getPatientExerDataTask']);	//ajax request\
+		Route::get('training/{id}', [taskController::class,'getTrainingDataTask']);	//ajax request\
+		Route::get('preview/{id}', [taskController::class,'getExerData']);	//ajax request\
+	});
 });
 ?>
