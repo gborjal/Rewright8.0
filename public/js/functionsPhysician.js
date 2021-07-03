@@ -239,7 +239,7 @@ function loadTasks(id){
                         $('#patientResTask'+id).empty();
                     }
                     var par = document.getElementById('patientResTask'+id);
-                    var div = addNode(par,"div",undefined,undefined,"container");
+                    var div = addNode(par,"div",undefined,undefined,"modal-content container");
                     var ul = addNode(div,"ul",undefined,undefined,"collapsible popout");
                     addNode(ul,"li");
                     
