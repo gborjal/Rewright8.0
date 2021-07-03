@@ -56,7 +56,7 @@
   <div id="dvInfoPanel" >    
       <!--div id="dvSidePanel" class="sidenav" style="z-index:1000000;"-->
 
-        <ul id="sidePanel" class = "sidenav collapsible popout" style="z-index:1000000;">
+        <ul id="sidePanel" class = "sidenav collapsible popout" style="z-index:1000000;width:300px">
           <li>
             <div class="collapsible-header active">
               <ul class="collection">
@@ -239,7 +239,6 @@
     $(document).ready(function(){
       $(".sidenav").sidenav(
         {
-          menuWidth: 400, // Default is 240 
           edge: 'right', // Choose the horizontal origin
         }
       );
