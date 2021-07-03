@@ -5,8 +5,8 @@
       var siteUrl = window.location.hostname;
       $.ajaxSetup({
           headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+              'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content')
           }
       });
 
