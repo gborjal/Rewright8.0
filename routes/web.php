@@ -50,8 +50,8 @@ Route::middleware(['web'])->group(function () {
 	});
 	Route::get('/preview/{id}', [taskController::class,'reviewExercise']);
 	Route::get('/recordings/lab', [taskController::class,'vanillaLab'])->name('vanillaLab');
-	Route::post('/recordings/exer/result/', [taskController::class,'getResultData']);	//ajax request\
-	
+	Route::post('/recordings/result/', [taskController::class,'getResultData']);	//ajax request\
+
 	Route::get('/tasks/{id}', [taskController::class,'openTask']);
 	Route::prefix('/profile')->group(function () {
 		Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
