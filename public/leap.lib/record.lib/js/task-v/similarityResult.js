@@ -11,6 +11,7 @@
       data: dataform,
       
       success:function(data){
+        console.log(data);
         var status = JSON.parse(data).status;
         var msg = JSON.parse(data).message;
         if(msg === null || msg === undefined){
