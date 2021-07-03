@@ -20,11 +20,14 @@
               similarityResult = msg; 
             }
           }else{
-            var toastContent = "<span>" + msg + "</span>";
-            M.toast({   html:toastContent,
-                  displayLength:5000, 
-                  classes:'red darken-4'
-              });
+            similarityResult = [];
+            if(msg != '[]'){
+              var toastContent = "<span>" + msg + "</span>";
+              M.toast({   html:toastContent,
+                    displayLength:5000, 
+                    classes:'red darken-4'
+                });
+            }
           }
         return true;
       },error:function(data){ 
