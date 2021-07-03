@@ -78,7 +78,7 @@ class taskController extends Controller
      *  @return array
      */
     public function getTasks(Request $request){
-        //if ( $request->ajax() ) {
+        if ( $request->ajax() ) {
             $err = array();
             $set=array();
             $project_id = $request->get('project');
@@ -375,7 +375,7 @@ class taskController extends Controller
                 ->json($response)
                 ->setCallback($request->input('callback'));
             
-        //}
+        }
         //return redirect()->route('dashboard');
     }
     /**
@@ -385,8 +385,12 @@ class taskController extends Controller
      */
     public function vanillaLab(Request $request){
         //authenticate before proceeding
-        $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
-        return view('leapvanilla',['authToken'=>$tokenResult]); 
+        if(Auth::user()->createToken('authToken')->plainTextToken){
+            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+            return view('leapvanilla',['authToken'=>$tokenResult]);
+        }else{
+            redirect()->route('logout');
+        } 
         
     }
     /**
