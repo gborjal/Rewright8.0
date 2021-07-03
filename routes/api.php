@@ -130,7 +130,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//});
 	});
 
-	
+	Route::post('/recordings/exer/result/', [taskController::class,'getResultData']);	//ajax request\
 });
 
 
