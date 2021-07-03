@@ -42,18 +42,22 @@ class userController extends Controller
     *  @return view
     */
     public function dashboard(Request $request){   
-        if(Auth::user()->user_types === 0){
-            Auth::guard('web')->logout();
-            //Auth::logout();
-            return redirect()
-                ->route('showAdminLoginForm')
-                ->with('error','Account is an admin.');
-        }else if(Auth::user()->user_types === 1){
-            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
-            return view('dashboard',['authToken'=>$tokenResult]); 
-        }else if(Auth::user()->user_types === 2){
-            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
-            return view('dashboard2',['authToken'=>$tokenResult]); 
+        if(!is_null(Auth::user())){
+            if(Auth::user()->user_types === 0){
+                Auth::guard('web')->logout();
+                //Auth::logout();
+                return redirect()
+                    ->route('showAdminLoginForm')
+                    ->with('error','Account is an admin.');
+            }else if(Auth::user()->user_types === 1){
+                $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+                return view('dashboard',['authToken'=>$tokenResult]); 
+            }else if(Auth::user()->user_types === 2){
+                $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+                return view('dashboard2',['authToken'=>$tokenResult]); 
+            }
+        }else{
+            return redirect()->route('logout');
         }
         
     }
@@ -63,16 +67,20 @@ class userController extends Controller
     *  @return view
     */
     public function dashboardAdmin(Request $request){
-        if(Auth::user()->user_types === 0){
-            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
-            return view('dashboardAdmin',['authToken'=>$tokenResult]);//$request->user()->username; 
+        if(!is_null(Auth::user())){
+            if(Auth::user()->user_types === 0){
+                $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+                return view('dashboardAdmin',['authToken'=>$tokenResult]);//$request->user()->username; 
+            }else{
+                Auth::guard('web')->logout();
+                //Auth::logout();
+                return redirect()
+                    ->route('login')
+                    ->with('error','Account is not an admin.');
+            }
         }else{
-            Auth::guard('web')->logout();
-            //Auth::logout();
-            return redirect()
-                ->route('login')
-                ->with('error','Account is not an admin.');
-        }
+            return redirect()->route('logout');
+        }   
     }
     /**
     *
@@ -91,58 +99,61 @@ class userController extends Controller
      * @return View
      */
     public function editUserProfile1($code){
-        
-        if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
-            $user_id = DB::table('users')
-                        ->select('id','email','activation_code as code')
-                        ->where('activation_code','=',$code)
-                        ->first();
-            $user_cnt = user_info::select('*')
+        if(!is_null(Auth::user())){
+            if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
+                $user_id = DB::table('users')
+                            ->select('id','email','activation_code as code')
+                            ->where('activation_code','=',$code)
+                            ->first();
+                $user_cnt = user_info::select('*')
+                                ->where('user_id','=',$user_id->id)
+                                ->count();
+                
+                if($user_cnt == 0){
+                    $user_info_id = DB::table('users_info')->insert([
+                        "user_id"=>$user_id->id,
+                        "profile"=>'1_profile_1.jpg',
+                        "banner"=>'1_banner_1.jpg',
+                        "first_name"=>'',
+                        "middle_name"=>'',
+                        "last_name"=>'',
+                        "suffix_name"=>NULL,
+                        "sex"=>NULL,
+                        "perm_address"=>NULL,
+                        "tempo_address"=>NULL,
+                        "office_address"=>NULL
+                    ]);
+                }
+                $user_info = user_info::select('profile as prof_pic',
+                                            'first_name as fname',
+                                            'middle_name as mname',
+                                            'last_name as lname',
+                                            'suffix_name as sname',
+                                            'sex',
+                                            'perm_address as p_add',
+                                            'tempo_address as t_add',
+                                            'office_address as o_add')
                             ->where('user_id','=',$user_id->id)
-                            ->count();
-            
-            if($user_cnt == 0){
-                $user_info_id = DB::table('users_info')->insert([
-                    "user_id"=>$user_id->id,
-                    "profile"=>'1_profile_1.jpg',
-                    "banner"=>'1_banner_1.jpg',
-                    "first_name"=>'',
-                    "middle_name"=>'',
-                    "last_name"=>'',
-                    "suffix_name"=>NULL,
-                    "sex"=>NULL,
-                    "perm_address"=>NULL,
-                    "tempo_address"=>NULL,
-                    "office_address"=>NULL
-                ]);
+                            ->first();
+                $user = array('prof_pic' => $user_info->prof_pic,
+                                'fname'  => $user_info->fname,
+                                'mname'  => $user_info->mname,
+                                'lname'  => $user_info->lname,
+                                'sname'  => $user_info->sname,
+                                'sex'    => $user_info->sex,
+                                'p_add'  => $user_info->p_add,
+                                't_add'  => $user_info->t_add,
+                                'o_add'  => $user_info->o_add,
+                                'email'  => $user_id->email,
+                                'code'   => $user_id->code);
+                $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
+                return view('profileEdit',['user_info'=>$user])
+                            ->with('authToken',$tokenResult);
+            }else{
+                return redirect()->route('dashboard');
             }
-            $user_info = user_info::select('profile as prof_pic',
-                                        'first_name as fname',
-                                        'middle_name as mname',
-                                        'last_name as lname',
-                                        'suffix_name as sname',
-                                        'sex',
-                                        'perm_address as p_add',
-                                        'tempo_address as t_add',
-                                        'office_address as o_add')
-                        ->where('user_id','=',$user_id->id)
-                        ->first();
-            $user = array('prof_pic' => $user_info->prof_pic,
-                            'fname'  => $user_info->fname,
-                            'mname'  => $user_info->mname,
-                            'lname'  => $user_info->lname,
-                            'sname'  => $user_info->sname,
-                            'sex'    => $user_info->sex,
-                            'p_add'  => $user_info->p_add,
-                            't_add'  => $user_info->t_add,
-                            'o_add'  => $user_info->o_add,
-                            'email'  => $user_id->email,
-                            'code'   => $user_id->code);
-            $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
-            return view('profileEdit',['user_info'=>$user])
-                        ->with('authToken',$tokenResult);
         }else{
-            //view only redirect to another view
+            return redirect()->route('logout');
         }
     }
     
