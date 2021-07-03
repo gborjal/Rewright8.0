@@ -101,10 +101,10 @@ function searchPatient(){
                         a.onclick = function(){ loadNotes(res_id) };
                         
                     var d = addNode(div2,"div","patientResThread"+result[0].user_id,undefined,undefined,undefined,undefined,undefined);
-                    var d_t_d = addNode(d,"div",undefined,undefined,"container");
+                    var d_t_d = addNode(d,"div",undefined,undefined,"modal-content container");
                         addNode(d_t_d,"ul",undefined,undefined,"collection");
                     var t = addNode(div2,"div","patientResTask"+result[0].user_id,undefined,undefined,undefined,undefined,undefined);
-                    var t_d = addNode(t,"div",undefined,undefined,"container");
+                    var t_d = addNode(t,"div",undefined,undefined,"modal-content container");
                         addNode(t_d,"ul",undefined,undefined,"collapsible popout");
                     var notes = addNode(div2,"div",undefined,undefined,undefined,undefined,undefined,undefined);
                         addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible popout");
