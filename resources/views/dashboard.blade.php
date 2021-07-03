@@ -132,7 +132,7 @@
 		@if(Auth::user()->user_types == 1)
 		<div id="genPatientBoard" style ="display:none;">
 			<div class="row">
-				<div class="col s12 m12 l10 offset-l3">
+				<div class="col s12 m12 l10 offset-l2">
 					<div class="search-wrapper card">
 						{!! Form::open(['route'=>'getPatientSrch','id'=>'f_getPatientSrch']) !!}
 						{!! csrf_field() !!}
