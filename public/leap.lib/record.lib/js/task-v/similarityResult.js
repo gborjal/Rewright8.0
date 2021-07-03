@@ -11,14 +11,21 @@
       data: dataform,
       
       success:function(data){
-        console.log(data);
-        var status = JSON.parse(data).status;
-        var msg = JSON.parse(data).message;
-        if(msg === null || msg === undefined){
-          similarityResult = [];
-        }else{
-          similarityResult = msg[message]; 
-        }
+        var status = data.status;
+        var msg = data.message;
+          if(status == true){
+            if(!msg){
+              similarityResult = [];
+            }else{
+              similarityResult = msg; 
+            }
+          }else{
+            var toastContent = "<span>" + msg + "</span>";
+            M.toast({   html:toastContent,
+                  displayLength:5000, 
+                  classes:'red darken-4'
+              });
+          }
         return true;
       },error:function(data){ 
         return false;
