@@ -28,8 +28,6 @@ use App\Http\Controllers\userController;
 Route::middleware(['web'])->group(function () {
 	Route::get('/', [indexController::class,'index']);
 	
-	// Route::prefix('auth')->group(function () {	
-	// 	//Login route
 	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
 	Route::post('login', [AuthController::class,'login']);
 	Route::get('logout',[userController::class,'getLogout'])->name('logout');	
@@ -38,9 +36,6 @@ Route::middleware(['web'])->group(function () {
 		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
 
 		Route::get('admin/logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
-	 	
-	 	//Route::get('logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
-	// });
 
 	//Route::get('/dashboard', [userController::class,'dashboard']);
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
@@ -54,9 +49,9 @@ Route::middleware(['web'])->group(function () {
 		});
 	});
 	Route::get('/preview/{id}', [taskController::class,'reviewExercise']);
-	Route::prefix('/recordings')->group(function () {
-		Route::get('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');
-	});
+	Route::get('/recordings/lab', [taskController::class,'vanillaLab'])->name('vanillaLab');
+	Route::post('/recordings/exer/result/', [taskController::class,'getResultData']);	//ajax request\
+	
 	Route::get('/tasks/{id}', [taskController::class,'openTask']);
 	Route::prefix('/profile')->group(function () {
 		Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
@@ -72,7 +67,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 	Route::prefix('recordings')->group(function () {
 		//Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
 		//Route::get('lab', [taskController::class,'vanillaLab']);				
-		Route::post('exer/result/', [taskController::class,'getResultData']);	//ajax request\
+		
 		Route::get('exer/{id}', [taskController::class,'getExerDataTask']);	//ajax request\
 		Route::get('patient_exer/{id}', [taskController::class,'getPatientExerDataTask']);	//ajax request\
 		Route::get('training/{id}', [taskController::class,'getTrainingDataTask']);	//ajax request\
