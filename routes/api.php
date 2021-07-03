@@ -68,7 +68,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		
 		Route::post('board', [taskController::class,'getTasks'])->name('taskBoard');	//ajax request
 		//Route::get('board', [taskController::class,'getTasks']);
-		Route::get('/', [taskController::class,'openTasks']);
+		//Route::get('/', [taskController::class,'openTasks']);
 	});
 	//Route::middleware(['web', 'cors'])->group(function () {
 	Route::prefix('/post')->group(function () {
@@ -130,7 +130,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		//});
 	});
 
-	Route::post('/recordings/exer/result/', [taskController::class,'getResultData']);	//ajax request\
+	
 });
 
 
