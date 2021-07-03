@@ -74,7 +74,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
 	Route::post('tasks/info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
 	//Route::get('info', [taskController::class,'getTask']);
-	Route::prefix('/recordings')->group(function () {
+	Route::prefix('/tasks/recordings')->group(function () {
 		//Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
 		//Route::get('lab', [taskController::class,'vanillaLab']);				
 		Route::post('exer/result/', [taskController::class,'getResultData']);	//ajax request\
