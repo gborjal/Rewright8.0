@@ -6,6 +6,7 @@
       $.ajaxSetup({
           headers: {
               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
           }
       });
 
@@ -13,8 +14,7 @@
       var tasks=[];
       var user_info = { type: parseInt({{ Auth::user()->user_types }}),
                         token: "{{csrf_token()}}"
-
-      };
+                      };
       var pageid = parseInt({{ $pageid }});
       var exer_id = parseInt({{$exer_id}});
       var p_exer_id = parseInt({{$p_exer_id}});
@@ -50,7 +50,7 @@
 @section('body-content')
   <body>
     <div id="dvInfoPanel" >    
-        <div id="dvSidePanel" class="side-nav" style="z-index:1000000;">
+        <div id="dvSidePanel" class="sidenav" style="z-index:1000000;">
 
           <ul id="sidePanel" class = "collapsible popout">
             <li>
