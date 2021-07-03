@@ -239,7 +239,7 @@
     $(document).ready(function(){
       $(".sidenav").sidenav(
         {
-          menuWidth: window.innerWidth - (window.innerWidth/2), // Default is 240 
+          menuWidth: 400, // Default is 240 
           edge: 'right', // Choose the horizontal origin
         }
       );
