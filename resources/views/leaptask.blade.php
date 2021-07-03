@@ -155,7 +155,7 @@
           </ul>
         </div>
         <div class="fixed-action-btn" style="top: 50%; right: 0px;">
-          <a class="btn-floating btn-large button-collapse" href="#" data-activates="dvSidePanel">
+          <a class="btn-floating btn-large button-collapse sidenav-trigger" href="#" data-target="dvSidePanel">
             <i class="large material-icons">chevron_left</i>
           </a>
         </div>
