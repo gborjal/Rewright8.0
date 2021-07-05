@@ -28,7 +28,8 @@ function addNode(parent,type,id,name,classTxt,value,inpType,textNode){
 }
 function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 	var error;
-	var conn = (keepAlive) ? "Keep-Alive": "close";
+	//var conn = (keepAlive) ? "Keep-Alive": "close";
+	
 	if(keepAlive){
 		var k = 'timeout=10, max='+timeoutMax;
 		$.ajax({
@@ -82,6 +83,7 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
         });
     }else{
     	$.ajax({
+    		connection: 'close',
             url: $(formId).attr('action'),
             processData: false,
 			contentType: false,
