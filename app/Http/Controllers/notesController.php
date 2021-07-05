@@ -58,7 +58,7 @@ class notesController extends Controller
 	                ->setCallback($request->input('callback'));
 	        }
 	    }
-	    return redirect()->route('dashboard');  
+	    //return redirect()->route('dashboard');  
     }
     /**
      *  Get Patient Notes (list)
@@ -109,7 +109,7 @@ class notesController extends Controller
 	                ->setCallback($request->input('callback'));
 	        }
 	    }
-	    return redirect()->route('dashboard');  
+	    //return redirect()->route('dashboard');  
     }
     /**
      *  Get Task_exer_data Notes (list)
@@ -249,6 +249,6 @@ class notesController extends Controller
             }
 
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
 }

@@ -28,7 +28,7 @@ class projectsController extends Controller
 	    	return response()
 	                ->json($response);
       	}
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
     /**
      *  join Projects
@@ -55,7 +55,7 @@ class projectsController extends Controller
 	            'role'          => Auth::user()->user_type
 	    		]);
 	    }
-    	return redirect()->route('dashboard');
+    	//return redirect()->route('dashboard');
     }
     /**
      *  post discussion on board
@@ -99,6 +99,6 @@ class projectsController extends Controller
             }
         
         }
-        return redirect()->route('dashboard');
+        //return redirect()->route('dashboard');
     }
 }

@@ -83,7 +83,7 @@ class adminController extends Controller
                 }
             }
         }
-        return redirect()->route('dashboardAdmin');
+        //return redirect()->route('dashboardAdmin');
     }
     /**
      * Search patient group.
@@ -224,7 +224,7 @@ class adminController extends Controller
                 
             }
         }
-        return redirect()->route('dashboardAdmin');
+        //return redirect()->route('dashboardAdmin');
 
     }
     /* Search patient group.
@@ -320,7 +320,7 @@ class adminController extends Controller
                 
             }
         }
-        return redirect()->route('dashboardAdmin');
+        //return redirect()->route('dashboardAdmin');
 
     }
     /**
@@ -447,7 +447,7 @@ class adminController extends Controller
         }else{
             //logout and redirect
         }
-        return redirect()->route('dashboardAdmin');
+        //return redirect()->route('dashboardAdmin');
     }
 
     /**
