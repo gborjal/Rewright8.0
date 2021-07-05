@@ -85,10 +85,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::prefix('task')->group(function () {
 			Route::post('item', [taskController::class,'postTask'])->name('postTask');	//ajax 
 			//Route::get('item', [taskController::class,'postTask']);
-			Route::post('patient', [taskController::class,'postTaskPatient'])->name('postTaskPatient');	//ajax 
-			//Route::get('patient', [taskController::class,'postTaskPatient']);
-			Route::post('patient/result', [taskController::class,'postTaskPatientResult'])->name('postTaskPatientResult');	//ajax 
-			Route::get('patient/result', [taskController::class,'postTaskPatientResult']);
+			
 		});
 		Route::prefix('exerdata')->group(function () {
 			Route::post('/', [taskController::class,'postExerciseData'])->name('postExerciseData');	//ajax 

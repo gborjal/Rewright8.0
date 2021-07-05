@@ -41,7 +41,7 @@ Route::middleware(['web'])->group(function () {
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 	Route::get('admin/dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
-	Route::prefix('auth')->group(function () {;
+	Route::prefix('auth')->group(function () {
 		//Profile routes
 		Route::prefix('profile')->group(function () {
 			Route::get('edit/{code}',[userController::class,'editUserProfile1']);
@@ -62,8 +62,15 @@ Route::middleware(['web'])->group(function () {
 Route::middleware(['auth:sanctum'])->group(function () {
 	Route::post('/note/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
 	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
-	Route::post('tasks/info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
-	//Route::get('info', [taskController::class,'getTask']);
+	Route::prefix('tasks')->group(function () {;
+		Route::post('info', [taskController::class,'getTask'])->name('taskBoardInfo');	//ajax request
+		//Route::get('info', [taskController::class,'getTask']);
+		Route::post('patient', [taskController::class,'postTaskPatient'])->name('postTaskPatient');	//ajax 
+		//Route::get('patient', [taskController::class,'postTaskPatient']);
+		Route::post('patient/result', [taskController::class,'postTaskPatientResult'])->name('postTaskPatientResult');	//ajax 
+		Route::get('patient/result', [taskController::class,'postTaskPatientResult']);
+
+	});
 	Route::prefix('recordings')->group(function () {
 		//Route::post('lab', [taskController::class,'vanillaLab'])->name('vanillaLab');	//ajax 
 		//Route::get('lab', [taskController::class,'vanillaLab']);				
