@@ -154,14 +154,34 @@ function submitRegForm(){
                         });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
-				M.toast({   html:toastContent,
+                M.toast({   html:toastContent,
                             displayLength:5000, 
                             classes:'red darken-4'
                         });
-				
-                cur.innerHTML = " ";
-				addNode(cur,'h1',undefined,undefined,undefined,undefined,undefined,msg);
-			}
+                
+                var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
+                addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
+                a = addNode(row,'a',undefined,undefined,"btn waves-effect btn-flat",undefined,undefined,"Copy");
+                a.onclick = function(){
+                    var text = msg;
+                    var listener = function(ev) {
+                        ev.clipboardData.setData("text/plain", text);
+                        ev.preventDefault();
+                    };
+                    document.addEventListener("copy", listener);
+                    document.execCommand("copy");
+                    document.removeEventListener("copy", listener);
+                    toastContent = "<span>" + "Copied Code: " + msg + "</span>";
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
+                };
+                var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
+                var siteUrl = window.location.href.split('/')[2];
+                a.href = "https://" + siteUrl + "/auth/profile/edit/" + msg;
+                a.target = "_blank";
+                }
          },error:function(data){ 
             error = data.status;
         }
