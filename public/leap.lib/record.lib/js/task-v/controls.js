@@ -323,7 +323,7 @@
         dataform.append('similarityResult',jsonFile);
         dataform.append('leapData',lzFile);
         $.ajax({
-            url: 'api/post/task/patient',
+            url: 'tasks/patient',
             processData: false,
             contentType: false,
             mimeType: 'multipart/form-data',
@@ -344,7 +344,7 @@
 
         
         $.ajax({
-            url: 'api/post/task/patient/result',
+            url: 'tasks/patient/result',
             processData: false,
             contentType: false,
             mimeType: 'multipart/form-data',
