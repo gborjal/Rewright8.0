@@ -11,7 +11,7 @@
       data: dataform,
       
       success:function(data){
-        var status = data.status;
+        var status = data.success;
         var msg = data.message;
           if(status == true){
             if(!msg){
