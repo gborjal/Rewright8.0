@@ -681,7 +681,9 @@ function populateProjectList(){
 	opt1.setAttribute('disabled', 'disabled');
 	opt1.setAttribute('selected','selected');
 	for(result of patientDataList){
-    	var row = addNode(sel_inp,'option',undefined,undefined,undefined,result.user_id,undefined,result.first_name + " " + result.middle_name + " " + result.last_name + " " + result.suffix_name);
+		var fullname = result.first_name + " " + result.middle_name + " " + result.last_name;
+            fullname += (result.suffix_name) ? result.suffix_name: " ";
+    	var row = addNode(sel_inp,'option',undefined,undefined,undefined,result.user_id,undefined,fullname);
     	var img = addNode(row,'img',undefined,undefined,"secondary-content circle",undefined,undefined,undefined);
     	img.setAttribute('src',"/profile/image/t/"+result.user_id);
     	img.setAttribute('alt','notavailable');
