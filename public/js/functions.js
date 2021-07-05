@@ -962,6 +962,7 @@ $('a').on('click', function() {
 			}
 		}else if($(this).attr('href')==='#post_task'){
 			populateExerData();
+			getPatientList();
 		}else if($(this).attr('href')==='#upImageDisc'){
 			addImage('addl_post_disc','file_img','img_desc_text',discImageCntr);
 	   		$('#m_postings .modal-content').animate({scrollTop:$('#m_postings .modal-content').scrollTop()+120}, 'slow');
@@ -1015,7 +1016,6 @@ $('#e_view').click(function(){
     document.getElementById('post_add_exercise').style.display = 'none';
     document.getElementById('post_view_exercise').style.display = 'block';
     getExerDataList();
-    getPatientList();
 });
 $(document).ready(function(){
 	$('select').formSelect();
