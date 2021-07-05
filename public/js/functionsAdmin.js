@@ -81,6 +81,7 @@ function submitActivationForm(formId){
                             displayLength:5000, 
                             classes:'red darken-4'
                         });
+                
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
                 a = addNode(row,'a',undefined,undefined,"btn waves-effect btn-flat",undefined,undefined,"Copy");
@@ -101,7 +102,7 @@ function submitActivationForm(formId){
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
-                a.href = "http://" + siteUrl + "/auth/profile/edit/" + msg;
+                a.href = "https://" + siteUrl + "/auth/profile/edit/" + msg;
                 a.target = "_blank";
                 }
         },error:function(data){ 
@@ -233,7 +234,7 @@ function submitActivationForm(){
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
-                a.href = "http://" + siteUrl + "/auth/profile/edit/" + msg;
+                a.href = "https://" + siteUrl + "/auth/profile/edit/" + msg;
                 a.target = "_blank";
             }
         },error:function(data){ 
@@ -331,7 +332,7 @@ function searchPatientGroup(){
 
                     var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                     var siteUrl = window.location.href.split('/')[2];
-                    a.href = "http://" + siteUrl + "/auth/group/edit/" + result[0].id;
+                    a.href = "https://" + siteUrl + "/auth/group/edit/" + result[0].id;
                     a.target = "_blank";
                 }
                 
