@@ -24,7 +24,7 @@ function searchPatient(){
                 for(var message in msg){                    
                     var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
-                            displayLength:5000, 
+                            displayLength:5000,
                             classes:'red darken-4'
                         });
                 }
