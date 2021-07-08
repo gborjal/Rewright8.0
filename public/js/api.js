@@ -394,7 +394,9 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 					//for(var j=0;j<temp2.length;j++){
 						normTxt+= temp2[0];
 						addNode(div,'br');
-						addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
+						//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,);
+						var t = document.createTextNode(normTxt);
+						div.appendChild(t);
 						normTxt = "";
 						normTxt+=temp2[1];
 					//}
