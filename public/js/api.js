@@ -403,7 +403,7 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 			}
 		}
 		if(normTxt!="")
-			addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
+			addNode(div,'pre',undefined,undefined,undefined,undefined,undefined,normTxt);
 		//return newText;
 	}
 	//return null;
