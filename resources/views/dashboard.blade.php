@@ -114,8 +114,8 @@
 							</div>
 						</div>
 						<div class="fixed-action-btn" style="bottom: 110px; right: 24px;">
-							<a class="btn-floating btn-large modal-trigger tooltipped" href="#modal2" data-position="top" data-delay="50" data-tooltip="Threads">
-								<i class="large material-icons">view_list</i>
+							<a class="btn-floating btn-large modal-trigger tooltipped" href="#modal2" data-position="top" data-delay="50" data-tooltip="Threads" onclick="notifsRefresh();">
+								<i class="large material-icons">view_list</i> 
 							</a>
 						</div>
 						
