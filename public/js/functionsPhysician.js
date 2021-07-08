@@ -102,7 +102,7 @@ function searchPatient(){
                         
                     var d = addNode(div2,"div","patientResThread"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
                     var d_t_d = addNode(d,"div",undefined,undefined,"container");
-                        addNode(d_t_d,"ul",undefined,undefined,"collection");
+                        addNode(d_t_d,"ul",undefined,undefined,"modal-content collection");
                     var t = addNode(div2,"div","patientResTask"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
                     var t_d = addNode(t,"div",undefined,undefined,"container");
                         addNode(t_d,"ul",undefined,undefined,"collapsible popout");
