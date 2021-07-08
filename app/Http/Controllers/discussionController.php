@@ -104,8 +104,7 @@ class discussionController extends Controller
                 'discussions'   => $set
             ];
             return response()
-                ->json($response)
-                ->setCallback($request->input('callback'));
+                ->json($response);
         }
         //return redirect()->route('dashboard');
         
