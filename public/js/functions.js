@@ -136,7 +136,7 @@ function updateModal2(currBoard,div){
 	var add1 = $('.modal-content ul','#'+div);
 	var add2 = $('.modal-content ul li','#'+div);
 	//add2.remove();
-
+	console.log(Array.isArray(currBoard));
 	if(!Array.isArray(currBoard)){
 		if(currBoard === "db_disc_board"){
 			for(var i=0;i < discussions.length;i++){
