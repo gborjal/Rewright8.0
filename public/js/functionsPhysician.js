@@ -107,7 +107,7 @@ function searchPatient(){
                     var t_d = addNode(t,"div",undefined,undefined,"container");
                         addNode(t_d,"ul",undefined,undefined,"collapsible popout");
                     var notes = addNode(div2,"div",undefined,undefined,"col s12",undefined,undefined,undefined);
-                        addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible");
+                        addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible popout");
                     $('.tabs').tabs();
                     
                 }
@@ -148,10 +148,8 @@ function loadNotes(id){
                 var li = addNode(ul,"li",undefined,undefined,undefined,undefined,undefined,undefined);
                 var div_header = addNode(li,"div",undefined,undefined,"collapsible-header");
                 var header_ul = addNode(div_header,"ul",undefined,undefined,"collection");
-                var header_li = addNode(header_ul,"li",undefined,undefined,"collection-avatar");
-                var a = addNode(header_li,"a",undefined,undefined,"btn-flat",undefined,undefined,"Note ID: "+artcle.id);
-                    a.onclick = $("#patientResNotes"+id).collapsible('open', 0);
-                if(info.exer_data){
+                var header_li = addNode(header_ul,"li",undefined,undefined,"collection-avatar",undefined,undefined,"Note ID: "+artcle.id);
+                /*if(info.exer_data){
                     var secCont = addNode(header_li,"div",undefined,undefined,"secondary-content");
                         a = addNode(secCont,"a",undefined,undefined,"btn-flat tooltipped");
                         a.href = "https://" + siteUrl + "/tasks/" + info.exer_data;
@@ -160,14 +158,14 @@ function loadNotes(id){
                         a.setAttribute("data-delay","50");
                         a.setAttribute("data-tooltip","Launch");
                         addNode(a,"i",undefined,undefined,"material-icons center",undefined,undefined,"launch");
-                }
+                }*/
                 var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
                 var row = addNode(div_body,"div",undefined,undefined,"row");
                 var div2 = addNode(row,"div",undefined,undefined,"col s12 m12 l12");
                 var details = addNode(div2,"div","details"+artcle.id);
                 var contents = addNode(div2,"div","contents"+artcle.id);
                 updateNoteInfoDetail(artcle,details,contents);
-                $('#patientResNotes'+ id +' .collapsible').collapsible(); 
+                //$('#patientResNotes'+ id +' .collapsible').collapsible(); 
               }
             }else{
                 var toastContent = "<span>No notes available</span>";
