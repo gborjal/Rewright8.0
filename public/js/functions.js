@@ -393,19 +393,18 @@ function notifsNextPage(pageNo){
 		});
 	}
 }
-function notifsRefresh(){
+function notifsRefresh(){ //discussion notifs fo now
 
-	var url = "";
+	/*var url = "";
 	if(board === "db_disc_board"){
 		url = "/api/post/discussion/notifs/cnt";
-	}
+	}*/
 	var data = {
             project: project_id,
-            all: false,
-            _token: $('meta[name="csrf-token"]').attr('content')
+            all: false
 		};
 	$.ajax({
-		url: url,
+		url: "/api/post/discussion/notifs/cnt",
 		data: data,
 		method: "POST",
 		success:function(data){
