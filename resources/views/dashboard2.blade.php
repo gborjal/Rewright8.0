@@ -229,7 +229,8 @@
 					</ul>
 					<div id="post_disc" class="row">
 
-					{!! Form::open(['route'=>'postDiscussion','id'=>'postDiscussion','files'=>'true']) !!}
+					{!! Form::open(['route'=>'postDiscussion','id'=>'postDiscussion','files'=>'true']) !!} 
+					{!! Form::hidden('pd_project',Auth::user()->projects[0]->project_id,['id'=>'pd_project']) !!}
 						<div class="col s12 m6 l6">
 							<label for="pd_priority">Priority (urgency):</label>
 							<select id="pd_priority" name="pd_priority">
