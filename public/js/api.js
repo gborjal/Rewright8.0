@@ -389,8 +389,12 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 				textCardV2(div,text);
 				
 			}else{
-				if(temp[i].endsWith("<br/>")){
-					normTxt+= temp[i] + "\n";
+				if(temp[i].includes("<br/>")||temp[i].endsWith("<br/>")){
+					var temp2 = temp[i].split("<br/>");
+					for(var j=0;j<temp2.length;j++){
+						normTxt+= temp2[j] + "\n";	
+					}
+					
 				}else{
 					normTxt+= temp[i] + " ";
 				}
