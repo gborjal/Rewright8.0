@@ -149,7 +149,7 @@ function loadNotes(id){
                 var li = addNode(ul,"li",undefined,undefined,undefined,undefined,undefined,undefined);
                 var div_header = addNode(li,"div",undefined,undefined,"collapsible-header");
                 var header_ul = addNode(div_header,"ul",undefined,undefined,"collection");
-                var header_li = addNode(header_ul,"li",undefined,undefined,"collection-avatar",undefined,undefined,"Note ID: "+artcle.id);
+                var header_li = addNode(header_ul,"li",undefined,undefined,"collection-avatar",undefined,undefined,"Note ID: "+artcle.id + " " + artcle.title + " ");
 
                 if(Number.isInteger(info.exer_data)){
                     var secCont = addNode(header_li,"div",undefined,undefined,"secondary-content");
