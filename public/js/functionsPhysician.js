@@ -107,7 +107,7 @@ function searchPatient(){
                     var t_d = addNode(t,"div",undefined,undefined,"container");
                         addNode(t_d,"ul",undefined,undefined,"collapsible popout");
                     var notes = addNode(div2,"div",undefined,undefined,"col s12",undefined,undefined,undefined);
-                        addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible popout");
+                        addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible");
                     $('.tabs').tabs();
                     
                 }
@@ -143,7 +143,7 @@ function loadNotes(id){
                     artcle.text    = info.text;
                     artcle.images   = info.images;
                     artcle.updated_at   = info.updated_at;
-                
+                console.log(info);
 
                 var li = addNode(ul,"li",undefined,undefined,undefined,undefined,undefined,undefined);
                 var div_header = addNode(li,"div",undefined,undefined,"collapsible-header");
@@ -167,7 +167,7 @@ function loadNotes(id){
                 var details = addNode(div2,"div","details"+artcle.id);
                 var contents = addNode(div2,"div","contents"+artcle.id);
                 updateNoteInfoDetail(artcle,details,contents);
-                $('#patientResNotes'+ id +' .collapsible').collapsible();
+                $('#patientResNotes'+ id +' .collapsible').collapsible(); 
               }
             }else{
                 var toastContent = "<span>No notes available</span>";
