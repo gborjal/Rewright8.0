@@ -88,7 +88,7 @@ function searchPatient(){
                     var dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
                         a = addNode(dtls_tab,"a",undefined,undefined,"active",undefined,undefined,"Threads");
                         a.href = "#patientResThread"+res_id;
-                        a.onclick = loadDiscs(res_id);
+                        a.onclick = function(){loadDiscs(res_id)};
                     //tasks    
                         dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
                         a = addNode(dtls_tab,"a",undefined,undefined,undefined,undefined,undefined,"Tasks");
