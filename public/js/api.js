@@ -360,7 +360,9 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 		for(var i = 0; i<temp.length;i++){
 
 			if(temp[i]=== "<[!img!]>" ){
-				addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
+				var t = document.createTextNode(normTxt);
+				div.appendChild(t);
+				//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
 				normTxt = "";
 				if(images != false){
 					//var t = "";
@@ -380,7 +382,9 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 					//newText+="<div class='card'> Image Unavailable </div>";
 				}
 			}else if(temp[i].startsWith('<[!text',0)){
-				addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
+				var t = document.createTextNode(normTxt);
+				div.appendChild(t);
+				//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
 				normTxt = "";
 
 				var ret = interpText(temp,i);
