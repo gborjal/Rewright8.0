@@ -135,8 +135,7 @@ function updateGenContentTasks(arr,div){
 function updateModal2(currBoard,div){
 	var add1 = $('.modal-content ul','#'+div);
 	var add2 = $('.modal-content ul li','#'+div);
-	//add2.remove();
-	console.log(Array.isArray(currBoard));
+
 	if(!Array.isArray(currBoard)){
 		if(currBoard === "db_disc_board"){
 			for(var i=0;i < discussions.length;i++){
@@ -233,7 +232,6 @@ function launchGenContent(disc_id){
 	getLoading('div_details');
 	if($('#div_details').is(':parent') ){
 		$('#div_contents').empty();
-		//$('#div_comments').empty();
 	}
 	
 	var data = {
@@ -481,7 +479,6 @@ function submitActivationForm(formId){
 	var cur = document.getElementById(div);
 	var dataform =  new FormData();
 
-	//dataform.append('_token',$(formId + ' [name=_token]')[0].value);
 	dataform.append('email',$(formId+' [name=email]')[0].value);
 	
 	var error;
@@ -558,7 +555,6 @@ function getExerDataList(){
 	
 	var dataform =  new FormData();
 
-	//dataform.append('_token',$('#postExerciseDataList [name=_token]')[0].value);
 	$.ajax({
 		url: '/api/post/exerdata/list',
         processData: false,
@@ -611,16 +607,11 @@ function getExerDataList(){
 }
 
 function getPatientList(){
-	//formId = '#postTask';
-	
-	var dataform =  new FormData();
 
-	//dataform.append('_token',$('#postTask [name=_token]')[0].value);
 	$.ajax({
 		url: '/api/post/patient/list',
         processData: false,
 		contentType: false,
-    	data: dataform,
     	method: "POST",
     	success:function(data){
     		var status = data.success;

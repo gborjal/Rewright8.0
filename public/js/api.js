@@ -11,7 +11,6 @@ $.ajaxSetup({
     }
 });
 function addNode(parent,type,id,name,classTxt,value,inpType,textNode){
-	//var parent = document.getElementById(parentId);
 	var tmp = document.createElement(type);
 
 	if(id != undefined){tmp.id = id;}
@@ -28,7 +27,6 @@ function addNode(parent,type,id,name,classTxt,value,inpType,textNode){
 }
 function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 	var error;
-	//var conn = (keepAlive) ? "Keep-Alive": "close";
 	
 	if(keepAlive){
 		var k = 'timeout=10, max='+timeoutMax;
@@ -362,7 +360,6 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 			if(temp[i]=== "<[!img!]>" ){
 				var t = document.createTextNode(normTxt);
 				div.appendChild(t);
-				//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
 				normTxt = "";
 				if(images != false){
 					//var t = "";
@@ -376,15 +373,12 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 						imageCardV2(div,images[k]);
 					}
 					k++;
-					//newText+=t;
 				}else{
 					addNode(div,undefined,undefined,'card');
-					//newText+="<div class='card'> Image Unavailable </div>";
 				}
 			}else if(temp[i].startsWith('<[!text',0)){
 				var t = document.createTextNode(normTxt);
 				div.appendChild(t);
-				//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
 				normTxt = "";
 
 				var ret = interpText(temp,i);
@@ -395,31 +389,23 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 			}else{
 				if(temp[i].includes("<br/>") || temp[i].endsWith("<br/>")){
 					var temp2 = temp[i].split("<br/>");
-					//for(var j=0;j<temp2.length;j++){
 						normTxt+= temp2[0];
 						addNode(div,'br');
-						//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,);
 						var t = document.createTextNode(normTxt);
 						div.appendChild(t);
 						normTxt = "";
 						normTxt+=temp2[1];
-					//}
-					
 				}else{
 					normTxt+= temp[i] + " ";
 				}
-				//addNode(div,undefined,undefined,undefined,undefined,undefined,undefined,temp[i]+" ");
-				
 			}
 		}
 		if(normTxt!=""){
-			//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
 			var t = document.createTextNode(normTxt);
 			div.appendChild(t);
 		}
-		//return newText;
 	}
-	//return null;
+	return null;
 }
 function updateGenContent(artcle){
 	//details
@@ -473,7 +459,6 @@ function colateText(arr){
 	for(var i=0;i<arr.length;i++){
 		if((arr[i].value != "")){
 			if(arr[i].tagName === "TEXTAREA"){
-				//text+=arr[i].value;
 				var tmp = arr[i].value.split('\n');
 				
 				for(var j=0;j<tmp.length;j++){
