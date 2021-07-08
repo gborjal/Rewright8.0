@@ -391,9 +391,13 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 			}else{
 				if(temp[i].includes("<br/>")||temp[i].endsWith("<br/>")){
 					var temp2 = temp[i].split("<br/>");
-					for(var j=0;j<temp2.length;j++){
-						normTxt+= temp2[j] + "\n";	
-					}
+					//for(var j=0;j<temp2.length;j++){
+						normTxt+= temp2[0];
+						addNode(div,'br');
+						addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
+						normTxt = "";
+						normTxt+=temp2[1];
+					//}
 					
 				}else{
 					normTxt+= temp[i] + " ";
@@ -403,7 +407,7 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 			}
 		}
 		if(normTxt!="")
-			addNode(div,'pre',undefined,undefined,undefined,undefined,undefined,normTxt);
+			addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
 		//return newText;
 	}
 	//return null;
