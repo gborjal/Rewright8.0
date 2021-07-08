@@ -389,7 +389,7 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 				textCardV2(div,text);
 				
 			}else{
-				if(temp[i].includes("<br/>")||temp[i].endsWith("<br/>")){
+				if(temp[i].includes("<br/>") || temp[i].endsWith("<br/>")){
 					var temp2 = temp[i].split("<br/>");
 					//for(var j=0;j<temp2.length;j++){
 						normTxt+= temp2[0];
@@ -408,8 +408,11 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 				
 			}
 		}
-		if(normTxt!="")
-			addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
+		if(normTxt!=""){
+			//addNode(div,'p',undefined,undefined,undefined,undefined,undefined,normTxt);
+			var t = document.createTextNode(normTxt);
+			div.appendChild(t);
+		}
 		//return newText;
 	}
 	//return null;
