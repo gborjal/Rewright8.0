@@ -76,7 +76,7 @@
 									</div>
 								</div>
 								<div id = "manageUser">
-									<nav class = "hide-on-large-only blue darken-4">
+									<nav class = "hide-on-large-only light-blue darken-4">
 											<div class="nav-wrapper">
 												<div class="col s12">
 													<a href="#!" class="breadcrumb">Users</a>
@@ -85,8 +85,8 @@
 										</nav>
 									<div class="col s12">
 										<ul class = "pagination">
-											<li class = "light-blue darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
-											<li class = "light-blue darken-4" id = "li_activation"><a id = "a_activation" href="#!">Activation Code</a></li>
+											<li class = "light-blue-text darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
+											<li id = "li_activation"><a id = "a_activation" href="#!">Activation Code</a></li>
 										</ul>
 										
 									</div>
@@ -106,7 +106,7 @@
 											</div>
 											<br/><br/>
 											
-										{!! Form::close() !!}<button id="sub" class="btn waves-effect red darken-4" onclick="submitRegForm()">Create Account
+										{!! Form::close() !!}<button id="sub" class="btn waves-effect light-blue darken-3" onclick="submitRegForm()">Create Account
 												<i class="material-icons right">done</i>
 											</button>
 										<div id = "code" class="input-field col s12">
@@ -121,7 +121,7 @@
 											<label for="email">Email</label>
 											<br/><br/>
 											
-										{!! Form::close() !!}<button id="sub" class="btn waves-effect red darken-4" onclick="submitActivationForm()">Get Code
+										{!! Form::close() !!}<button id="sub" class="btn waves-effect light-blue darken-3" onclick="submitActivationForm()">Get Code
 												<i class="material-icons right">done</i>
 											</button>
 										<div class="input-field col s12">
@@ -131,7 +131,7 @@
 								</div>
 								<div id = "managePG">
 									<div class="col s12">
-										<nav class = "hide-on-large-only red darken-4">
+										<nav class = "hide-on-large-only light-blue darken-3">
 											<div class="nav-wrapper">
 												<div class="col s12">
 													<a href="#!" class="breadcrumb">Patient Group</a>
@@ -158,7 +158,7 @@
 								</div>
 								<div id = "manageDiscussion">
 									<div class="col s12">
-										<nav class = "hide-on-large-only red darken-4">
+										<nav class = "hide-on-large-only light-blue darken-3">
 											<div class="nav-wrapper">
 												<div class="col s12">
 													<a href="#!" class="breadcrumb">Discussions</a>
@@ -170,7 +170,7 @@
 								</div>
 								<div id = "manageTask">
 									<div class="col s12">
-										<nav class = "hide-on-large-only red darken-4">
+										<nav class = "hide-on-large-only light-blue darken-3">
 											<div class="nav-wrapper">
 												<div class="col s12">
 													<a href="#!" class="breadcrumb">Tasks</a>

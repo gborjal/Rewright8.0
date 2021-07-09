@@ -29,13 +29,13 @@ $(document).ready(function(){
 });
 
 $('#a_c_user').click(function(){
-    this.parentNode.className = "active";
+    this.parentNode.className = "light-blue-text darken-4 active";
     document.getElementById('li_activation').className = "";
     document.getElementById('createUser').style.display = 'block';
     document.getElementById('getActivationCode').style.display = 'none';
 });
 $('#a_activation').click(function(){
-    this.parentNode.className = "active";
+    this.parentNode.className = "light-blue-text darken-4 active";
     document.getElementById('li_c_user').className = "";
     document.getElementById('createUser').style.display = 'none';
     document.getElementById('getActivationCode').style.display = 'block';
@@ -100,7 +100,7 @@ function submitActivationForm(formId){
                             classes:'blue darken-4'
                         });
                 };
-                var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
+                var a = addNode(row,'a',undefined,undefined,"secondary-content btn light-blue darken-3 waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
                 a.href = "https://" + siteUrl + "/auth/profile/edit/" + msg;
                 a.target = "_blank";
