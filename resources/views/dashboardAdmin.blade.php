@@ -77,12 +77,12 @@
 								</div>
 								<div id = "manageUser">
 									<nav class = "hide-on-large-only light-blue darken-4">
-											<div class="nav-wrapper">
-												<div class="col s12">
-													<a href="#!" class="breadcrumb">Users</a>
-												</div>
+										<div class="nav-wrapper">
+											<div class="col s12">
+												<a href="#!" class="breadcrumb">Users</a>
 											</div>
-										</nav>
+										</div>
+									</nav>
 									<div class="col s12">
 										<ul class = "pagination">
 											<li class = "light-blue-text darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
