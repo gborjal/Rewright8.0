@@ -167,12 +167,12 @@ class userSeeder extends Seeder
             "user_id"=>$patient_id,
             "profile"=>'1_profile_1.jpg',
             "banner"=>'1_banner_1.jpg',
-            "first_name"=>'Luis',
-            "middle_name"=>'Minsalan',
-            "last_name"=>'Borjal',
+            "first_name"=>'Trafalgar',
+            "middle_name"=>'D',
+            "last_name"=>'Water Law',
             "suffix_name"=>NULL,
             "sex"=>'MALE',
-            "perm_address"=>'blk.4 lt1 phase 1c, Rambutan st cor Santol drv Palmera Homes Q.C',
+            "perm_address"=>'North Blue Sea, One Piece',
             "tempo_address"=>NULL,
             "office_address"=>NULL
         ]);
