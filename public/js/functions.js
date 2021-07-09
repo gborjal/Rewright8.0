@@ -66,7 +66,7 @@ function updateGenContentTasks(arr,div){
 			li+="</ul></div>";
 			li+="<div class='collapsible-body'>";
 			if(arr[i].task_text!=false){
-				li+="<p>"+arr[i].task_info.task_text+"</p>";				
+				li+="<p>"+filterQuickText(arr[i].task_info.task_text)+"</p>";				
 			}
 
 			
