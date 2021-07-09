@@ -268,10 +268,10 @@
 			<div class="modal-content">
 				<div class="row">
 					<ul class="tabs" id="post_tabs">
-						<li class="tab col s3"><a class="blue-text text-accent-4" href="#post_disc">Thread</a></li>
-						<li class="tab col s3"><a class="blue-text text-accent-4" href="#post_patient">Patient</a></li>
-						<li class="tab col s3"><a class="blue-text text-accent-4" href="#post_task">Assign Task</a></li>
-						<li class="tab col s3"><a class="blue-text text-accent-4" href="#post_exercise">Exercises</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_disc">Thread</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_patient">Patient</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_task">Assign Task</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_exercise">Exercises</a></li>
 						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="post_disc" class="row">
@@ -371,7 +371,7 @@
 						<div class="col s12">
 						<ul class = "pagination">
 							<li class = "light-blue darken-4 active" id = "li_p_add"><a id = "a_p_add" href="#!">Add</a></li>
-							<li class = "light-blue darken-4" id = "li_find"><a id = "a_find" href="#!">Get Code</a></li>
+							<li id = "li_find"><a id = "a_find" href="#!">Get Code</a></li>
 						</ul>
 						
 					</div>
@@ -419,7 +419,7 @@
 					<div id = "post_exercise" class = "col s12">
 						<div class="col s12">
 							<ul class = "pagination">
-								<li class = "active" id = "li_e_add"><a id = "a_e_add" href="#!">Add</a></li>
+								<li class = "ight-blue darken-4 active" id = "li_e_add"><a id = "a_e_add" href="#!">Add</a></li>
 								<li id = "li_e_view"><a id = "e_view" href="#!">View</a></li>
 							</ul>
 							
