@@ -180,7 +180,7 @@ function getLoading(div){
 	var div = $('#'+div);
 	var loading = "<div class='col s1 m1 l1 offset-s5 offset-m5 offset-l5 center'>"+
 					"<div class='preloader-wrapper active'>"+
-						"<div class='spinner-layer spinner-red-only'>"+
+						"<div class='spinner-layer spinner-blue-only'>"+
 							"<div class='circle-clipper left'>"+
 								"<div class='circle'></div>"+
 							"</div>"+

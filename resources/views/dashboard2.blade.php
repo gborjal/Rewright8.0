@@ -223,8 +223,8 @@
 			<div class="modal-content">
 				<div class="row">
 					<ul class="tabs" id="post_tabs">
-						<li class="tab col s3"><a class="red-text text-accent-4" href="#post_disc">Create Thread</a></li>
-						<li class="tab col s3"><a class="red-text text-accent-4">&nbsp</a></li>
+						<li class="tab col s3"><a class="blue-text text-accent-4" href="#post_disc">Create Thread</a></li>
+						<li class="tab col s3"><a class="blue-text text-accent-4">&nbsp</a></li>
 						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="post_disc" class="row">
@@ -257,9 +257,9 @@
 					{!! Form::close() !!}
 						<div class="col s12">
 						<br/>
-							<a class="tooltipped waves-effect waves-red btn-flat btn-large white col s4 blue-text text-darken-3" data-position="top" data-delay="50" data-tooltip="Add Image" href="#upImageDisc"><i class="material-icons">picture_in_picture</i></a>
-							<a class="tooltipped waves-effect waves-red btn-flat btn-large white col s4 blue-text text-darken-2" data-position="top" data-delay="50" data-tooltip="Highlight text" href="#upHighlightDisc"><i class="material-icons" href="#upHighlightDisc">"</i></a>
-							<a class="tooltipped waves-effect waves-red btn-flat btn-large white col s4 blue-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" href="#upDescDisc"><i class="material-icons">description</i></a>
+							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-3" data-position="top" data-delay="50" data-tooltip="Add Image" href="#upImageDisc"><i class="material-icons">picture_in_picture</i></a>
+							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-2" data-position="top" data-delay="50" data-tooltip="Highlight text" href="#upHighlightDisc"><i class="material-icons" href="#upHighlightDisc">"</i></a>
+							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" href="#upDescDisc"><i class="material-icons">description</i></a>
 						</div>
 					</div>
 					

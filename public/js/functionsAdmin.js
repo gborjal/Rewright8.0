@@ -66,20 +66,20 @@ function submitActivationForm(formId){
                     var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 }
             }else if(status == "fail"){
                 var toastContent = "<span>" + msg + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             }else if(status == "success"){
                 var toastContent = "<span>" + msg + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
@@ -97,7 +97,7 @@ function submitActivationForm(formId){
                     toastContent = "<span>" + "Copied Code: " + msg + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
@@ -142,7 +142,7 @@ function submitRegForm(){
             		var toastContent = "<span>" + msg[message] + "</span>";
 					M.toast({  html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             	}
             }else if(status == "fail"){
@@ -150,13 +150,13 @@ function submitRegForm(){
             	var toastContent = "<span>" + msg + "</span>";
 				M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
@@ -174,7 +174,7 @@ function submitRegForm(){
                     toastContent = "<span>" + "Copied Code: " + msg + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
@@ -218,7 +218,7 @@ function submitActivationForm(){
             		var toastContent = "<span>" + msg[message] + "</span>"; 
 					M.toast({  html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             	}
             }else if(status == "fail"){
@@ -226,13 +226,13 @@ function submitActivationForm(){
             	var toastContent = "<span>" + msg + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
 				M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
@@ -249,7 +249,7 @@ function submitActivationForm(){
                     toastContent = "<span>" + "Copied Code: " + msg + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
@@ -293,7 +293,7 @@ function searchPatientGroup(){
                     var toastContent = "<span>" + errors + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 }
             }else if(status == "fail"){
@@ -301,7 +301,7 @@ function searchPatientGroup(){
                     var toastContent = "<span>" + errors + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 }
             }else if(status == "success"){
@@ -397,7 +397,7 @@ function updatePGSize(id,type){
                 var toastContent = "<span>" + errors + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             }
             return false;

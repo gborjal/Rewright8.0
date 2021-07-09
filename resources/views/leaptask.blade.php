@@ -108,7 +108,7 @@
                       @if(is_null($adjustedResScore))
                       <input type="text" id="adjustedScore" name="adjustedScore" value = "{{ $adjustedResScore }}">
                       <label for="adjustedScore">Adjust Score</label>
-                      <a class="waves-effect waves-red red-text text-darken-3" onclick="submitAdjustedScore();">Post</a>
+                      <a class="waves-effect waves-blue blue-text text-darken-3" onclick="submitAdjustedScore();">Post</a>
                       @else
                       {{ $adjustedResScore}}% 
                       @endif
@@ -146,9 +146,9 @@
                   {!! Form::close() !!}
                     <div class="col s12">
                     <br/>
-                      <a class="tooltipped waves-effect waves-red btn-flat btn-large white col s4 red-text text-darken-3" data-position="top" data-delay="50" data-tooltip="Add Image"  onclick="upImage();"><i class="material-icons">picture_in_picture</i></a>
-                      <a class="tooltipped waves-effect waves-red btn-flat btn-large white col s4 red-text text-darken-2" data-position="top" data-delay="50" data-tooltip="Highlight text" onclick="upHighlight();"><i class="material-icons" href="#upHighlightDisc">"</i></a>
-                      <a class="tooltipped waves-effect waves-red btn-flat btn-large white col s4 red-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" onclick="upDesc();"><i class="material-icons">description</i></a>
+                      <a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-3" data-position="top" data-delay="50" data-tooltip="Add Image"  onclick="upImage();"><i class="material-icons">picture_in_picture</i></a>
+                      <a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-2" data-position="top" data-delay="50" data-tooltip="Highlight text" onclick="upHighlight();"><i class="material-icons" href="#upHighlightDisc">"</i></a>
+                      <a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" onclick="upDesc();"><i class="material-icons">description</i></a>
                     </div>
                     <a class="modal-action modal-close waves-effect waves-green btn-flat center" onclick="submitNote();">Post</a>
                 </div>

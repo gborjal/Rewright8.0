@@ -38,7 +38,7 @@
 				var toastContent = "<span>{{ $error }}</span>";
 				M.toast({ 	html:toastContent,
 							displayLength:5000, 
-							classes:'red darken-4'
+							classes:'blue darken-4'
 						});		
 			@endforeach
 		</script>
@@ -48,7 +48,7 @@
 			var toastContent = "<span>{{ Session::get('error') }}</span>";
 			M.toast({ 	html:toastContent,
 						displayLength:5000, 
-						classes:'red darken-4'
+						classes:'blue darken-4'
 					});
 		</script>
 	@endif

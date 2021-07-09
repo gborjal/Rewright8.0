@@ -7,7 +7,7 @@
 			<div class="col s12 m6 l6 offset-m3 offset-l3">
 				<div id="f" class="card medium">
 					<ul class="tabs">
-						<li class="tab col s3"><a class="red-text text-accent-4" href="#div_login" onclick="changeRegCard(0);">Login</a></li>
+						<li class="tab col s3"><a class="blue-text text-accent-4" href="#div_login" onclick="changeRegCard(0);">Login</a></li>
 						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="div_login" class="col s12">
@@ -18,8 +18,7 @@
 							{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
 							<label for="password">Password</label>
 							<p>
-							<input type="checkbox" id="remember" name="remember"/>
-	      					<label for="remember">Remember</label>
+							<input type="checkbox" id="remember" name="remember"/>Remember me
 	      					</p>	
 							<button class="btn waves-effect blue darken-4" type="submit" formmethod="post">Login
 							    <i class="large material-icons right">send</i>
@@ -43,7 +42,7 @@
 				var toastContent = "<span>{{ $error }}</span>";
 				M.toast({ 	html:toastContent,
 							displayLength:5000, 
-							classes:'red darken-4'
+							classes:'blue darken-4'
 						});
 			
 			@endforeach
@@ -54,7 +53,7 @@
 			var toastContent = "<span>{{ Session::get('error') }}</span>";
 			M.toast({ 	html:toastContent,
 						displayLength:5000, 
-						classes:'red darken-4'
+						classes:'blue darken-4'
 					});
 		</script>
 	@endif

@@ -25,7 +25,7 @@ function searchPatient(){
                     var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000,
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 }
             }else if(status == "fail"){
@@ -33,7 +33,7 @@ function searchPatient(){
                     var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 }
             }else if(status == "success"){
@@ -174,14 +174,14 @@ function loadNotes(id){
                 var toastContent = "<span>No notes available</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             }
         }else{
             var toastContent = "<span>" + data.message + "</span>";
             M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });   
         }
         
@@ -216,7 +216,7 @@ function loadTasks(id){
                 var toastContent = "<span>" + data.message + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             }else{
                 if(data.tasks.length > 0){
@@ -249,7 +249,7 @@ function loadTasks(id){
                     var toastContent = "<span> No Tasks available. </span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 }
                 if(data.error.length >0){
@@ -257,7 +257,7 @@ function loadTasks(id){
                         var toastContent = "<span> "+ data.error[i].status + "Patient ID: " + data.error[i].info + " </span>";
                         M.toast({   html:toastContent,
                                 displayLength:5000, 
-                                classes:'red darken-4'
+                                classes:'blue darken-4'
                             });
                     }
                 }

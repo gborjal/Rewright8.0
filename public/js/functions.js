@@ -498,20 +498,20 @@ function submitActivationForm(formId){
             		var toastContent = "<span>" + msg[message] + "</span>";
 					M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             	}
             }else if(status == "fail"){
             	var toastContent = "<span>" + msg + "</span>";
 				M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
 				M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
 				
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
@@ -529,7 +529,7 @@ function submitActivationForm(formId){
                     toastContent = "<span>" + "Copied Code: " + msg + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
                 };
                 var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
@@ -566,8 +566,11 @@ function getExerDataList(){
         	var cur = document.getElementById('ul_view_exercises');
         	if(status == false){
             	for(errors of msg){
-                    var toastContent = "<span>" + errors + "</span>";
-                    Materialize.toast(toastContent, 1000, 'red darken-4');
+                    var toastContent = "<span>" + msg[errors] + "</span>";
+             		M.toast({   html:toastContent,
+                            displayLength:1000, 
+                            classes:'blue darken-4'
+                        });	
                 }
             }else if(status == true){
 	    		for(result of msg){
@@ -617,8 +620,11 @@ function getPatientList(){
         	var msg = data.message;
         	if(status == false){
             	for(errors of msg){
-                    var toastContent = "<span>" + errors + "</span>";
-                    Materialize.toast(toastContent, 1000, 'red darken-4');
+                    var toastContent = "<span>" + msg[errors] + "</span>";
+             		M.toast({   html:toastContent,
+                            displayLength:1000, 
+                            classes:'blue darken-4'
+                        });
                 }
             }else if(status == true){
 	    		for(result of msg){
@@ -695,34 +701,40 @@ function submitExer(id){
 		var toastContent = "<span> Leap File Required. </span>";
         M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
 	}else{
 		dataform.append('leapData',$('#leapData'+id).prop('files')[0]);
 	}
 	$.ajax({
-			url: '/api/post/task/patient',
-            processData: false,
-			contentType: false,
-			mimeType: 'multipart/form-data',
-            data: dataform,
-            method: "POST",            
-            success:function(data){
-            	var status = JSON.parse(data).status;
-            	var msg = JSON.parse(data).message;
-            	
+		url: '/api/post/task/patient',
+        processData: false,
+		contentType: false,
+		mimeType: 'multipart/form-data',
+        data: dataform,
+        method: "POST",            
+        success:function(data){
+        	var status = JSON.parse(data).status;
+        	var msg = JSON.parse(data).message;
+        	
+            var toastContent = "<span>" + msg + "</span>";
+            M.toast({   html:toastContent,
+                        displayLength:5000, 
+                        classes:'blue darken-4'
+                    });
+                
+			return true;
+        },error:function(data){ 
+            for(errors of JSON.parse(data).message){
                 var toastContent = "<span>" + errors + "</span>";
-                Materialize.toast(toastContent, 1000, 'red darken-4');
-	                
-				return true;
-            },error:function(data){ 
-                for(errors of JSON.parse(data).message){
-	                var toastContent = "<span>" + errors + "</span>";
-	                Materialize.toast(toastContent, 1000, 'red darken-4');
-	            }
-                return false;
+                M.toast({   html:toastContent,
+                        displayLength:5000, 
+                        classes:'blue darken-4'
+                    });
             }
-        });
+            return false;
+        }
+    });
         
 }
 $('#project','#nav-desktop li').on('change',function(){
@@ -817,7 +829,7 @@ $('.boards').on('click',function(){
             		var toastContent = "<span>" + data.message + "</span>";
                 	M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             	}else{
 
@@ -851,7 +863,7 @@ $('.boards').on('click',function(){
 						var toastContent = "<span> No Tasks available. </span>";
                 		M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
 					}
 					if(data.error.length >0){
@@ -859,7 +871,7 @@ $('.boards').on('click',function(){
 							var toastContent = "<span> "+ data.error[i].status + "Patient ID: " + data.error[i].info + " </span>";
                 		M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
 						}
 					}

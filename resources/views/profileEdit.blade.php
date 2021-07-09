@@ -150,62 +150,33 @@
 		{!! Form::close() !!}
 		</main>
 		<footer class="page-footer grey darken-4">
-	      <div class="container">
-	        <div class="row">
-	          <div class="col l6 s12">
-	            <h5 class="red-text text-darken-1">ReWrighT: Hand and Wrist rehabilitaion system</h5>
-	            <p class="red-text text-darken-4">Help me</p>
-	          </div>
-	          <div class="col l4 offset-l2 s12">
-	            <h5 class="red-text text-darken-1">Links</h5>
-	            <ul>
-	              <li><a class="red-text text-darken-4" href="#!">Link 1</a></li>
-	              <li><a class="red-text text-darken-4" href="#!">Link 2</a></li>
-	              <li><a class="red-text text-darken-4" href="#!">Link 3</a></li>
-	              <li><a class="red-text text-darken-4" href="#!">Link 4</a></li>
-	            </ul>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="footer-copyright">
-	        <div class="container red-text text-darken-1">
-	        © 2019 ReWrighT: Hand and Wrist rehabilitaion system
-	        <!--a class="grey-text text-lighten-4 right" href="#!">More Links</a-->
-	        </div>
-	      </div>
-	    </footer>
-		<script type = "text/javascript" />
-			// source: https://stackoverflow.com/questions/895171/prevent-users-from-submitting-a-form-by-hitting-enter
-			$(document).on("keydown", ":input:not(textarea)", function(event) {
-		    return event.key != "Enter";
-			});
-			$(document).ready(function(){
-
-				$('select').formSelect();
-				$('.collapsible').collapsible();
-				$('.sidenav').sidenav(
-		    	{
-						menuWidth: 300, // Default is 240
-						edge: 'left', // Choose the horizontal origin
-						closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-					}
-				);
-			});
-			$('a').on('click', function() {
-				if($(this).attr('href') != undefined){
-					if($(this).attr('href') ==='#top' ) {
-			   		$('html,body').animate({ scrollTop: 0 }, 'slow');
-					}else if($(this).attr('href')==='#post'){
-						var dataform =  new FormData(document.getElementById("postEditProfile"));
-										
-						if(ajaxSubmitPostings("#postEditProfile",dataform)){
-							//materialize toast : success
-						}
-						return false;
-					}
-				}
-			});
-		</script>
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="blue-text text-darken-1">ReWrighT: Hand and Wrist rehabilitation system</h5>
+                <p class="blue-text text-darken-4">Made with Laravel</p>
+                <p class="blue-text text-darken-4">Made with LeapJS PlayBack</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="blue-text text-darken-1">Links</h5>
+                <ul>
+                  <li><a class="blue-text text-darken-4" href="https://github.com/leapmotion/leapjs-playback">LeapJS Playback</a></li>
+                  <li><a class="blue-text text-darken-4" href="https://laravel.com/">Laravel</a></li>
+                  <li><a class="blue-text text-darken-4" href="https://github.com/gborjal">Gabriel Luis Borjal</a></li>
+                  <li><a class="blue-text text-darken-4" href="#!">Ralph Deloria</a></li>
+                  <li><a class="blue-text text-darken-4" href="#!">Rheyvin Demerey</a></li>
+                  <li><a class="blue-text text-darken-4" href="#!">Dave Kristian Au</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container blue-text text-darken-1">
+            © 2021 ReWrighT: Hand and Wrist rehabilitation system
+            <!--a class="grey-text text-lighten-4 right" href="#!">More Links</a-->
+            </div>
+          </div>
+        </footer>
 		<script type = "text/javascript" src = "{{ URL::asset('js/api.js') }}"/></script>
         
   </body>
