@@ -78,7 +78,7 @@ function submitAdjustedScore(){
     all: true
   }
   $.ajax({
-        url: 'api/post/exerdata/adjustedScore',
+        url: '/exerdata/adjustedScore',
         type:"POST",
         data: data,
         success:function(data){
