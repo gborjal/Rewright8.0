@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="{{ URL::asset('leap.lib/css/controls.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('leap.lib/css/data-collection.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('leap.lib/css/similarityChecker.css') }}">
+    <link rel = "stylesheet" type = "text/css" href = "{{ URL::asset('css/functions.css') }}"/>
     <script type = "text/javascript" src = "{{ URL::asset('js/materialize.js') }}"/></script>
   </head>
   <body>
