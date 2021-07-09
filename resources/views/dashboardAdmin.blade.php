@@ -76,7 +76,7 @@
 									</div>
 								</div>
 								<div id = "manageUser">
-									<nav class = "hide-on-large-only red darken-4">
+									<nav class = "hide-on-large-only blue darken-4">
 											<div class="nav-wrapper">
 												<div class="col s12">
 													<a href="#!" class="breadcrumb">Users</a>

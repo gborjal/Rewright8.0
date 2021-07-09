@@ -145,10 +145,10 @@ function updateModal2(currBoard,div){
 				switch(discussions[i].priority){
 					case 1: li = "<li class='collection-item avatar'>";
 							break;
-					case 4: li = "<li class='collection-item avatar red darken-1'>";
+					case 4: li = "<li class='collection-item avatar blue darken-1'>";
 							font = " white-text ";
 							break;
-					case 5: li = "<li class='collection-item avatar red darken-3'>";
+					case 5: li = "<li class='collection-item avatar blue darken-3'>";
 							font = " white-text ";
 							break;
 					default: li = "<li class='collection-item avatar'>";
@@ -186,10 +186,10 @@ function updateModal2(currBoard,div){
 			switch(currBoard[i].priority){
 				case 1: li = "<li class='collection-item avatar'>";
 						break;
-				case 4: li = "<li class='collection-item avatar red darken-1'>";
+				case 4: li = "<li class='collection-item avatar blue darken-1'>";
 						font = " white-text ";
 						break;
-				case 5: li = "<li class='collection-item avatar red darken-3'>";
+				case 5: li = "<li class='collection-item avatar blue darken-3'>";
 						font = " white-text ";
 						break;
 				default: li = "<li class='collection-item avatar'>";

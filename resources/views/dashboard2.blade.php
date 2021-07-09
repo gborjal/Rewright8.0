@@ -106,7 +106,7 @@
 							</a>
 						</div>
 						<div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
-							<a class="btn-floating btn-large red modal-trigger" href="#m_postings">
+							<a class="btn-floating btn-large blue modal-trigger" href="#m_postings">
 								<i class="large material-icons">add</i>
 							</a>
 						</div>
@@ -225,7 +225,7 @@
 					<ul class="tabs" id="post_tabs">
 						<li class="tab col s3"><a class="red-text text-accent-4" href="#post_disc">Create Thread</a></li>
 						<li class="tab col s3"><a class="red-text text-accent-4">&nbsp</a></li>
-						<div class="indicator red darken-4" style="z-index:1"></div>
+						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="post_disc" class="row">
 

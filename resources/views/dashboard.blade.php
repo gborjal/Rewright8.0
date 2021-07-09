@@ -63,7 +63,7 @@
 		<!-- General Body -->
 
 		<div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
-			<a class="btn-floating btn-large red modal-trigger tooltipped" href="#m_postings" data-position="top" data-delay="50" data-tooltip="Threads... Tasks... Exercises">
+			<a class="btn-floating btn-large blue modal-trigger tooltipped" href="#m_postings" data-position="top" data-delay="50" data-tooltip="Threads... Tasks... Exercises">
 				<i class="large material-icons">add</i>
 			</a>
 		</div>
@@ -272,7 +272,7 @@
 						<li class="tab col s3"><a class="red-text text-accent-4" href="#post_patient">Patient</a></li>
 						<li class="tab col s3"><a class="red-text text-accent-4" href="#post_task">Assign Task</a></li>
 						<li class="tab col s3"><a class="red-text text-accent-4" href="#post_exercise">Exercises</a></li>
-						<div class="indicator red darken-4" style="z-index:1"></div>
+						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="post_disc" class="row">
 					{!! Form::open(['route'=>'postDiscussion','id'=>'postDiscussion','files'=>'true']) !!}
@@ -376,7 +376,7 @@
 						
 					</div>
 					<div id="post_patient_add" class="col s12">
-						<nav class = "hide-on-large-only red darken-4">
+						<nav class = "hide-on-large-only blue darken-4">
 							<div class="nav-wrapper">
 								<div class="col s12">
 									<a href="#!" class="breadcrumb">Add Patient/s</a>
@@ -390,13 +390,13 @@
 							<label for="email">Email</label>
 							<br/><br/>
 							
-						{!! Form::close() !!}<button id="sub" class="btn waves-effect red darken-4" onclick="submitActivationForm('f_activation')">Get Code
+						{!! Form::close() !!}<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_activation')">Get Code
 								<i class="material-icons right">done</i>
 							</button>
 						<div id = "f_activation_div" class="input-field col s12"></div>
 					</div>
 					<div id="post_patient_find" class="col s12" style = "display:none;">
-						<nav class = "hide-on-large-only red darken-4">
+						<nav class = "hide-on-large-only blue darken-4">
 							<div class="nav-wrapper">
 								<div class="col s12">
 									<a href="#!" class="breadcrumb">Activation code</a>
@@ -410,7 +410,7 @@
 							<label for="email">Email</label>
 							<br/><br/>
 							
-						{!! Form::close() !!}<button id="sub" class="btn waves-effect red darken-4" onclick="submitActivationForm('f_Code')">Get Code
+						{!! Form::close() !!}<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_Code')">Get Code
 								<i class="material-icons right">done</i>
 							</button>
 						<div id = "f_Code_div" class="col s12"></div>
@@ -425,7 +425,7 @@
 							
 						</div>
 						<div id="post_add_exercise" class="col s12">
-							<nav class = "hide-on-large-only red darken-4">
+							<nav class = "hide-on-large-only blue darken-4">
 								<div class="nav-wrapper">
 									<div class="col s12">
 										<a href="#!" class="breadcrumb">Add Exercise</a>
@@ -448,7 +448,7 @@
 							<div class="input-field" style="position: absolute; bottom:10px;right:20px;"><a class="btn-large tooltipped" href = "{{route('vanillaLab')}}" target = "_blank" data-position="top" data-tooltip="Create Exercise/s"><i class="large material-icons">developer_mode</i></a></div>
 						</div>
 						<div id="post_view_exercise" class="col s12" style = "display:none;">
-							<nav class = "hide-on-large-only red darken-4">
+							<nav class = "hide-on-large-only blue darken-4">
 								<div class="nav-wrapper">
 									<div class="col s12">
 										<a href="#!" class="breadcrumb">Exercise/s</a>
