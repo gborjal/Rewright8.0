@@ -16,7 +16,7 @@ class CreateDiscussionVotesTable extends Migration
         Schema::create('discussion_votes', function (Blueprint $table) {
             $table->integer('discussion_comment_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->boolean('vote');
+            $table->integer('vote');
             $table->timestamps();
             
             $table->foreign('discussion_comment_id')
