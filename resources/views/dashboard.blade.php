@@ -105,7 +105,7 @@
 						<div class="col hide-on-small-only m3 l2">
 							<div class="tabs-wrapper pinned">
 								<div style="height:1px;">
-									<ul class="section table-of-contents">
+									<ul class="section table-of-contents light-blue darken-4">
 										<li><a href="#div_details">Details</a></li>
 										<li><a href="#div_contents">Contents</a></li>
 										<li><a href="#div_comments">Comments</a></li>
@@ -370,8 +370,8 @@
 					<div id="post_patient" class="col s12">
 						<div class="col s12">
 						<ul class = "pagination">
-							<li class = "active" id = "li_p_add"><a id = "a_p_add" href="#!">Add</a></li>
-							<li id = "li_find"><a id = "a_find" href="#!">Get Code</a></li>
+							<li class = "light-blue darken-4 active" id = "li_p_add"><a id = "a_p_add" href="#!">Add</a></li>
+							<li class = "light-blue darken-4" id = "li_find"><a id = "a_find" href="#!">Get Code</a></li>
 						</ul>
 						
 					</div>
