@@ -276,9 +276,11 @@ function filterQuickText(text){
 	var newText = "";
 	for(var i = 0; i<temp.length;i++){
 		if(temp[i]=== "<[!img!]>" ){
+			break;
 			temp[i] = "--image--";
 			newText+=temp[i]+ " ";
 		}else if(temp[i].startsWith('<[!text',0) || temp[i].startsWith('<[!caption',0)){
+			break;
 			var t = "";
 			var j;
 			for(j=i;j<temp.length;j++){
