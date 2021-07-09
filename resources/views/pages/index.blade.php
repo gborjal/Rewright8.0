@@ -18,8 +18,12 @@
 							{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
 							<label for="password">Password</label>
 							
-							<input type="checkbox" id="remember" name="remember"/>Remember me
-	      						
+							<p>
+								<label>
+									<input type="checkbox" id="remember" name="remember"/>
+									<span>Remember me</span>
+								</label>
+							</p>	
 							<button class="btn waves-effect blue darken-4" type="submit" formmethod="post">Login
 							    <i class="large material-icons right">send</i>
 			  				</button>
