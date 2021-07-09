@@ -107,7 +107,7 @@ function updateGenContentTasks(arr,div){
 							}
 						}
 							
-						li+="<div class='secondary-content "+font+"'><a class='btn btn-flat light-blue darken-3 tooltipped' href='https://" + siteUrl + "/tasks/" + arr[i].exers_info.task_datas[k].id + "' target='_blank' data-position='left' data-delay='50' data-tooltip='Launch'><i class='material-icons'>launch</i></a></div>";
+						li+="<div class='secondary-content "+font+"'><a class='btn btn-flat light-blue-text darken-3 tooltipped' href='https://" + siteUrl + "/tasks/" + arr[i].exers_info.task_datas[k].id + "' target='_blank' data-position='left' data-delay='50' data-tooltip='Launch'><i class='material-icons'>launch</i></a></div>";
 						
 						li+="</li>";
 
