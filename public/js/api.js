@@ -489,7 +489,7 @@ function addImage(div_Id,input_Id,desc_Id,cntr){
 	var cur = document.getElementById(div_Id);
 
 	var div_file = addNode(cur,'div',undefined,undefined,'file-field input-field');
-	var div_btn =  addNode(div_file,'div',undefined,undefined,'btn');
+	var div_btn =  addNode(div_file,'div',undefined,undefined,'btn light-blue accent-4');
 	addNode(div_btn,'span',undefined,undefined,undefined,undefined,undefined,'Image');
 	var inp_file = addNode(div_btn,'input',input_Id+'['+cntr+']',input_Id+'[]',undefined,undefined,'file');
 
