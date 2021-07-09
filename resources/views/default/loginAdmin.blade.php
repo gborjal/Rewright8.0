@@ -11,11 +11,18 @@
 						<div id="div_login">
 							
 							{!! Form::open(['route'=>'loginAdmin']) !!}
-								{!! Form::text('login_id',null,['placeholder'=>'username or email','class'=>'validate']) !!}
-								<label for="login_id">Username/Email</label>
-								{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
-								<label for="password">Password</label>
-								
+								<div class="row">
+	        					<div class="input-field col s12">
+									{!! Form::text('login_id',null,['placeholder'=>'username or email','class'=>'validate']) !!}
+									<label for="login_id">Username/Email</label>
+								</div>
+							</div>
+							<div class="row">
+	        					<div class="input-field col s12">
+									{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
+									<label for="password">Password</label>
+								</div>
+							</div>
 								<p>
 									<label>
 										<input type="checkbox" id="remember" name="remember"/>
