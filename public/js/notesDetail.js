@@ -1,10 +1,11 @@
 (function(){
-var data = {
-  _token:user_info.token,
-  id:pageid
-}
+  function notesRetrieve(){
+    var data = {
+      _token:user_info.token,
+      id:pageid
+    }
 
-$.ajax({
+    $.ajax({
       url: '/note/list/task',
       data: data,
       method: "POST",
@@ -41,6 +42,7 @@ $.ajax({
       },error:function(){ 
           alert("An Error!!!!");
           return false;
-      }
-  });
+      } 
+    });
+  }
 }).call(this);
