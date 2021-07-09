@@ -86,7 +86,7 @@ function submitAdjustedScore(){
               var toastContent = "<span>" + data.message + "</span>";
               M.toast({   html:toastContent,
                             displayLength:1000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
           }           
           return true;

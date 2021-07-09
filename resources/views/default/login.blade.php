@@ -14,10 +14,9 @@
 								<label for="login_id">Username/Email</label>
 								{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
 								<label for="password">Password</label>
-								<p>
-									<input type="checkbox" id="remember" name="remember"/>
-									<label for="remember">Remember</label>
-								</p>
+								
+								<input type="checkbox" id="remember" name="remember"/>Remember me
+	      					
 
 								<button class="btn waves-effect blue darken-4" type="submit">Login
 								    <i class="large material-icons right">send</i>
