@@ -85,25 +85,25 @@ function updateGenContentTasks(arr,div){
 								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Generated Score'>"+ arr[i].exers_info.task_datas[k].resultScore*100 + "%<i class='material-icons'>assessment</i></div>";
 							}
 							else{
-								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip red-text tooltipped' data-position='top' data-delay='50' data-tooltip='Generated Score'>Pending<i class='material-icons'>assessment</i></div>";
+								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Generated Score'>Pending<i class='material-icons'>assessment</i></div>";
 							}
 							if(arr[i].exers_info.task_datas[k].adjustedResultScore){
 								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score'>"+ arr[i].exers_info.task_datas[k].adjustedResultScore + "<i class='material-icons'>assessment</i></div>";
 							}
 							else{
-								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip red-text tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score''>Pending<i class='material-icons'>assessment</i></div>";
+								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score''>Pending<i class='material-icons'>assessment</i></div>";
 							}
 						}else if(user_type==2){
 							if(arr[i].exers_info.task_datas[k].resultScore){
 								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Status'>Performed<i class='material-icons'>play_arrow</i></div>";
 							}else{
-								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip red-text tooltipped' data-position='top' data-delay='50' data-tooltip='Status'>Pending<i class='material-icons'>play_arrow</i></div>";
+								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Status'>Pending<i class='material-icons'>play_arrow</i></div>";
 							}
 							if(arr[i].exers_info.task_datas[k].adjustedResultScore){
 								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Assessment'>Assessed<i class='material-icons'>assessment</i></div>";
 							}
 							else{
-								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip red-text tooltipped' data-position='top' data-delay='50' data-tooltip='Assessment'>Pending<i class='material-icons'>assessment</i></div>";
+								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Assessment'>Pending<i class='material-icons'>assessment</i></div>";
 							}
 						}
 							

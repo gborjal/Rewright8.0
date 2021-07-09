@@ -19,7 +19,7 @@
 									<label for="remember">Remember</label>
 								</p>
 
-								<button class="btn waves-effect red darken-4" type="submit">Login
+								<button class="btn waves-effect blue darken-4" type="submit">Login
 								    <i class="large material-icons right">send</i>
 								</button>
 							{!! Form::close() !!}

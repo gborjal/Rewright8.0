@@ -8,7 +8,7 @@
 				<div id="f" class="card medium">
 					<ul class="tabs">
 						<li class="tab col s3"><a class="red-text text-accent-4" href="#div_login" onclick="changeRegCard(0);">Login</a></li>
-						<div class="indicator red darken-4" style="z-index:1"></div>
+						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="div_login" class="col s12">
 						<br/>
@@ -21,7 +21,7 @@
 							<input type="checkbox" id="remember" name="remember"/>
 	      					<label for="remember">Remember</label>
 	      					</p>	
-							<button class="btn waves-effect red darken-4" type="submit" formmethod="post">Login
+							<button class="btn waves-effect blue darken-4" type="submit" formmethod="post">Login
 							    <i class="large material-icons right">send</i>
 			  				</button>
 						{!! Form::close() !!}
