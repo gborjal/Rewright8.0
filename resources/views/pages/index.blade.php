@@ -13,18 +13,17 @@
 					<div id="div_login" class="col s12">
 						<br/>
 						{!! Form::open(['route'=>'login','method'=>'POST']) !!}
-							<div class="row">
-	        					<div class="input-field col s12">
-									{!! Form::text('login_id',null,['placeholder'=>'username or email','class'=>'validate']) !!}
-									<label for="login_id">Username/Email</label>
-								</div>
+							
+        					<div class="input-field">
+								{!! Form::text('login_id',null,['placeholder'=>'username or email','class'=>'validate']) !!}
+								<label for="login_id">Username/Email</label>
 							</div>
-							<div class="row">
-	        					<div class="input-field col s12">
-									{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
-									<label for="password">Password</label>
-								</div>
+						
+        					<div class="input-field">
+								{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
+								<label for="password">Password</label>
 							</div>
+							
 							<p>
 								<label>
 									<input type="checkbox" id="remember" name="remember"/>
