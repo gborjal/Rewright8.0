@@ -368,12 +368,10 @@
 						</div>
 					</div>
 					<div id="post_patient" class="col s12">
-						<div class="col s12">
 						<ul class = "pagination">
 							<li class = "light-blue darken-4 active" id = "li_p_add"><a id = "a_p_add" href="#!">Add</a></li>
 							<li id = "li_find"><a id = "a_find" href="#!">Get Code</a></li>
 						</ul>
-						
 					</div>
 					<div id="post_patient_add" class="col s12">
 						<nav class = "hide-on-large-only blue darken-4">
