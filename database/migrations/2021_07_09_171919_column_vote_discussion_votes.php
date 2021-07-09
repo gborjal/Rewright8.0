@@ -13,10 +13,8 @@ class ColumnVoteDiscussionVotes extends Migration
      */
     public function up()
     {
-        Schema::table('discussion_votes', function (Blueprint $table) {
         
-            $table->integer('vote')->change();
-        });
+        DB::statement('ALTER TABLE discussion_votes ALTER COLUMN vote TYPE integer USING (trim(vote)::integer');
     }
 
     /**
