@@ -437,7 +437,7 @@
 								<input type="text" id="title" name="title">
 								<label for="title">Description</label>
 								<div class="file-field input-field">
-									<div class="btn light-blue accent-3"><span>LeapMotion</span>
+									<div class="btn light-blue darken-3"><span>LeapMotion</span>
 										<input id="leapData" name="leapData" type="file" accept=".json.lz" required="required">
 									</div>
 									<div class="file-path-wrapper">
@@ -445,7 +445,7 @@
 									</div>
 								</div>
 							{!! Form::close() !!}
-							<div class="input-field" style="position: absolute; bottom:10px;right:20px;"><a class="btn-large light-blue accent-3 tooltipped" href = "{{route('vanillaLab')}}" target = "_blank" data-position="top" data-tooltip="Create Exercise/s"><i class="large material-icons">developer_mode</i></a></div>
+							<div class="input-field" style="position: absolute; bottom:10px;right:20px;"><a class="btn-large light-blue darken-3 tooltipped" href = "{{route('vanillaLab')}}" target = "_blank" data-position="top" data-tooltip="Create Exercise/s"><i class="large material-icons">developer_mode</i></a></div>
 						</div>
 						<div id="post_view_exercise" class="col s12" style = "display:none;">
 							<nav class = "hide-on-large-only blue darken-4">

@@ -38,7 +38,7 @@
 
           <div class="btn-group btn-group-lg dropup">
 
-            <button style="text-align: left" type="button" class="btn btn-default" ng-click="playback()" ng-class="{active: mode=='playback'}" ng-disabled="canPlayBack()">
+            <button style="text-align: left" type="button" class="btn btn-default light-blue accent-4" ng-click="playback()" ng-class="{active: mode=='playback'}" ng-disabled="canPlayBack()">
 
               <span ng-show="player().loading()" us-spinner="{radius:4, width:2, length: 4, left: '20px'}" style="width: 18px; display: inline-block;"></span>
 

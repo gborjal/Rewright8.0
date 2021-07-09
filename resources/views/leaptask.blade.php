@@ -49,7 +49,7 @@
 @stop
 @section('body-content')
   <div class="fixed-action-btn" style="top: 50%; right: 0px;">
-    <a class="btn-floating btn-large sidenav-trigger" href="#" data-target="sidePanel">
+    <a class="btn-floating btn-large light-blue accent-4 sidenav-trigger" href="#" data-target="sidePanel">
       <i class="large material-icons">chevron_left</i>
     </a>
   </div>
@@ -182,7 +182,7 @@
 
         <div class="btn-group btn-group-lg dropup">
           @if(Auth::user()->user_types == 2)
-          <button type="button" class="btn btn-default" ng-click="record()" ng-class="{active: mode=='record'}" id="record">
+          <button type="button" class="btn btn-default light-blue accent-4" ng-click="record()" ng-class="{active: mode=='record'}" id="record">
 
             <i class="glyphicon glyphicon-record" ng-class="{orange: recordPending(), red: recording()}"></i>
 
@@ -190,7 +190,7 @@
 
           </button>
 
-          <button type="button" class="btn btn-default" ng-click="crop()" ng-class="{active: mode=='crop'}" ng-disabled="canPlayBack()" id="crop">
+          <button type="button" class="btn btn-default light-blue accent-4" ng-click="crop()" ng-class="{active: mode=='crop'}" ng-disabled="canPlayBack()" id="crop">
 
             <span style="margin-top: -2px; display: inline-block; vertical-align: top;">[ ]</span>
 
@@ -198,7 +198,7 @@
 
           </button>
           @endif
-          <button style="text-align: left" type="button" class="btn btn-default" ng-click="playback()" ng-class="{active: mode=='playback'}" ng-disabled="canPlayBack()">
+          <button style="text-align: left" type="button" class="btn btn-default light-blue accent-4" ng-click="playback()" ng-class="{active: mode=='playback'}" ng-disabled="canPlayBack()">
 
             <span ng-show="player().loading()" us-spinner="{radius:4, width:2, length: 4, left: '20px'}" style="width: 18px; display: inline-block;"></span>
 
@@ -212,8 +212,8 @@
 
         </div>
         @if(Auth::user()->user_types == 2)
-        <div class="btn-group btn-group-lg dropup" style="text-align: left;">
-          <button type="button" class="btn btn-default" ng-click="submit()">Submit Exercise</button>
+        <div class="btn-group btn-group-lg dropup center" style="text-align: left;">
+          <button type="button" class="btn btn-default light-blue accent-4" ng-click="submit()">Submit Exercise</button>
           
         </div>
         @endif

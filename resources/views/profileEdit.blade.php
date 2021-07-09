@@ -139,7 +139,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col l12">
+				<div class="col s12">
 					<a href="#post" class="right modal-action modal-close waves-effect waves-green btn-flat">Update
 						<i class="large material-icons right">send</i>
 					</a>

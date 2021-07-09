@@ -39,7 +39,7 @@
                ng-show="mode == 'crop' || mode == 'playback'"></div>
 
           <div class="btn-group btn-group-lg dropup">
-            <button type="button" class="btn btn-default" ng-click="record()" ng-class="{active: mode=='record'}" id="record">
+            <button type="button" class="btn btn-defaultlight-blue accent-4" ng-click="record()" ng-class="{active: mode=='record'}" id="record">
 
               <i class="glyphicon glyphicon-record" ng-class="{orange: recordPending(), red: recording()}"></i>
 
@@ -47,14 +47,14 @@
 
             </button>
 
-            <button type="button" class="btn btn-default" ng-click="crop()" ng-class="{active: mode=='crop'}" ng-disabled="canPlayBack()" id="crop">
+            <button type="button" class="btn btn-default light-blue accent-4" ng-click="crop()" ng-class="{active: mode=='crop'}" ng-disabled="canPlayBack()" id="crop">
 
               <span style="margin-top: -2px; display: inline-block; vertical-align: top;">[ ]</span>
 
               <span class="hotkey">C</span>rop
 
             </button>
-            <button style="text-align: left" type="button" class="btn btn-default" ng-click="playback()" ng-class="{active: mode=='playback'}" ng-disabled="canPlayBack()">
+            <button style="text-align: left" type="button" class="btn btn-default light-blue accent-4" ng-click="playback()" ng-class="{active: mode=='playback'}" ng-disabled="canPlayBack()">
 
               <span ng-show="player().loading()" us-spinner="{radius:4, width:2, length: 4, left: '20px'}" style="width: 18px; display: inline-block;"></span>
 
@@ -68,7 +68,7 @@
 
           </div>
           <div class="btn-group btn-group-lg dropup" style="text-align: left;">
-            <button type="button" class="btn btn-default" ng-click="save()">Download</button>
+            <button type="button" class="btn btn-default light-blue accent-4" ng-click="save()">Download</button>
             
           </div>
           <div class="pull-right">
