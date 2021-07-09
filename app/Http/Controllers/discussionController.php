@@ -205,14 +205,14 @@ class discussionController extends Controller
             $id = $request->get('id');
             $type = $request->get('type');
             $query = discussion_vote::select(DB::raw('count(*) as vote_count'))
-                ->where('discussion_comment_id','=',$id)
-                ->first();
+                                    ->where('discussion_comment_id','=',$id)
+                                    ->first();
             if(intval($query->vote_count)==0){//insert
                 DB::table('discussion_votes')
-                    ->insertGetId([
-                        'discussion_comment_id' => $id,
-                        'vote'                  => $type,
-                        'user_id'               => Auth::user()->id
+                    ->insert([
+                                'discussion_comment_id' => $id,
+                                'vote'                  => $type,
+                                'user_id'               => Auth::user()->id
                     ]);
             }else{//update
                  $query = discussion_vote::select('*')
