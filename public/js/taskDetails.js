@@ -82,7 +82,7 @@ function submitAdjustedScore(){
         type:"POST",
         data: data,
         success:function(data){
-          if(data.status == 'success'){ 
+          if(data.success){ 
               var toastContent = "<span>" + data.message + "</span>";
               M.toast({   html:toastContent,
                             displayLength:1000, 
