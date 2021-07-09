@@ -1240,7 +1240,7 @@ Recording.prototype = {
       if (xhr.readyState === xhr.DONE) {
         if (xhr.status === 200 || xhr.status === 0) {
           if (xhr.responseText) {
-
+            console.log(xhr.responseText);
             recording.readFileData(xhr.responseText, callback);
 
           } else {
