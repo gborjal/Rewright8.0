@@ -39,7 +39,7 @@
                ng-show="mode == 'crop' || mode == 'playback'"></div>
 
           <div class="btn-group btn-group-lg dropup">
-            <button type="button" class="btn btn-defaultlight-blue accent-4" ng-click="record()" ng-class="{active: mode=='record'}" id="record">
+            <button type="button" class="btn btn-default light-blue accent-4" ng-click="record()" ng-class="{active: mode=='record'}" id="record">
 
               <i class="glyphicon glyphicon-record" ng-class="{orange: recordPending(), red: recording()}"></i>
 
