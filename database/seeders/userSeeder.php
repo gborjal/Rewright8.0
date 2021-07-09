@@ -158,9 +158,9 @@ class userSeeder extends Seeder
         //patient
         $patient_id = \DB::table('users')->insertGetId([
             'username'=>'lmborjal',
-            'email'=> 'lmborjal@yahoo.com',
-            'password'=> Hash::make('123456'),
-            'activation_code' => '123456',
+            'email'=> 'trafalgarlaw@gmail.com',
+            'password'=> Hash::make('cbzbtuy7'),
+            'activation_code' => 'cbzbtuy7',
             'user_types'=> 2
         ]);
         \DB::table('users_info')->insert([
