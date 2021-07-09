@@ -596,7 +596,7 @@ function getExerDataList(){
                 	var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                     addNode(row,"span",undefined,undefined,undefined,undefined,undefined,result.desc);
 
-                    var a = addNode(row,'a',undefined,undefined,"secondary-content",undefined,undefined,undefined);
+                    var a = addNode(row,'a',undefined,undefined,"secondary-content light-blue-text accent-4",undefined,undefined,undefined);
                     addNode(a,'i',undefined,undefined,"material-icons",undefined,undefined,"launch");
                     var siteUrl = window.location.href.split('/')[2];
                     a.href = "https://" + siteUrl + "/preview/" + result.id;
