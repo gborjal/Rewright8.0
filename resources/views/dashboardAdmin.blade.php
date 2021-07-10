@@ -63,7 +63,7 @@
 			<div class="row">
 				<div class="col s12 m12 l12">
 					<div class="row">
-						<div class="col s12 m9 l7 offset-l3">
+						<div class="col s12 m12 l7 offset-l3">
 							<div class="row">
 								<div id = "manage">
 									<div class="col s12 hide-on-med-and-down">
