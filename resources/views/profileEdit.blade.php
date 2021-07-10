@@ -181,7 +181,7 @@
 		<script type="text/javascript">
 			function simpleSave(fId){
 				var df = new FormData(fId);
-				ajaxSubmitPostings(fId,new FormData(fId));
+				ajaxSubmitPostings(fId,df);
 			}
 		</script>
         
