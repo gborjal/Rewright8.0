@@ -155,7 +155,7 @@
 		<!-- End of General Body -->
 		<!-- Modals -->
 		
-		<div id="m_personal" class="modal modal-fixed-footer">
+		<div id="m_personal" class="modal">
 			
 			<div class="modal-content">
 				<h4>Profile</h4>
@@ -255,7 +255,7 @@
 			</div>
 			
 		</div>
-		<div id="m_settings" class="modal modal-fixed-footer">
+		<!--div id="m_settings" class="modal modal-fixed-footer">
 			<div class="modal-content">
 				<h4>Setting</h4>
 				<p>Sample Settings Here.</p>
@@ -263,7 +263,7 @@
 			<div class="modal-footer">
 				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
 			</div>
-		</div>
+		</div-->
 		<div id="m_postings" class="modal modal-fixed-footer">
 			<div class="modal-content">
 				<div class="row">
