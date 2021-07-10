@@ -997,25 +997,25 @@ $('a').on('click', function() {
 	}
 });
 $('#a_p_add').click(function(){
-    this.parentNode.className = "light-blue darken-4 active";
+    this.parentNode.className = "active";
     document.getElementById('li_find').className = "";
     document.getElementById('post_patient_add').style.display = 'block';
     document.getElementById('post_patient_find').style.display = 'none';
 });
 $('#a_find').click(function(){
-    this.parentNode.className = "light-blue darken-4 active";
+    this.parentNode.className = "active";
     document.getElementById('li_p_add').className = "";
     document.getElementById('post_patient_add').style.display = 'none';
     document.getElementById('post_patient_find').style.display = 'block';
 });
 $('#a_e_add').click(function(){
-    this.parentNode.className = "light-blue darken-4 active";
+    this.parentNode.className = "active";
     document.getElementById('li_e_view').className = "";
     document.getElementById('post_add_exercise').style.display = 'block';
     document.getElementById('post_view_exercise').style.display = 'none';
 });
 $('#e_view').click(function(){
-    this.parentNode.className = "light-blue darken-4 active";
+    this.parentNode.className = "active";
     document.getElementById('li_e_add').className = "";
     document.getElementById('post_add_exercise').style.display = 'none';
     document.getElementById('post_view_exercise').style.display = 'block';
