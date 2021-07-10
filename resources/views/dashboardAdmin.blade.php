@@ -132,10 +132,8 @@
 								<div id = "managePG">
 									<div class="col s12">
 										<nav class = "hide-on-large-only light-blue darken-3">
-											<div class="nav-wrapper">
-												<div class="col s12">
-													<a href="#!" class="breadcrumb">Patient Group</a>
-												</div>
+											<div class="col s12">
+												<a href="#!" class="breadcrumb">Patient Group</a>
 											</div>
 										</nav>
 									</div>
