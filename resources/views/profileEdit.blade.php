@@ -140,7 +140,7 @@
 			</div>
 			<div class="row">
 				<div class="col s12">
-					<a href="#post" class="right modal-action modal-close waves-effect waves-green btn-flat">Update
+					<a href="#post" class="right modal-action modal-close waves-effect waves-green btn-flat" onclick="simpleSave('postEditProfile');">Update
 						<i class="large material-icons right">send</i>
 					</a>
 				</div>
@@ -178,6 +178,11 @@
           </div>
         </footer>
 		<script type = "text/javascript" src = "{{ URL::asset('js/api.js') }}"/></script>
+		<script type="text/javascript">
+			function simpleSave(fId){
+				ajaxSubmitPostings(fId,new FormData(fId));
+			}
+		</script>
         
   </body>
 </html>
