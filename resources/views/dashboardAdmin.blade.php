@@ -96,8 +96,8 @@
 											
 											{!! Form::email('email',null,['class'=>'form-control']) !!}
 											<label for="email">Email</label>
-											<div class="input-field col s12 light-blue-text darken-1">
-												<select name='user_types'>		{{-- get this from db next time for scalability--}}
+											<div class="input-field col s12">
+												<select name='user_types' class="light-blue-text darken-1">		{{-- get this from db next time for scalability--}}
 													<option value="" disabled selected>Choose your option</option>
 													<option value="1">Physician</option>
 													<option value="2">Patient</option>
