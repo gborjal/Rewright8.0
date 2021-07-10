@@ -180,6 +180,7 @@
 		<script type = "text/javascript" src = "{{ URL::asset('js/api.js') }}"/></script>
 		<script type="text/javascript">
 			function simpleSave(fId){
+				var df = new FormData(fId);
 				ajaxSubmitPostings(fId,new FormData(fId));
 			}
 		</script>
