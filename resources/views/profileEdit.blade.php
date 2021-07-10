@@ -179,6 +179,9 @@
         </footer>
 		<script type = "text/javascript" src = "{{ URL::asset('js/api.js') }}"/></script>
 		<script type="text/javascript">
+			$(document).ready(function(){
+				$('select').formSelect();
+			});
 			function simpleSave(fId){
 				var df = new FormData(document.getElementById(fId));
 				ajaxSubmitPostings('#'+fId,df);
