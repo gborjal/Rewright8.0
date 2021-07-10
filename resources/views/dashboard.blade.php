@@ -309,6 +309,64 @@
 							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" href="#upDescDisc"><i class="material-icons">description</i></a>
 						</div>
 					</div>
+					<div id="post_task" class="col s12">Assign Task
+					{!! Form::open(['route'=>'postTask','id'=>'postTask','files'=>'true']) !!}
+						<!-- change to: if pt his user_id-->
+						{!! Form::hidden('pd_project',Auth::user()->projects[1]->project_id,['id'=>'pd_project']) !!}
+						
+						<input type="text" id="title" name="title">
+						<label for="title">Subject</label>
+						<div class="input-field">
+							<select id="freq" name="freq" required="required">
+								<option value="1" selected>1 day</option>
+								<option value="2" >2 day</option>
+								<option value="3" >3 day</option>
+								<option value="4" >4 day</option>
+								<option value="5" >5 day</option>
+								<option value="6" >6 day</option>
+								<option value="7" >7 day</option>
+								<option value="8" >8 day</option>
+								<option value="9" >9 day</option>
+								<option value="10" >10 day</option>
+								<option value="11" >11 day</option>
+								<option value="12" >12 day</option>
+								<option value="13" >13 day</option>
+								<option value="14" >14 day</option>
+								<option value="15" >15 day</option>
+							</select>
+							<label>Number of day/s</label>
+						</div>
+						<div class="input-field">
+							<select id="leapData" name="leapData" multiple="multiple" required="required" onfocus = "populateExerData();">
+								<option value="" disabled selected>Choose your option</option>
+								
+							</select>
+							<label>Exercise Data:</label>
+						</div>
+						<div class="input-field"> 
+							<select id="patientData" name="patientData" multiple="multiple" required="required">
+								<option value="" disabled selected></option>
+								
+							</select>
+							<label>Assign to Patient/s:</label>
+						</div>
+						<div id="addl_post_task">
+							<script type="text/javascript">
+								var taskTextCntr = 1;
+								var taskImageCntr = 0;
+								var taskHighlightCntr = 0;
+							</script>
+							<textarea class="materialize-textarea" id="text[0]" name="text[]" placeholder="What do you want to say?"></textarea>
+						
+						</div>
+					{!! Form::close() !!}
+						<div class="col s12">
+						<br/>
+							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-3" data-position="top" data-delay="50" data-tooltip="Add Image" href="#upImageTask"><i class="material-icons">picture_in_picture</i></a>
+							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-2" data-position="top" data-delay="50" data-tooltip="Highlight text" href="#upHighlightTask"><i class="material-icons" href="#upHighlightDisc">"</i></a>
+							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" href="#upDescTask"><i class="material-icons">description</i></a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
