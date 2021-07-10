@@ -66,14 +66,14 @@ function submitActivationForm(formId){
                     var toastContent = "<span>" + msg[message] + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
                 }
             }else if(status == "fail"){
                 var toastContent = "<span>" + msg + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
             }else if(status == "success"){
                 var toastContent = "<span>" + msg + "</span>";
@@ -142,7 +142,7 @@ function submitRegForm(){
             		var toastContent = "<span>" + msg[message] + "</span>";
 					M.toast({  html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
             	}
             }else if(status == "fail"){
@@ -150,7 +150,7 @@ function submitRegForm(){
             	var toastContent = "<span>" + msg + "</span>";
 				M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
@@ -218,7 +218,7 @@ function submitActivationForm(){
             		var toastContent = "<span>" + msg[message] + "</span>"; 
 					M.toast({  html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
             	}
             }else if(status == "fail"){
@@ -226,7 +226,7 @@ function submitActivationForm(){
             	var toastContent = "<span>" + msg + "</span>";
                 M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
             }else if(status == "success"){
             	var toastContent = "<span>" + msg + "</span>";
@@ -293,7 +293,7 @@ function searchPatientGroup(){
                     var toastContent = "<span>" + errors + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
                 }
             }else if(status == "fail"){
@@ -301,7 +301,7 @@ function searchPatientGroup(){
                     var toastContent = "<span>" + errors + "</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes:'red darken-4'
                         });
                 }
             }else if(status == "success"){
