@@ -67,7 +67,7 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 					var toastContent = "<span>Success</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
 	            }
 				return true;
@@ -100,7 +100,7 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
             			var toastContent = "<span>" + msg + "</span>";
 	                   	M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
             		}else{
             			for(errors of Object.values(msg)){
@@ -116,7 +116,7 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 					var toastContent = "<span>Success</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'red darken-4'
+                            classes:'blue darken-4'
                         });
 	            }
 				return true;
