@@ -96,18 +96,19 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
             	var msg = JSON.parse(data).message;
             	
             	if(!success || !status){
+            		var color = (success || status) ? "blue": "red";
             		if(typeof msg != "object"){
             			var toastContent = "<span>" + msg + "</span>";
 	                   	M.toast({   html:toastContent,
                             displayLength:5000, 
-                            classes:'blue darken-4'
+                            classes: color + ' darken-4'
                         });
             		}else{
             			for(errors of Object.values(msg)){
 		                    var toastContent = "<span>" + errors + "</span>";
 		                   	M.toast({   html:toastContent,
 	                            displayLength:5000, 
-	                            classes:'blue darken-4'
+	                            classes: color + ' darken-4'
 	                        });
 		                }
             		}
