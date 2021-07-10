@@ -269,9 +269,9 @@
 				<div class="row">
 					<ul class="tabs" id="post_tabs">
 						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_disc">Thread</a></li>
-						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_patient">Patient</a></li>
 						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_task">Assign Task</a></li>
 						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_exercise">Exercises</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_patient">Patient</a></li>
 						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="post_disc" class="row">
@@ -436,7 +436,7 @@
 								<br/><br/>
 								
 							{!! Form::close() !!}
-							<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_activation')">Get Code
+								<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_activation')">Create
 									<i class="material-icons right">done</i>
 								</button>
 							<div id = "f_activation_div" class="input-field col s12"></div>
