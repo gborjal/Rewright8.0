@@ -516,7 +516,7 @@ function submitActivationForm(formId){
 				
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
-                a = addNode(row,'a',undefined,undefined,"light-blue darken-3 btn waves-effect btn-flat",undefined,undefined,"Copy");
+                a = addNode(row,'a',undefined,undefined,"light-blue-text text-darken-3 btn waves-effect btn-flat",undefined,undefined,"Copy");
                 a.onclick = function(){
                     var text = msg;
                     var listener = function(ev) {
