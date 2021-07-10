@@ -419,48 +419,49 @@
 							<li class = "light-blue darken-4 active" id = "li_p_add"><a id = "a_p_add" href="#!">Add</a></li>
 							<li id = "li_find"><a id = "a_find" href="#!">Get Code</a></li>
 						</ul>
-					</div>
-					<div id="post_patient_add" class="col s12">
-						<nav class = "hide-on-large-only blue darken-4">
-							<div class="nav-wrapper">
-								<div class="col s12">
-									<a href="#!" class="breadcrumb">Add Patient/s</a>
+					
+						<div id="post_patient_add" class="col s12">
+							<nav class = "hide-on-large-only blue darken-4">
+								<div class="nav-wrapper">
+									<div class="col s12">
+										<a href="#!" class="breadcrumb">Add Patient/s</a>
+									</div>
 								</div>
-							</div>
-						</nav>
-						{!! Form::open(['route'=>'registerByAdmin','id'=>'f_activation']) !!}
-						{!! csrf_field() !!}
-							
-							{!! Form::email('email',null,['class'=>'form-control']) !!}
-							<label for="email">Email</label>
-							<br/><br/>
-							
-						{!! Form::close() !!}
-						<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_activation')">Get Code
-								<i class="material-icons right">done</i>
-							</button>
-						<div id = "f_activation_div" class="input-field col s12"></div>
-					</div>
-					<div id="post_patient_find" class="col s12" style = "display:none;">
-						<nav class = "hide-on-large-only blue darken-4">
-							<div class="nav-wrapper">
-								<div class="col s12">
-									<a href="#!" class="breadcrumb">Activation code</a>
+							</nav>
+							{!! Form::open(['route'=>'registerByAdmin','id'=>'f_activation']) !!}
+							{!! csrf_field() !!}
+								
+								{!! Form::email('email',null,['class'=>'form-control']) !!}
+								<label for="email">Email</label>
+								<br/><br/>
+								
+							{!! Form::close() !!}
+							<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_activation')">Get Code
+									<i class="material-icons right">done</i>
+								</button>
+							<div id = "f_activation_div" class="input-field col s12"></div>
+						</div>
+						<div id="post_patient_find" class="col s12" style = "display:none;">
+							<nav class = "hide-on-large-only blue darken-4">
+								<div class="nav-wrapper">
+									<div class="col s12">
+										<a href="#!" class="breadcrumb">Activation code</a>
+									</div>
 								</div>
-							</div>
-						</nav>
-						{!! Form::open(['route'=>'getActivationCode','id'=>'f_Code']) !!}
-						{!! csrf_field() !!}
-							
-							{!! Form::email('email',null,['class'=>'form-control']) !!}
-							<label for="email">Email</label>
-							<br/><br/>
-							
-						{!! Form::close() !!}
-						<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_Code')">Get Code
-								<i class="material-icons right">done</i>
-							</button>
-						<div id = "f_Code_div" class="col s12"></div>
+							</nav>
+							{!! Form::open(['route'=>'getActivationCode','id'=>'f_Code']) !!}
+							{!! csrf_field() !!}
+								
+								{!! Form::email('email',null,['class'=>'form-control']) !!}
+								<label for="email">Email</label>
+								<br/><br/>
+								
+							{!! Form::close() !!}
+							<button id="sub" class="btn waves-effect blue darken-4" onclick="submitActivationForm('f_Code')">Get Code
+									<i class="material-icons right">done</i>
+								</button>
+							<div id = "f_Code_div" class="col s12"></div>
+						</div>
 					</div>
 				</div>
 			</div>
