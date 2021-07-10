@@ -288,9 +288,9 @@
 
 				<div id="div_extra_dtls"></div>
 			</div>
-			<div class="modal-footer">
+			<!--div class="modal-footer">
 				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="">Save</a>
-			</div>
+			</div-->
 			{!! Form::close() !!}
 		</div>
 		

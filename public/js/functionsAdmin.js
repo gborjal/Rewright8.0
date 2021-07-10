@@ -350,10 +350,10 @@ function searchPatientGroup(){
                     a.setAttribute('onclick','updatePGSize(' + res_id +',0)');
                     addNode(a,'i',undefined,undefined,"material-icons",undefined,undefined,"arrow_drop_down");
 
-                    var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
+                    /*var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
                     var siteUrl = window.location.href.split('/')[2];
                     a.href = "https://" + siteUrl + "/auth/group/edit/" + result[0].id;
-                    a.target = "_blank";
+                    a.target = "_blank";*/
                 }
                 
                 
