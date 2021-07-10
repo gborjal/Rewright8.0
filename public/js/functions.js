@@ -516,7 +516,7 @@ function submitActivationForm(formId){
 				
                 var row = addNode(cur,'li',undefined,undefined,'collection-item',undefined,undefined,undefined);
                 addNode(row,undefined,undefined,undefined,undefined,undefined,undefined,$(formId+' [name=email]')[0].value + " ");
-                a = addNode(row,'a',undefined,undefined,"btn waves-effect btn-flat",undefined,undefined,"Copy");
+                a = addNode(row,'a',undefined,undefined,"light-blue darken-3 btn waves-effect btn-flat",undefined,undefined,"Copy");
                 a.onclick = function(){
                     var text = msg;
                     var listener = function(ev) {
@@ -532,7 +532,7 @@ function submitActivationForm(formId){
                             classes:'blue darken-4'
                         });
                 };
-                var a = addNode(row,'a',undefined,undefined,"secondary-content btn waves-effect",undefined,undefined,"Edit");
+                var a = addNode(row,'a',undefined,undefined,"secondary-content light-blue darken-3 btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
                 a.href = "https://" + siteUrl + "/auth/profile/edit/" + msg;
                 a.target = "_blank";
