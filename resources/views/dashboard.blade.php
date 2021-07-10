@@ -367,6 +367,53 @@
 							<a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" href="#upDescTask"><i class="material-icons">description</i></a>
 						</div>
 					</div>
+					<div id = "post_exercise" class = "col s12">
+						<div class="col s12">
+							<ul class = "pagination">
+								<li class = "light-blue darken-4 active" id = "li_e_add"><a id = "a_e_add" href="#!">Add</a></li>
+								<li id = "li_e_view"><a id = "e_view" href="#!">View</a></li>
+							</ul>
+							
+						</div>
+						<div id="post_add_exercise" class="col s12">
+							<nav class = "hide-on-large-only blue darken-4">
+								<div class="nav-wrapper">
+									<div class="col s12">
+										<a href="#!" class="breadcrumb">Add Exercise</a>
+									</div>
+								</div>
+							</nav>
+							{!! Form::open(['route'=>'postExerciseData','id'=>'postExerciseData','files'=>'true']) !!}
+							{!! csrf_field() !!}
+								<input type="text" id="title" name="title">
+								<label for="title">Description</label>
+								<div class="file-field input-field">
+									<div class="btn light-blue darken-3"><span>LeapMotion</span>
+										<input id="leapData" name="leapData" type="file" accept=".json.lz" required="required">
+									</div>
+									<div class="file-path-wrapper">
+										<input id="leapDataPath[0]" name="leapDataPath" class="file-path validate" type="text">
+									</div>
+								</div>
+							{!! Form::close() !!}
+							<div class="input-field" style="position: absolute; bottom:10px;right:20px;"><a class="btn-large light-blue darken-3 tooltipped" href = "{{route('vanillaLab')}}" target = "_blank" data-position="top" data-tooltip="Create Exercise/s"><i class="large material-icons">developer_mode</i></a></div>
+						</div>
+						<div id="post_view_exercise" class="col s12" style = "display:none;">
+							<nav class = "hide-on-large-only blue darken-4">
+								<div class="nav-wrapper">
+									<div class="col s12">
+										<a href="#!" class="breadcrumb">Exercise/s</a>
+									</div>
+								</div>
+							</nav>
+							<div id="div_view_exercises" class = "col s12">
+							{!! Form::open(['route'=>'postExerciseDataList','id'=>'postExerciseDataList']) !!}
+							{!! csrf_field() !!}
+							{!! Form::close() !!}
+								<ul class="collection" id="ul_view_exercises"></ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
