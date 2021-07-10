@@ -85,7 +85,7 @@
 									</nav>
 									<div class="col s12">
 										<ul class = "pagination">
-											<li class = "light-blue-text darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
+											<li class = "light-blue darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
 											<li id = "li_activation"><a id = "a_activation" href="#!">Activation Code</a></li>
 										</ul>
 										

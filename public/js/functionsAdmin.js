@@ -29,13 +29,13 @@ $(document).ready(function(){
 });
 
 $('#a_c_user').click(function(){
-    this.parentNode.className = "light-blue-text darken-4 active";
+    this.parentNode.className = "light-blue darken-4 active";
     document.getElementById('li_activation').className = "";
     document.getElementById('createUser').style.display = 'block';
     document.getElementById('getActivationCode').style.display = 'none';
 });
 $('#a_activation').click(function(){
-    this.parentNode.className = "light-blue-text darken-4 active";
+    this.parentNode.className = "light-blue darken-4 active";
     document.getElementById('li_c_user').className = "";
     document.getElementById('createUser').style.display = 'none';
     document.getElementById('getActivationCode').style.display = 'block';
