@@ -7,7 +7,7 @@ body {
 
 main {
 	flex: 1 0 auto;
-    min-height: 100%;
+    min-height: 300%;
 }
 textarea:focus{
   border-bottom: 1px solid #64b5f6;
