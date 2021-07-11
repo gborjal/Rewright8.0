@@ -29,6 +29,13 @@ class indexController extends Controller
     */
     public function index()
     {
+        if(!is_null(Auth::user())){
+            if(Auth::user()->user_types === 0) {
+                return redirect()->route('dashboardAdmin');
+            }else{
+                return redirect()->route('dashboard');
+            }
+        }
         return view('pages.index');
     }
 }
