@@ -86,7 +86,7 @@
 									<div class="col s12">
 										<ul class = "pagination">
 											<li class = "light-blue darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
-											<li id = "li_activation"><a id = "a_activation" href="#!">Activation Code</a></li>
+											<li id = "li_activation"><a id = "a_activation" href="#!">Search</a></li>
 										</ul>
 										
 									</div>
@@ -121,7 +121,7 @@
 											<label for="email">Email</label>
 											<br/><br/>
 											
-										{!! Form::close() !!}<button id="sub" class="btn waves-effect light-blue darken-3" onclick="submitActivationForm()">Get Code
+										{!! Form::close() !!}<button id="sub" class="btn waves-effect light-blue darken-3" onclick="submitActivationForm()">Search
 												<i class="material-icons right">done</i>
 											</button>
 										<div class="input-field col s12">
