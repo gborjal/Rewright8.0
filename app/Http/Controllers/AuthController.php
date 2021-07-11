@@ -233,7 +233,7 @@ class AuthController extends Controller
                 }
                 $tokenResult = $user->createToken('authToken')->plainTextToken;*/
                 if(Auth::user()->user_types != 0){
-                    if(is_null(Auth::user()->userInformation->first_name)){
+                    if(is_null(Auth::user()->userInformation)){
                         $prompt = "";
                         if(Auth::user()->user_types === 1) {
                             $prompt = 'User Information unaccomplished. Please contact admin.';
