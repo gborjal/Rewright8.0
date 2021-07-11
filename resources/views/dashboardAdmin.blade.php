@@ -68,10 +68,10 @@
 								<div id = "manage">
 									<div class="col s12 hide-on-med-and-down">
 										<ul class="tabs" id = "menu_tabs">
-											<li class="tab col s3 light-blue-text darken-3"><a class="active" href="#manageUser">User</a></li>
-											<li class="tab col s3 light-blue-text darken-3"><a href="#managePG">Patient group</a></li>
-											<li class="tab col s3 light-blue-text darken-3"><a href="#manageDiscussion">Discussions</a></li>
-											<li class="tab col s3 light-blue-text darken-3"><a href="#manageTask">Tasks</a></li>
+											<li class="tab col s3"><a class="light-blue-text text-darken-1 active" href="#manageUser">User</a></li>
+											<li class="tab col s3"><a class="light-blue-text text-darken-1" href="#managePG">Patient group</a></li>
+											<li class="tab col s3"><a class="light-blue-text text-darken-1" href="#manageDiscussion">Discussions</a></li>
+											<li class="tab col s3"><a class="light-blue-text text-darken-1" href="#manageTask">Tasks</a></li>
 										</ul>
 									</div>
 								</div>
