@@ -232,19 +232,19 @@ class AuthController extends Controller
                     $user = User::where('username','=',$userdata['username'])->first();
                 }
                 $tokenResult = $user->createToken('authToken')->plainTextToken;*/
-                if(Auth::user()->user_types != 0){
-                    if(is_null(Auth::user()->userInformation->first_name)){
-                        $prompt = "";
-                        if(Auth::user()->user_types === 1) {
-                            $prompt = 'User Information unaccomplished. Please contact admin.';
-                        }else if(Auth::user()->user_types === 2){
-                            $prompt = 'User Information unaccomplished. Please contact your physician.';
-                        }
-                        return back()
-                            ->with('error',$prompt)
-                            ->withInput($request->except('password'));
+                
+                if(Auth::user()->user_types !== 0 && is_null(Auth::user()->userInformation)){
+                    $prompt = "";
+                    if(Auth::user()->user_types === 1) {
+                        $prompt = 'User Information unaccomplished. Please contact admin.';
+                    }else if(Auth::user()->user_types === 2){
+                        $prompt = 'User Information unaccomplished. Please contact your physician.';
                     }
+                    return back()
+                        ->with('error',$prompt)
+                        ->withInput($request->except('password'));
                 }
+                
                 return redirect()->route('dashboard')
                     ->with('project',Auth::user()->projects->first()->project_id);
                     //->with('authToken',$tokenResult);
