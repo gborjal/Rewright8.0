@@ -50,9 +50,19 @@ class userController extends Controller
                     ->route('showAdminLoginForm')
                     ->with('error','Account is an admin.');
             }else if(Auth::user()->user_types === 1){
+                if(is_null(Auth::user()->userInformation) || is_empty(is_null(Auth::user()->userInformation))){
+                    Auth::guard('web')->logout();
+                    return redirect()->route('index')
+                        ->with('error','User Information unaccomplished. Please contact admin.');
+                }
                 $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
                 return view('dashboard',['authToken'=>$tokenResult]); 
             }else if(Auth::user()->user_types === 2){
+                if(is_null(Auth::user()->userInformation) || is_empty(is_null(Auth::user()->userInformation))){
+                    Auth::guard('web')->logout();
+                    return redirect()->route('index')
+                        ->with('error','User Information unaccomplished. Please contact your physician.');
+                }
                 $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
                 return view('dashboard2',['authToken'=>$tokenResult]); 
             }
