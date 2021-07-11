@@ -225,14 +225,26 @@ class AuthController extends Controller
             {
                 //return redirect()->route('dashboard');
                 //
-                if($field == 'email'){
+                /*if($field == 'email'){
                     $user = User::where('email','=',$userdata['email'])->first();
                     
                 }else{
                     $user = User::where('username','=',$userdata['username'])->first();
                 }
-                //$tokenResult = $user->createToken('authToken')->plainTextToken;
-
+                $tokenResult = $user->createToken('authToken')->plainTextToken;*/
+                if(Auth::user()->user_types != 0){
+                    if(is_null(Auth::user()->userInformation->first_name)){
+                        $prompt = "";
+                        if(Auth::user()->user_types === 1) {
+                            $prompt = 'User Information unaccomplished. Please contact admin.';
+                        }else if(Auth::user()->user_types === 2){
+                            $prompt = 'User Information unaccomplished. Please contact your physician.';
+                        }
+                        return back()
+                            ->with('error',$prompt)
+                            ->withInput($request->except('password'));
+                    }
+                }
                 return redirect()->route('dashboard')
                     ->with('project',Auth::user()->projects->first()->project_id);
                     //->with('authToken',$tokenResult);
