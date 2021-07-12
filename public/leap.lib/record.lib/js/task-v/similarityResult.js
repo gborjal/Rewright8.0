@@ -17,7 +17,7 @@
             if(!msg){
               similarityResult = [];
             }else{
-              similarityResult = msg; 
+              similarityResult = JSON.parse(msg); 
             }
           }else{
             similarityResult = [];
