@@ -273,7 +273,8 @@
 
             $scope.leftHandlePosition = player2.player().recording.leftCropPosition;
   
-            var fnd = similarityResult.find(element => element.player2frame.id == frame.data.id);
+            //var fnd = similarityResult.find(element => element.player2frame.id == frame.data.id);
+            var fnd = similarityResult.some(element => element.player2frame.id == frame.data.id);
             var similarityIndex = (fnd != undefined)? fnd.similarityIndex:-1;
             //console.log(similarityResult.find(element => element.player2frame.id == frame.data.id))
             //rec = (fnd != undefined)? [fnd.player1frame.eArray,fnd.player2frame.eArray]:[[],[]];
