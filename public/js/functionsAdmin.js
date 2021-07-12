@@ -100,7 +100,7 @@ function submitActivationForm(formId){
                             classes:'blue darken-4'
                         });
                 };
-                var a = addNode(row,'a',undefined,undefined,"secondary-content btn light-blue darken-3 waves-effect",undefined,undefined,"Edit");
+                var a = addNode(row,'a',undefined,undefined,"secondary-content light-blue darken-3 btn waves-effect",undefined,undefined,"Edit");
                 var siteUrl = window.location.href.split('/')[2];
                 a.href = "https://" + siteUrl + "/auth/profile/edit/" + msg;
                 a.target = "_blank";
