@@ -306,7 +306,7 @@
             
             for(var i=0; i<similarityResult.length && i<cmp ;i++){
               if((similarityResult[i].player1frame.id !== null && similarityResult[i].player2frame.id !== null) 
-                  && (similarityResult[i].similarityIndex !== -1 && similarityResult[i].similarityIndex >= 0.9997)){//0.9
+                  && (similarityResult[i].similarityIndex !== -1 && similarityResult[i].similarityIndex >= 0.99997)){//0.9
                 cnt++;
               }
             }
