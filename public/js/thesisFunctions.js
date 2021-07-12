@@ -38,12 +38,12 @@ function onProtocol(frame) {
 
       for (var handId = 0, handCount = handsLength; handId != handCount; handId++) {
         var hand = frame.hands[handId];
-        var posX = (hand.palmPosition[0]*3);
+       /* var posX = (hand.palmPosition[0]*3);
         var posY = (hand.palmPosition[2]*3)-200;
         var posZ = (hand.palmPosition[1]*3)-400;
         var rotX = (hand._rotation[2]*90);
         var rotY = (hand._rotation[1]*90);
-        var rotZ = (hand._rotation[0]*90);
+        var rotZ = (hand._rotation[0]*90);*/
         var sphere = spheres[hand.id];
 
         if(handId == 0){
@@ -56,7 +56,7 @@ function onProtocol(frame) {
           var d7 = euclideanDistance(hand.fingers[3],hand.fingers[2]);
           var d8 = euclideanDistance(hand.fingers[2],hand.fingers[1]);
 
-          record = [d1,d2,d3,d4,d5,d6,d7];//,d8];
+          record = [d1,d2,d3,d4,d5,d6,d7,d8];//
           if(handsLength == 1) break;
         }else{
 
