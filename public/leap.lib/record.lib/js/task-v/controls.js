@@ -305,7 +305,8 @@
             var cmp = player1.player().recording.frameData.length - 1;
             
             for(var i=0; i<similarityResult.length && i<cmp ;i++){
-              if((similarityResult[i].player1frame.id !== null && similarityResult[i].player2frame.id !== null) && (similarityResult[i].similarityIndex !== -1 && similarityResult[i].similarityIndex >= 0.97)){//0.9
+              if((similarityResult[i].player1frame.id !== null && similarityResult[i].player2frame.id !== null) 
+                  && (similarityResult[i].similarityIndex !== -1 && similarityResult[i].similarityIndex >= 0.9997)){//0.9
                 cnt++;
               }
             }
