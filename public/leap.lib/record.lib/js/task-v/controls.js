@@ -332,6 +332,12 @@
             data: dataform,
             
             success:function(data){
+              var msg = JSON.parse(data.message);
+              var toastContent = "<span>" + msg + "</span>";
+              M.toast({   html:toastContent,
+                  displayLength:5000, 
+                  classes:'red darken-4'
+              });
               return true;
             },error:function(data){ 
               return false;
@@ -353,7 +359,12 @@
             data: dataform,
             
             success:function(data){
-              
+              var msg = JSON.parse(data.message);
+              var toastContent = "<span>" + msg + "</span>";
+              M.toast({   html:toastContent,
+                  displayLength:5000, 
+                  classes:'red darken-4'
+              });
               return true;
             },error:function(data){
               
