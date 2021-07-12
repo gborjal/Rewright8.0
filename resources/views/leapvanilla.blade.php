@@ -67,7 +67,7 @@
             </button>
 
           </div>
-          <div class="btn-group btn-group-lg dropup" style="text-align: left;">
+          <div class="btn-group btn-group-lg dropup center">
             <button type="button" class="btn btn-default light-blue accent-4" ng-click="save()">Download</button>
             
           </div>
