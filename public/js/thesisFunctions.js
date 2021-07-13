@@ -56,7 +56,7 @@ function onProtocol(frame) {
           var d7 = euclideanDistance(hand.fingers[3],hand.fingers[2]);
           var d8 = euclideanDistance(hand.fingers[2],hand.fingers[1]);
 
-          record = [d1,d2,d3,d4,d5,d6,d7d8];//
+          record = [d1,d2,d3,d4,d5,d6,d7,d8];//
           if(handsLength == 1) break;
         }else{
 
