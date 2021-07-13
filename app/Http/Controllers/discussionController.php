@@ -332,17 +332,7 @@ class discussionController extends Controller
                     }
                 }
                 
-                /**/
                 
-                                                                        //add feature:: exclusive for team / project/ profs
-                /*foreach($user_ids as $user_id){                    
-                   discussion_notif::create([
-                        'discussion_id'     => $newDisc['id'],
-                        'user_id'           => $user_id,/*['user_id'],*/
-                        'seen'              => False,
-                        'read'              => False,
-                    ]);
-                }*/
                 
                 $images = $request->file('image');
                 if($request->hasFile('image')){
