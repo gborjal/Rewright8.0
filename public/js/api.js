@@ -123,7 +123,7 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 	            }
 				return true;
             },error:function(data){ 
-                for(errors of JSON.parse(data).message){
+                for(errors of data.message){
 	                var toastContent = "<span>" + errors + "</span>";
 	                Materialize.toast(toastContent, 1000, 'red darken-4');
 	            }
