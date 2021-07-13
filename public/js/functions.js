@@ -945,6 +945,19 @@ $('a').on('click', function() {
 				}
 				return false;
 			}
+		}else if($(this).attr('href')==='#postNote'){
+			var formId = '#postNote';
+			var dataform =  new FormData();
+
+			dataform = colateText('addl_post_note');
+			//dataform.append('_token',$(formId+' [name=_token]')[0].value);
+			dataform.append('patient_id',$(formId+' [name=patient_id]')[0].value);
+			dataform.append('title',$(formId+' [name=title]')[0].value);
+
+			if(ajaxSubmitPostings(formId,dataform)){
+				resetPostings('addl_post_note',3);
+				//reset postings
+			}
 		}else if($(this).attr('href')==='#comment'){
 
 			if(board === 'db_disc_board'){	//comment on current discussion
