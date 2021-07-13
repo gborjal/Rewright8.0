@@ -45,6 +45,7 @@ function onProtocol(frame) {
         var rotY = (hand._rotation[1]*90);
         var rotZ = (hand._rotation[0]*90);*/
         var sphere = spheres[hand.id];
+        //var wristPos = hand.wristPosition();
 
         if(handId == 0){
           var d1 = euclideanDistance(hand.palmPosition,hand.fingers[0]);
@@ -55,8 +56,9 @@ function onProtocol(frame) {
           var d6 = euclideanDistance(hand.fingers[4],hand.fingers[3]);
           var d7 = euclideanDistance(hand.fingers[3],hand.fingers[2]);
           var d8 = euclideanDistance(hand.fingers[2],hand.fingers[1]);
+          //var d9 = euclideanDistance(hand.palmPosition,hand.wristPosition());
 
-          record = [d1,d2,d3,d4,d5,d6,d7,d8];//
+          record = [d1,d2,d3,d4,d5,d6,d7,d8];//,d9];
           if(handsLength == 1) break;
         }else{
 
@@ -68,6 +70,7 @@ function onProtocol(frame) {
           record.push(euclideanDistance(hand.fingers[4],hand.fingers[3]));
           record.push(euclideanDistance(hand.fingers[3],hand.fingers[2]));
           record.push(euclideanDistance(hand.fingers[2],hand.fingers[1]));
+          //record.push(euclideanDistance(hand.palmPosition,hand.wristPosition()));
         }
         //console.table(record);
       }
@@ -102,7 +105,7 @@ function cosineSimilarity(cd,cf){
     return -1; //
   }
 }
-function resultTotal(result,criteria){
+function computeResultTotal(result,criteria){
   var cnt = 0;
   var cmp = player1.player().recording.frameData.length - 1;
   
