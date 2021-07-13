@@ -267,6 +267,7 @@
 		<div id="m_note" class="modal modal-fixed-footer">
 			<div class="modal-content">
 				<div class="row">
+					<h5><i class="material-icons">note_add</i> Note </h5>
 				{!! Form::open(['route'=>'postNote','id'=>'postNote','files'=>'true']) !!}
 					<input type="hidden" name="patient_id" />
 					<input type="text" id="title" name="title">
