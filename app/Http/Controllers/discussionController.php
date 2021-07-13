@@ -318,10 +318,7 @@ class discussionController extends Controller
                                 ->where('id','=', $newDisc['project_id'])
                                 ->first();
                     $user_ids = array($owner_id['owner_id'],Auth::user()->id);
-                    print_r($user_ids);
-                    /*$user_ids = developer::select('user_id')
-                        ->where('project_id','=',$newDisc['project_id'])
-                        ->get();*/
+                    
                     foreach($user_ids as $user_id){                    
                        discussion_notif::create([
                             'discussion_id'     => $newDisc['id'],
