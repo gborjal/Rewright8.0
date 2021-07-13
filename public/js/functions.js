@@ -100,10 +100,10 @@ function updateGenContentTasks(arr,div){
 								}else{
 									resultColor = "blue-text"
 								}
-								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score'>"+ arr[i].exers_info.task_datas[k].adjustedResultScore + "<i class='material-icons'>assessment</i></div>";
+								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip "+ resultColor +" tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score'>"+ arr[i].exers_info.task_datas[k].adjustedResultScore + "<i class='material-icons'>assessment</i></div>";
 							}
 							else{
-								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip teal-text darken-2 accent-4 tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score''>Pending<i class='material-icons'>assessment</i></div>";
+								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip teal-text text-darken-2 accent-4 tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score''>Pending<i class='material-icons'>assessment</i></div>";
 							}
 						}else if(user_type==2){
 							if(arr[i].exers_info.task_datas[k].resultScore){
