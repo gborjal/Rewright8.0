@@ -79,7 +79,7 @@ function searchPatient(){
                     //var siteUrl = window.location.href.split('/')[2];
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
-                    var n = addNode(header_li,'a',undefined,undefined,"btn waves-effect",undefined,undefined,"Profile");
+                    var n = addNode(header_li,'a',undefined,undefined,"btn waves-effect",undefined,undefined,"Add Note");
 
                     var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
                     var row = addNode(div_body,"div",undefined,undefined,"row");
