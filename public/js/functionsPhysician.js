@@ -75,11 +75,15 @@ function searchPatient(){
                     var fullname = result[0].first_name + " " + result[0].middle_name + " " + result[0].last_name;
                         fullname += (result[0].suffix_name) ? result[0].suffix_name: " ";
                         addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,fullname);
-                    var a = addNode(header_li,'a',undefined,undefined,"btn waves-effect",undefined,undefined,"Profile");
+                    var a = addNode(header_li,'a',undefined,undefined,"btn waves-effect light-blue darken-3",undefined,undefined,"Profile");
                     //var siteUrl = window.location.href.split('/')[2];
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
-                    var n = addNode(header_li,'a',undefined,undefined,"btn waves-effect",undefined,undefined,"Add Note");
+                    var secCont = addNode(header_li,"div",undefined,undefined,"secondary-content");
+                    var a_n = addNode(secCont,'a',undefined,undefined,"modal-trigger btn waves-effect light-blue darken-3");
+                        addNode(a_n,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
+                        a_n.href="#m_note";
+                        a_n.onlick = "addNote("+res_id+");";
 
                     var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
                     var row = addNode(div_body,"div",undefined,undefined,"row");
