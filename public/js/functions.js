@@ -905,6 +905,7 @@ $('a').on('click', function() {
 				
 				dataform = colateText('addl_post_disc');
 				dataform.append('priority',$(formId+' [name=pd_priority]')[0].value);
+				dataform.append('patient_ids',$(formId+' [name=patientData]')[0].value);
 				dataform.append('project_id',$(formId+' [name=pd_project]')[0].value);
 				dataform.append('title',$(formId+' [name=title]')[0].value);
 
