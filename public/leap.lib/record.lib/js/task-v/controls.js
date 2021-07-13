@@ -323,6 +323,8 @@
             data: dataform,
             
             success:function(data){
+              var success = JSON.parse(data).success;
+              var msg = JSON.parse(data).message;
               if(!success){
                 var color = (success) ? "blue": "red";
                 if(typeof msg != "object"){
@@ -369,6 +371,8 @@
             data: dataform,
             
             success:function(data){
+              var success = JSON.parse(data).success;
+              var msg = JSON.parse(data).message;
               if(!success){
                 var color = (success) ? "blue": "red";
                 if(typeof msg != "object"){
