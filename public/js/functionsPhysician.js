@@ -1,4 +1,4 @@
-var searchRes = [];
+
 function searchPatient(){
     getLoading('ul_srch_res_pat');
     var formId = '#f_getPatientSrch';
@@ -37,6 +37,7 @@ function searchPatient(){
                         });
                 }
             }else if(status == "success"){
+                var searchRes = [];
                 for(result of msg){
                     if(result.length != 0){
                         if(searchRes.length == 0){
