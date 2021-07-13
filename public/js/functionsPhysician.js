@@ -123,7 +123,10 @@ function searchPatient(){
     return false;
 }
 function loadNotes(id){
-
+    if($('#patientResNotes'+id).is(':parent') ){
+        $('#patientResNotes'+id).empty();
+    }
+    getLoading('patientResTask'+id);
     var data = {
         
         id:id
@@ -136,6 +139,7 @@ function loadNotes(id){
 
         if(data.status == 'success'){
             var ul = document.getElementById("patientResNotes"+id);
+
             if(data.notes.length > 0){
               for(info of data.notes){
                 var artcle = {id:'',title:'',text:'',images:'',updated_at:''};
@@ -144,7 +148,7 @@ function loadNotes(id){
                     artcle.text    = info.text;
                     artcle.images   = info.images;
                     artcle.updated_at   = info.updated_at;
-                console.log(info);
+                //console.log(info);
 
                 var li = addNode(ul,"li",undefined,undefined,undefined,undefined,undefined,undefined);
                 var div_header = addNode(li,"div",undefined,undefined,"collapsible-header");
