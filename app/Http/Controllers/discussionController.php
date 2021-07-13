@@ -287,7 +287,7 @@ class discussionController extends Controller
                 'title'         => 'required|string|min:10',
                 'text'          => 'required|string|min:10'
             );
-            var_dump($input['patient_ids']);
+            
 
             $validator = Validator::make($input, $rules);
             if ($validator->fails()) {
