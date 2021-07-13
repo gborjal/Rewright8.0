@@ -264,6 +264,11 @@
 				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
 			</div>
 		</div-->
+		<div id="m_note" class="modal modal-fixed-footer">
+			<div class="modal-footer">
+				<a href="#post" class="modal-action modal-close waves-effect waves-green btn-flat ">Post</a>
+			</div>
+		</div>
 		<div id="m_postings" class="modal modal-fixed-footer">
 			<div class="modal-content">
 				<div class="row">
