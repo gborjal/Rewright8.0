@@ -301,10 +301,37 @@ class discussionController extends Controller
                 $input+=['user_id'=>Auth::user()->id];
                 $input+=['active'=>true];
                 $newDisc = discussion::create($input);
-                $user_ids = explode(',',$input['patient_ids']);
-                /*$user_ids = developer::select('user_id')
+                if(Auth::user()->user_types === 1) {
+                    $user_ids = explode(',',$input['patient_ids']);
+                    array_push($user_ids,Auth::user()->id);
+
+                    foreach($user_ids as $user_id){                    
+                        discussion_notif::create([
+                            'discussion_id'     => $newDisc['id'],
+                            'user_id'           => $user_id,/*['user_id'],*/
+                            'seen'              => False,
+                            'read'              => False,
+                        ]);
+                    }
+                }else if(Auth::user()->user_types === 2){
+                    $user_ids = project::select('owner_id')
+                                ->where('id','=', $newDisc['project_id'])
+                                ->get();
+                    array_push($user_ids, Auth::user()->id)
+                    /*$user_ids = developer::select('user_id')
                         ->where('project_id','=',$newDisc['project_id'])
                         ->get();*/
+                    foreach($user_ids as $user_id){                    
+                       discussion_notif::create([
+                            'discussion_id'     => $newDisc['id'],
+                            'user_id'           => $user_id['owner_id'],//['user_id'],
+                            'seen'              => False,
+                            'read'              => False,
+                        ]);
+                    }
+                }
+                
+                /**/
                 
                                                                         //add feature:: exclusive for team / project/ profs
                 foreach($user_ids as $user_id){                    
