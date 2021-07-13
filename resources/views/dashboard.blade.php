@@ -308,7 +308,9 @@
 					<div id="post_disc" class="row">
 					{!! Form::open(['route'=>'postDiscussion','id'=>'postDiscussion','files'=>'true']) !!}
 						{!! Form::hidden('pd_project',Auth::user()->projects[1]->project_id,['id'=>'pd_project']) !!}
-						
+						@if(Auth::user()->user_types == 2)
+							{!! Form::hidden('patient_ids',Auth::user()->projects[1]->project_id,['id'=>'patient_ids']) !!}
+						@endif
 						<div class="col s12 m6 l6">
 							<label for="pd_priority">Priority (urgency):</label>
 							<select id="pd_priority" name="pd_priority">
@@ -320,6 +322,7 @@
 								<option value='1'>1</option>
 							</select>
 						</div>
+						@if(Auth::user()->user_types == 1)
 						<div class="col s12 m6 l6"> 
 							<select id="patient_ids" name="patient_ids" multiple="multiple" required="required">
 								<option value="" disabled selected></option>
@@ -327,6 +330,7 @@
 							</select>
 							<label>Assign to Patient/s:</label>
 						</div>
+						@endif
 						<input type="text" id="title" name="title">
 						<label for="title">Subject</label>
 						
