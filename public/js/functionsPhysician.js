@@ -82,7 +82,7 @@ function searchPatient(){
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
                     
-                    var d_col = addNode(d_col,"div",undefined,undefined,"col s12 m3 l3");
+                    var d_col = addNode(d,"div",undefined,undefined,"col s12 m3 l3");
                     var a_n = addNode(d_col,'a',undefined,undefined,"modal-trigger btn btn-flat light-blue-text text-darken-3");
                         addNode(a_n,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
                         a_n.href="#m_note";
