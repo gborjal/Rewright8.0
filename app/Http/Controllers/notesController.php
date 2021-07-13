@@ -192,7 +192,8 @@ class notesController extends Controller
                     ->json($response)
                     ->setCallback($request->input('callback'));                   
             }else{
-            	if(!is_null($input['task_exer_data_id'])){
+            	if(array_key_exists('task_exer_data_id', $input) && !is_null($input['task_exer_data_id'])){
+            	//if(!is_null($input['task_exer_data_id'])){
             		$tmp = task_exer_data::where('id','=',intval($input['task_exer_data_id']))->first();
             		$input['patient_id'] = assigned_to::where('id','=',intval($tmp->task_assignment_id))->first()->user_id;
             	}
