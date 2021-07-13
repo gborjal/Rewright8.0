@@ -81,10 +81,10 @@ function searchPatient(){
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
                     
-                    var a_n = addNode(header_li,'a',undefined,undefined,"modal-trigger btn btn-flat light-blue-text text-darken-3");
-                        addNode(a_n,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
-                        a_n.href="#m_note";
-                        a_n.onclick = "$('#postNote [name=patient_id]')[0].value = res_id;";
+                    var a = addNode(header_li,'a',undefined,undefined,"modal-trigger btn btn-flat light-blue-text text-darken-3");
+                        addNode(a,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
+                        a.href="#m_note";
+                        a.onclick = function(){addNote(res_id)};
 
                     var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
                     var row = addNode(div_body,"div",undefined,undefined,"row");
