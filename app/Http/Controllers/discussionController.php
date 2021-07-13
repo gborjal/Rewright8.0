@@ -301,7 +301,7 @@ class discussionController extends Controller
                 $input+=['user_id'=>Auth::user()->id];
                 $input+=['active'=>true];
                 $newDisc = discussion::create($input);
-                $user_ids = explode(',',$input['patientData']);
+                $user_ids = explode(',',$input['patient_ids']);
                 /*$user_ids = developer::select('user_id')
                         ->where('project_id','=',$newDisc['project_id'])
                         ->get();*/
