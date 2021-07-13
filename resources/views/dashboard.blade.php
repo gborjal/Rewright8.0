@@ -321,7 +321,7 @@
 							</select>
 						</div>
 						<div class="input-field"> 
-							<select id="patientData" name="patientData" multiple="multiple" required="required">
+							<select id="patient_ids" name="patient_ids" multiple="multiple" required="required">
 								<option value="" disabled selected></option>
 								
 							</select>
