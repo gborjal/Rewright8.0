@@ -306,7 +306,7 @@
             
             for(var i=0; i<similarityResult.length && i<cmp ;i++){
               if((similarityResult[i].player1frame.id !== null && similarityResult[i].player2frame.id !== null) 
-                  && (similarityResult[i].similarityIndex !== -1 && similarityResult[i].similarityIndex >= 0.99997)){//0.9
+                  && (similarityResult[i].similarityIndex !== -1 && similarityResult[i].similarityIndex >= 0.9999997)){//0.9
                 cnt++;
               }
             }
@@ -333,12 +333,31 @@
             data: dataform,
             
             success:function(data){
-              var msg = JSON.parse(data).message;
-              var toastContent = "<span>" + msg + "</span>";
-              M.toast({   html:toastContent,
-                  displayLength:5000, 
-                  classes:'red darken-4'
-              });
+              if(!success){
+                var color = (success) ? "blue": "red";
+                if(typeof msg != "object"){
+                  var toastContent = "<span>" + msg + "</span>";
+                      M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes: color + ' darken-4'
+                        });
+                }else{
+                  for(errors of Object.values(msg)){
+                        var toastContent = "<span>" + errors + "</span>";
+                        M.toast({   html:toastContent,
+                              displayLength:5000, 
+                              classes: color + ' darken-4'
+                          });
+                    }
+                }
+                
+              }else{
+                var toastContent = "<span>Success</span>";
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'blue darken-4'
+                        });
+              }
               return true;
             },error:function(data){ 
               return false;
@@ -360,12 +379,31 @@
             data: dataform,
             
             success:function(data){
-              var msg = JSON.parse(data).message;
-              var toastContent = "<span>" + msg + "</span>";
-              M.toast({   html:toastContent,
-                  displayLength:5000, 
-                  classes:'red darken-4'
-              });
+              if(!success){
+                var color = (success) ? "blue": "red";
+                if(typeof msg != "object"){
+                  var toastContent = "<span>" + msg + "</span>";
+                      M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes: color + ' darken-4'
+                        });
+                }else{
+                  for(errors of Object.values(msg)){
+                        var toastContent = "<span>" + errors + "</span>";
+                        M.toast({   html:toastContent,
+                              displayLength:5000, 
+                              classes: color + ' darken-4'
+                          });
+                    }
+                }
+                
+              }else{
+                var toastContent = "<span>Success</span>";
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'blue darken-4'
+                        });
+              }
               return true;
             },error:function(data){
               
