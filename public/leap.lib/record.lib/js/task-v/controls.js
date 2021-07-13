@@ -360,7 +360,7 @@
             data: dataform,
             
             success:function(data){
-              var msg = JSON.parse(data.message);
+              var msg = data.message;//JSON.parse(data.message);
               var toastContent = "<span>" + msg + "</span>";
               M.toast({   html:toastContent,
                   displayLength:5000, 
