@@ -64,7 +64,15 @@ function ajaxSubmitPostings(formId,dataform,keepAlive=false,timeoutMax=50){
 		                }
             		}
 	            	
-	            }else{
+	            }else if(status == "validatorFail"){
+	            	for(errors of Object.values(msg)){
+		                    var toastContent = "<span>" + errors + "</span>";
+		                   	M.toast({   html:toastContent,
+	                            displayLength:5000, 
+	                            classes: color + ' darken-4'
+	                        });
+	                }
+	        	}else{
 					var toastContent = "<span>Success</span>";
                     M.toast({   html:toastContent,
                             displayLength:5000, 
