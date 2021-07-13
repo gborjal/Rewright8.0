@@ -415,7 +415,7 @@ function notifsRefresh(){ //discussion notifs fo now
 
 		},complete: function() {
 	      // Schedule the next request when the current one's complete
-			setTimeout(notifsRefresh, 30000);
+			setTimeout(notifsRefresh, 20000);
 		}
 	});
 }
