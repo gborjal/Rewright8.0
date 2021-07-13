@@ -301,10 +301,10 @@ class discussionController extends Controller
                 $input+=['user_id'=>Auth::user()->id];
                 $input+=['active'=>true];
                 $newDisc = discussion::create($input);
-                $user_ids = developer::select('user_id')
+                $user_ids = explode(',',$input['patientData']);
+                /*$user_ids = developer::select('user_id')
                         ->where('project_id','=',$newDisc['project_id'])
-
-                        ->get();
+                        ->get();*/
                 
                                                                         //add feature:: exclusive for team / project/ profs
                 foreach($user_ids as $user_id){                    
