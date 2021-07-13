@@ -277,6 +277,7 @@ class discussionController extends Controller
             $input = $request->only([
                 'project_id',
                 'priority',
+                'patient_ids',
                 'title',
                 'text'
                 ]);
@@ -286,7 +287,7 @@ class discussionController extends Controller
                 'title'         => 'required|string|min:10',
                 'text'          => 'required|string|min:10'
             );
-
+            var_dump($input['patient_ids']);
 
             $validator = Validator::make($input, $rules);
             if ($validator->fails()) {
@@ -302,6 +303,7 @@ class discussionController extends Controller
                 $newDisc = discussion::create($input);
                 $user_ids = developer::select('user_id')
                         ->where('project_id','=',$newDisc['project_id'])
+
                         ->get();
                 
                                                                         //add feature:: exclusive for team / project/ profs
