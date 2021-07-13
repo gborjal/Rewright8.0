@@ -320,7 +320,7 @@
 								<option value='1'>1</option>
 							</select>
 						</div>
-						<div class="input-field"> 
+						<div class="col s12 m6 l6"> 
 							<select id="patient_ids" name="patient_ids" multiple="multiple" required="required">
 								<option value="" disabled selected></option>
 								
