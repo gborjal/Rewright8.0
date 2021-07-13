@@ -158,7 +158,7 @@ function resetPostings(div,type){
 				notesImageCntr = 0;
 				notesHighlightCntr = 0;
 				addDesc('addl_post_note','text','What do you want to say?',notesTextCntr);
-				$('#postNote input')[3].value = '';
+				if($('#postNote input')[3]) $('#postNote input')[3].value = '';
 				break;
 		case 4: commTextCntr = 1;
 				commImageCntr = 0;
