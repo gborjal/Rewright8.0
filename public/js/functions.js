@@ -646,6 +646,7 @@ function getPatientList(){
                     }
                 }
                 populateProjectList();
+                populateProjectListDiscs();
 			}
     	}
 	});
@@ -671,6 +672,28 @@ function populateExerData(){
 }
 function populateProjectList(){
 	var sel_inp = document.getElementById('patientData');
+	sel_inp.innerHTML = " ";
+
+	var opt1 = addNode(sel_inp,'option',undefined,undefined,undefined,undefined,undefined,"Choose patient.");
+	opt1.setAttribute('disabled', 'disabled');
+	opt1.setAttribute('selected','selected');
+	for(result of patientDataList){
+		var fullname = result.first_name + " " + result.middle_name + " " + result.last_name;
+            fullname += (result.suffix_name) ? result.suffix_name: " ";
+    	var row = addNode(sel_inp,'option',undefined,undefined,undefined,result.user_id,undefined,fullname);
+    	var img = addNode(row,'img',undefined,undefined,"secondary-content circle",undefined,undefined,undefined);
+    	img.setAttribute('src',"/profile/image/t/"+result.user_id);
+    	img.setAttribute('alt','notavailable');
+        /*var a = addNode(row,'a',undefined,undefined,"secondary-content",undefined,undefined,undefined);
+        addNode(a,'i',undefined,undefined,"material-icons",undefined,undefined,"launch");
+        var siteUrl = window.location.href.split('/')[2];
+        a.href = "https://" + siteUrl + "/preview/" + result.id + ".json.lz";
+        a.target = "_blank";*/
+    }
+    $('select').formSelect();
+}
+function populateProjectListDiscs(){
+	var sel_inp = document.getElementById('patient_ids');
 	sel_inp.innerHTML = " ";
 
 	var opt1 = addNode(sel_inp,'option',undefined,undefined,undefined,undefined,undefined,"Choose patient.");
@@ -905,7 +928,7 @@ $('a').on('click', function() {
 				
 				dataform = colateText('addl_post_disc');
 				dataform.append('priority',$(formId+' [name=pd_priority]')[0].value);
-				dataform.append('patient_ids',$(formId+' [name=patientData]')[0].value);
+				dataform.append('patient_ids',$(formId+' [name=patient_ids]')[0].value);
 				dataform.append('project_id',$(formId+' [name=pd_project]')[0].value);
 				dataform.append('title',$(formId+' [name=title]')[0].value);
 
