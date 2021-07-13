@@ -265,8 +265,30 @@
 			</div>
 		</div-->
 		<div id="m_note" class="modal modal-fixed-footer">
+			{!! Form::open(['route'=>'postNote','id'=>'postNote','files'=>'true']) !!}
+				<input type="hidden" name="patient_id" />
+				<input type="text" id="title" name="title">
+                <label for="title">Subject</label>
+                
+                <div id="addl_post_note">
+                  <script type="text/javascript">
+                    var notesTextCntr = 1;
+                    var notesImageCntr = 0;
+                    var notesHighlightCntr = 0;
+                  </script>
+                  <textarea class="materialize-textarea" id="text[0]" name="text[]" placeholder="What do you want to say?"></textarea>
+                
+                </div>
+              {!! Form::close() !!}
+                <div class="col s12">
+                <br/>
+                  <a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-3" data-position="top" data-delay="50" data-tooltip="Add Image"  onclick="upImage();"><i class="material-icons">picture_in_picture</i></a>
+                  <a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-2" data-position="top" data-delay="50" data-tooltip="Highlight text" onclick="upHighlight();"><i class="material-icons" href="#upHighlightDisc">"</i></a>
+                  <a class="tooltipped waves-effect waves-blue btn-flat btn-large white col s4 blue-text text-darken-1" data-position="top" data-delay="50" data-tooltip="Add more description" onclick="upDesc();"><i class="material-icons">description</i></a>
+                </div>
+			
 			<div class="modal-footer">
-				<a href="#post" class="modal-action modal-close waves-effect waves-green btn-flat ">Post</a>
+				<a href="#postNote" class="modal-action modal-close waves-effect waves-green btn-flat ">Post</a>
 			</div>
 		</div>
 		<div id="m_postings" class="modal modal-fixed-footer">
