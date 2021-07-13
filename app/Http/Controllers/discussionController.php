@@ -317,7 +317,7 @@ class discussionController extends Controller
                     $owner_id = project::select('owner_id')
                                 ->where('id','=', $newDisc['project_id'])
                                 ->first();
-                    $user_ids = array($owner_id['owner_id',Auth::user()->id);
+                    $user_ids = array($owner_id['owner_id'],Auth::user()->id);
                     print_r($user_ids);
                     /*$user_ids = developer::select('user_id')
                         ->where('project_id','=',$newDisc['project_id'])
