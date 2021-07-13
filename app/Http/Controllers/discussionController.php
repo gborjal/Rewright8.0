@@ -304,11 +304,11 @@ class discussionController extends Controller
                 if(Auth::user()->user_types === 1) {
                     $user_ids = explode(',',$input['patient_ids']);
                     array_push($user_ids,Auth::user()->id);
-                    var_dump($user_ids);
+                    print_r($user_ids);
                     foreach($user_ids as $user_id){                    
                         discussion_notif::create([
                             'discussion_id'     => $newDisc['id'],
-                            'user_id'           => $user_id,/*['user_id'],*/
+                            'user_id'           => inval($user_id),/*['user_id'],*/
                             'seen'              => False,
                             'read'              => False,
                         ]);
@@ -317,8 +317,8 @@ class discussionController extends Controller
                     $owner_id = project::select('owner_id')
                                 ->where('id','=', $newDisc['project_id'])
                                 ->first();
-                    $user_ids = array($owner_id,Auth::user()->id);
-                    var_dump($user_ids);
+                    $user_ids = array($owner_id['owner_id',Auth::user()->id);
+                    print_r($user_ids);
                     /*$user_ids = developer::select('user_id')
                         ->where('project_id','=',$newDisc['project_id'])
                         ->get();*/
