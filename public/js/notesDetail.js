@@ -1,5 +1,5 @@
 (function(){
-  function notesRetrieve(){
+  //function notesRetrieve(){
     var data = {
       _token:user_info.token,
       id:pageid
@@ -44,5 +44,5 @@
           return false;
       } 
     });
-  }
+  //}
 }).call(this);
