@@ -75,12 +75,15 @@ function searchPatient(){
                     var fullname = result[0].first_name + " " + result[0].middle_name + " " + result[0].last_name;
                         fullname += (result[0].suffix_name) ? result[0].suffix_name: " ";
                         addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,fullname);
-                    var a = addNode(header_li,'a',undefined,undefined,"btn waves-effect light-blue darken-3",undefined,undefined,"Profile");
+                    var d = addNode(header_li,"div",undefined,undefined,"row");
+                    var d_col = addNode(d,"div",undefined,undefined,"col s12 m3 l3");
+                    var a = addNode(d_col,'a',undefined,undefined,"btn waves-effect light-blue darken-3",undefined,undefined,"Profile");
                     //var siteUrl = window.location.href.split('/')[2];
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
-                    var secCont = addNode(header_li,"div",undefined,undefined,"secondary-content");
-                    var a_n = addNode(secCont,'a',undefined,undefined,"modal-trigger btn waves-effect light-blue darken-3");
+                    
+                    var d_col = addNode(d_col,"div",undefined,undefined,"col s12 m3 l3");
+                    var a_n = addNode(d_col,'a',undefined,undefined,"modal-trigger btn btn-flat waves-effect light-blue-text text-darken-3");
                         addNode(a_n,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
                         a_n.href="#m_note";
                         a_n.onlick = "addNote("+res_id+");";
