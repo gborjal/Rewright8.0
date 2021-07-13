@@ -242,7 +242,11 @@ class notesController extends Controller
                 }
 
                 $response['success'] = True;
-                array_push($response['message'],'Posted in '. task_exer_data::where('id','=',intval($input['task_exer_data_id']))->first()->id);
+                if(isset($input['task_exer_data_id'])){
+                	array_push($response['message'],'Posted in '. task_exer_data::where('id','=',intval($input['task_exer_data_id']))->first()->id);
+                }else{
+                	array_push($response['message'],'Note Posted.');
+                }
 
                 return response()
                     ->json($response);
