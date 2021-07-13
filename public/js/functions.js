@@ -952,6 +952,7 @@ $('a').on('click', function() {
 			dataform = colateText('addl_post_note');
 			//dataform.append('_token',$(formId+' [name=_token]')[0].value);
 			dataform.append('patient_id',$(formId+' [name=patient_id]')[0].value);
+			dataform.append('task_exer_data_id', null);
 			dataform.append('title',$(formId+' [name=title]')[0].value);
 
 			if(ajaxSubmitPostings(formId,dataform)){
