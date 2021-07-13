@@ -25,6 +25,7 @@
       var tempSimilarityResults = {player1frame:{id:null,eArray:null},player2frame:{id:null,eArray:null},similarityIndex:null}; //javascript obj blueprint;
       
       var similarityResult = [];
+      var resultTotal = 0;
     </script>
     
     <script type = "text/javascript" src = "{{ URL::asset('leap.lib/record.lib/js/task-v/similarityResult.js') }}"/></script>
