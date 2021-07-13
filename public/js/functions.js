@@ -409,13 +409,14 @@ function notifsRefresh(){ //discussion notifs fo now
 		method: "POST",
 		success:function(data){
 			if(data.cnt > 0 && data.cnt != $('#modal2 div ul li').length){
+				console.log("discussions refreshed.")
 				notifsNextPage(-1);
 			}
 		},error:function(data){
 
 		},complete: function() {
 	      // Schedule the next request when the current one's complete
-			setTimeout(notifsRefresh, 20000);
+			setTimeout(notifsRefresh, 10000);
 		}
 	});
 }
@@ -818,6 +819,7 @@ $('.boards').on('click',function(){
 				updateModal2(board,'modal2');
 				launchGenContent(discussions[0].disc_id);
 				displayed_id = discussions[0].disc_id;
+				notifsRefresh();
 				return true;
             },error:function(){ 
                 alert("An Error!!!!");
