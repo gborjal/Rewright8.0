@@ -22,10 +22,10 @@ function searchPatient(){
             
             if(status == "validatorFail"){
                 for(var message in msg){                    
-                    var toastContent = "<span>" + msg[message] + "</span>";
-                    M.toast({   html:toastContent,
-                            displayLength:5000,
-                            classes:'blue darken-4'
+                    var toastContent = "<span>" + message + "</span>";
+                        M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes: color + ' darken-4'
                         });
                 }
             }else if(status == "fail"){
