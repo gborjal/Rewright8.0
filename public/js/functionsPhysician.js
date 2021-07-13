@@ -57,7 +57,7 @@ function searchPatient(){
                         }
                     }
                 }
-                document.getElementById('ul_srch_res_pat').empty();
+                $('#ul_srch_res_pat').empty();
                 var cur = document.getElementById('ul_srch_res_pat');
 
                 cur.innerHTML = " ";
