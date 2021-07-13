@@ -82,12 +82,24 @@ function updateGenContentTasks(arr,div){
 						li+="<li class='collection-item'><span>Exercise #"+(arr[i].exers_info.task_datas[k].freq_order);
 						if(user_type==1){
 							if(arr[i].exers_info.task_datas[k].resultScore){
-								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Generated Score'>"+ arr[i].exers_info.task_datas[k].resultScore*100 + "%<i class='material-icons'>assessment</i></div>";
+								var resultColor = "";
+								if(arr[i].exers_info.task_datas[k].resultScore*100 < 60){
+									resultColor = "red-text text-darken-2";
+								}else{
+									resultColor = "blue-text"
+								}
+								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip "+ resultColor +" tooltipped' data-position='top' data-delay='50' data-tooltip='Generated Score'>"+ arr[i].exers_info.task_datas[k].resultScore*100 + "%<i class='material-icons'>assessment</i></div>";
 							}
 							else{
 								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip teal-text darken-2 tooltipped' data-position='top' data-delay='50' data-tooltip='Generated Score'>Pending<i class='material-icons'>assessment</i></div>";
 							}
 							if(arr[i].exers_info.task_datas[k].adjustedResultScore){
+								var resultColor = "";
+								if(arr[i].exers_info.task_datas[k].adjustedResultScore < 60){
+									resultColor = "red-text text-darken-2";
+								}else{
+									resultColor = "blue-text"
+								}
 								li+= "&nbsp&nbsp&nbsp&nbsp<div class='chip blue-text tooltipped' data-position='top' data-delay='50' data-tooltip='Adjusted Score'>"+ arr[i].exers_info.task_datas[k].adjustedResultScore + "<i class='material-icons'>assessment</i></div>";
 							}
 							else{
