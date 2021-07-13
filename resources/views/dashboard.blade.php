@@ -320,6 +320,13 @@
 								<option value='1'>1</option>
 							</select>
 						</div>
+						<div class="input-field"> 
+							<select id="patientData" name="patientData" multiple="multiple" required="required">
+								<option value="" disabled selected></option>
+								
+							</select>
+							<label>Assign to Patient/s:</label>
+						</div>
 						<input type="text" id="title" name="title">
 						<label for="title">Subject</label>
 						
