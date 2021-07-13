@@ -310,7 +310,7 @@ class discussionController extends Controller
                 foreach($user_ids as $user_id){                    
                    discussion_notif::create([
                         'discussion_id'     => $newDisc['id'],
-                        'user_id'           => $user_id['user_id'],
+                        'user_id'           => $user_id,/*['user_id'],*/
                         'seen'              => False,
                         'read'              => False,
                     ]);
