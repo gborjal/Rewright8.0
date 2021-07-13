@@ -300,7 +300,8 @@
       $scope.submit = function(format) {
         //compute similarity total
         
-        var resultTotal = resultTotal(similarityResult, 0.9999997); //tentative criteria
+        var resultTotal = computeResultTotal(similarityResult, 0.9999997); //tentative criteria
+        //$rootScope.$emit("similarityResult",[similarityResult, 0.9999997]);
         var jsonFile = new Blob([ JSON.stringify(similarityResult)], 
                                   {
                                     type: "text/JSON;charset=utf-8"
