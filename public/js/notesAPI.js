@@ -65,3 +65,6 @@ function upDesc(){
 	addDesc('addl_post_note','text','Continue...',notesTextCntr);
 	$('#m_postings .modal-content').animate({scrollTop:$('#m_postings .modal-content').scrollTop()+120}, 'slow');
 }
+function addNote(res_id){
+	$('#postNote [name=patient_id]')[0].value = res_id;
+}
