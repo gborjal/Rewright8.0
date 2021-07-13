@@ -299,19 +299,8 @@
       };
       $scope.submit = function(format) {
         //compute similarity total
-        var resultTotal = 0;
-        //function similarityResultTotal(result){
-            var cnt = 0;
-            var cmp = player1.player().recording.frameData.length - 1;
-            
-            for(var i=0; i<similarityResult.length && i<cmp ;i++){
-              if((similarityResult[i].player1frame.id !== null && similarityResult[i].player2frame.id !== null) 
-                  && (similarityResult[i].similarityIndex !== -1 && similarityResult[i].similarityIndex >= 0.9999997)){//0.9
-                cnt++;
-              }
-            }
-            resultTotal = Math.abs((cnt/cmp).toFixed(2));
-          //}
+        
+        var resultTotal = resultTotal(similarityResult, 0.9999997); //tentative criteria
         var jsonFile = new Blob([ JSON.stringify(similarityResult)], 
                                   {
                                     type: "text/JSON;charset=utf-8"
