@@ -42,9 +42,11 @@
         }else{
           $('#similarityChecker').css("border","5px ridge red");
         }
-
-
       });
+      /*$rootScope.$on('similarityResult',function(e,args){
+        var criteria = 0.9999992;
+        resultTotal = resultTotal(similarityResult, criteria);
+      });*/
     }]);
   
 
