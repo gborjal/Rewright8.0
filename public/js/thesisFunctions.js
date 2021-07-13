@@ -102,3 +102,15 @@ function cosineSimilarity(cd,cf){
     return -1; //
   }
 }
+function resultTotal(result,criteria){
+  var cnt = 0;
+  var cmp = player1.player().recording.frameData.length - 1;
+  
+  for(var i=0; i<result.length && i<cmp ;i++){
+    if((result[i].player1frame.id !== null && result[i].player2frame.id !== null) 
+        && (result[i].similarityIndex !== -1 && result[i].similarityIndex >= criteria)){//0.9
+      cnt++;
+    }
+  }
+  return Math.abs((cnt/cmp).toFixed(2));
+}
