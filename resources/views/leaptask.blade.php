@@ -213,6 +213,7 @@
 
         </div>
         @if(Auth::user()->user_types == 2)
+        <br/>
         <div class="btn-group btn-group-lg dropup center">
           <button type="button" class="btn btn-default light-blue accent-4" ng-click="submit()">Submit Exercise</button>
           
