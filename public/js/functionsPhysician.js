@@ -79,6 +79,7 @@ function searchPatient(){
                     //var siteUrl = window.location.href.split('/')[2];
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
+                    var n = addNode(header_li,'a',undefined,undefined,"btn waves-effect",undefined,undefined,"Profile");
 
                     var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
                     var row = addNode(div_body,"div",undefined,undefined,"row");
@@ -86,17 +87,17 @@ function searchPatient(){
                     var dtls_ul = addNode(div2,"ul",undefined,undefined,"tabs tabs-fixed-width tab-demo z-depth-1");
                     //thread/discussions
                     var dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
-                        a = addNode(dtls_tab,"a",undefined,undefined,"active",undefined,undefined,"Threads");
+                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1 active",undefined,undefined,"Threads");
                         a.href = "#patientResThread"+res_id;
                         a.onclick = function(){loadDiscs(res_id)};
                     //tasks    
                         dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
-                        a = addNode(dtls_tab,"a",undefined,undefined,undefined,undefined,undefined,"Tasks");
+                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1",undefined,undefined,"Tasks");
                         a.href = "#patientResTask"+res_id;
                         a.onclick = function(){loadTasks(res_id)};
                     //notes
                         dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
-                        a = addNode(dtls_tab,"a",undefined,undefined,undefined,undefined,undefined,"Notes");
+                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1",undefined,undefined,"Notes");
                         a.href = "#patientResNotes"+res_id;
                         a.onclick = function(){ loadNotes(res_id) };
                         
