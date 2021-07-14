@@ -370,19 +370,19 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 			if(temp[i]=== "<[!img!]>" ){
 				var t = document.createTextNode(normTxt);
 				div.appendChild(t);
-				normTxt = "";
-				if(images != false){
-					//var t = "";
-					if(temp[++i].startsWith('<[!caption',0) ){
-						var ret = interpText(temp,i);
-						var text = ret.text;
+				// normTxt = "";
+				// if(images != false){
+				// 	//var t = "";
+				// 	if(temp[++i].startsWith('<[!caption',0) ){
+				// 		var ret = interpText(temp,i);
+				// 		var text = ret.text;
 
-						i = ret.pos;
-						imageCardV2(div,images[k],text);
-					}else{
-						imageCardV2(div,images[k]);
-					}
-					k++;
+				// 		i = ret.pos;
+				// 		imageCardV2(div,images[k],text);
+				// 	}else{
+				// 		imageCardV2(div,images[k]);
+				// 	}
+				// 	k++;
 				}else{
 					addNode(div,undefined,undefined,'card');
 				}
