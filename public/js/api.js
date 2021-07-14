@@ -383,9 +383,9 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 				// 		imageCardV2(div,images[k]);
 				// 	}
 				// 	k++;
-				}else{
-					addNode(div,undefined,undefined,'card');
-				}
+				// }else{
+				// 	addNode(div,undefined,undefined,'card');
+				// }
 			}else if(temp[i].startsWith('<[!text',0)){
 				var t = document.createTextNode(normTxt);
 				div.appendChild(t);
