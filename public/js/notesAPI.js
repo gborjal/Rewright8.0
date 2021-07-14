@@ -21,7 +21,7 @@ function updateNoteInfoDetail(artcle,details,genContent){
   //details.append(dtls);
 
   //contents
-  var conts = filterGenText(artcle.text,artcle.images,genContent); 
+  var conts = filterGenTextV2(artcle.text,artcle.images,genContent); 
 
   //contents.append(conts);
   
