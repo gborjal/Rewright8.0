@@ -1,13 +1,14 @@
 @extends('masterleaplab')
 @section('header-content')
     <script type="text/javascript">
+      var player2 = {player:null,recorder:null,controller:null};
       $.ajaxSetup({
           headers: {
               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
               'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content')
           }
       });
-      var player2 = {player:null,recorder:null,controller:null};
+      
       var user_info = { type: parseInt({{ Auth::user()->user_types }}),
                         token: "{{csrf_token()}}"
     </script>
