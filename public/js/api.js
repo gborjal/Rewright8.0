@@ -371,11 +371,11 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 				normTxt = "";
 				if(images != false){
 					//var t = "";
-					console.log(temp[i]);
-					if(temp[++i]!=undefined && temp[++i].startsWith('<[!caption',0) ){
-						console.log(temp[i]);
+					console.log(temp[i+1]);
+					if(temp[i+1].startsWith('<[!caption',0) ){
+						console.log(temp[i+1]);
 						console.log(i);
-						var ret = interpText(temp,i);
+						var ret = interpText(temp,i+1);
 						var text = ret.text;
 
 						i = ret.pos;
@@ -401,11 +401,11 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 				if(temp[i].includes("<br/>") || temp[i].endsWith("<br/>")){
 					var temp2 = temp[i].split("<br/>");
 						normTxt+= temp2[0];
-						addNode(div,'br');
 						var t = document.createTextNode(normTxt);
 						div.appendChild(t);
+						addNode(div,'br');
 						normTxt = "";
-						normTxt+=temp2[1];
+						if(temp2[1] != undefined || temp2[1] != null) normTxt+=temp2[1];
 				}else{
 					normTxt+= temp[i] + " ";
 				}
