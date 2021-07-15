@@ -96,12 +96,11 @@
                       </div>
                     </div-->
                   </div>
-                  <button type="button" class="btn btn-default  modal-trigger tooltipped light-blue accent-4" ng-click="submit()">Submit Exercise</button>
+
                 </div>
               </div>
               {!! Form::close() !!}
-            
-            
+            <button type="button" class="btn btn-default  modal-trigger tooltipped light-blue accent-4" ng-click="submit()">Submit Exercise</button>
           </div> 
           @endif
           <!--div class="btn-group btn-group-lg dropup center">
