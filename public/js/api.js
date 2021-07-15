@@ -358,15 +358,14 @@ function filterGenText(text,image){
 }
 //filterGenTextV2(artcle.text,artcle.images);
 function filterGenTextV2(text,image,div){//v2 of filterGenText
-
+	console.log(image);
+	console.table(text);
 	if(text != null){
 		var temp = text.split(/\s+/);
 		var images = (image != null) ? image.split(","):false;
-		
-		var k = 0;
 		var normTxt = "";
+		var k = 0;
 		for(var i = 0; i<temp.length;i++){
-
 			if(temp[i]=== "<[!img!]>" ){
 				var t = document.createTextNode(normTxt);
 				div.appendChild(t);
