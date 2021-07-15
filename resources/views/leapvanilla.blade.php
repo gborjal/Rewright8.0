@@ -11,6 +11,7 @@
       
       var user_info = { type: parseInt({{ Auth::user()->user_types }}),
                         token: "{{csrf_token()}}"
+                      };
     </script>
     
     <script type = "text/javascript" src = "{{ URL::asset('leap.lib/record.lib/js/vanilla-v/recorder.js') }}"></script>
