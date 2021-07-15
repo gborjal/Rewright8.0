@@ -245,6 +245,7 @@
               return false;
             }
         });
+      };
       return $('#metadata, #helpModal').on('shown.bs.modal', function() {
         return track($(this).attr('id') + "Shown");
       });
