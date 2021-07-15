@@ -124,7 +124,7 @@
         return track('playback');
       };
       $document.bind('keypress', function(e) {
-        switch (e.which) {
+        /*switch (e.which) {
           case 32:
             e.originalEvent.target.blur();
             if ($scope.mode === 'record') {
@@ -160,7 +160,7 @@
             return $('#metadata').modal('toggle');
           default:
             return console.log("unbound keycode: " + e.which);
-        }
+        }*/
       });
       player2.controller.on('frame', function(frame) {
         if ($scope.$$phase) {
