@@ -75,7 +75,7 @@
             </button>
 
           </div>
-          @if(Auth::user()->user_types == 2)
+          @if(Auth::user()->user_types == 1)
           <br/>
           <div class="btn-group btn-group-lg dropup center">
             {!! Form::open(['route'=>'postExerciseData','id'=>'postExerciseData','files'=>'true']) !!}
