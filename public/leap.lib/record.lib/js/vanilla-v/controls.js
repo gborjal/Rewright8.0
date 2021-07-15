@@ -1,4 +1,4 @@
-(function() {
+(function() { 
 
   player2.recorder.controller('Controls', [
     '$scope', '$rootScope', '$location', '$document', '$analytics', function($scope, $rootScope, $location, $document, $analytics) {
@@ -194,6 +194,57 @@
           label: format
         });
       };
+      $scope.submit = function(format) {
+        var lzFile = player2.player().recording.exportBlob(format);
+        var formId = '#postExerciseData';
+        var dataform =  new FormData();
+
+        dataform.append('title',$(formId+' [name=title]')[0].value);
+        dataform.append('_token',user_info.token);
+        dataform.append('leapData',lzFile);
+        $.ajax({
+            connection: 'Keep-Alive',
+            'keep-alive': 50000,
+            url: $(formId).attr('action'),
+            processData: false,
+            contentType: false,
+            mimeType: 'multipart/form-data',
+            type:"POST",
+            data: dataform,
+            
+            success:function(data){
+              var success = JSON.parse(data).success;
+              var msg = JSON.parse(data).message;
+              if(!success){
+                var color = (success) ? "blue": "red";
+                if(typeof msg != "object"){
+                  var toastContent = "<span>" + msg + "</span>";
+                      M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes: color + ' darken-4'
+                        });
+                }else{
+                  for(errors of Object.values(msg)){
+                        var toastContent = "<span>" + errors + "</span>";
+                        M.toast({   html:toastContent,
+                              displayLength:5000, 
+                              classes: color + ' darken-4'
+                          });
+                    }
+                }
+                
+              }else{
+                var toastContent = "<span>Success</span>";
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'blue darken-4'
+                        });
+              }
+              return true;
+            },error:function(data){ 
+              return false;
+            }
+        });
       return $('#metadata, #helpModal').on('shown.bs.modal', function() {
         return track($(this).attr('id') + "Shown");
       });
