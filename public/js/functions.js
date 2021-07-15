@@ -304,7 +304,7 @@ function genContentComments(disc_id){
 			    		comment.downvote = data.comments[i].downvote;
 			    		comment.created_at = data.comments[i].created_at;
 			    		comment.updated_at = data.comments[i].updated_at;
-			    	console.log(comment);
+			    	console.table(comment);
 			    	if(comments.length == 0){
 			    		comments.push(comment);
 			    	}else{
