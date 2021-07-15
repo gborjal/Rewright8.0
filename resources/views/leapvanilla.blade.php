@@ -1,7 +1,15 @@
 @extends('masterleaplab')
 @section('header-content')
     <script type="text/javascript">
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+              'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content')
+          }
+      });
       var player2 = {player:null,recorder:null,controller:null};
+      var user_info = { type: parseInt({{ Auth::user()->user_types }}),
+                        token: "{{csrf_token()}}"
     </script>
     
     <script type = "text/javascript" src = "{{ URL::asset('leap.lib/record.lib/js/vanilla-v/recorder.js') }}"></script>
@@ -67,10 +75,30 @@
             </button>
 
           </div>
+          @if(Auth::user()->user_types == 2)
+          <br/>
           <div class="btn-group btn-group-lg dropup center">
+            {!! Form::open(['route'=>'postExerciseData','id'=>'postExerciseData','files'=>'true']) !!}
+              {!! csrf_field() !!}
+                <input type="text" id="title" name="title">
+                <label for="title">Description</label>
+                <!--div class="file-field input-field">
+                  <div class="btn light-blue darken-3"><span>LeapMotion</span>
+                    <input id="leapData" name="leapData" type="file" accept=".json.lz" required="required">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input id="leapDataPath[0]" name="leapDataPath" class="file-path validate" type="text">
+                  </div>
+                </div-->
+              {!! Form::close() !!}
+            <button type="button" class="btn btn-default  modal-trigger tooltipped light-blue accent-4" ng-click="submit()">Submit Exercise</button>
+            
+          </div> 
+          @endif
+          <!--div class="btn-group btn-group-lg dropup center">
             <button type="button" class="btn btn-default light-blue accent-4" ng-click="save()">Download</button>
             
-          </div>
+          </div-->
           <div class="pull-right">
             <a href="#" onclick="$('#helpModal').modal('toggle')">
               <!-- todo: should change href to help and use angular router.. -->
@@ -79,8 +107,6 @@
           </div>
 
         </div>
-    </div>
-    
     
     <script type="text/javascript">
       var dvPlayer = document.getElementById("dvPlayer");
