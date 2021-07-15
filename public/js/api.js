@@ -329,11 +329,13 @@ function filterGenText(text,image){
 			if(temp[i]=== "<[!img!]>" ){
 				if(images != false){
 					var t = "";
-					if(temp[++i].startsWith('<[!caption',0) ){
-						var ret = interpText(temp,i);
-						var text= ret.text;						
-						i = ret.pos;
-						t = imageCard(images[k],text);
+					if((i+1 < temp.length)){
+						if(temp[++i].startsWith('<[!caption',0) ){
+							var ret = interpText(temp,i);
+							var text= ret.text;						
+							i = ret.pos;
+							t = imageCard(images[k],text);
+						}
 					}else{
 						t= imageCard(images[k]);
 					}
@@ -371,15 +373,14 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 				normTxt = "";
 				if(images != false){
 					//var t = "";
-					console.log(temp[i+1]);
-					if(temp[i+1].startsWith('<[!caption',0) ){
-						console.log(temp[i+1]);
-						console.log(i);
-						var ret = interpText(temp,i+1);
-						var text = ret.text;
+					if((i+1 < temp.length)){
+						if(temp[++i].startsWith('<[!caption',0) ){
+							var ret = interpText(temp,i);
+							var text = ret.text;
 
-						i = ret.pos;
-						imageCardV2(div,images[k],text);
+							i = ret.pos;
+							imageCardV2(div,images[k],text);
+						}
 					}else{
 						imageCardV2(div,images[k]);
 					}
