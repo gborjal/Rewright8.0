@@ -304,7 +304,6 @@ function genContentComments(disc_id){
 			    		comment.downvote = data.comments[i].downvote;
 			    		comment.created_at = data.comments[i].created_at;
 			    		comment.updated_at = data.comments[i].updated_at;
-			    	console.table(comment);
 			    	if(comments.length == 0){
 			    		comments.push(comment);
 			    	}else{
@@ -422,14 +421,14 @@ function notifsRefresh(){ //discussion notifs fo now
 		method: "POST",
 		success:function(data){
 			if(data.cnt > 0 && data.cnt != $('#modal2 div ul li').length){
-				console.log("discussions refreshed.")
+				//console.log("discussions refreshed.")
 				notifsNextPage(-1);
 			}
 		},error:function(data){
 
 		},complete: function() {
 	      // Schedule the next request when the current one's complete
-			setTimeout(notifsRefresh, 10000);
+			setTimeout(notifsRefresh, 20000);
 		}
 	});
 }
@@ -1007,7 +1006,6 @@ $('a').on('click', function() {
 				
 				dataform = colateText('addl_post_comment');
 				dataform.append('discussion_id',displayed_id);
-				//console.log("here");
 				if(ajaxSubmitPostings(formId,dataform)){
 					
 					resetPostings('addl_post_comment',4);
@@ -1044,8 +1042,6 @@ $('a').on('click', function() {
 			addHighlight('addl_post_comment','hl_text',commHighlightCntr);
 		}else if($(this).attr('href')==='#upDescComment'){
 			addDesc('addl_post_comment','text','Continue...',commTextCntr);
-		}else{
-			//console.log($(this).attr('href'));
 		}
 	}
 });
