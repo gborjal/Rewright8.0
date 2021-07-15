@@ -83,24 +83,17 @@
             {!! Form::open(['route'=>'postExerciseData','id'=>'postExerciseData','files'=>'true']) !!}
               {!! csrf_field() !!}
               <div class = "row">
-                <div class = "col s12 m5 l5">
+                <div class = "col s12 m6 l6">
                   <div class="input-field">
                     <input type="text" id="title" name="title">
                     <label for="title">Description</label>
-                    <!--div class="file-field input-field">
-                      <div class="btn light-blue darken-3"><span>LeapMotion</span>
-                        <input id="leapData" name="leapData" type="file" accept=".json.lz" required="required">
-                      </div>
-                      <div class="file-path-wrapper">
-                        <input id="leapDataPath[0]" name="leapDataPath" class="file-path validate" type="text">
-                      </div>
-                    </div-->
                   </div>
-
+                 </div>
+            {!! Form::close() !!}
+                <div class="col s12 m6 l6">
+                  <button type="button" class="btn btn-default  modal-trigger tooltipped light-blue accent-4" ng-click="submit()">Submit Exercise</button>
                 </div>
               </div>
-              {!! Form::close() !!}
-            <button type="button" class="btn btn-default  modal-trigger tooltipped light-blue accent-4" ng-click="submit()">Submit Exercise</button>
           </div> 
           @endif
           <!--div class="btn-group btn-group-lg dropup center">
