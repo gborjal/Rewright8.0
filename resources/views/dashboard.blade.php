@@ -413,7 +413,7 @@
 						<div class="col s12">
 							<ul class = "pagination">
 								<!--li class = "light-blue darken-4 active" id = "li_e_add"><a id = "a_e_add" href="#!">Add</a></li-->
-								<li id = "li_e_view" class = "light-blue darken-4 active"><a id = "e_view" href="#!"><i class = "material-icons">refresh</i></a></li>
+								<li id = "li_e_view" class = "light-blue-text text-darken-4 active"><a id = "e_view" href="#!"><i class = "material-icons">refresh</i></a></li>
 							</ul>
 							
 						</div>
