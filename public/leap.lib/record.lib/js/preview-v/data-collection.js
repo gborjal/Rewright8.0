@@ -61,7 +61,7 @@
       };
       $scope.currentRecordingIndex = 0;
       $scope.setCurrentRecording();
-      dropArea = $('#dropzone');
+      /*dropArea = $('#dropzone');
       $scope.watchForDragEvents = function() {
         document.body.addEventListener("dragover", function(event) {
           event.stopPropagation();
@@ -83,16 +83,16 @@
             return function(event) {
               var recording;
               console.log('file', file, event.target.result.substr(0, 30) + '...');
-              recording = new (player().Recording);
+              recording = new (player2.player().Recording);
               recording.url = file.name;
               recording.readFileData(event.target.result);
-              return player().setRecording(recording).play();
+              return player2.player().setRecording(recording).play();
             };
           })(file);
           return reader.readAsText(file);
         }, false);
       };
-      $scope.watchForDragEvents();
+      $scope.watchForDragEvents();*/
       $scope.replay = function(e) {
         $(e.originalEvent.target).closest('button').get(0).blur();
         return player().play();
