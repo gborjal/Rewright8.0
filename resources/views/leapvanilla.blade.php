@@ -83,14 +83,14 @@
             {!! Form::open(['route'=>'postExerciseData','id'=>'postExerciseData','files'=>'true']) !!}
               {!! csrf_field() !!}
               <div class = "row">
-                <div class = "col s12 m6 l6">
+                <div class = "col s12 m6 l6 offset-l3">
                   <div class="input-field">
                     <input type="text" id="title" name="title">
                     <label for="title">Description</label>
                   </div>
                  </div>
             {!! Form::close() !!}
-                <div class="col s12 m6 l6">
+                <div class="col s12 m3 l3">
                   <button type="button" class="btn btn-default  modal-trigger tooltipped light-blue accent-4" ng-click="submit()">Submit Exercise</button>
                 </div>
               </div>
