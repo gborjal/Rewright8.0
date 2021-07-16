@@ -1064,10 +1064,10 @@ $('#a_e_add').click(function(){
     document.getElementById('post_view_exercise').style.display = 'none';
 });
 $('#e_view').click(function(){
-    this.parentNode.className = "light-blue darken-4 active";
+    /*this.parentNode.className = "light-blue darken-4 active";
     document.getElementById('li_e_add').className = "";
     document.getElementById('post_add_exercise').style.display = 'none';
-    document.getElementById('post_view_exercise').style.display = 'block';
+    document.getElementById('post_view_exercise').style.display = 'block';*/
     getExerDataList();
 });
 $(document).ready(function(){
