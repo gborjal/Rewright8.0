@@ -299,10 +299,10 @@
 			<div class="modal-content">
 				<div class="row">
 					<ul class="tabs" id="post_tabs">
-						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_disc">Thread</a></li>
-						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_task">Assign Task</a></li>
-						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_exercise">Exercises</a></li>
-						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_patient">Patient</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_disc"><i class="material-icons">question_answer</i>Thread</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_task"><i class="material-icons">work</i>Assign Task</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_exercise"><i class="material-icons">view_day</i>Exercises</a></li>
+						<li class="tab col s3"><a class="light-blue-text text-accent-4" href="#post_patient"><i class="material-icons">perm_identity</i>Patient</a></li>
 						<div class="indicator blue darken-4" style="z-index:1"></div>
 					</ul>
 					<div id="post_disc" class="row">
@@ -413,7 +413,7 @@
 						<div class="col s12">
 							<ul class = "pagination">
 								<!--li class = "light-blue darken-4 active" id = "li_e_add"><a id = "a_e_add" href="#!">Add</a></li-->
-								<li id = "li_e_view"><a id = "e_view" href="#!">View</a></li>
+								<li id = "li_e_view" class = "light-blue darken-4 active"><a id = "e_view" href="#!"><i class = "material-icons">refresh</i></a></li>
 							</ul>
 							
 						</div>
