@@ -417,7 +417,7 @@
 							</ul>
 							
 						</div>
-						<div id="post_add_exercise" class="col s12">
+						<div id="post_add_exercise" class="col s12"  style = "display:none;">
 							<nav class = "hide-on-large-only blue darken-4">
 								<div class="nav-wrapper">
 									<div class="col s12">
@@ -440,7 +440,7 @@
 							{!! Form::close() !!}
 							<div class="input-field" style="position: absolute; bottom:10px;right:20px;"><a class="btn-large light-blue darken-3 tooltipped" href = "{{route('vanillaLab')}}" target = "_blank" data-position="top" data-tooltip="Create Exercise/s"><i class="large material-icons">developer_mode</i></a></div>
 						</div>
-						<div id="post_view_exercise" class="col s12" style = "display:none;">
+						<div id="post_view_exercise" class="col s12">
 							<nav class = "hide-on-large-only blue darken-4">
 								<div class="nav-wrapper">
 									<div class="col s12">
