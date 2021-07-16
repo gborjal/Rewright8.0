@@ -51,7 +51,7 @@
       
       $scope.replay = function(e) {
         $(e.originalEvent.target).closest('button').get(0).blur();
-        return player().play();
+        return player2.player().play();
       };
       player1.controller.on('playback.playbackFinished', function() {
         if ($scope.mode === 'off') {
@@ -60,11 +60,11 @@
         return $scope.$apply();
       });
       $scope.canReplay = function() {
-        return !player().loading && (player().state !== 'playing');
+        return !player2.player().loading && (player2.player().state !== 'playing');
       };
       $scope.intro = function() {
-        player().clear();
-        player().setRecording($scope.currentRecording());
+        player2.player().clear();
+        player2.player().setRecording($scope.currentRecording());
         return $scope.mode = 'intro';
       };
     }
@@ -130,7 +130,7 @@
       };
       $scope.currentRecordingIndex = 0;
       $scope.setCurrentRecording();
-      dropArea = $('#dropzone');
+      /*dropArea = $('#dropzone');
       $scope.watchForDragEvents = function() {
         document.body.addEventListener("dragover", function(event) {
           event.stopPropagation();
@@ -152,16 +152,16 @@
             return function(event) {
               var recording;
               console.log('file', file, event.target.result.substr(0, 30) + '...');
-              recording = new (player().Recording);
+              recording = new (player2.player().Recording);
               recording.url = file.name;
               recording.readFileData(event.target.result);
-              return player().setRecording(recording).play();
+              return player2.player().setRecording(recording).play();
             };
           })(file);
           return reader.readAsText(file);
         }, false);
       };
-      $scope.watchForDragEvents();
+      $scope.watchForDragEvents();*/
       $scope.replay = function(e) {
         $(e.originalEvent.target).closest('button').get(0).blur();
         return player().play();
@@ -188,11 +188,11 @@
         return $scope.$apply();
       });
       $scope.canReplay = function() {
-        return !player().loading && (player().state !== 'playing');
+        return !player2.player().loading && (player2.player().state !== 'playing');
       };
       $scope.intro = function() {
-        player().clear();
-        player().setRecording($scope.currentRecording());
+        player2.player().clear();
+        player2.player().setRecording($scope.currentRecording());
         return $scope.mode = 'intro';
       };
       $scope.save = function() {
