@@ -327,7 +327,7 @@ function filterGenText(text,image){
 		var k = 0;
 
 		for(var i = 0; i<temp.length;i++){
-			console.log(temp);
+			
 			if(temp[i]=== "<[!img!]>" ){
 				if(images != false){
 					var t = "";
