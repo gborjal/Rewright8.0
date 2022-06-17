@@ -38,4 +38,20 @@ class indexController extends Controller
         }
         return view('pages.index');
     }
+    /**
+    *
+    *   return registration page
+    *   @return view
+    */
+    public function registerByNormal()
+    {
+        if(!is_null(Auth::user())){
+            if(Auth::user()->user_types === 0) {
+                return redirect()->route('dashboardAdmin');
+            }else{
+                return redirect()->route('dashboard');
+            }
+        }
+        return view('default.register');
+    }
 }
