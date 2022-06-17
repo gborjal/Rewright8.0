@@ -27,7 +27,8 @@ use App\Http\Controllers\userController;
 
 Route::middleware(['web'])->group(function () {
 	Route::get('/', [indexController::class,'index']);
-	
+	Route::get('register', [indexController::class,'registerByNormal']);
+
 	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
 	Route::post('login', [AuthController::class,'login']);
 	Route::get('logout',[userController::class,'getLogout'])->name('logout');	
