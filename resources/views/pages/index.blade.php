@@ -35,9 +35,7 @@
 			  				</button>
 						{!! Form::close() !!}
 					</div>
-					<a href="register" data-link="{{ route('register') }}">
-						<i class="material-icons left">person_add</i>Register as Physician {
-					</a>
+					
 				</div>
 			</div>
 		</div>
