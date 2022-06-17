@@ -35,9 +35,14 @@
 			  				</button>
 						{!! Form::close() !!}
 					</div>
-					<a href="register" data-link="{{ route('register') }}">
-						<i class="material-icons left">person_add</i>Register as Physician {
-					</a>
+					<ul>
+						<li> Forgot my password </li>
+						<li class="no padding">
+							<a href="register" data-link="{{ route('register') }}">
+								<i class="material-icons left">person_add</i>Register as Physician 
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
