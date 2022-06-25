@@ -43,7 +43,7 @@ class indexController extends Controller
     *   return registration page
     *   @return view
     */
-    public function registerByNormal()
+    public function indexRegister()
     {
         if(!is_null(Auth::user())){
             if(Auth::user()->user_types === 0) {
