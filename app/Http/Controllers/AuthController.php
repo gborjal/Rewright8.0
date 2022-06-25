@@ -331,7 +331,91 @@ class AuthController extends Controller
             }
         }
     }
+    /**
+     * Create a new user.
+     *
+     *  note: might want to change function name down the line
+     *
+     * @return error
+     * @return view 
+     */
+    public function registerByNormal(Request $request)
+    {  
+        $response = [
+            'status'       => "",
+            'message'      => []
+        ];
+        $input = $request->only([
+                    '_token',
+                    'email',
+                    'user_types'
+                    ]);
+        $input['user_types'] = 1;    // only physicians can register here
+        $rules = array(
+            'email'     => 'required|email|max:255', // make sure the email is an actual email
+            'user_types' => 'required|integer'
+        );
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {//change to /admin/dashboard
+            $response['status'] = 'validatorFail';
+            $response['message'] = $validator->errors();
+            
+            return response()
+                ->json($response)
+                ->setCallback($request->input('callback'));
+        } else {
+            unset($input['_token']);
+            $pword = adminController::unique_code(8);
+            
+            $input['password']= Hash::make($pword);
+            $input['username'] = explode("@", $input['email'])[0];
+            $input['activation_code'] = $pword;
+            //search for existing
+            $query = User::where('email','=',$input['email'])
+                    ->get();
 
+            if(is_null($query) || count($query) == 0){
+                //if($input['user_types'] == 1){
+                    /*$user = DB::table('users')
+                                -> insertGetId($input);
+                    $proj_id = project::insertGetId([
+                                 'owner_id' => $user,
+                                 'text' => $input['username'],
+                                 'size' => 10,
+                                 'active' => true
+                                ]);
+                    
+                    $admin_grp = developer::insert([ 
+                                            'project_id'    => Auth::user()->projects[0]->project_id,
+                                            'user_id'       => $user,
+                                            'role'          => $input['user_types']
+                                            ]);
+                    $dev_inp = developer::insert([ 
+                                            'project_id'    => $proj_id,
+                                            'user_id'       => $user,
+                                            'role'          => $input['user_types']
+                                            ]);                    
+                    */
+                //}else{
+                    //logout and redirect
+                //}
+
+                $response['status'] = 'success';
+                $response['message'] = $pword;
+
+                return response()
+                   ->json($response);
+            }else{
+                $response['status'] = 'fail';
+                $response['message'] = 'Email already exists.';
+                return response()
+                    ->json($response);
+
+            } 
+        }
+             
+        
+    }
     /**
      * Get a validator for an incoming registration request.
      *
