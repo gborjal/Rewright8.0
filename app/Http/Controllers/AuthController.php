@@ -365,7 +365,7 @@ class AuthController extends Controller
                 ->setCallback($request->input('callback'));
         } else {
             unset($input['_token']);
-            $pword = adminController::unique_code(8);
+            $pword = AuthController::unique_code(8);
             
             $input['password']= Hash::make($pword);
             $input['username'] = explode("@", $input['email'])[0];
@@ -415,6 +415,16 @@ class AuthController extends Controller
         }
              
         
+    }
+    /**
+     *  return unique code
+     *
+     *  source: https://codebriefly.com/unique-alphanumeric-string-php/
+     *  @return /code
+     */
+    private function unique_code($limit)
+    {
+      return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit);
     }
     /**
      * Get a validator for an incoming registration request.
