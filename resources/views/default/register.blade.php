@@ -12,25 +12,14 @@
 					</ul>
 					<div id="div_login" class="col s12">
 						<br/>
-						{!! Form::open(['route'=>'login','method'=>'POST']) !!}
+						{!! Form::open(['route'=>'registerByNormal','method'=>'POST']) !!}
 							
         					<div class="input-field">
-								{!! Form::text('login_id',null,['placeholder'=>'username or email','class'=>'validate']) !!}
-								<label for="login_id">Username/Email</label>
+								{!! Form::text('email',null,['placeholder'=>'username or email','class'=>'validate']) !!}
+								<label for="email">Username/Email</label>
 							</div>
-						
-        					<div class="input-field">
-								{!! Form::password('password',null,['placeholder'=>'password','type'=>'password','class'=>'validate']) !!}
-								<label for="password">Password</label>
-							</div>
-							
-							<p>
-								<label>
-									<input type="checkbox" id="remember" name="remember"/>
-									<span>Remember me</span>
-								</label>
-							</p>	
-							<button class="btn waves-effect blue darken-4" type="submit" formmethod="post">Login
+								
+							<button class="btn waves-effect blue darken-4" type="submit" formmethod="post">Register
 							    <i class="large material-icons right">send</i>
 			  				</button>
 						{!! Form::close() !!}
