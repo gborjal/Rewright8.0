@@ -27,7 +27,8 @@ use App\Http\Controllers\userController;
 
 Route::middleware(['web'])->group(function () {
 	Route::get('/', [indexController::class,'index']);
-	Route::get('register', [indexController::class,'registerByNormal'])->name('register');
+	Route::get('register', [indexController::class,'indexRegister'])->name('register');
+	Route::post('register', [AuthController::class,'registerByNormal']);
 
 	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
 	Route::post('login', [AuthController::class,'login']);
