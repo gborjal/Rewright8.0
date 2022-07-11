@@ -82,7 +82,7 @@ Route::middleware(['web'])->group(function () {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');*/
 
 Route::get('/email/verify', [AuthController::class,'verificationNotice'])->middleware(['auth'])->name('verification.notice');
-Route::get('/email/verify/{id}/{hash}', [AuthController::class,'verificationVerified']])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/verify/{id}/{hash}', [AuthController::class,'verificationVerified'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/email/verification-notification', [AuthController::class,'verificationNotice'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::middleware(['web','auth'])->group(function () {
