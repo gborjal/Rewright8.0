@@ -401,7 +401,7 @@ class AuthController extends Controller
                 $response['status'] = 'success';
                 $response['message'] = $pword;
 
-                return redirect()->route('verification.notice')   
+                return redirect()->route('verification.notice');
             }else{
                 $response['status'] = 'fail';
                 $response['message'] = 'Email already exists.';
