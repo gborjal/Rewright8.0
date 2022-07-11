@@ -82,7 +82,7 @@ Route::middleware(['web','auth'])->group(function () {
 		Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
 	});
 	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);
-}
+});
 Route::middleware(['auth:sanctum'])->group(function () {
 	Route::post('/note/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
 	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
