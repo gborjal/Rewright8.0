@@ -375,36 +375,33 @@ class AuthController extends Controller
                     ->get();
 
             if(is_null($query) || count($query) == 0){
-                //if($input['user_types'] == 1){
-                    /*$user = DB::table('users')
-                                -> insertGetId($input);
-                    $proj_id = project::insertGetId([
-                                 'owner_id' => $user,
-                                 'text' => $input['username'],
-                                 'size' => 10,
-                                 'active' => true
-                                ]);
-                    
-                    $admin_grp = developer::insert([ 
-                                            'project_id'    => Auth::user()->projects[0]->project_id,
-                                            'user_id'       => $user,
-                                            'role'          => $input['user_types']
-                                            ]);
-                    $dev_inp = developer::insert([ 
-                                            'project_id'    => $proj_id,
-                                            'user_id'       => $user,
-                                            'role'          => $input['user_types']
-                                            ]);                    
-                    */
-                //}else{
-                    //logout and redirect
-                //}
+                
+                /*$user = DB::table('users')
+                            -> insertGetId($input);
+                $proj_id = project::insertGetId([
+                             'owner_id' => $user,
+                             'text' => $input['username'],
+                             'size' => 10,
+                             'active' => true
+                            ]);
+                
+                $admin_grp = developer::insert([ 
+                                        'project_id'    => Auth::user()->projects[0]->project_id,
+                                        'user_id'       => $user,
+                                        'role'          => $input['user_types']
+                                        ]);
+                $dev_inp = developer::insert([ 
+                                        'project_id'    => $proj_id,
+                                        'user_id'       => $user,
+                                        'role'          => $input['user_types']
+                                        ]);  
+                event(new Registered($user));     //will send the verification email             
+                */
 
                 $response['status'] = 'success';
                 $response['message'] = $pword;
 
-                return response()
-                   ->json($response);
+                return redirect()->route('verification.notice')   
             }else{
                 $response['status'] = 'fail';
                 $response['message'] = 'Email already exists.';
@@ -415,6 +412,46 @@ class AuthController extends Controller
         }
              
         
+    }
+    /**
+     * Verification Notice.
+     *
+     *  note: Notice after registration
+     *
+     * 
+     * @return view 
+     */
+    public function verificationNotice(Request $request)
+    {  
+        return view('auth.verify-email');
+    }
+    /**
+     * Verification Verified.
+     *
+     *  note: User is Verified
+     *
+     * 
+     * @return view 
+     */
+    public function verificationVerified(EmailVerificationRequest $request)
+    {  
+        $request->fulfill();
+ 
+        return view('auth.verified-user');
+    }
+    /**
+     * Verification Email resend.
+     *
+     *  note: Resending of verification email
+     *
+     * 
+     * @return view 
+     */
+    public function verificationResend(Request $request)
+    {  
+        $request->user()->sendEmailVerificationNotification();
+ 
+        return back()->with('error', 'Verification link sent!');
     }
     /**
      *  return unique code
