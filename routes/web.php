@@ -40,7 +40,7 @@ Route::middleware(['web'])->group(function () {
 		Route::get('admin/logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 
 	//Route::get('/dashboard', [userController::class,'dashboard']);
-	
+	/*
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 	Route::get('admin/dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
 	Route::prefix('auth')->group(function () {
@@ -60,7 +60,29 @@ Route::middleware(['web'])->group(function () {
 		Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
 	});
 	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);	//possible change
+	*/
 });
+Route::middleware(['web','auth'])->group(function () {
+	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
+	Route::get('admin/dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
+	Route::prefix('auth')->group(function () {
+		//Profile routes
+		Route::prefix('profile')->group(function () {
+			Route::get('edit/{code}',[userController::class,'editUserProfile1']);
+			//Route::post('edit/{code}', [userController::class,'editUserProfile1'])->name('editProfile');
+		});
+	});
+	Route::get('/preview/{id}', [taskController::class,'reviewExercise']);
+	Route::get('/recordings/lab', [taskController::class,'vanillaLab'])->name('vanillaLab');
+	Route::post('/recordings/result/', [taskController::class,'getResultData']);	//ajax request\
+
+	Route::get('/tasks/{id}', [taskController::class,'openTask']);
+	Route::prefix('/profile')->group(function () {
+		Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
+		Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
+	});
+	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);
+}
 Route::middleware(['auth:sanctum'])->group(function () {
 	Route::post('/note/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
 	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
