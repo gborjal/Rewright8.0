@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\AuthController;
@@ -62,7 +64,29 @@ Route::middleware(['web'])->group(function () {
 	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);	//possible change
 	*/
 });
+
+/*Route::get('/email/verify', function () {
+	    return view('auth.verify-email');
+	})->middleware(['auth'])->name('verification.notice');*/
+
+/*Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return view('auth.verified-user');
+})->middleware(['auth', 'signed'])->name('verification.verify');*/
+
+/*Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');*/
+
+Route::get('/email/verify', [AuthController::class,'verificationNotice'])->middleware(['auth'])->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', [AuthController::class,'verificationVerified']])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::post('/email/verification-notification', [AuthController::class,'verificationNotice'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
 Route::middleware(['web','auth'])->group(function () {
+	
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
 	Route::get('admin/dashboard', [userController::class,'dashboardAdmin'])->name('dashboardAdmin');
 	Route::prefix('auth')->group(function () {
