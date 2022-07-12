@@ -375,7 +375,7 @@ class AuthController extends Controller
                     ->get();
 
             if(is_null($query) || count($query) == 0){
-                /*
+                
                 $user = DB::table('users')
                             -> insertGetId($input);
                 $proj_id = project::insertGetId([
@@ -396,9 +396,9 @@ class AuthController extends Controller
                                         'role'          => $input['user_types']
                                         ]); 
                 $newUser = User::where('email','=',$input['email'])
-                            ->get();
+                            ->first();
                 event(new Registered($newUser));     //will send the verification email             
-                */
+                
 
                 $response['status'] = 'success';
                 $response['message'] = $pword;
