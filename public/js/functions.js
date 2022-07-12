@@ -829,7 +829,7 @@ $('.boards').on('click',function(){
 				}
 				$('.modal-content ul li','#modal2').remove();
 				updateModal2(board,'modal2');
-				launchGenContent(discussions[0].disc_id);
+				if(discussions.length > 0) launchGenContent(discussions[0].disc_id);
 				displayed_id = discussions[0].disc_id;
 				notifsRefresh();
 				return true;
