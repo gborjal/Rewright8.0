@@ -117,7 +117,7 @@ class AuthController extends Controller
                         
                         $err_type = -1;
                         foreach($db as $acc){
-                            if($acc->user_types != '0'){
+                            if($acc->user_types != 0){
                                 $err_type = 0;
                                 break;
                             }
@@ -375,8 +375,8 @@ class AuthController extends Controller
                     ->get();
 
             if(is_null($query) || count($query) == 0){
-                
-                /*$user = DB::table('users')
+                /*
+                $user = DB::table('users')
                             -> insertGetId($input);
                 $proj_id = project::insertGetId([
                              'owner_id' => $user,
@@ -394,8 +394,10 @@ class AuthController extends Controller
                                         'project_id'    => $proj_id,
                                         'user_id'       => $user,
                                         'role'          => $input['user_types']
-                                        ]);  
-                event(new Registered($user));     //will send the verification email             
+                                        ]); 
+                $newUser = User::where('email','=',$input['email'])
+                            ->get();
+                event(new Registered($newUser));     //will send the verification email             
                 */
 
                 $response['status'] = 'success';
