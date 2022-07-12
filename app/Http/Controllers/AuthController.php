@@ -375,8 +375,8 @@ class AuthController extends Controller
             $input['username'] = explode("@", $input['email'])[0];
             $input['activation_code'] = $pword;
             //search for existing
-            DB::table('users')->where('email','=',$input['email'])->delete();
-            /*$query = User::where('email','=',$input['email'])
+            //DB::table('users')->where('email','=',$input['email'])->delete();
+            $query = User::where('email','=',$input['email'])
                     ->get();
 
             if(is_null($query) || count($query) == 0){
@@ -415,7 +415,7 @@ class AuthController extends Controller
                 return response()
                     ->json($response);
 
-            }*/ 
+            }
         }
              
         
