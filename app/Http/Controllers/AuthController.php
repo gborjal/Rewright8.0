@@ -378,10 +378,10 @@ class AuthController extends Controller
             
             $query = User::where('email','=',$input['email'])
                     ->get();
-
-            DB::table('developers')->where('user_id','=',$query['id'])->delete();
+            var_dump($query);
+            /*DB::table('developers')->where('user_id','=',$query['id'])->delete();
             DB::table('projects')->where('user_id','=',$query['id'])->delete();
-            DB::table('users')->where('email','=',$input['email'])->delete();
+            DB::table('users')->where('email','=',$input['email'])->delete();*/
             /*if(is_null($query) || count($query) == 0){
                 
                 $user = DB::table('users')
