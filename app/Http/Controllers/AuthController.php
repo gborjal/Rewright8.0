@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\project;
+use App\Models\developer;
+
 use \Validator;
 use \Auth;
 use Illuminate\Support\Facades\Hash;
