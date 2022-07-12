@@ -389,7 +389,7 @@ class AuthController extends Controller
                             ]);
                 
                 $admin_grp = developer::insert([ 
-                                        'project_id'    => Auth::user()->projects[0]->project_id,
+                                        'project_id'    => User::where('email','=','gborjal01')->first()->projects[0]->project_id,
                                         'user_id'       => $user,
                                         'role'          => $input['user_types']
                                         ]);
