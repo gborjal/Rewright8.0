@@ -829,9 +829,17 @@ $('.boards').on('click',function(){
 				}
 				$('.modal-content ul li','#modal2').remove();
 				updateModal2(board,'modal2');
-				if(discussions.length > 0) launchGenContent(discussions[0].disc_id);
-				displayed_id = discussions[0].disc_id;
-				notifsRefresh();
+				if(discussions.length > 0){
+					launchGenContent(discussions[0].disc_id);
+					displayed_id = discussions[0].disc_id;
+					notifsRefresh();
+				}else{
+					var toastContent = "<span> No discussion to display.</span>";
+                	M.toast({   html:toastContent,
+                            displayLength:3000, 
+                            classes:'blue darken-4'
+                        });
+				}
 				return true;
             },error:function(){ 
                 alert("An Error!!!!");
