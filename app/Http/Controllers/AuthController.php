@@ -379,7 +379,7 @@ class AuthController extends Controller
 
             if(is_null($query) || count($query) == 0){
                 
-                /*$user = DB::table('users')
+                $user = DB::table('users')
                             -> insertGetId($input);
                 $proj_id = project::insertGetId([
                              'owner_id' => $user,
@@ -387,9 +387,7 @@ class AuthController extends Controller
                              'size' => 10,
                              'active' => true
                             ]);
-                */
-                dd(User::where('email','=','gborjal01@gmail.com')->first()->projects[0]->project_id);
-                /*
+               
                 $admin_grp = developer::insert([ 
                                         'project_id'    => User::where('email','=','gborjal01@gmail.com')
                                                             ->first()->projects[0]->project_id,
@@ -405,7 +403,6 @@ class AuthController extends Controller
                             ->first();
                 event(new Registered($newUser));     //will send the verification email             
                 
-                */
                 $response['status'] = 'success';
                 $response['message'] = $pword;
 
