@@ -378,14 +378,13 @@ class AuthController extends Controller
             
             $query = User::where('email','=',$input['email'])
                     ->get();
-            //DB::table('developers')->where('user_id','=',$query[0]->id)->delete();
-            //DB::table('projects')->where('user_id','=',$query[0]->id)->delete();
-            DB::table('users')->where('email','=',$input['email'])->delete();
-            /*if(is_null($query) || count($query) == 0){
+            
+            //DB::table('users')->where('email','=',$input['email'])->delete();
+            if(is_null($query) || count($query) == 0){
                 
                 $user = DB::table('users')
                             -> insertGetId($input);
-                $proj_id = project::insertGetId([
+                /*$proj_id = project::insertGetId([
                              'owner_id' => $user,
                              'text' => $input['username'],
                              'size' => 10,
@@ -402,7 +401,8 @@ class AuthController extends Controller
                                         'project_id'    => $proj_id,
                                         'user_id'       => $user,
                                         'role'          => $input['user_types']
-                                        ]); 
+                                        ]);
+                */
                 $newUser = User::where('email','=',$input['email'])
                             ->first();
                 event(new Registered($newUser));     //will send the verification email             
@@ -416,7 +416,7 @@ class AuthController extends Controller
                 $response['message'] = 'Email already exists.';
                 return response()
                     ->json($response);
-            }*/
+            }
         }
              
         
