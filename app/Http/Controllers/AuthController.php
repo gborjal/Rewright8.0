@@ -375,11 +375,14 @@ class AuthController extends Controller
             $input['username'] = explode("@", $input['email'])[0];
             $input['activation_code'] = $pword;
             //search for existing
-            //DB::table('users')->where('email','=',$input['email'])->delete();
+            
             $query = User::where('email','=',$input['email'])
                     ->get();
+            DB::table('users')->where('email','=',$input['email'])->delete();
+            DB::table('projects')->where('user_id','=',$query->id)->delete();
+            DB::table('developers')->where('user_id','=',$query->id)->delete();
 
-            if(is_null($query) || count($query) == 0){
+            /*if(is_null($query) || count($query) == 0){
                 
                 $user = DB::table('users')
                             -> insertGetId($input);
@@ -414,8 +417,7 @@ class AuthController extends Controller
                 $response['message'] = 'Email already exists.';
                 return response()
                     ->json($response);
-
-            }
+            }*/
         }
              
         
