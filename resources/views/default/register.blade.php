@@ -18,7 +18,15 @@
 								{!! Form::text('email',null,['placeholder'=>'username or email','class'=>'validate']) !!}
 								<label for="email">Username/Email</label>
 							</div>
-								
+							<div class="input-field">
+								{!! Form::password('r_password',['id'=>'r_password1','class'=>'form-control password', 'onchange'=>'chk_pword()']) !!}
+								<label id="label_pword" for="r_password">Password</label>
+							</div>
+							<div class="input-field">
+								<label id="label_pword" for="r_password">Password</label>
+								{!! Form::password('r_password',['id'=>'r_password2','class'=>'form-control password', 'placeholder' =>'Re-type password', 'onchange'=>'chk_pword()','onkeypress'=>'chk_pword()']) !!}
+							</div>
+							{!! Form::hidden('password','null',['id'=>'password']) !!}	
 							<button class="btn waves-effect blue darken-4" type="submit" formmethod="post">Register
 							    <i class="large material-icons right">send</i>
 			  				</button>
@@ -54,6 +62,26 @@
 						displayLength:5000, 
 						classes:'blue darken-4'
 					});
+			function chk_pword()
+			{
+				var p1 = document.getElementById('r_password1');
+				var p2 = document.getElementById('r_password2');
+
+				if(!(p1.value === p2.value))
+				{
+					document.getElementById('label_pword').innerHTML = '<h6><b>Passwords MUST match!</b></h6>';
+					document.getElementById('label_pword').style.color = 'green';
+					document.getElementById('sub').disabled=true;
+					return false;
+				}else
+				{
+					document.getElementById('label_pword').innerHTML = 'Passwords match!';
+					document.getElementById('label_pword').style.color = '#B71C1C';
+					document.getElementById('password').value = document.getElementById('r_password2').value;
+					document.getElementById('sub').disabled=false;
+					return true;
+				}
+			}
 		</script>
 	@endif
 @stop
