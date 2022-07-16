@@ -16,6 +16,12 @@
         <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
     </head>
     <body>
+        <nav>
+            <div class="nav-wrapper">
+                <img src="https://rewright.herokuapp.com/logo" />
+                <a href="#" class="brand-logo">ReWright</a>
+            </div>
+        </nav>
         @yield('content')
         
         <script type = "text/javascript" src = "{{ URL::asset('js/materialize.min.js') }}"/></script>
