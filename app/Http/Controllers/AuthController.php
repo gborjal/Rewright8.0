@@ -354,7 +354,7 @@ class AuthController extends Controller
         $input = $request->only([
                     '_token',
                     'email',
-                    'user_types'
+                    'user_types',
                     'password'
                     ]);
         $input['user_types'] = 1;    // only physicians can register here
