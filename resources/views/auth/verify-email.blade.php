@@ -9,7 +9,9 @@
 					<span class="white-text">
 						Thank you for Registering with ReWright!<br/>
 						Check your e-mail to complete your verification.<br/><br/>
-						<a class="btn-flat" type="submit" href="{!! route('verification.send') !!}">Resend verification email.</a>
+						{!! Form::open(['route'=>'verification.send']) !!}
+							<a class="btn-flat" type="submit" href="{!! route('verification.send') !!}">Resend verification email.</a>
+						{!!Form::close()!!}
 			        </span>	
 				</div>
 			</div>
