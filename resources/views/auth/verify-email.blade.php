@@ -9,7 +9,7 @@
 					<span class="white-text">
 						Thank you for Registering with ReWright!<br/>
 						Check your e-mail to complete your verification.<br/><br/>
-						<a href="{!! route('verification.send') !!}">Resend verification email.</a>
+						<a class="btn-flat" type="submit" href="{!! route('verification.send') !!}">Resend verification email.</a>
 			        </span>	
 				</div>
 			</div>
