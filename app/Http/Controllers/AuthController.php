@@ -448,7 +448,7 @@ class AuthController extends Controller
     {  
         $request->fulfill();
         $prompt = 'Successfully verified.'
-        return redirect('login')->with('errors',$prompt);
+        return redirect()->route('login')->with('errors',$prompt);
 
     }
     /**
