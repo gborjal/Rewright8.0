@@ -253,7 +253,7 @@
 	
 				<!--div id="div_extra_dtls"></div-->
 				<div class="modal-footer">
-					<a href="https://rewright.herokuapp.com/auth/profile/edit/{{ Auth::user()->activation_code }}" class="modal-action modal-close waves-effect waves-green btn-flat " target = "_blank">Edit Profile</a>
+					<a href="https://rewright.herokuapp.com/auth/profile/edit/{{ Auth::user()->activation_code }}" class="modal-action modal-close waves-effect waves-green btn " target = "_blank">Edit Profile</a>
 				</div>
 			</div>
 			
