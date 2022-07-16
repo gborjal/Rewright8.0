@@ -209,6 +209,9 @@
 	
 				<!--div id="div_extra_dtls"></div-->
 			</div>
+			<div class="modal-footer">
+				<a href="https://rewright.herokuapp.com/auth/profile/edit/{{ Auth::user()->activation_code }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Edit Profile</a>
+			</div>
 		</div>
 		<div id="m_settings" class="modal modal-fixed-footer">
 			<div class="modal-content">
