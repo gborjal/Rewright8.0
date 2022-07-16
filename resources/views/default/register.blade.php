@@ -27,7 +27,7 @@
 								{!! Form::password('r_password',['id'=>'r_password2','class'=>'form-control password', 'placeholder' =>'Re-type password', 'onchange'=>'chk_pword()','onkeypress'=>'chk_pword()']) !!}
 							</div>
 							{!! Form::hidden('password','null',['id'=>'password']) !!}	
-							<button class="btn waves-effect blue darken-4" type="submit" formmethod="post">Register
+							<button id = "sub" class="btn waves-effect blue darken-4" type="submit" formmethod="post">Register
 							    <i class="large material-icons right">send</i>
 			  				</button>
 						{!! Form::close() !!}
