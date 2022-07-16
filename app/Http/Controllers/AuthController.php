@@ -447,10 +447,8 @@ class AuthController extends Controller
     public function verificationVerified(EmailVerificationRequest $request)
     {  
         $request->fulfill();
-        $prompt = 'Successfully verified.'
-        return redirect()->route('login')
-                    ->withErrors($prompt);
-
+ 
+        return view('auth.verified-user');
     }
     /**
      * Verification Email resend.
