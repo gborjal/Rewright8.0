@@ -241,6 +241,8 @@ class AuthController extends Controller
                     $prompt = "";
                     if(Auth::user()->user_types === 1) {
                         $prompt = 'User Information unaccomplished. Please contact admin.';
+                        return redirect('/auth/profile/edit/' . Auth::user()->activation_code)
+                                ->with('error',$prompt);
                     }else if(Auth::user()->user_types === 2){
                         $prompt = 'User Information unaccomplished. Please contact your physician.';
                     }
@@ -379,12 +381,12 @@ class AuthController extends Controller
             $query = User::where('email','=',$input['email'])
                     ->get();
             
-            //DB::table('users')->where('email','=',$input['email'])->delete();
+            
             if(is_null($query) || count($query) == 0){
                 
                 $user = DB::table('users')
                             -> insertGetId($input);
-                /*$proj_id = project::insertGetId([
+                $proj_id = project::insertGetId([
                              'owner_id' => $user,
                              'text' => $input['username'],
                              'size' => 10,
@@ -402,7 +404,7 @@ class AuthController extends Controller
                                         'user_id'       => $user,
                                         'role'          => $input['user_types']
                                         ]);
-                */
+                
                 $newUser = User::where('email','=',$input['email'])
                             ->first();
                 event(new Registered($newUser));     //will send the verification email             
