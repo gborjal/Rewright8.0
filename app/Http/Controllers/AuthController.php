@@ -240,7 +240,8 @@ class AuthController extends Controller
                 if(Auth::user()->user_types !== 0 && (is_null(Auth::user()->userInformation))){
                     $prompt = "";
                     if(Auth::user()->user_types === 1) {
-                        $prompt = 'User Information unaccomplished. Please contact admin.';
+                        $prompt = 'User Information unaccomplished.';
+                        return redirect('/auth/profile/edit/' . Auth::user()->activation_code);
                     }else if(Auth::user()->user_types === 2){
                         $prompt = 'User Information unaccomplished. Please contact your physician.';
                     }
