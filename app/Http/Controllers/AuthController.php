@@ -355,11 +355,11 @@ class AuthController extends Controller
                     '_token',
                     'email',
                     'user_types'
+                    'password'
                     ]);
         $input['user_types'] = 1;    // only physicians can register here
         $rules = array(
-            'email'     => 'required|email|max:255', // make sure the email is an actual email
-            'user_types' => 'required|integer'
+            'email'     => 'required|email|max:255' // make sure the email is an actual email
         );
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {//change to /admin/dashboard
@@ -373,9 +373,10 @@ class AuthController extends Controller
             unset($input['_token']);
             $pword = AuthController::unique_code(8);
             
-            $input['password']= Hash::make($pword);
+            $input['password']= Hash::make($input['password'];//Hash::make($pword);
             $input['username'] = explode("@", $input['email'])[0];
             $input['activation_code'] = $pword;
+            $input['user_types'] = 1; //physician only
             //search for existing
             
             $query = User::where('email','=',$input['email'])
