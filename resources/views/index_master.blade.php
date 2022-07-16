@@ -18,7 +18,6 @@
     <body>
         <nav>
             <div class="nav-wrapper">
-                <img src="https://rewright.herokuapp.com/profile/image/get/t/" alt='notavailable' class='profiles circle'/>
                 <a href="#" class="brand-logo">ReWright</a>
             </div>
         </nav>
