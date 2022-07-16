@@ -51,9 +51,13 @@ class userController extends Controller
                     ->with('error','Account is an admin.');
             }else if(Auth::user()->user_types === 1){
                 if(is_null(Auth::user()->userInformation)){
-                    Auth::guard('web')->logout();
+                    $prompt = 'User Information unaccomplished. Please contact admin.';
+                    return redirect('/auth/profile/edit/' . Auth::user()->activation_code)
+                                ->with('error',$prompt);
+                    /*Auth::guard('web')->logout();
                     return redirect()->route('index')
                         ->with('error','User Information unaccomplished. Please contact admin.');
+                        */
                 }
                 $tokenResult = Auth::user()->createToken('authToken')->plainTextToken;
                 return view('dashboard',['authToken'=>$tokenResult]); 
