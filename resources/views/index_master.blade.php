@@ -18,7 +18,7 @@
     <body>
         <nav class="blue darken-4">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">ReWright</a>
+                <a href="#" class="brand-logo">&nbsp&nbsp&nbspReWright</a>
             </div>
         </nav>
         @yield('content')
