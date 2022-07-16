@@ -373,7 +373,7 @@ class AuthController extends Controller
             unset($input['_token']);
             $pword = AuthController::unique_code(8);
             
-            $input['password']= Hash::make($input['password'];//Hash::make($pword);
+            $input['password']= Hash::make($input['password']);//Hash::make($pword);
             $input['username'] = explode("@", $input['email'])[0];
             $input['activation_code'] = $pword;
             $input['user_types'] = 1; //physician only
