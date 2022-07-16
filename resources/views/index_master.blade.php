@@ -16,7 +16,7 @@
         <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
     </head>
     <body>
-        <nav>
+        <nav class="blue darken-4">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">ReWright</a>
             </div>
