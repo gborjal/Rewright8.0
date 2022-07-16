@@ -186,6 +186,12 @@
 				var df = new FormData(document.getElementById(fId));
 				ajaxSubmitPostings('#'+fId,df);
 			}
+			var toastContent = "<span>{{ Session::get('error') }}</span>";
+			M.toast({ 	html:toastContent,
+						displayLength:5000, 
+						classes:'blue darken-4'
+					});
+		
 		</script>
         
   </body>
