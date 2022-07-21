@@ -98,8 +98,8 @@
 											<div class="input-field col l6 m6 s12">
 												<select id="pd_order" name="pd_order" onchange="submitUserListFilter()">
 													<option disabled></option>
-													<option value='1' selected = "selected">Ascending</option>
-													<option value='2'>Descending</option>
+													<option value='1' selected = "selected">Latest</option>
+													<option value='2'>Oldest</option>
 												</select>
 											</div>
 											<div class="input-field col l6 m6 s12">
