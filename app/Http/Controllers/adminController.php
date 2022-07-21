@@ -96,7 +96,33 @@ class adminController extends Controller
         if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
 
             if($request->ajax()){
+                $set = array(); 
+                $response = [
+                    'status'       => "",
+                    'message'      => []
+                ];
                 
+                $input = $request->only([
+                '_token',
+                'order',
+                'user_types',
+                ]);
+                $rules = array(
+                    'order'     => 'Integer', 
+                    'user_types'=> 'Integer'
+                );
+                $validator = Validator::make($input, $rules);
+                if ($validator->fails()) {//change to /admin/dashboard
+                    $response['status'] = 'validatorFail';
+                    $response['message'] = $validator->errors();
+                    
+                    return response()
+                        ->json($response)
+                        ->setCallback($request->input('callback'));
+                } else {
+                    
+                               
+                }
             }
         }
         //return redirect()->route('dashboardAdmin');
