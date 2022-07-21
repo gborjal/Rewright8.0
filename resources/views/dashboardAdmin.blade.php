@@ -93,7 +93,7 @@
 										
 									</div>
 									<div if="listUsers" class = "col s12">
-										{!! Form::open(['route'=>'userList','id'=>'f_user_list_filter']) !!}
+										{!! Form::open(['route'=>'getUserList','id'=>'f_user_list_filter']) !!}
 										{!! csrf_field() !!}
 											<label for="pd_order">Order:</label>
 											<select id="pd_order" name="pd_order">
