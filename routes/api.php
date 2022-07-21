@@ -41,7 +41,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 		Route::post('register', [adminController::class,'registerByAdmin'])->name('registerByAdmin');
 		//Route::get('register', [adminController::class,'registerByAdmin']);
 
-		Route::get('getUserList', [adminController::class,'getUserList'])->name('getUserList');
+		Route::post('getUserList', [adminController::class,'getUserList'])->name('getUserList');
 		//Route::get('getCode', [adminController::class,'getUserList']);
 
 		Route::post('getCode', [adminController::class,'getActivationCode'])->name('getActivationCode');

@@ -63,7 +63,14 @@ function submitUserListFilter(){
     dataform.append('user_types',$(formId+' [name=pd_user_type]')[0].value);
     
     var error;
-    $.ajax({
+    $.ajax(
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
+            datatype: "JSON",
+            method: "POST"
+        },
+        {
         url: $(formId).attr('action'),
         processData: false,
         contentType: false,
