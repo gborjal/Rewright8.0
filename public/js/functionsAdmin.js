@@ -130,7 +130,7 @@ function submitUserListFilter(){
                     
                     
                     //$('.tabs').tabs();
-                    //$('.collapsible').collapsible();
+                    $('.collapsible').collapsible();
                     
                 }
             }
