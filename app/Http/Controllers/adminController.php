@@ -135,7 +135,7 @@ class adminController extends Controller
                             $response['status'] = 'success';
                             $response['message'] = array();
                             foreach($query as $owner){
-                                if($owner['id'] == Auth.user()->id) continue;
+                                if($owner['id'] == Auth::user()->id) continue;
                                 array_push($response['message'],user_info::select( 'users.activation_code as code',
                                                                                    'users_info.user_id',
                                                                                    'users_info.profile',
