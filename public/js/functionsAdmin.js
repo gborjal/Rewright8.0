@@ -172,6 +172,7 @@ function submitUserListFilter(){
                     $('.collapsible').collapsible();
                     
                 }
+            }
         },error:function(data){ 
             error = data.status;
         }
