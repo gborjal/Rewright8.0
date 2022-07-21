@@ -93,7 +93,8 @@
 										
 									</div>
 									<div id="listOfUsers" class = "col s12">
-										
+										{!! Form::open(['route'=>'getUserList','id'=>'f_user_list_filter']) !!}
+										{!! csrf_field() !!}
 											<div class="input-field col l6 m6 s12">
 												<select id="pd_order" name="pd_order" >
 													<option disabled></option>
@@ -107,7 +108,7 @@
 													<option value='2'>Patient</option>
 												</select>
 											</div>
-										
+										{!! Form::close()!!}
 
 										<div class="input-field col s12">
 											<!--ul class = "collection" id = "listOfUsers"></ul-->
