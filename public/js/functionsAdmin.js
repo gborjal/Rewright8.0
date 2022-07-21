@@ -83,6 +83,7 @@ function submitUserListFilter(){
         success:function(data){
             var status = JSON.parse(data).status;
             var msg = JSON.parse(data).message;
+            console.table(msg);
             var cur = document.getElementById('ul_list_users');
             if(status == "validatorFail"){
                 
