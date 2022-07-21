@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 
 use App\Models\User;
+use App\Models\user_info;
 use App\Models\project;
 use App\Models\developer;
 use \Image;
@@ -136,7 +137,7 @@ class adminController extends Controller
                             $response['message'] = array();
                             foreach($query as $owner){
                                 if($owner['id'] == Auth::user()->id) continue;
-                                array_push($response['message'],user_info::select( 'users.activation_code as code',
+                                array_push($set,user_info::select( 'users.activation_code as code',
                                                                                    'users_info.user_id',
                                                                                    'users_info.profile',
                                                                                    'first_name',
