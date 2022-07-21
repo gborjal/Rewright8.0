@@ -1,4 +1,4 @@
-$.ajaxSetup({
+$.ajaxSetup({ 
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
         'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
@@ -27,19 +27,160 @@ $(document).ready(function(){
     });
 	$('.collapsible').collapsible();
 });
-
+$('#a_l_user').click(function(){
+    this.parentNode.className = "light-blue darken-4 active";
+    document.getElementById('li_c_user').className = "";
+    document.getElementById('li_activation').className = "";
+    document.getElementById('listOfUsers').style.display = 'block';
+    document.getElementById('createUser').style.display = 'none';
+    document.getElementById('getActivationCode').style.display = 'none';
+});
 $('#a_c_user').click(function(){
     this.parentNode.className = "light-blue darken-4 active";
+    document.getElementById('li_l_user').className = "";
     document.getElementById('li_activation').className = "";
     document.getElementById('createUser').style.display = 'block';
+    document.getElementById('listOfUsers').style.display = 'none';
     document.getElementById('getActivationCode').style.display = 'none';
 });
 $('#a_activation').click(function(){
     this.parentNode.className = "light-blue darken-4 active";
+    document.getElementById('li_l_user').className = "";
     document.getElementById('li_c_user').className = "";
-    document.getElementById('createUser').style.display = 'none';
     document.getElementById('getActivationCode').style.display = 'block';
+    document.getElementById('listOfUsers').style.display = 'none';
+    document.getElementById('createUser').style.display = 'none';   
 });
+function submitUserListFilter(){
+    var formId = "f_user_list_filter";
+    var div = formId + "_div";
+    formId = '#' + formId;
+    var dataform =  new FormData();
+
+    dataform.append('_token',$('meta[name="csrf-token"]').attr('content'));
+    dataform.append('order',$(formId+' [name=pd_order]')[0].value);
+    dataform.append('user_types',$(formId+' [name=user_types]')[0].value);
+    
+    var error;
+    $.ajax({
+        url: $(formId).attr('action'),
+        processData: false,
+        contentType: false,
+        mimeType: 'multipart/form-data',
+        method: "POST",
+        data: dataform,
+        
+        success:function(data){
+            var status = JSON.parse(data).status;
+            var msg = JSON.parse(data).message;
+            var cur = document.getElementById('listOfUsers');
+            if(status == "validatorFail"){
+                
+                for(var message in msg){                    
+                    var toastContent = "<span>" + msg[message] + "</span>";
+                    M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
+                }
+            }else if(status == "fail"){
+                var toastContent = "<span>" + msg + "</span>";
+                M.toast({   html:toastContent,
+                            displayLength:5000, 
+                            classes:'red darken-4'
+                        });
+            }else if(status == "success"){
+                var searchRes = [];
+                for(result of msg){
+                    if(result.length != 0){
+                        if(searchRes.length == 0){
+                            searchRes.push(result);
+                        }else{
+                            var flg = 0; //no similar result
+                            for(res of searchRes){
+                                if(res[0].id == result[0].id){
+                                    flg = 1;
+                                    res[0].text = result[0].text;
+                                    res[0].size = result[0].size;
+                                    break;
+                                }
+                            }
+                            if(flg==0){
+                                searchRes.push(result);
+                            }
+                        }
+                    }
+                }
+                $('#ul_list_users').empty();
+                var cur = document.getElementById('ul_list_users');
+
+                cur.innerHTML = " ";
+                for(result of searchRes){
+                    var res_id = result[0].user_id;
+                    
+                    var li = addNode(cur,"li",undefined,undefined,undefined,undefined,undefined,undefined);
+                             addNode(li,'input','h_pg_id'+res_id,'h_pg_id'+res_id,undefined,res_id,'hidden',undefined);
+                    var div_header = addNode(li,"div",undefined,undefined,"collapsible-header");
+                    var header_ul = addNode(div_header,"ul",undefined,undefined,"collection");
+                    var header_li = addNode(header_ul,"li",undefined,undefined,"collection-item avatar");
+                    var img_prof = addNode(header_li,"img",undefined,undefined,"profile circle");
+                        img_prof.src = "https://" + siteUrl + "/discussion/image/"+result[0].profile;
+                        img_prof.alt = 'notavailable';
+                    var fullname = result[0].first_name + " " + result[0].middle_name + " " + result[0].last_name;
+                        fullname += (result[0].suffix_name) ? result[0].suffix_name: " ";
+                        addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,fullname);
+                    
+                    var a = addNode(header_li,'a',undefined,undefined,"btn waves-effect light-blue darken-3",undefined,undefined,"Profile");
+                    //var siteUrl = window.location.href.split('/')[2];
+                        a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
+                        a.target = "_blank";
+                    
+                    var a = addNode(header_li,'a',undefined,undefined,"modal-trigger btn btn-flat light-blue-text text-darken-3");
+                        addNode(a,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
+                        a.href="#m_note";
+                        a.onclick = function(){addNote(res_id)};
+
+                    var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
+                    var row = addNode(div_body,"div",undefined,undefined,"row");
+                    var div2 = addNode(row,"div");
+                    var dtls_ul = addNode(div2,"ul",undefined,undefined,"tabs tabs-fixed-width tab-demo z-depth-1");
+                    //thread/discussions
+                    var dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
+                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1 active",undefined,undefined,"Threads");
+                        a.href = "#patientResThread"+res_id;
+                        a.onclick = function(){loadDiscs(res_id)};
+                    //tasks    
+                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
+                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1",undefined,undefined,"Tasks");
+                        a.href = "#patientResTask"+res_id;
+                        a.onclick = function(){loadTasks(res_id)};
+                    //notes
+                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
+                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1",undefined,undefined,"Notes");
+                        a.href = "#patientResNotes"+res_id;
+                        a.onclick = function(){ loadNotes(res_id) };
+                        
+                    var d = addNode(div2,"div","patientResThread"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
+                    var d_t_d = addNode(d,"div",undefined,undefined,"modal-content container");
+                        addNode(d_t_d,"ul",undefined,undefined,"collection");
+                    var t = addNode(div2,"div","patientResTask"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
+                    var t_d = addNode(t,"div",undefined,undefined,"container");
+                        addNode(t_d,"ul",undefined,undefined,"collapsible popout");
+                    var notes = addNode(div2,"div",undefined,undefined,"col s12",undefined,undefined,undefined);
+                        addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible popout");
+                    $('.tabs').tabs();
+                    $('.collapsible').collapsible();
+                    
+                }
+        },error:function(data){ 
+            error = data.status;
+        }
+    });
+    if(error == undefined){
+        return true;
+    }
+    return false;
+}
 function submitActivationForm(formId){
     var div = formId + "_div";
     formId = '#' + formId;
