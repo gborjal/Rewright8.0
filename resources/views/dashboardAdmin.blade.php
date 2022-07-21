@@ -83,39 +83,14 @@
 											</div>
 										</div>
 									</nav>
-									
 									<div class="col s12">
 										<ul class = "pagination">
-											<li class = "light-blue darken-4 active" id = "li_l_user"><a id = "a_l_user" href="#!">All Users</a></li>
-											<li id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
+											<li class = "light-blue darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
 											<li id = "li_activation"><a id = "a_activation" href="#!">Search</a></li>
 										</ul>
 										
 									</div>
-									<div id="listOfUsers" class = "col s12">
-										{!! Form::open(['route'=>'getUserList','id'=>'f_user_list_filter']) !!}
-										{!! csrf_field() !!}
-											<div class="input-field col l6 m6 s12">
-												<select id="pd_order" name="pd_order" >
-													<option disabled></option>
-													<option value='1' selected = "selected">Ascending</option>
-													<option value='2'>Descending</option>
-												</select>
-											</div>
-											<div class="input-field col l6 m6 s12">
-												<select id="pd_user_type" name="pd_user_type">
-													<option value='1' selected = "selected">Physician</option>
-													<option value='2'>Patient</option>
-												</select>
-											</div>
-										{!! Form::close()!!}
-
-										<div class="input-field col s12">
-											<!--ul class = "collection" id = "listOfUsers"></ul-->
-											<ul id="ul_list_users" class = "collapsible popout"></ul>
-										</div>
-									</div>
-									<div id="createUser" class="col s12" style = "display:none;">
+									<div id="createUser" class="col s12">
 										{!! Form::open(['route'=>'registerByAdmin','id'=>'f_reg']) !!}
 										{!! csrf_field() !!}
 											
