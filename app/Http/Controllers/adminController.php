@@ -120,7 +120,24 @@ class adminController extends Controller
                         ->json($response)
                         ->setCallback($request->input('callback'));
                 } else {
-                    
+                    try{
+                        $orderby = 'asc';
+                        if($input['order'] == 2 ){
+                            $orderby = 'desc';
+                        }
+                        $query = User::select('id')
+                                    ->where('user_types','=',$input['user_types'])
+                                    ->leftjoin("developers","developers.user_id",'=','users.id')
+                                    ->orderBy("users.created_at",$orderby)
+                                    ->get();
+                        
+                    } catch (PDOException $e) {
+                        $response['status'] = 'fail';
+                        $response['message'] = 'PDOException. Kindly report this.';
+                        
+                        return response()
+                            ->json($response);
+                    }
                                
                 }
             }
