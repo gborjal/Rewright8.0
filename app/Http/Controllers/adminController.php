@@ -132,6 +132,22 @@ class adminController extends Controller
                                     ->get();
                         if(!is_null($query)){
                             
+                            $response['status'] = 'success';
+                            $response['message'] = array();
+                            foreach($query as $owner){
+                                if($owner['id'] == Auth.user()->id) continue;
+                                array_push($response['message'],user_info::select( 'users.activation_code as code',
+                                                                                   'users_info.user_id',
+                                                                                   'users_info.profile',
+                                                                                   'first_name',
+                                                                                   'middle_name',
+                                                                                   'last_name',
+                                                                                   'suffix_name',
+                                                                                   'sex')
+                                                                            ->where('user_id','=',$owner['id'])
+                                                                            ->leftjoin('users','users.id','=','users_info.user_id')
+                                                                            ->get());
+                            }
                         }else{
                             $response['status'] = 'fail';
                             $response['message'] = 'No Users found.';
