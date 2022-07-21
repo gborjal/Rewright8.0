@@ -101,27 +101,8 @@ function submitUserListFilter(){
                             classes:'red darken-4'
                         });
             }else if(status == "success"){
-                var searchRes = [];
-                for(result of msg){
-                    if(result.length != 0){
-                        if(searchRes.length == 0){
-                            searchRes.push(result);
-                        }else{
-                            var flg = 0; //no similar result
-                            for(res of searchRes){
-                                if(res[0].id == result[0].id){
-                                    flg = 1;
-                                    res[0].text = result[0].text;
-                                    res[0].size = result[0].size;
-                                    break;
-                                }
-                            }
-                            if(flg==0){
-                                searchRes.push(result);
-                            }
-                        }
-                    }
-                }
+                var searchRes = msg;
+                
                 $('#ul_list_users').empty();
                 var cur = document.getElementById('ul_list_users');
                 var siteUrl = window.location.href.split('/')[2];
@@ -146,41 +127,7 @@ function submitUserListFilter(){
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
                     
-                    /*
-                    var a = addNode(header_li,'a',undefined,undefined,"modal-trigger btn btn-flat light-blue-text text-darken-3");
-                        addNode(a,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
-                        a.href="#m_note";
-                        a.onclick = function(){addNote(res_id)};
                     
-                    var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
-                    var row = addNode(div_body,"div",undefined,undefined,"row");
-                    var div2 = addNode(row,"div");
-                    var dtls_ul = addNode(div2,"ul",undefined,undefined,"tabs tabs-fixed-width tab-demo z-depth-1");
-                    //thread/discussions
-                    var dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
-                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1 active",undefined,undefined,"Threads");
-                        a.href = "#patientResThread"+res_id;
-                        a.onclick = function(){loadDiscs(res_id)};
-                    //tasks    
-                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
-                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1",undefined,undefined,"Tasks");
-                        a.href = "#patientResTask"+res_id;
-                        a.onclick = function(){loadTasks(res_id)};
-                    //notes
-                        dtls_tab = addNode(dtls_ul,"li",undefined,undefined,"tab");
-                        a = addNode(dtls_tab,"a",undefined,undefined,"light-blue-text text-darken-1",undefined,undefined,"Notes");
-                        a.href = "#patientResNotes"+res_id;
-                        a.onclick = function(){ loadNotes(res_id) };
-                        
-                    var d = addNode(div2,"div","patientResThread"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
-                    var d_t_d = addNode(d,"div",undefined,undefined,"modal-content container");
-                        addNode(d_t_d,"ul",undefined,undefined,"collection");
-                    var t = addNode(div2,"div","patientResTask"+result[0].user_id,undefined,"col s12",undefined,undefined,undefined);
-                    var t_d = addNode(t,"div",undefined,undefined,"container");
-                        addNode(t_d,"ul",undefined,undefined,"collapsible popout");
-                    var notes = addNode(div2,"div",undefined,undefined,"col s12",undefined,undefined,undefined);
-                        addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible popout");
-                    */
                     //$('.tabs').tabs();
                     //$('.collapsible').collapsible();
                     
