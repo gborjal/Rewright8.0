@@ -130,7 +130,14 @@ class adminController extends Controller
                                     ->leftjoin("developers","developers.user_id",'=','users.id')
                                     ->orderBy("users.created_at",$orderby)
                                     ->get();
-                        
+                        if(!is_null($query)){
+                            
+                        }else{
+                            $response['status'] = 'fail';
+                            $response['message'] = 'No Users found.';
+                            return response()
+                                ->json($response);
+                        }
                     } catch (PDOException $e) {
                         $response['status'] = 'fail';
                         $response['message'] = 'PDOException. Kindly report this.';
