@@ -27,7 +27,7 @@ class adminController extends Controller
     {   
         if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
 
-            if($request->ajax()){
+            //if($request->ajax()){
                 $response = [
                     'status'       => "",
                     'message'      => []
@@ -81,7 +81,7 @@ class adminController extends Controller
                             ->json($response);
                     }           
                 }
-            }
+            //}
         }
         //return redirect()->route('dashboardAdmin');
     }
