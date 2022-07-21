@@ -83,12 +83,35 @@
 											</div>
 										</div>
 									</nav>
+									
 									<div class="col s12">
 										<ul class = "pagination">
-											<li class = "light-blue darken-4 active" id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
+											<li class = "light-blue darken-4 active" id = "li_l_user"><a id = "a_l_user" href="#!">All Users</a></li>
+											<li id = "li_c_user"><a id = "a_c_user" href="#!">Create</a></li>
 											<li id = "li_activation"><a id = "a_activation" href="#!">Search</a></li>
 										</ul>
 										
+									</div>
+									<div if="listUsers" class = "col s12">
+										{!! Form::open(['route'=>'userList','id'=>'f_user_list_filter']) !!}
+										{!! csrf_field() !!}
+											<label for="pd_order">Order:</label>
+											<select id="pd_order" name="pd_order">
+												<option disabled></option>
+												<option value='1' selected = "selected">Ascending</option>
+												<option value='2'>Descending</option>
+											</select>
+											<label for="pd_user_type">User:</label>
+											<select id="pd_user_type" name="pd_user_type">
+												<option value='1' selected = "selected">Physician</option>
+												<option value='2'>Patient</option>
+											</select>
+										{!! Form::close()!!}
+
+										<div class="input-field col s12">
+											<!--ul class = "collection" id = "listOfUsers"></ul-->
+											<ul id="ul_list_users" class = "collapsible popout"></ul>
+										</div>
 									</div>
 									<div id="createUser" class="col s12">
 										{!! Form::open(['route'=>'registerByAdmin','id'=>'f_reg']) !!}
@@ -114,7 +137,7 @@
 										</div>
 									</div>
 									<div id="getActivationCode" class="col s12" style = "display:none;">
-										{!! Form::open(['route'=>'getActivationCode','id'=>'f_activation']) !!}
+										{!! Form::open(['route'=>'getUserList','id'=>'f_user_list_filter']) !!}
 										{!! csrf_field() !!}
 											
 											{!! Form::email('email',null,['class'=>'form-control']) !!}
