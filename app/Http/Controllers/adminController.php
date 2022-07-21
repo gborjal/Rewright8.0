@@ -137,7 +137,7 @@ class adminController extends Controller
                             $response['message'] = array();
                             foreach($query as $owner){
                                 if($owner['id'] == Auth::user()->id) continue;
-                                array_push($set,user_info::select( 'users.activation_code as code',
+                                array_push($response['message'],user_info::select( 'users.activation_code as code',
                                                                                    'users_info.user_id',
                                                                                    'users_info.profile',
                                                                                    'first_name',
@@ -149,6 +149,8 @@ class adminController extends Controller
                                                                             ->leftjoin('users','users.id','=','users_info.user_id')
                                                                             ->get());
                             }
+                            return response()
+                                ->json($response);
                         }else{
                             $response['status'] = 'fail';
                             $response['message'] = 'No Users found.';
