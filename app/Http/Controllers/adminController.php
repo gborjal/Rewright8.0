@@ -91,7 +91,7 @@ class adminController extends Controller
      * @return error
      * @return view 
      */
-    public function getUserList(Request $request)
+    /*public function getUserList(Request $request)
     {   
         if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
 
@@ -164,7 +164,7 @@ class adminController extends Controller
             }
         }
         //return redirect()->route('dashboardAdmin');
-    }
+    }*/
     /**
      * Search patient group.
      *
