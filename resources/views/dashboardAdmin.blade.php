@@ -116,7 +116,7 @@
 										</div>
 									</div>
 									<div id="createUser" class="col s12" style = "display:none;">
-										{!! Form::open(['route'=>'registerByAdmin','id'=>'f_user_list_filter']) !!}
+										{!! Form::open(['route'=>'registerByAdmin','id'=>'f_reg']) !!}
 										{!! csrf_field() !!}
 											
 											{!! Form::email('email',null,['class'=>'form-control']) !!}
@@ -139,7 +139,7 @@
 										</div>
 									</div>
 									<div id="getActivationCode" class="col s12" style = "display:none;">
-										{!! Form::open(['route'=>'getUserList','id'=>'f_reg']) !!}
+										{!! Form::open(['route'=>'getUserList','id'=>'f_activation']) !!}
 										{!! csrf_field() !!}
 											
 											{!! Form::email('email',null,['class'=>'form-control']) !!}
