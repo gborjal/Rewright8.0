@@ -96,14 +96,14 @@
 										{!! Form::open(['route'=>'getUserList','id'=>'f_user_list_filter']) !!}
 										{!! csrf_field() !!}
 											<div class="input-field col l6 m6 s12">
-												<select id="pd_order" name="pd_order" >
+												<select id="pd_order" name="pd_order" onchange="submitUserListFilter()">
 													<option disabled></option>
 													<option value='1' selected = "selected">Ascending</option>
 													<option value='2'>Descending</option>
 												</select>
 											</div>
 											<div class="input-field col l6 m6 s12">
-												<select id="pd_user_type" name="pd_user_type">
+												<select id="pd_user_type" name="pd_user_type" onchange="submitUserListFilter()">
 													<option value='1' selected = "selected">Physician</option>
 													<option value='2'>Patient</option>
 												</select>
