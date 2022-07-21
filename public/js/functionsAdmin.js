@@ -31,7 +31,7 @@ $('#a_l_user').click(function(){
     this.parentNode.className = "light-blue darken-4 active";
     document.getElementById('li_c_user').className = "";
     document.getElementById('li_activation').className = "";
-    document.getElementById('listOfUsers').style.display = 'block';
+    document.getElementById('ul_list_users').style.display = 'block';
     document.getElementById('createUser').style.display = 'none';
     document.getElementById('getActivationCode').style.display = 'none';
 });
@@ -40,7 +40,7 @@ $('#a_c_user').click(function(){
     document.getElementById('li_l_user').className = "";
     document.getElementById('li_activation').className = "";
     document.getElementById('createUser').style.display = 'block';
-    document.getElementById('listOfUsers').style.display = 'none';
+    document.getElementById('ul_list_users').style.display = 'none';
     document.getElementById('getActivationCode').style.display = 'none';
 });
 $('#a_activation').click(function(){
@@ -48,7 +48,7 @@ $('#a_activation').click(function(){
     document.getElementById('li_l_user').className = "";
     document.getElementById('li_c_user').className = "";
     document.getElementById('getActivationCode').style.display = 'block';
-    document.getElementById('listOfUsers').style.display = 'none';
+    document.getElementById('ul_list_users').style.display = 'none';
     document.getElementById('createUser').style.display = 'none';   
 });
 function submitUserListFilter(){
@@ -73,7 +73,7 @@ function submitUserListFilter(){
         success:function(data){
             var status = JSON.parse(data).status;
             var msg = JSON.parse(data).message;
-            var cur = document.getElementById('listOfUsers');
+            var cur = document.getElementById('ul_list_users');
             if(status == "validatorFail"){
                 
                 for(var message in msg){                    
