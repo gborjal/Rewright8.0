@@ -122,9 +122,9 @@ class adminController extends Controller
                 } else {
                     
                     try{
-                        $orderby = 'asc'
+                        $orderby = 'asc';
                         if($input['order'] == 2 ){
-                            $orderby = 'desc'
+                            $orderby = 'desc';
                         }
                         $query = User::select('id')
                                     ->where('user_types','=',$input['user_types'])
