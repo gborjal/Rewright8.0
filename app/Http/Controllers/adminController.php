@@ -129,7 +129,7 @@ class adminController extends Controller
                         $query = User::select('id')
                                     ->where('user_types','=',$input['user_types'])
                                     ->leftjoin("developers","developers.user_id",'=','users.id')
-                                    ->orderBy("users.created_at",$orderby)
+                                    ->orderBy("users.last_name",$orderby)
                                     ->get();
                         if(!is_null($query)){
                             
