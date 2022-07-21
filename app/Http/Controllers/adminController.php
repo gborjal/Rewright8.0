@@ -96,7 +96,7 @@ class adminController extends Controller
         if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
 
             if($request->ajax()){
-                $set = arrayy(); 
+                $set = array(); 
                 $response = [
                     'status'       => "",
                     'message'      => []
