@@ -26,7 +26,7 @@ $(document).ready(function(){
         onOpenStart: $('ul.tabs').tabs(),
     });
 	$('.collapsible').collapsible();
-    //submitUserListFilter();
+    submitUserListFilter();
 });
 $('#a_l_user').click(function(){
     this.parentNode.className = "light-blue darken-4 active";
@@ -63,9 +63,7 @@ function submitUserListFilter(){
     dataform.append('user_types',$(formId+' [name=pd_user_type]')[0].value);
     
     var error;
-    $.ajax({'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-        'Authorization':  "Bearer "+ $('meta[name="authToken"]').attr('content'),
-        datatype: "JSON",
+    $.ajax({
         url: $(formId).attr('action'),
         processData: false,
         contentType: false,
@@ -425,7 +423,7 @@ function searchPatientGroup(){
         processData: false,
         contentType: false,
         mimeType: 'multipart/form-data',
-        method: "GET",
+        method: "POST",
         data: dataform,
         
         success:function(data){
