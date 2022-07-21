@@ -113,7 +113,7 @@
 											<ul id="ul_list_users" class = "collapsible popout"></ul>
 										</div>
 									</div>
-									<div id="createUser" class="col s12">
+									<div id="createUser" class="col s12" style = "display:none;">
 										{!! Form::open(['route'=>'registerByAdmin','id'=>'f_reg']) !!}
 										{!! csrf_field() !!}
 											
