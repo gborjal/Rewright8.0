@@ -96,71 +96,7 @@ class adminController extends Controller
         if(Auth::user()->user_types === 0 || Auth::user()->user_types === 1){
 
             if($request->ajax()){
-                $set = array(); 
-                $response = [
-                    'status'       => "",
-                    'message'      => []
-                ];
                 
-                $input = $request->only([
-                '_token',
-                'order',
-                'user_types',
-                ]);
-                $rules = array(
-                    'order'     => 'Integer', 
-                    'user_types'=> 'Integer'
-                );
-                $validator = Validator::make($input, $rules);
-                if ($validator->fails()) {//change to /admin/dashboard
-                    $response['status'] = 'validatorFail';
-                    $response['message'] = $validator->errors();
-                    
-                    return response()
-                        ->json($response)
-                        ->setCallback($request->input('callback'));
-                } else {
-                    
-                    try{
-                        $orderby = 'asc';
-                        if($input['order'] == 2 ){
-                            $orderby = 'desc';
-                        }
-                        $query = User::select('id')
-                                    ->where('user_types','=',$input['user_types'])
-                                    ->leftjoin("developers","developers.user_id",'=','users.id')
-                                    ->get();
-                        if(!is_null($query)){
-                            if($query[0]['id'] == Auth::user()->id){
-                                $response['status'] = 'fail';
-                                $response['message'] = array('Don\'t search yourself.');
-                                return response()
-                                    ->json($response);
-                            }
-                            $response['status'] = 'success';
-                            $response['message'] = array();
-                            foreach($query as $owner){
-                                array_push($response['message'],user_info::select('users.activation_code as code','users_info.user_id','users_info.profile','first_name','middle_name','last_name','suffix_name','sex')
-                                                                        ->where('user_id','=',$owner['id'])
-                                                                        ->leftjoin('users','users.id','=','users_info.user_id')
-                                                                        ->get());
-                            }
-                            return response()
-                               ->json($response);
-                        }else{
-                            $response['status'] = 'fail';
-                                $response['message'] = 'No Users found.';
-                                return response()
-                                    ->json($response);
-                        }
-                    } catch (PDOException $e) {
-                        $response['status'] = 'fail';
-                        $response['message'] = 'PDOException. Kindly report this.';
-                        
-                        return response()
-                            ->json($response);
-                    }           
-                }
             }
         }
         //return redirect()->route('dashboardAdmin');
