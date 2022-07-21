@@ -144,7 +144,8 @@ class adminController extends Controller
                                                                                    'middle_name',
                                                                                    'last_name',
                                                                                    'suffix_name',
-                                                                                   'sex')
+                                                                                   'sex',
+                                                                                   'users.created_at')
                                                                             ->where('user_id','=',$owner['id'])
                                                                             ->leftjoin('users','users.id','=','users_info.user_id')
                                                                             ->get());
