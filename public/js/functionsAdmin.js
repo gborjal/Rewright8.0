@@ -114,7 +114,7 @@ function submitUserListFilter(){
                 }
                 $('#ul_list_users').empty();
                 var cur = document.getElementById('ul_list_users');
-
+                var siteUrl = window.location.href.split('/')[2];
                 cur.innerHTML = " ";
                 for(result of searchRes){
                     var res_id = result[0].user_id;
