@@ -83,7 +83,7 @@ function submitUserListFilter(){
         success:function(data){
             var status = JSON.parse(data).status;
             var msg = JSON.parse(data).message;
-            console.table(msg);
+            
             var cur = document.getElementById('ul_list_users');
             if(status == "validatorFail"){
                 
@@ -108,7 +108,7 @@ function submitUserListFilter(){
                 var siteUrl = window.location.href.split('/')[2];
                 cur.innerHTML = " ";
                 for(result of searchRes){
-                    if(result[0].user_id === undefined) continue;
+                    if(result[0] === undefined) continue;
                     var res_id = result[0].user_id;
                     
                     var li = addNode(cur,"li",undefined,undefined,undefined,undefined,undefined,undefined);
