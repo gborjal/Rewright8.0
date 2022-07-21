@@ -139,7 +139,7 @@
 										</div>
 									</div>
 									<div id="getActivationCode" class="col s12" style = "display:none;">
-										{!! Form::open(['route'=>'getCode','id'=>'f_activation']) !!}
+										{!! Form::open(['route'=>'getActivationCode','id'=>'f_activation']) !!}
 										{!! csrf_field() !!}
 											
 											{!! Form::email('email',null,['class'=>'form-control']) !!}
