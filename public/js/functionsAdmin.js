@@ -26,7 +26,7 @@ $(document).ready(function(){
         onOpenStart: $('ul.tabs').tabs(),
     });
 	$('.collapsible').collapsible();
-    submitUserListFilter();
+    //submitUserListFilter();
 });
 $('#a_l_user').click(function(){
     this.parentNode.className = "light-blue darken-4 active";
