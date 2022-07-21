@@ -423,6 +423,7 @@ function searchPatientGroup(){
         processData: false,
         contentType: false,
         mimeType: 'multipart/form-data',
+        method: "GET",
         data: dataform,
         
         success:function(data){
