@@ -141,11 +141,11 @@ function submitUserListFilter(){
                         fullname += (result[0].suffix_name) ? result[0].suffix_name: " ";
                         addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,fullname);
 
-                    var year = Number(result[0].updated_at.substr(0,4));
-                    var day  = Number(result[0].updated_at.substr(9,1));
-                    var month= Number(result[0].updated_at.substr(6,1)) - 1;
-                    var hour = Number(result[0].updated_at.substr(11,2));
-                    var min  = Number(result[0].updated_at.substr(14,2));
+                    var year = Number(result[0].created_at.substr(0,4));
+                    var day  = Number(result[0].created_at.substr(9,1));
+                    var month= Number(result[0].created_at.substr(6,1)) - 1;
+                    var hour = Number(result[0].created_at.substr(11,2));
+                    var min  = Number(result[0].created_at.substr(14,2));
 
                     var date = new Date(year,month,day,hour,min); 
                     var p = addNode(header_li,'p',undefined,undefined,"grey-text text-darken-1",undefined,undefined,date.toUTCString());
