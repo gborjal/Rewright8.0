@@ -96,7 +96,6 @@
 										{!! Form::open(['route'=>'getUserList','id'=>'f_user_list_filter']) !!}
 										{!! csrf_field() !!}
 											<div class="input-field col l6 m6 s12">
-												<label for="pd_order">Order:</label>
 												<select id="pd_order" name="pd_order" >
 													<option disabled></option>
 													<option value='1' selected = "selected">Ascending</option>
@@ -104,7 +103,6 @@
 												</select>
 											</div>
 											<div class="input-field col l6 m6 s12">
-												<label for="pd_user_type">User:</label>
 												<select id="pd_user_type" name="pd_user_type">
 													<option value='1' selected = "selected">Physician</option>
 													<option value='2'>Patient</option>
@@ -118,7 +116,7 @@
 										</div>
 									</div>
 									<div id="createUser" class="col s12" style = "display:none;">
-										{!! Form::open(['route'=>'registerByAdmin','id'=>'f_reg']) !!}
+										{!! Form::open(['route'=>'registerByAdmin','id'=>'f_user_list_filter']) !!}
 										{!! csrf_field() !!}
 											
 											{!! Form::email('email',null,['class'=>'form-control']) !!}
@@ -141,7 +139,7 @@
 										</div>
 									</div>
 									<div id="getActivationCode" class="col s12" style = "display:none;">
-										{!! Form::open(['route'=>'getUserList','id'=>'f_user_list_filter']) !!}
+										{!! Form::open(['route'=>'getUserList','id'=>'f_reg']) !!}
 										{!! csrf_field() !!}
 											
 											{!! Form::email('email',null,['class'=>'form-control']) !!}
