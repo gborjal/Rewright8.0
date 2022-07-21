@@ -28,6 +28,15 @@ $(document).ready(function(){
 	$('.collapsible').collapsible();
     submitUserListFilter();
 });
+// For todays date;
+Date.prototype.today = function () { 
+    return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
+}
+
+// For the time now
+Date.prototype.timeNow = function () {
+     return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+}
 $('#a_l_user').click(function(){
     this.parentNode.className = "light-blue darken-4 active";
     document.getElementById('li_c_user').className = "";
@@ -130,17 +139,27 @@ function submitUserListFilter(){
                     var fullname = result[0].first_name + " " + result[0].middle_name + " " + result[0].last_name;
                         fullname += (result[0].suffix_name) ? result[0].suffix_name: " ";
                         addNode(header_li,"p",undefined,undefined,undefined,undefined,undefined,fullname);
-                    
+
+                    var year = Number(result[0].updated_at.substr(0,4));
+                    var day  = Number(result[0].updated_at.substr(9,1));
+                    var month= Number(result[0].updated_at.substr(6,1)) - 1;
+                    var hour = Number(result[0].updated_at.substr(11,2));
+                    var min  = Number(result[0].updated_at.substr(14,2));
+
+                    var date = new Date(year,month,day,hour,min); 
+                    var p = addNode(header_li,'p',undefined,undefined,"grey-text text-darken-1",undefined,undefined,date.toUTCString());
+
                     var a = addNode(header_li,'a',undefined,undefined,"btn waves-effect light-blue darken-3",undefined,undefined,"Profile");
                     //var siteUrl = window.location.href.split('/')[2];
                         a.href = "https://" + siteUrl + "/auth/profile/edit/" + result[0].code;
                         a.target = "_blank";
                     
+                    /*
                     var a = addNode(header_li,'a',undefined,undefined,"modal-trigger btn btn-flat light-blue-text text-darken-3");
                         addNode(a,"i",undefined,undefined,"material-icons",undefined,undefined,"note_add");
                         a.href="#m_note";
                         a.onclick = function(){addNote(res_id)};
-
+                    
                     var div_body = addNode(li,"div",undefined,undefined,"collapsible-body");
                     var row = addNode(div_body,"div",undefined,undefined,"row");
                     var div2 = addNode(row,"div");
@@ -169,8 +188,9 @@ function submitUserListFilter(){
                         addNode(t_d,"ul",undefined,undefined,"collapsible popout");
                     var notes = addNode(div2,"div",undefined,undefined,"col s12",undefined,undefined,undefined);
                         addNode(notes,"ul","patientResNotes"+res_id,undefined,"collapsible popout");
-                    $('.tabs').tabs();
-                    $('.collapsible').collapsible();
+                    */
+                    //$('.tabs').tabs();
+                    //$('.collapsible').collapsible();
                     
                 }
             }
