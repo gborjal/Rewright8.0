@@ -26,6 +26,7 @@ $(document).ready(function(){
         onOpenStart: $('ul.tabs').tabs(),
     });
 	$('.collapsible').collapsible();
+    submitUserListFilter();
 });
 $('#a_l_user').click(function(){
     this.parentNode.className = "light-blue darken-4 active";
@@ -59,7 +60,7 @@ function submitUserListFilter(){
 
     dataform.append('_token',$('meta[name="csrf-token"]').attr('content'));
     dataform.append('order',$(formId+' [name=pd_order]')[0].value);
-    dataform.append('user_types',$(formId+' [name=user_types]')[0].value);
+    dataform.append('user_types',$(formId+' [name=pd_user_type]')[0].value);
     
     var error;
     $.ajax({
@@ -73,7 +74,7 @@ function submitUserListFilter(){
         success:function(data){
             var status = JSON.parse(data).status;
             var msg = JSON.parse(data).message;
-            var cur = document.getElementById('listOfUsers');
+            var cur = document.getElementById('ul_list_users');
             if(status == "validatorFail"){
                 
                 for(var message in msg){                    
