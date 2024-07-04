@@ -189,7 +189,7 @@ class AuthController extends Controller
             'login_id',
             'password'
         ]);
-        $remember = $request->input('remember');
+        $remember = ($request->input('remember') === 'on') ? true : false;
         
         $field = filter_var($userdata['login_id'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         
@@ -280,7 +280,195 @@ class AuthController extends Controller
         return back()
                 ->withInput($request->except('password'));
     }
+    /**
+     * Login to Demo Physician Account.
+     *
+     * @return error
+     * @return view 
+     */
+    public function login_demo_phy(Request $request)
+    {
+        // var_dump($request);   
+        // create our user data for the authentication
+        
+        $userdata['login_id'] = "demo_physician@gmail.com";
+        $userdata['password'] = "rewightdemophys";
+        $remember = false;
 
+        $field = filter_var($userdata['login_id'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        
+        if($field == 'email') {
+            $rules = array(
+                'email' => 'required|email|max:255', // make sure the email is an actual email
+                'password' => 'required|string|min:6' 
+            );
+        }else{
+            $rules = array(
+                'username' => 'required|string|max:255', // make sure the username exists
+                'password' => 'required|string|min:6' 
+            );    
+        }
+
+        // change login_id key to appropriate key
+        if (key_exists('login_id',$userdata)) {
+            if($field == 'email'){
+                $userdata['email'] = $userdata['login_id'];
+                unset($userdata['login_id']); 
+            }else{
+                $userdata['username'] = $userdata['login_id'];
+                unset($userdata['login_id']); 
+            }
+        }
+
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make($userdata, $rules);
+        
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return back()
+                    ->withErrors($validator)
+                    ->withInput($request->except(['password']));
+        }else {
+            if(Auth::attempt($userdata,$remember))
+            {
+                if(Auth::user()->user_types !== 0 && (is_null(Auth::user()->userInformation))){
+                    $prompt = "";
+                    if(Auth::user()->user_types === 1) {
+                        $prompt = 'User Information unaccomplished. Please contact admin.';
+                        return redirect('/auth/profile/edit/' . Auth::user()->activation_code)
+                                ->with('error',$prompt);
+                    }else if(Auth::user()->user_types === 2){
+                        $prompt = 'User Information unaccomplished. Please contact your physician.';
+                    }
+                    Auth::guard('web')->logout();
+                    return back()
+                        ->with('error',$prompt)
+                        ->withInput($request->except('password'));
+                }
+                
+                return redirect()->route('dashboard')
+                    ->with('project',Auth::user()->projects->first()->project_id);
+                    //->with('authToken',$tokenResult);
+            }else{                
+                if($field === "email"){
+                    if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
+                        return back()
+                            ->with('error','Account does not exist.')
+                            ->withInput($request->except('password'));
+                    }
+                    return back()
+                        ->with('error','E-mail and Password does not match.')
+                        ->withInput($request->except('password'));
+                }else{
+                    if(DB::table('users')->where('username','=',$userdata['username'])->count() === 0){
+                        return back()
+                            ->with('error','Account does not exist.')
+                            ->withInput($request->except('password'));
+                    }
+                    return back()
+                        ->with('error','Username and Password does not match.')
+                        ->withInput($request->except('password'));
+                }
+            }
+        }
+        return back()
+                ->withInput($request->except('password'));
+    }
+    /**
+     * Login to Demo Patient Account.
+     *
+     * @return error
+     * @return view 
+     */
+    public function login_demo_patient(Request $request)
+    {
+        // var_dump($request);   
+        // create our user data for the authentication
+        
+        $userdata['login_id'] = "demo_patient_1@gmail.com";
+        $userdata['password'] = "1lw3yjuo";
+        $remember = false;
+
+        $field = filter_var($userdata['login_id'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        
+        if($field == 'email') {
+            $rules = array(
+                'email' => 'required|email|max:255', // make sure the email is an actual email
+                'password' => 'required|string|min:6' 
+            );
+        }else{
+            $rules = array(
+                'username' => 'required|string|max:255', // make sure the username exists
+                'password' => 'required|string|min:6' 
+            );    
+        }
+
+
+        // change login_id key to appropriate key
+        if (key_exists('login_id',$userdata)) {
+            if($field == 'email'){
+                $userdata['email'] = $userdata['login_id'];
+                unset($userdata['login_id']); 
+            }else{
+                $userdata['username'] = $userdata['login_id'];
+                unset($userdata['login_id']); 
+            }
+        }
+
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make($userdata, $rules);
+        
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return back()
+                    ->withErrors($validator)
+                    ->withInput($request->except(['password']));
+        }else {
+            if(Auth::attempt($userdata,$remember))
+            {
+                if(Auth::user()->user_types !== 0 && (is_null(Auth::user()->userInformation))){
+                    $prompt = "";
+                    if(Auth::user()->user_types === 1) {
+                        $prompt = 'User Information unaccomplished. Please contact admin.';
+                        return redirect('/auth/profile/edit/' . Auth::user()->activation_code)
+                                ->with('error',$prompt);
+                    }else if(Auth::user()->user_types === 2){
+                        $prompt = 'User Information unaccomplished. Please contact your physician.';
+                    }
+                    Auth::guard('web')->logout();
+                    return back()
+                        ->with('error',$prompt)
+                        ->withInput($request->except('password'));
+                }
+                
+                return redirect()->route('dashboard')
+                    ->with('project',Auth::user()->projects->first()->project_id);
+                    //->with('authToken',$tokenResult);
+            }else{                
+                if($field === "email"){
+                    if(DB::table('users')->where('email','=',$userdata['email'])->count() === 0){
+                        return back()
+                            ->with('error','Account does not exist.')
+                            ->withInput($request->except('password'));
+                    }
+                    return back()
+                        ->with('error','E-mail and Password does not match.')
+                        ->withInput($request->except('password'));
+                }else{
+                    if(DB::table('users')->where('username','=',$userdata['username'])->count() === 0){
+                        return back()
+                            ->with('error','Account does not exist.')
+                            ->withInput($request->except('password'));
+                    }
+                    return back()
+                        ->with('error','Username and Password does not match.')
+                        ->withInput($request->except('password'));
+                }
+            }
+        }
+        return back()
+                ->withInput($request->except('password'));
+    }
     /**
      * Return re
      *

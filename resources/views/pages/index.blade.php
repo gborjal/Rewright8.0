@@ -35,9 +35,19 @@
 			  				</button>
 						{!! Form::close() !!}
 						<ul>
-							<li class="no padding">
+							<!--li class="no padding">
 								<a href="register" data-link="{{ route('register') }}">
 									<i class="material-icons left">person_add</i>Register as Physician 
+								</a>
+							</li-->
+							<li class="no padding">
+								<a href="register" data-link="{{ route('login_demo_phy') }}">
+									<i class="material-icons left">play_circle_outline</i>Demo as Physician 
+								</a>
+							</li>
+							<li class="no padding">
+								<a href="register" data-link="{{ route('login_demo_patient') }}">
+									<i class="material-icons left">play_circle_outline</i>Demo as Patient 
 								</a>
 							</li>
 						</ul>
