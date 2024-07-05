@@ -8,7 +8,7 @@
 				<div class="col s12" style="z-index: -1;">
 					<img class="responsive-img" src="{{ route('image','brandBackdropLarge.png') }}"/>
 				</div>
-				<div id="f" class="col s12 m6 l6 offset-m3 offset-l3card medium">
+				<div id="f" class="col s12 m6 l6 offset-m3 offset-l3 card medium">
 					<div id="div_login" class="col s12">
 						<br/>
 						{!! Form::open(['route'=>'login','method'=>'POST']) !!}
