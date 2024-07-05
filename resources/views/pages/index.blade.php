@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m6 l6 offset-m3 offset-l3">
-				<div id="f" class="card medium">
+				<div id="f" class="card large">
 					<ul class="tabs">
 						<li class="tab col s3"><a class="blue-text text-accent-4" href="#div_login" onclick="changeRegCard(0);">Login</a></li>
 						<div class="indicator blue darken-4" style="z-index:1"></div>
@@ -35,18 +35,18 @@
 			  				</button>
 						{!! Form::close() !!}
 						<ul class="collection">
-							<li class="collection-item">
+							<!--li class="collection-item">
 								<a href="register" data-link="{{ route('register') }}">
 									<i class="material-icons left">person_add</i>Register as Physician 
 								</a>
-							</li>
+							</li-->
 							<li class="collection-item">
-								<a href="register" data-link="{{ route('login_demo_phy') }}">
+								<a href="{{ route('login_demo_phy') }}">
 									<i class="material-icons left">play_circle_outline</i>Demo as Physician 
 								</a>
 							</li>
 							<li class="collection-item">
-								<a href="register" data-link="{{ route('login_demo_patient') }}">
+								<a href="{{ route('login_demo_patient') }}">
 									<i class="material-icons left">play_circle_outline</i>Demo as Patient 
 								</a>
 							</li>
