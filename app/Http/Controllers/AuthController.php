@@ -286,21 +286,29 @@ class AuthController extends Controller
      * @return error
      * @return view 
      */
-    public function login_demo_phy(Request $request)
+    public function login_demo_phys(Request $request)
     {
         // var_dump($request);   
         // create our user data for the authentication
         
-        $userdata['login_id'] = "demo_physician@gmail.com";
-        $userdata['password'] = "b9pdqqv7";
+        $userdata['login_id'] = "demo_patient_1@gmail.com";
+        $userdata['password'] = "1lw3yjuo";
         $remember = false;
 
-        $field = 'email';
-                
-        $rules = array(
-            'email' => 'required|email|max:255', // make sure the email is an actual email
-            'password' => 'required|string|min:6' 
-        );
+        $field = filter_var($userdata['login_id'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        
+        if($field == 'email') {
+            $rules = array(
+                'email' => 'required|email|max:255', // make sure the email is an actual email
+                'password' => 'required|string|min:6' 
+            );
+        }else{
+            $rules = array(
+                'username' => 'required|string|max:255', // make sure the username exists
+                'password' => 'required|string|min:6' 
+            );    
+        }
+
 
         // change login_id key to appropriate key
         if (key_exists('login_id',$userdata)) {
