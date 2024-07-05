@@ -16,14 +16,13 @@
         <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
     </head>
     <body>
-        <nav class="blue-grey lighten-2">
+        <nav style="background-color:#DFDFDD">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">
                     <span>
                         <img src="{{ route('image','brand-logo.png') }}" alt="REWRIGHT" 
                              style="height:60px; width:60px;"/> 
                     </span>
-                    <h1>REWRIGHT</h1>
                 </a>
             </div>
         </nav>

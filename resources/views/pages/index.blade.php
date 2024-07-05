@@ -4,12 +4,9 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col s12 m6 l6 offset-m3 offset-l3">
-				<div id="f" class="card large">
-					<ul class="tabs">
-						<li class="tab col s3"><a class="blue-text text-accent-4" href="#div_login" onclick="changeRegCard(0);">Login</a></li>
-						<div class="indicator blue darken-4" style="z-index:1"></div>
-					</ul>
+			<div class="col s12 m12 l6">
+				<img class="responsive-img hide-on-med-and-down" src="{{ route('image','brandBackdropLarge.png') }}"/>
+				<div id="f" class="col s12 m6 l6 offset-m3 offset-l3card medium">
 					<div id="div_login" class="col s12">
 						<br/>
 						{!! Form::open(['route'=>'login','method'=>'POST']) !!}
@@ -68,7 +65,7 @@
 			
 				var toastContent = "<span>{{ $error }}</span>";
 				M.toast({ 	html:toastContent,
-							displayLength:5000, 
+							displayLength:10000, 
 							classes:'blue darken-4'
 						});
 			
@@ -79,7 +76,7 @@
 		<script type="text/javascript">
 			var toastContent = "<span>{{ Session::get('error') }}</span>";
 			M.toast({ 	html:toastContent,
-						displayLength:5000, 
+						displayLength:10000, 
 						classes:'blue darken-4'
 					});
 		</script>
