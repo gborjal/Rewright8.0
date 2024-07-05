@@ -5,7 +5,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m12 l6">
-				<img class="responsive-img hide-on-med-and-down" src="{{ route('image','brandBackdropLarge.png') }}"/>
+				<div class="col s12" style="z-index: -1;">
+					<img class="responsive-img" src="{{ route('image','brandBackdropLarge.png') }}"/>
+				</div>
 				<div id="f" class="col s12 m6 l6 offset-m3 offset-l3card medium">
 					<div id="div_login" class="col s12">
 						<br/>
