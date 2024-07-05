@@ -286,11 +286,13 @@ class AuthController extends Controller
      * @return error
      * @return view 
      */
-    public function login_demo_phys(Request $request)
+    public function login_demo_phy(Request $request)
     {
         // var_dump($request);   
         // create our user data for the authentication
-        
+        $userdata['login_id'] = "demo_physician@gmail.com";
+        $userdata['password'] = "b9pdqqv7";
+
         $userdata['login_id'] = "demo_patient_1@gmail.com";
         $userdata['password'] = "1lw3yjuo";
         $remember = false;
