@@ -41,12 +41,12 @@
 								</a>
 							</li>
 							<li class="no padding">
-								<!--a href="register" data-link="{{ route('login_demo_phy') }}">
+								<!--a href="register" data-link="{{ //route('login_demo_phy') }}">
 									<i class="material-icons left">play_circle_outline</i>Demo as Physician 
 								</a-->
 							</li>
 							<li class="no padding">
-								<!--a href="register" data-link="{{ route('login_demo_patient') }}">
+								<!--a href="register" data-link="{{ //route('login_demo_patient') }}">
 									<i class="material-icons left">play_circle_outline</i>Demo as Patient 
 								</a-->
 							</li>
