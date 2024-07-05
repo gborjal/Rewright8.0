@@ -41,12 +41,12 @@
 								</a>
 							</li-->
 							<li class="collection-item">
-								<a href="{{ route('login_demo_phy') }}">
+								<a href="login_demo_phy" data-link="{{ route('login_demo_phy') }}">
 									<i class="material-icons left">play_circle_outline</i>Demo as Physician 
 								</a>
 							</li>
 							<li class="collection-item">
-								<a href="{{ route('login_demo_patient') }}">
+								<a href="login_demo_patient" data-link="{{ route('login_demo_patient') }}">
 									<i class="material-icons left">play_circle_outline</i>Demo as Patient 
 								</a>
 							</li>

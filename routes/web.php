@@ -34,8 +34,10 @@ Route::middleware(['web'])->group(function () {
 
 	Route::get('login',[AuthController::class,'showLoginForm'])->name('login');
 	Route::post('login', [AuthController::class,'login']); 
-	Route::post('login_demo_phy', [AuthController::class,'login_demo_phy'])->name('login_demo_phy'); 
-	Route::post('login_demo_patient', [AuthController::class,'login_demo_patient'])->name('login_demo_patient'); 
+	//demo routes
+	Route::get('login_demo_phy', [AuthController::class,'login_demo_phy'])->name('login_demo_phy'); 
+	Route::get('login_demo_patient', [AuthController::class,'login_demo_patient'])->name('login_demo_patient'); 
+	
 	Route::get('logout',[userController::class,'getLogout'])->name('logout');	
 	// 	//Admin Login Route
 		Route::post('admin/login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
