@@ -18,7 +18,7 @@
     <body>
         <nav class="blue-grey lighten-2">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">&nbsp&nbsp&nbsp<img src="{{ route('image','carouselimg-1.png') }}"/> REWRIGHT</a>
+                <a href="#" class="brand-logo">&nbsp&nbsp&nbsp<img src="{{ route('image','brand-logo') }}"/> REWRIGHT</a>
             </div>
         </nav>
         @yield('content')
