@@ -109,7 +109,7 @@ Route::middleware(['web','auth'])->group(function () {
 	});
 	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);
 });
-Route::middleware(['auth:sanctum'])->group(function () {
+/*Route::middleware(['auth:sanctum'])->group(function () {
 	Route::post('/note/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
 	//Route::get('/list/task', [notesController::class,'getTaskExerDataNotes']);
 	Route::prefix('tasks')->group(function () {;
@@ -131,5 +131,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 		Route::get('training/{id}', [taskController::class,'getTrainingDataTask']);	//ajax request\
 		Route::get('preview/{id}', [taskController::class,'getExerData']);	//ajax request\
 	});
-});
+});*/
 ?>
