@@ -59,7 +59,7 @@ class imagesController extends Controller
         return Image::make($storagePath)->resize($size,$size)->response();
     }
 
-    public function discussionImage($image)
+    public function getImage($image)
     {
     	if(!Storage::disk('local')->has($image)){
     		$response = [
@@ -73,4 +73,5 @@ class imagesController extends Controller
 
         return Image::make($storagePath)->response();
     }
+
 }

@@ -37,14 +37,16 @@ Route::middleware(['web'])->group(function () {
 	//demo routes
 	Route::get('login_demo_phy', [AuthController::class,'login_demo_phy'])->name('login_demo_phy'); 
 	Route::get('login_demo_patient', [AuthController::class,'login_demo_patient'])->name('login_demo_patient'); 
-	
+
 	Route::get('logout',[userController::class,'getLogout'])->name('logout');	
-	// 	//Admin Login Route
-		Route::post('admin/login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
-		Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
+	//Admin Login Route
+	Route::post('admin/login', [AuthController::class,'loginAdmin'])->name('loginAdmin');
+	Route::get('admin/login',[AuthController::class,'showAdminLoginForm'])->name('showAdminLoginForm');
 
-		Route::get('admin/logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
+	Route::get('admin/logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 
+	Route::get('/image/{image}', [imagesController::class,'getImage']);
+	
 	//Route::get('/dashboard', [userController::class,'dashboard']);
 	/*
 	Route::get('/dashboard', [userController::class,'dashboard'])->name('dashboard');
@@ -109,7 +111,8 @@ Route::middleware(['web','auth'])->group(function () {
 		Route::get('image/{type}/{person}', [imagesController::class,'profilePicture']);
 		Route::get('image/get/{type}/{image}', [imagesController::class,'forcedGetPicture']);
 	});
-	Route::get('/discussion/image/{image}', [imagesController::class,'discussionImage']);
+	Route::get('/discussion/image/{image}', [imagesController::class,'getImage']);
+
 });
 /*Route::middleware(['auth:sanctum'])->group(function () {
 	Route::post('/note/list/task', [notesController::class,'getTaskExerDataNotes'])->name('noteListTask');	//ajax request
