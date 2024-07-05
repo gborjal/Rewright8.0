@@ -1,13 +1,12 @@
 @extends('index_master')
 
 @section('content')
-
-	<div class="container">
-		<div class="row">
-			<div class="parallax-container">
-				<div class="parallax"><img src="{{ route('image','brandBackdropLarge.png') }}"></div>
-			</div>
-			
+	
+	<div class="parallax-container">
+		<div class="parallax"><img src="{{ route('image','brandBackdropLarge.png') }}"></div>
+	</div>
+	<div class="section white">
+		<div class="row container">
 			<div id="f" class="col s12 m6 l6 offset-m3 offset-l3 card medium">
 				<div id="div_login" class="col s12">
 					<br/>
@@ -55,7 +54,9 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="parallax-container">
+		<div class="parallax"><img src="{{ route('image','brandBackdropLarge.png') }}"></div>
+	</div>
 
 @stop
 @section('errors')
