@@ -291,10 +291,10 @@ class AuthController extends Controller
         // var_dump($request);   
         // create our user data for the authentication
         $userdata['login_id'] = "demo_physician@gmail.com";
-        $userdata['password'] = "b9pdqqv7";
+        $userdata['password'] = "rewrightdemophys";
 
-        $userdata['login_id'] = "demo_patient_1@gmail.com";
-        $userdata['password'] = "1lw3yjuo";
+        /*$userdata['login_id'] = "demo_patient_1@gmail.com";
+        $userdata['password'] = "1lw3yjuo";*/
         $remember = false;
 
         $field = filter_var($userdata['login_id'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
