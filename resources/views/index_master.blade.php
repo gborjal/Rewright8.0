@@ -16,9 +16,9 @@
         <script type = "text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"/></script>
     </head>
     <body>
-        <nav class="blue darken-4">
+        <nav class="blue-grey lighten-2">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">&nbsp&nbsp&nbspReWright</a>
+                <a href="#" class="brand-logo">&nbsp&nbsp&nbsp<img src="{{ route('image','carouselimg-1') }}"/> REWRIGHT</a>
             </div>
         </nav>
         @yield('content')

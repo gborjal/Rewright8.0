@@ -45,7 +45,7 @@ Route::middleware(['web'])->group(function () {
 
 	Route::get('admin/logout',[userController::class,'getLogoutAdmin'])->name('logoutAdmin');
 
-	Route::get('/image/{image}', [imagesController::class,'getImage']);
+	Route::get('/image/{image}', [imagesController::class,'getImage'])->name('image');
 	
 	//Route::get('/dashboard', [userController::class,'dashboard']);
 	/*
