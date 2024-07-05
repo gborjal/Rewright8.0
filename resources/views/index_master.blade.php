@@ -19,7 +19,7 @@
         <nav class="blue-grey lighten-2">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">
-                    <img src="{{ route('image','brand-logo.png') }}" alt="REWRIGHT" /> 
+                    <img src="{{ route('image','brand-logo.png') }}" alt="REWRIGHT" style="height:60px; width:60px;"/> 
                     <span>REWRIGHT</span>
                 </a>
             </div>
