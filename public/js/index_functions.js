@@ -38,5 +38,5 @@ function chk_pword()
 }
 $(document).ready(function(){
 	$('select').formSelect();
-
+	$('.parallax').parallax();
 });

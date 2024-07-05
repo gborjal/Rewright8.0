@@ -4,11 +4,11 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col s12 m12 l6">
-				<div class="col s12" style="z-index: -1;">
-					<img class="responsive-img" src="{{ route('image','brandBackdropLarge.png') }}"/>
-				</div>
-				<div id="f" class="col s12 m6 l6 offset-m3 offset-l3 card medium">
+			<div class="parallax-container">
+				<div class="parallax"><img src="{{ route('image','brandBackdropLarge.png') }}"></div>
+			</div>
+			<div class="col l12">
+				<div id="f" class="col s12 m6 l6 offset-m3 offset-l6 card medium">
 					<div id="div_login" class="col s12">
 						<br/>
 						{!! Form::open(['route'=>'login','method'=>'POST']) !!}
