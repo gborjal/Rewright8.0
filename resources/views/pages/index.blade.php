@@ -7,7 +7,14 @@
 	</div>
 	<div class="section white">
 		<div class="row container">
-			<div id="f" class="col s12 m6 l6 offset-m3 offset-l3 card medium">
+			<div class="col s12 m9 l9">
+				<h3>Try out our demo!</h3>
+				<blockquote>
+					Login as a demo Physician or as a Patient!
+				</blockquote>
+				<blockquote>Or, just login!</blockquote>
+			</div>
+			<div id="f" class="col s12 m3 l3 card medium">
 				<div id="div_login" class="col s12">
 					<br/>
 					{!! Form::open(['route'=>'login','method'=>'POST']) !!}
