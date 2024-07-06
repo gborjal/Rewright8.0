@@ -18,7 +18,7 @@
     <body>
         <nav style="background-color:#DFDFDD">
             <div class="nav-wrapper">
-                <a href="{{ route(index) }}" class="brand-logo">
+                <a href="{{ route('index') }}" class="brand-logo">
                     <span>
                         <img src="{{ route('image','brand-logo.png') }}" alt="REWRIGHT" 
                              style="height:60px; width:60px;"/> 
