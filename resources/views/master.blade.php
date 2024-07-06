@@ -26,6 +26,13 @@
                 <p class="light-blue-text text-darken-2">Made with LeapJS PlayBack</p>
               </div>
               <div class="col l4 offset-l2 s12">
+                <h6 class="light-blue-text text-darken-1">Artwork</h6>
+                <ul>
+                  <li><a class="light-blue-text text-darken-1" href="https://www.facebook.com/faustfolio">Ms Jean Thompson</a></li>
+                  
+                </ul>
+              </div>
+              <div class="col l4 offset-l2 s12">
                 <h5 class="light-blue-text text-darken-1">Links</h5>
                 <ul>
                   <li><a class="light-blue-text text-darken-2" href="https://github.com/leapmotion/leapjs-playback">LeapJS Playback</a></li>
