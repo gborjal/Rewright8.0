@@ -7,14 +7,14 @@
 	</div>
 	<div class="section white">
 		<div class="row container">
-			<div class="col s12 m9 l9">
+			<div class="col s12 m12 l9">
 				<h3>Try out our demo!</h3>
 				<blockquote>
 					Login as a demo Physician or as a Patient!
 				</blockquote>
 				<blockquote>Or, just login!</blockquote>
 			</div>
-			<div id="f" class="col s12 m3 l3 card medium">
+			<div id="f" class="col s12 m12 l3 card medium">
 				<div id="div_login" class="col s12">
 					<br/>
 					{!! Form::open(['route'=>'login','method'=>'POST']) !!}
@@ -63,6 +63,13 @@
 	</div>
 	<div class="parallax-container">
 		<div class="parallax"><img src="{{ route('image','brandBackdropLarge.png') }}"></div>
+	</div>
+	<div class="section white">
+		<div class="row container">
+			<div class="col s12 m9 l9">
+
+			</div>
+		</div>
 	</div>
 
 @stop
