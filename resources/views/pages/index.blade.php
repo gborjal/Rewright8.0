@@ -10,9 +10,9 @@
 			<div class="col s12 m12 l8">
 				<h3>Try out our demo!</h3>
 				<blockquote>
-					Login as a demo Physician or as a Patient!
+					Login as a demo Physician or as a Patient!<br/> <br/>
+					Or, just login!
 				</blockquote>
-				<blockquote>Or, just login!</blockquote>
 			</div>
 			<div id="f" class="col s12 m12 l4 card medium">
 				<div id="div_login" class="col s12">
