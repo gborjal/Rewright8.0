@@ -64,7 +64,7 @@
 	<div class="parallax-container">
 		<div class="parallax"><img src="{{ route('image','highlight_1.png') }}"/></div>
 	</div>
-	<div class="section white">
+	<div class="section" style="background-color:#DFDFDD">
 		<div class="row container">
 			<div class="col s12 m9 l9">
 				<h3>Record EXERCISES!</h3>
@@ -102,7 +102,7 @@
 	<div class="parallax-container">
 		<div class="parallax"><img src="{{ route('image','highlight_2.png') }}"/></div>
 	</div>
-	<div class="section white">
+	<div class="section" style="background-color:#DFDFDD">
 		<div class="row container">
 			<div class="col s12 m3 l3">
 				<div class="card large">
@@ -120,7 +120,7 @@
 	<div class="parallax-container">
 		<div class="parallax"><img src="{{ route('image','highlight_3.png') }}"/></div>
 	</div>
-	<div class="section white">
+	<div class="section" style="background-color:#DFDFDD">
 		<div class="row container">
 			<div class="col s12 m9 l9">
 				<h3>Create Discussion Threads!</h3>
