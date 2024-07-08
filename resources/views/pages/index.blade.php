@@ -75,7 +75,11 @@
 				</blockquote>
 			</div>
 			<div class="col s12 m3 l3">
-				<img class="materialboxed responsive-img" src="{{ route('image','feature_1.png') }}"/>
+				<div class="card large">
+					<div class="card-image">
+						<img src="{{ route('image','feature_1.png') }}"/>
+					</div>
+				</div>	
 			</div>
 		</div>
 		<div class="row container">
@@ -87,7 +91,11 @@
 				</blockquote>
 			</div>
 			<div class="col s12 m3 l3">
-				<img class="materialboxed responsive-img" src="{{ route('image','feature_2.png') }}"/>
+				<div class="card large">
+					<div class="card-image">
+						<img src="{{ route('image','feature_2.png') }}"/>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</div>
@@ -97,7 +105,11 @@
 	<div class="section white">
 		<div class="row container">
 			<div class="col s12 m3 l3">
-				<img class="materialboxed responsive-img" src="{{ route('image','feature_3.png') }}"/>
+				<div class="card large">
+					<div class="card-image">
+						<img src="{{ route('image','feature_3.png') }}"/>
+					</div>
+				</div>	
 			</div>
 			<div class="col s12 m9 l9">
 				<h3>Remotely monitor Patient Exercise!</h3>
@@ -118,7 +130,11 @@
 				</blockquote>
 			</div>
 			<div class="col s12 m3 l3">
-				<img class="materialboxed responsive-img" src="{{ route('image','feature_4.png') }}"/>
+				<div class="card large">
+					<div class="card-image">
+						<img src="{{ route('image','feature_4.png') }}"/>
+					</div>
+				</div>	
 			</div>
 		</div>
 		<div class="row container">
@@ -127,7 +143,11 @@
 				<blockquote>Reply queries trough the thread's comments section</blockquote>
 			</div>
 			<div class="col s12 m3 l3">
-				<img class="materialboxed responsive-img" src="{{ route('image','feature_5.png') }}"/>
+				<div class="card large">
+					<div class="card-image">
+						<img src="{{ route('image','feature_5.png') }}"/>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</div>
