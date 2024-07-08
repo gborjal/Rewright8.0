@@ -62,12 +62,72 @@
 		</div>
 	</div>
 	<div class="parallax-container">
-		<div class="parallax"><img src="{{ route('image','brandBackdropLarge.png') }}"></div>
+		<div class="parallax"><img src="{{ route('image','highlight_1.png') }}"/></div>
 	</div>
 	<div class="section white">
 		<div class="row container">
 			<div class="col s12 m9 l9">
-
+				<h3>Record EXERCISES!</h3>
+				<blockquote>Create and record PERSONALIZED Exercises for your Patients!</blockquote>
+				<blockquote>
+					Follow your Physician's recommendation!<br/>
+					Review your how your patient follows the exercises and PLAYBACK
+				</blockquote>
+			</div>
+			<div class="col s12 m3 l3">
+				<img class="materialboxed" src="{{ route('image','feature_1.png') }}"/>
+			</div>
+		</div>
+		<div class="row container">
+			<div class="col s12 m9 l9">
+				<h3>Personalize TASKS</h3>
+				<blockquote>Create tasks specific or generalized to your Patients!</blockquote>
+				<blockquote>
+					Have the ability to assign tasks for different or similar cases of patients!
+				</blockquote>
+			</div>
+			<div class="col s12 m3 l3">
+				<img class="materialboxed" src="{{ route('image','feature_2.png') }}"/>
+			</div>
+		</div>
+	</div>
+	<div class="parallax-container">
+		<div class="parallax"><img src="{{ route('image','highlight_2.png') }}"/></div>
+	</div>
+	<div class="section white">
+		<div class="row container">
+			<div class="col s12 m3 l3">
+				<img class="materialboxed" src="{{ route('image','feature_3.png') }}"/>
+			</div>
+			<div class="col s12 m9 l9">
+				<h3>Remotely monitor Patient Exercise!</h3>
+				<blockquote>Review, grade, and take notes of patient performances!</blockquote>
+			</div>
+		</div>
+	</div>
+	<div class="parallax-container">
+		<div class="parallax"><img src="{{ route('image','highlight_3.png') }}"/></div>
+	</div>
+	<div class="section white">
+		<div class="row container">
+			<div class="col s12 m9 l9">
+				<h3>Create Discussion Threads!</h3>
+				<blockquote>
+					Create articles for your patients to read and react! <br/>
+					Be it for a single patient or a group of patients.
+				</blockquote>
+			</div>
+			<div class="col s12 m3 l3">
+				<img class="materialboxed" src="{{ route('image','feature_4.png') }}"/>
+			</div>
+		</div>
+		<div class="row container">
+			<div class="col s12 m9 l9">
+				<h3>Interact through THREADS!</h3>
+				<blockquote>Reply queries trough the thread's comments section</blockquote>
+			</div>
+			<div class="col s12 m3 l3">
+				<img class="materialboxed" src="{{ route('image','feature_4.png') }}"/>
 			</div>
 		</div>
 	</div>
