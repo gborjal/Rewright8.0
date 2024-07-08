@@ -7,14 +7,14 @@
 	</div>
 	<div class="section white">
 		<div class="row container">
-			<div class="col s12 m12 l9">
+			<div class="col s12 m12 l8">
 				<h3>Try out our demo!</h3>
 				<blockquote>
 					Login as a demo Physician or as a Patient!
 				</blockquote>
 				<blockquote>Or, just login!</blockquote>
 			</div>
-			<div id="f" class="col s12 m12 l3 card medium">
+			<div id="f" class="col s12 m12 l4 card medium">
 				<div id="div_login" class="col s12">
 					<br/>
 					{!! Form::open(['route'=>'login','method'=>'POST']) !!}
@@ -66,7 +66,7 @@
 	</div>
 	<div class="section" style="background-color:#DFDFDD">
 		<div class="row container">
-			<div class="col s12 l9">
+			<div class="col s12 l7">
 				<h3>Record EXERCISES!</h3>
 				<blockquote>Create and record PERSONALIZED Exercises for your Patients!</blockquote>
 				<blockquote>
@@ -74,19 +74,19 @@
 					Review your how your patient follows the exercises and PLAYBACK
 				</blockquote>
 			</div>
-			<div class="col s12 m3 l3">
+			<div class="col s12 m3 l5">
 				<img class="materialboxed responsive-img" src="{{ route('image','feature_1.png') }}"/>
 			</div>
 		</div>
 		<div class="row container">
-			<div class="col s12 l9">
+			<div class="col s12 l7">
 				<h3>Personalize TASKS</h3>
 				<blockquote>Create tasks specific or generalized to your Patients!</blockquote>
 				<blockquote>
 					Have the ability to assign tasks for different or similar cases of patients!
 				</blockquote>
 			</div>
-			<div class="col s12 l3">
+			<div class="col s12 l5">
 				<img class="materialboxed responsive-img" src="{{ route('image','feature_2.png') }}"/>
 			</div>
 		</div>
@@ -96,10 +96,10 @@
 	</div>
 	<div  class="section" style="background-color:#DFDFDD">
 		<div class="row container">
-			<div class="col s12 l3">
+			<div class="col s12 l5">
 				<img class="materialboxed responsive-img" src="{{ route('image','feature_3.png') }}"/>
 			</div>
-			<div class="col s12 l9">
+			<div class="col s12 l7">
 				<h3>Remotely monitor Patient Exercise!</h3>
 				<blockquote>Review, grade, and take notes of patient performances!</blockquote>
 			</div>
@@ -110,23 +110,23 @@
 	</div>
 	<div class="section" style="background-color:#DFDFDD">
 		<div class="row container">
-			<div class="col s12 l9">
+			<div class="col s12 l7">
 				<h3>Create Discussion Threads!</h3>
 				<blockquote>
 					Create articles for your patients to read and react! <br/>
 					Be it for a single patient or a group of patients.
 				</blockquote>
 			</div>
-			<div class="col s12 l3">
+			<div class="col s12 l5">
 				<img class="materialboxed responsive-img" src="{{ route('image','feature_4.png') }}"/>
 			</div>
 		</div>
 		<div class="row container">
-			<div class="col s12 l9">
+			<div class="col s12 l7">
 				<h3>Interact through THREADS!</h3>
 				<blockquote>Reply queries trough the thread's comments section</blockquote>
 			</div>
-			<div class="col s12 l3">
+			<div class="col s12 l5">
 				<img class="materialboxed responsive-img" src="{{ route('image','feature_5.png') }}"/>
 			</div>
 		</div>
