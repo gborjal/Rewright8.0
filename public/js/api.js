@@ -336,8 +336,7 @@ function filterGenText(text,image){
 					var text = undefined;
 					if((i+1 < temp.length)){
 						if(temp[i+1].startsWith('<[!caption',0) ){
-							++i;
-							var ret = interpText(temp,i);
+							var ret = interpText(temp,++i);
 							text= ret.text;						
 							i = ret.pos;
 							//t = imageCard(images[k],text);
