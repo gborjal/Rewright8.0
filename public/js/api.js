@@ -344,7 +344,7 @@ function filterGenText(text,image){
 					}
 					
 					t = imageCard(images[k],text);
-					
+					i++;	
 					k++;
 					newText+=t;
 				}else{
