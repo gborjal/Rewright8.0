@@ -326,7 +326,7 @@ function filterGenText(text,image){
 		console.table(temp);
 		var images = (image != null) ? image.split(","):false;
 		var newText = "";
-		var k = 0;
+		var k = 0; //counter for images
 
 		for(var i = 0; i<temp.length;i++){
 			console.log(temp[i]);
@@ -335,7 +335,8 @@ function filterGenText(text,image){
 					var t = "";
 					var text = undefined;
 					if((i+1 < temp.length)){
-						if(temp[++i].startsWith('<[!caption',0) ){
+						if(temp[i+1].startsWith('<[!caption',0) ){
+							++i;
 							var ret = interpText(temp,i);
 							text= ret.text;						
 							i = ret.pos;
