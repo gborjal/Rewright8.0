@@ -337,9 +337,11 @@ function filterGenText(text,image){
 							var text= ret.text;						
 							i = ret.pos;
 							t = imageCard(images[k],text);
+						}else{
+							t = imageCard(images[k]);
 						}
 					}else{
-						t= imageCard(images[k]);
+						t = imageCard(images[k]);
 					}
 					k++;
 					newText+=t;
