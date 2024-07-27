@@ -323,6 +323,7 @@ function filterGenText(text,image){
 	console.log(image);
 	if(text != null){
 		var temp = text.split(/\s+/);
+		console.table(temp);
 		var images = (image != null) ? image.split(","):false;
 		var newText = "";
 		var k = 0;
