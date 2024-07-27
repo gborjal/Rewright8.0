@@ -209,7 +209,6 @@ function getLoading(div){
 	div.append(loading);
 }
 function imageCard(image,text){
-	console.log("here");
 	var card = "<div class='row'>"+
 					"<div class='col s12 m8 offset-m2'>"+
 						"<div class='card small'>"+
@@ -320,7 +319,8 @@ function filterQuickText(text){
 	return newText;
 }
 function filterGenText(text,image){
-
+	console.log(text);
+	console.log(image);
 	if(text != null){
 		var temp = text.split(/\s+/);
 		var images = (image != null) ? image.split(","):false;
@@ -344,7 +344,6 @@ function filterGenText(text,image){
 					}
 					
 					t = imageCard(images[k],text);
-					i++;	
 					k++;
 					newText+=t;
 				}else{
