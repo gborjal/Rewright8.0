@@ -319,17 +319,14 @@ function filterQuickText(text){
 	return newText;
 }
 function filterGenText(text,image){
-	console.log(text);
-	console.log(image);
+	
 	if(text != null){
 		var temp = text.split(/\s+/);
-		console.table(temp);
 		var images = (image != null) ? image.split(","):false;
 		var newText = "";
 		var k = 0; //counter for images
 
 		for(var i = 0; i<temp.length;i++){
-			console.log(temp[i]);
 			if(temp[i]=== "<[!img!]>" ){
 				if(images != false){
 					var t = "";
@@ -371,25 +368,24 @@ function filterGenTextV2(text,image,div){//v2 of filterGenText
 		var images = (image != null) ? image.split(","):false;
 		var normTxt = "";
 		var k = 0;
-		console.table(temp);
 		for(var i = 0; i<temp.length;i++){
 			if(temp[i]=== "<[!img!]>" ){
 				var t = document.createTextNode(normTxt);
 				div.appendChild(t);
 				normTxt = "";
+				var txt = undefined;
 				if(images != false){
 					//var t = "";
 					if((i+1 < temp.length)){
-						if(temp[++i].startsWith('<[!caption',0) ){
-							var ret = interpText(temp,i);
-							var text = ret.text;
+						if(temp[i+1].startsWith('<[!caption',0) ){
+							var ret = interpText(temp,++i);
+							txt = ret.text;
 
 							i = ret.pos;
-							imageCardV2(div,images[k],text);
+							//imageCardV2(div,images[k],text);
 						}
-					}else{
-						imageCardV2(div,images[k]);
 					}
+					imageCardV2(div,images[k],text);
 					k++;
 				}else{
 					addNode(div,undefined,undefined,'card');
