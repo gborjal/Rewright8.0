@@ -219,6 +219,75 @@ class userSeeder extends Seeder
             'status'        => False,
             'active'        => True
         ]);
+
+        //physician 2
+        $physician_id = \DB::table('users')->insertGetId([
+            'username'=>'demo_physician',
+            'email'=> 'demo_physician@gmail.com',
+            'password'=> Hash::make('rewrightdemophys'),
+            'activation_code' => 'rewrightdemophys',
+            'user_types'=> 1
+        ]);
+        DB::table('users_info')->insert([
+            "user_id"=>$physician_id,
+            "profile"=>'1_profile_1.jpg',
+            "banner"=>'1_banner_1.jpg',
+            "first_name"=>'Demo',
+            "middle_name"=>'Physician',
+            "last_name"=>'Account',
+            "suffix_name"=>NULL,
+            "sex"=>'FEMALE',
+            "perm_address"=>'Not Available.',
+            "tempo_address"=>'Not Available.',
+            "office_address"=>NULL
+        ]);
+        
+        
+        $physician_project_id = \DB::table('projects')->insertGetId([
+            'owner_id' => $physician_id,
+            'text' => 'Demo Physician Account',
+            'size' => 10,
+            'active' => True
+        ]);
+        //PT joins admin's group
+        DB::table('developers')->insert([
+            'project_id'    => $admin_project_id,
+            'user_id'       => $physician_id,
+            'role'          => 1
+        ]);
+        DB::table('developers')->insert([
+            'project_id'    => $physician_project_id,
+            'user_id'       => $physician_id,
+            'role'          => 1
+        ]);
+
+        //patient 2
+        $patient_id = \DB::table('users')->insertGetId([
+            'username'=>'demo_patient_1',
+            'email'=> 'demo_patient_1@gmail.com',
+            'password'=> Hash::make('1lw3yjuo'),
+            'activation_code' => '1lw3yjuo',
+            'user_types'=> 2
+        ]);
+        DB::table('users_info')->insert([
+            "user_id"=>$patient_id,
+            "profile"=>'1_profile_1.jpg',
+            "banner"=>'1_banner_1.jpg',
+            "first_name"=>'Demo',
+            "middle_name"=>'Patient',
+            "last_name"=>'Account',
+            "suffix_name"=>NULL,
+            "sex"=>'MALE',
+            "perm_address"=>'Not Available',
+            "tempo_address"=>'Not Available',
+            "office_address"=>NULL
+        ]);
+
+        DB::table('developers')->insert([
+            'project_id'    => $physician_project_id,
+            'user_id'       => $patient_id,
+            'role'          => 2
+        ]);
         
     }
 }
